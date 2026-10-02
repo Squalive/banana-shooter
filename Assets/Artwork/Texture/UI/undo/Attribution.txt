@@ -1,0 +1,1 @@
+Vectors and icons by <a href="https://github.com/kamilagraf/react-swm-icon-pack?ref=svgrepo.com" target="_blank">Software Mansion</a> in CC Attribution License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>

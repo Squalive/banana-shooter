@@ -1,0 +1,1 @@
+Vectors and icons by <a href="https://github.com/radix-ui/icons?ref=svgrepo.com" target="_blank">Radix Ui</a> in MIT License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>

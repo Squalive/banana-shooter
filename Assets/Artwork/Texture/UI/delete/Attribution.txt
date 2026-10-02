@@ -1,0 +1,1 @@
+Vectors and icons by <a href="https://github.com/element-plus/element-plus-icons?ref=svgrepo.com" target="_blank">Element Plus</a> in MIT License via <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>

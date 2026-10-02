@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7853975886435077148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7853975886435077151}
+  - component: {fileID: 7853975886435077150}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7853975886435077151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853975886435077148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7853975886435077150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853975886435077148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62cb524697b5b54f90f7de9322547f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 6584694582124329151, guid: f0544c03ed8b89640ac72524c7e292cf, type: 3}
+    size: 70
+  - tag: HitMarker
+    prefab: {fileID: 6483197907621238942, guid: f61c308cda7d3b542b42a88eba0bd30b, type: 3}
+    size: 20
+  - tag: ExplosiveBullet
+    prefab: {fileID: 2885289983096492780, guid: 6c566c26d037ba043bb82e8b65bcc2d5, type: 3}
+    size: 15
+  - tag: JackHitbox
+    prefab: {fileID: 5757952475451772953, guid: bed1aaddc7a9b74498690224dacebaa7, type: 3}
+    size: 125
+  - tag: PlayerHitbox
+    prefab: {fileID: 2321040217514712259, guid: 6c02865f17dff994084a209168f8ec2d, type: 3}
+    size: 40
+  - tag: BulletHit
+    prefab: {fileID: 419268218163932279, guid: cedd30c25be6afa488b053045a72428f, type: 3}
+    size: 70
+  - tag: Blood
+    prefab: {fileID: 3335462520153168183, guid: 68008568617ac84439f81990405d5b3b, type: 3}
+    size: 20
+  - tag: Water Splash
+    prefab: {fileID: 194016, guid: 95fe49cad7e515648b722bbc96c2ca69, type: 3}
+    size: 5
+  - tag: PlayerWalkSmokeFx
+    prefab: {fileID: 220063625310769861, guid: 5b417854e7d17f947bf6f886023021dc, type: 3}
+    size: 40
+  - tag: BloodSplashBig
+    prefab: {fileID: 3335462520153168183, guid: c44794e1be03a6240a4a02b4f8ba7095, type: 3}
+    size: 8
+  - tag: TurretHitbox
+    prefab: {fileID: 3623479888396892040, guid: c9d8d61895baad34d9a1f187a3a671b2, type: 3}
+    size: 125
+  - tag: KatHitbox
+    prefab: {fileID: 6827704599117307787, guid: 02f056be354e86d4291dbf6929ccf532, type: 3}
+    size: 125
+  - tag: ZombieHitbox
+    prefab: {fileID: 1378868449730388504, guid: 9a311981ad680c849b1b46cb958f965c, type: 3}
+    size: 125
+  - tag: SmokeTrail
+    prefab: {fileID: 4243339691937519602, guid: 572b07aae0610d84380d9bbd04936edd, type: 3}
+    size: 70
+  - tag: PlayerExplode
+    prefab: {fileID: 5324143681670041494, guid: c5d03f2a9d087234bbaddea9727f14b9, type: 3}
+    size: 40
