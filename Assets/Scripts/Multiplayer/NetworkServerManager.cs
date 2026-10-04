@@ -1361,7 +1361,7 @@ namespace Multiplayer
         {
             yield return new WaitForSeconds(10);
 
-            foreach (var client in ClientData.Values)
+            foreach (var client in ClientData.Values.ToList())
             {
                 if (!ServerPlayer.list.ContainsKey(client.Id))
                 {
