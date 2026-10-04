@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48f363a591dd4687774f3c5d382ef232bf3c4b38c8af2eff5e6af90a4f3ff752
-size 914
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Long Nose
+  m_EditorClassIdentifier: 
+  itemdefid: 144
+  displayName: Long Nose
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 7
+  icon: {fileID: 2800000, guid: e74e0d6ed04186b4cae54718f47a9a1c, type: 3}
+  mesh: {fileID: 2174717743521802176, guid: 5e1cf9e1ac6a4a14db725a8943ab36db, type: 3}
+  materials:
+  - {fileID: 5489615423474560200, guid: 5e1cf9e1ac6a4a14db725a8943ab36db, type: 3}
+  index: 16
+  alpha: 1
+  size: {x: 2.128278, y: 2.128278, z: 2.128278}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

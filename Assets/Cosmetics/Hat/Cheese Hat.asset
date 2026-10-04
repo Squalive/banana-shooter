@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2206cb805b000b44d1c6edc083f83ee60cc6a8a9788602f6462c68195678319e
-size 950
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Cheese Hat
+  m_EditorClassIdentifier: 
+  itemdefid: 116
+  displayName: Cheese Hat
+  description: Cheese in a banana game??!? Impossible.
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 57a43ef707236434fbeb581113a65b4b, type: 3}
+  mesh: {fileID: 2523632069651485468, guid: 89f216ae0b56ef2448268f59170cd202, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5356bb745a75db74798fdd189ce34241, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 0.49093923, y: 0.5212954, z: 0.43060702}
+  defaultRotation: {x: -180, y: 0, z: 180}
+  relatedItem: []
+  canApplyParticle: 1

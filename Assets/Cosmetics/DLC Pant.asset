@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d31b13602d78f663e37973c27874fdcf1bfab2b1cce4eab46b42ffc0087e9fd
-size 1010
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: DLC Pant
+  m_EditorClassIdentifier: 
+  itemdefid: 219
+  displayName: DLC Pant
+  description: nothing
+  tag: 
+  type: 7
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: ce0d3fac09901b249b73743cc0cb3be4, type: 3}
+  mesh: {fileID: -7489798097697326784, guid: 6a5b7ad1eb118bb49a7b5966f6db9aec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f341a7d25a0ec7a48a65a1d2f9e728ba, type: 2}
+  - {fileID: 2100000, guid: 42c6ef50bfe922749949599674124638, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 3, y: 3, z: 3}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 208.8, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:495f6e7b0d86d14454daa02fdc01e6650de057a71595d27db3e88a37fe138f58
-size 1056
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: DesertEagle
+  m_EditorClassIdentifier: 
+  weaponName: DesertEagle
+  chineseName: "\u6C99\u6F20\u4E4B\u9E70"
+  price: 350
+  texture: {fileID: 2800000, guid: 053875ee72216104a8da2e42317a44af, type: 3}
+  skins:
+  - mesh: {fileID: -9032557090061056480, guid: 2d37353f5a132c24fb0c0d081d1da4a1, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 66563e4e024f6594a943af5e472240ba, type: 2}
+  size: {x: 0.30728552, y: 0.30728552, z: 0.30728552}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 400
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 1
+  weaponType: 5
+  bUseGravity: 0
+  maxAmmo: 1
+  fireRate: 2
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 0.6
+  explosiveAmmo: 0

@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56274bb62750149cb1ef2491efba914e2f9c1aa2df20855ec992c9e3e4083b16
-size 904
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Bald
+  m_EditorClassIdentifier: 
+  itemdefid: 112
+  displayName: Bald
+  description: Laopi's hair
+  tag: 
+  type: 2
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: ec3e557591384e94f9a0196b96dbe449, type: 3}
+  mesh: {fileID: -1422433231989127438, guid: 144faee5a045b7d4285cc98bcf396f57, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 3e668ddfa65783840b6bf27a496a2acc, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 8.815398, y: 9.690131, z: 9.690131}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

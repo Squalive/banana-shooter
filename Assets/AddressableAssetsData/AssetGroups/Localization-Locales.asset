@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42949e06ad024a309e75bea629b306367e4e4992c20cbca87609e08745659c4d
-size 1879
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Locales
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Locales
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bc9526847c9fd0e4288cc2447abd374e
+  m_SerializeEntries:
+  - m_GUID: 03a0fe282aba960418cebb07183566ce
+    m_Address: Chinese (Simplified) (zh-Hans)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: 1d1ecd843a0e0244aa1e6a4ec016796b
+    m_Address: Russian (ru)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: 240a8e8d4d3b46e48b87d6be712abf6f
+    m_Address: English (en)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: 54310631b475d274a921d72e4328a80e
+    m_Address: Kyrgyz (Kyrgyzstan) (ky-KG)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: b276acb0483c2104ca5cad7093f69d4b
+    m_Address: Polish (pl)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: c585ea24c9d439f49876830abb5706e5
+    m_Address: Dutch (nl)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: f250c866ad8f0fa45a25d3fbe40c919e
+    m_Address: Norwegian (no)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  - m_GUID: fc74688e50c5f26419e33963918ba59b
+    m_Address: Bulgarian (bg)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a38db243bfe53b945ac680105af07497, type: 2}
+    - {fileID: 11400000, guid: dcddc371315017f469a017dcb14b37e6, type: 2}

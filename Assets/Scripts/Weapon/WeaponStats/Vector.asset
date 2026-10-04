@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:09c327e36b93c3fcedf9d7c607fc998f00758da434d90ec19f45cafed2e69dcf
-size 1023
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Vector
+  m_EditorClassIdentifier: 
+  weaponName: Vector
+  chineseName: "\u7EF4\u514B\u6258"
+  price: 1600
+  texture: {fileID: 2800000, guid: ad453e3635fca2244bbd4129b19d4133, type: 3}
+  skins:
+  - mesh: {fileID: -3149996399109167922, guid: 8289f61cd054c10459f6dd2ac88ef299, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 0505241e38bc7a54f935f57c9f37842b, type: 2}
+  size: {x: 1, y: 0.3914852, z: 1}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 20
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 4
+  weaponType: 3
+  bUseGravity: 0
+  maxAmmo: 23
+  fireRate: 15
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1.2
+  explosiveAmmo: 0

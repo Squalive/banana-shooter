@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:937915b12700caeabcc4c6f7627f0743db4172b4a2802faa37f86739dd7cac1f
-size 1056
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: p90_banana
+  m_EditorClassIdentifier: 
+  itemdefid: 153
+  displayName: P90 | Banana
+  description: og weapon
+  tag: 
+  type: 24
+  inventoryType: 1
+  rarity: 6
+  icon: {fileID: 2800000, guid: f1a52c2f18c80ef48b412c86231e1ade, type: 3}
+  mesh: {fileID: -6231077721535070182, guid: 8b470d678a1eace4b8322bfb23f51c7a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: cbde50e1cdbf4e4439fd2a128c9a8ec0, type: 2}
+  - {fileID: 2100000, guid: 179b7103a41b9674aa61d39140c157ff, type: 2}
+  - {fileID: 2100000, guid: 8d1ab466b6cb93546a393487adab68e0, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 2.2198, y: 0.88720965, z: 2.2198}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 0

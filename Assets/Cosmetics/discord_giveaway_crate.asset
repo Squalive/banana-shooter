@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:253a06923979b1103e34777e9dab3915ac27a48140d16df0fe4bbe9b085acfc6
-size 1051
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: discord_giveaway_crate
+  m_EditorClassIdentifier: 
+  itemdefid: 192
+  displayName: Discord Giveaway Crate
+  description: Contains nothing
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 181c360c075cada4b9c6eceb596d6d4d, type: 3}
+  mesh: {fileID: -6474488795518304631, guid: 48adf694b678fac4280521c4ed541df5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: d1338c3fc92ece640890971ca0eb2873, type: 2}
+  - {fileID: 2100000, guid: 54e2fec403ed4c34d9756425ba88ba98, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 4.5, y: 4.5, z: 4.5}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 180, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 0

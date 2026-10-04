@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12c2c2508a68f985405219fef35277bab4b1b062e26b47f75c5ec313c6c9b471
-size 1057
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: femboy_socks
+  m_EditorClassIdentifier: 
+  itemdefid: 184
+  displayName: Femboy Socks
+  description: weirdos
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 34a73e3da5bbc624980407beac650de7, type: 3}
+  mesh: {fileID: -3425035161409472671, guid: 25e0319be1da87044b924bef3e51f956, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4df27e180c03cd044a48500cd12b25ab, type: 2}
+  - {fileID: 2100000, guid: 76314f1b58b16a84cb8c621b76e65740, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 4.375255, y: 4.8094015, z: 4.8094015}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

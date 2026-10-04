@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0421fb245734c37fb22ed4c92b7714911d125508c8087b383dd5834e7d4782a1
-size 1099
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: broadsword_banana
+  m_EditorClassIdentifier: 
+  itemdefid: 151
+  displayName: Broadsword | Banana
+  description: og weapon
+  tag: 
+  type: 18
+  inventoryType: 1
+  rarity: 3
+  icon: {fileID: 2800000, guid: 3fe7ac301ce89694ba8024e6bc65bfb7, type: 3}
+  mesh: {fileID: 2534964839176971238, guid: 66f7eb85f22912d448562c02b15265f4, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a8873486eedcbc046adc4c7acea09f06, type: 2}
+  - {fileID: 2100000, guid: 444d00885e4b9a440bae43dd0d69c069, type: 2}
+  - {fileID: 2100000, guid: c7123e83142f1c04da72a3624b82d859, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 0.83398867, y: 0.31784186, z: 0.83398867}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1.5
+  relatedItem: []
+  canApplyParticle: 0

@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fab0ce38567dad226f8993beaa6a5c4af8662661c9e555ebfee1f1bb8cda4892
-size 1858
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Polish (pl)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Polish (pl)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0f120b325011f2641a6a4cb3af8a0bfb
+  m_SerializeEntries:
+  - m_GUID: 0a5866656e9ece74897145b955725421
+    m_Address: UI Text_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: 112b21d1c82d2ba47accd843be01663b
+    m_Address: Quest_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: b9bbc2159d2cd5c4c82107d5b9de7c70
+    m_Address: Notification_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: c40b981c504269a4b92da10d3131c9be
+    m_Address: VoiceLine_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: cce11e5105618a8459ccf06916cf42ef
+    m_Address: Map Editor_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: eaf407dfbf66cc94685c79e9b1d751c9
+    m_Address: FAQ_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  - m_GUID: f86941fabc7e095428fcd4e7327e0e1b
+    m_Address: Map_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6c5a89bdac3cb9f4b94b2c97ef47367e, type: 2}
+    - {fileID: 11400000, guid: 3850c44483269c84b85b97ee892464c6, type: 2}

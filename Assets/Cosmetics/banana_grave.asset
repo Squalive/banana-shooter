@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab2838cc56e36e5a25ba4787196b9cc59f528e853b7a2bdd93ed2a5c1d50dada
-size 1637
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_grave
+  m_EditorClassIdentifier: 
+  itemdefid: 136
+  displayName: Banana Grave
+  description: Contains \n<color=white>Common item</color>\n<color=#1e90ff>Uncommon
+    item</color>\n<color=red>Rare item</color>\n<color=green>Extraordinary item</color>\n<color=yellow>Legendary
+    item</color>\n<color=#ff69b4>Original item</color>\n<color=#00ff00>Unique item</color>
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 7
+  icon: {fileID: 2800000, guid: 7e266c2a49af1544b8ff1c0b456c1503, type: 3}
+  mesh: {fileID: -1365022408106835979, guid: 359a4fdb620c1e449a72418fd87b4bf5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: c0cd7f94d072f444294743a4b6e167a7, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 4, y: 4, z: 4}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: aa835c8c55a5419458179c48551f0dab, type: 2}
+  - {fileID: 11400000, guid: 9ffa8b8bbeed1204593d7f4f0b6189b0, type: 2}
+  - {fileID: 11400000, guid: cfcd6206a3edd0342bcf072bc76d9147, type: 2}
+  - {fileID: 11400000, guid: a4e894822cab03b4594ece90e832ec69, type: 2}
+  - {fileID: 11400000, guid: 815f613fa5fe5e7459dde2aee3d1b4ce, type: 2}
+  - {fileID: 11400000, guid: f0ffe71ace5073a4e962e6dace5f7fb2, type: 2}
+  canApplyParticle: 0

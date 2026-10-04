@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c6532c6fe641fc0203ced6f00bca31253c9c0d7f2164389cc873611f3eb1777f
-size 1022
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Microwave
+  m_EditorClassIdentifier: 
+  itemdefid: 133
+  displayName: Microwave
+  description: for some reason i just like putting a microwave on my head
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 2f02eda0a763a5c49845c0ab34fe1371, type: 3}
+  mesh: {fileID: 1146442964403048876, guid: 8c2191c49538632478a0674c754b4d79, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 3346e7e05fcb606428e5c0fd82758dcc, type: 2}
+  - {fileID: 2100000, guid: 9abd1c76f96e8164f9e2cff01288350a, type: 2}
+  index: 11
+  alpha: 1
+  size: {x: 3.201, y: 3.201, z: 3.201}
+  defaultRotation: {x: 0, y: -90, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

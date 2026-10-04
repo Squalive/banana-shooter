@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2efe794ebc8881d2e054fa619deda2caaaf41d2d34cfa5c91ea050b46ebabf34
-size 1349
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Notification_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 1e1aa282f019d8e4c9c42cea7d44bd86, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8338776064
+    m_Localized: "Wiadomo\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133916237824
+    m_Localized: "Zg\u0142oszenie zosta\u0142o wys\u0142ane"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 597613322240
+    m_Localized: "Od\u015Bwie\u017Cono"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 849099595776
+    m_Localized: "Od\u015Bwie\u017Canie..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22374792011776
+    m_Localized: Skopiowano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538499590103040
+    m_Localized: "Ostrze\u017Cenie wys\u0142ane"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538751801991168
+    m_Localized: "Nie uda\u0142o si\u0119 wys\u0142a\u0107 ostrze\u017Cenia"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

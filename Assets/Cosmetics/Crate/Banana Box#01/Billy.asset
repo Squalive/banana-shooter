@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:683635750a7e25147a130ad0bb247dc29add6214343e89eec154a611cbdb3e08
-size 999
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Billy
+  m_EditorClassIdentifier: 
+  itemdefid: 111
+  displayName: Billy
+  description: Oh you dont know what karlson is
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: 53cbbcb4157c3a54ab01001dec9518ce, type: 3}
+  mesh: {fileID: 8068646207940977120, guid: 8bd868f6bb1c3e942980183cdec620ea, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 93423e2c4cf593a4b8d2a417dd85ecd7, type: 2}
+  - {fileID: 2100000, guid: 3028e1625cef7ad42ab7a033fd3eca90, type: 2}
+  index: 4
+  alpha: 1
+  size: {x: 3.8158488, y: 3.8158488, z: 3.8158488}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

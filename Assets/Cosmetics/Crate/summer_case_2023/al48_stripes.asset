@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42459a5e899c81b6e6c9f5a847a4c37feb703626200d08bfe8eb2f7543a35db8
-size 1059
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: al48_stripes
+  m_EditorClassIdentifier: 
+  itemdefid: 194
+  displayName: AL48 | Stripes
+  description: Powerful and beautiful gun
+  tag: 
+  type: 11
+  inventoryType: 1
+  rarity: 1
+  icon: {fileID: 2800000, guid: 061a0a791339cc642b880f1a1bd005b6, type: 3}
+  mesh: {fileID: 159731093059413154, guid: 3aeab102417131e469710b73133d40ec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 82c40816589385b469853e81174a305b, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 1.6217248, y: 0.6420028, z: 1.6217248}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 10, z: 195}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 0

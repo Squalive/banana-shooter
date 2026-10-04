@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ebf16311e636a2d38b363cd2c1df0295a4e2092b074f98dd3d34d2f8221d88cb
-size 588
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297663e7e70c42342a02062fd3b74efd, type: 3}
+  m_Name: Vendo
+  m_EditorClassIdentifier: 
+  type: 2
+  prefab: {fileID: 4042503539244720417, guid: cc764ce7814a4574b8a96a41be4a2d33, type: 3}
+  icon: {fileID: 2800000, guid: 963e4521446a7364b9de3bfad6124d8e, type: 3}
+  decorationType: 0

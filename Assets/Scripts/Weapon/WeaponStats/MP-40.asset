@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29897965d45cbcae6ebe223b1de1f593dc1fb6345edbe572fd3186c4268cd2c9
-size 997
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: MP-40
+  m_EditorClassIdentifier: 
+  weaponName: MP-40
+  chineseName: MP-40
+  price: 2200
+  texture: {fileID: 2800000, guid: 28208a08e80e97a4ebdd1c6a74693abc, type: 3}
+  skins:
+  - mesh: {fileID: 2387495366054235544, guid: 92c74e6f1159e4a43a3c5bdd886c8322, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 2b7feafac9c15c645bab44df8dbd084a, type: 2}
+  size: {x: 6, y: 6, z: 6}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 25
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 3
+  weaponType: 3
+  bUseGravity: 0
+  maxAmmo: 37
+  fireRate: 13
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1.1
+  explosiveAmmo: 0

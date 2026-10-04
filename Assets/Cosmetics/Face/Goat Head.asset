@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:434cc43840569566ebe02575d7a72bc44b91915ca933bd575969f9cd64f6e77a
-size 944
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Goat Head
+  m_EditorClassIdentifier: 
+  itemdefid: 215
+  displayName: Goat Head
+  description: katsu...
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 440875376ef90364d90c44e08c35f37a, type: 3}
+  mesh: {fileID: -5832117596106298008, guid: 37f135679e7238b498040d856f17254d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: c86847ed3a1872e4c9aa25375d1ae15b, type: 2}
+  index: 29
+  alpha: 1
+  size: {x: 7, y: 7, z: 7}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 205.38, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

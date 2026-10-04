@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:abee4ab58a034f2f2743c374cafc26091eee0050520a81c04d62f732e8e7fda3
-size 1974
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: christmas_box#01
+  m_EditorClassIdentifier: 
+  itemdefid: 158
+  displayName: Christmas Box#01
+  description: Contains
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 90592ce01de00924f967bbcebd50dfa9, type: 3}
+  mesh: {fileID: 253103407582256581, guid: b4d0ebc8067c0634bb6e19c3c990b51f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a9876968f79e366488ff8a7efbeff76e, type: 2}
+  - {fileID: 2100000, guid: 11a34ff76af608f45a82a1556de175ef, type: 2}
+  - {fileID: 2100000, guid: a112de9aa5bac864e994bd5aa9fae4c5, type: 2}
+  - {fileID: 2100000, guid: 5bde79ee3e7c089429ec8ac5b10f06a8, type: 2}
+  - {fileID: 2100000, guid: 16f4739b2790ce54f8f8b5b694db7646, type: 2}
+  - {fileID: 2100000, guid: 8ed572408fc8cec45a41d4db32db9101, type: 2}
+  - {fileID: 2100000, guid: 64ce7116265a18e41ad0cfc8abd9c461, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 7, y: 7, z: 7}
+  defaultRotation: {x: -90, y: 180, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: bec7680d19e526b4cad50403e951a53b, type: 2}
+  - {fileID: 11400000, guid: 11f020fe8e622b74fb7fbd62a5bd2f52, type: 2}
+  - {fileID: 11400000, guid: 21286c0be05322f479e95c3a669192e4, type: 2}
+  - {fileID: 11400000, guid: 36fb02902dee3a447ae230b0c16d4a00, type: 2}
+  - {fileID: 11400000, guid: 5a80c34c1c38aa94bb135c823c334bfc, type: 2}
+  - {fileID: 11400000, guid: fe0d3c3f90d68714eb163085f48dd87f, type: 2}
+  - {fileID: 11400000, guid: b34a1e199a6d93c4ea6659d956bb71ab, type: 2}
+  - {fileID: 11400000, guid: 984f72a76eae3da4fb8e0c0605ba5217, type: 2}
+  - {fileID: 11400000, guid: 1806ba8cc9711324b92ea52c71cc3ea9, type: 2}
+  canApplyParticle: 0

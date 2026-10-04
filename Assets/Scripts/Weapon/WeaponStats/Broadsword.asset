@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c257788deeefda5dac686f7094db52eab04fc42753c1d786bafbdb0692684b95
-size 1401
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Broadsword
+  m_EditorClassIdentifier: 
+  weaponName: Broadsword
+  chineseName: "\u5927\u5200"
+  price: 550
+  texture: {fileID: 2800000, guid: 6618e9061e6f43c46b1e6e81e49c3181, type: 3}
+  skins:
+  - mesh: {fileID: -8341388288605509435, guid: 66f7eb85f22912d448562c02b15265f4, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 82ed71cbb3629a343af2e98832ad9171, type: 2}
+    - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  - mesh: {fileID: 2534964839176971238, guid: 66f7eb85f22912d448562c02b15265f4, type: 3}
+    materials:
+    - {fileID: 2100000, guid: a8873486eedcbc046adc4c7acea09f06, type: 2}
+    - {fileID: 2100000, guid: 444d00885e4b9a440bae43dd0d69c069, type: 2}
+    - {fileID: 2100000, guid: c7123e83142f1c04da72a3624b82d859, type: 2}
+  size: {x: 0.83398867, y: 0.31784186, z: 0.83398867}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 50
+  damageOffset: 10
+  specialWeapon: 0
+  weaponType: 6
+  bUseGravity: 0
+  maxAmmo: 30
+  fireRate: 5
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 0
+  reloadTime: 0

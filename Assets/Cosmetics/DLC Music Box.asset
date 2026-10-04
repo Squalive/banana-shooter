@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6cfd523671321b02f921dab0a531dd20e29f77386b7badab2356ed5c7574cf92
-size 1023
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: DLC Music Box
+  m_EditorClassIdentifier: 
+  itemdefid: 216
+  displayName: DLC Music Box
+  description: n othing
+  tag: 
+  type: 32
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 37e31c84d507f3a4ca0128a0be4aa8d9, type: 3}
+  mesh: {fileID: -4846434240376843901, guid: d9ad9f43b502338468e7ca0160e50a83, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 39f883b2f923c4f47938a02f108de90d, type: 2}
+  - {fileID: 2100000, guid: 63b665baf05fb1e4fa074234b0cb8606, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 1, y: 1, z: 1}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 200, z: 0}
+  sizeMultiplier: 5.32
+  relatedItem: []
+  canApplyParticle: 0

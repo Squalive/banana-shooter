@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0ae04d885d078ee81f20ea676db87b31ab9c91f465bde368726e11dfd95c220
-size 1081
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: katana_on_head
+  m_EditorClassIdentifier: 
+  itemdefid: 183
+  displayName: Katana On Head
+  description: why tf im still alive
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: d4d6a7b1c76339a428388608a2d4abcc, type: 3}
+  mesh: {fileID: -1445661123206519260, guid: 765f8a84135352942bf40cbcfe1ecd5f, type: 3}
+  materials:
+  - {fileID: 2100000, guid: e1a80ae6f413a8a428ebf487f684e8f8, type: 2}
+  - {fileID: 2100000, guid: ea4bb04b3c3443646bcdfe11a62f59c5, type: 2}
+  index: 26
+  alpha: 1
+  size: {x: 0.77761406, y: 0.108557984, z: 0.77761406}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

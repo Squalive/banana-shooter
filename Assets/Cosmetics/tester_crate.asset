@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d63177427cff9faa2925c909befaae528c30e13e8654c08a6bed00937ff60589
-size 2059
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: tester_crate
+  m_EditorClassIdentifier: 
+  itemdefid: 148
+  displayName: Tester Crate
+  description: 
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 7
+  icon: {fileID: 2800000, guid: f858688a926d00b429439c9b78b15214, type: 3}
+  mesh: {fileID: -7331218688984080815, guid: f83d24f206200e644ad75a002e7741c4, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 644ff5b5a6a8ea8409a440b6e36efc38, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 3.791261, y: 6.0282984, z: 3.791261}
+  defaultRotation: {x: -90, y: 90, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 755e6325aee46bc46ba89089c1bb22b9, type: 2}
+  - {fileID: 11400000, guid: c058c3adfcafae34f8139b50af6f21b3, type: 2}
+  - {fileID: 11400000, guid: f0d2f82788c262747a686f0aa36d2114, type: 2}
+  - {fileID: 11400000, guid: b6c4eb969f4d9f944825c9e4824056fa, type: 2}
+  - {fileID: 11400000, guid: 22ed2cd6b0140614a81cf909d697e0b9, type: 2}
+  - {fileID: 11400000, guid: 815f613fa5fe5e7459dde2aee3d1b4ce, type: 2}
+  - {fileID: 11400000, guid: ca0fb522f73683b49bf47c6f2cf78628, type: 2}
+  - {fileID: 11400000, guid: 9022b88808339114c9a359a40433beff, type: 2}
+  - {fileID: 11400000, guid: 171b3a6926d227d408c8a0c120c7ab9d, type: 2}
+  - {fileID: 11400000, guid: cfcd6206a3edd0342bcf072bc76d9147, type: 2}
+  - {fileID: 11400000, guid: f0ffe71ace5073a4e962e6dace5f7fb2, type: 2}
+  - {fileID: 11400000, guid: 43a6cefb55ee7e44eb66ebfd66396efe, type: 2}
+  - {fileID: 11400000, guid: c382ac4606f23b1489f6c7a937166745, type: 2}
+  - {fileID: 11400000, guid: fd8c3b1b65909b24ab8c4c41760df3b7, type: 2}
+  - {fileID: 11400000, guid: 23f20e8c1c74cb0479ca256f91af914f, type: 2}
+  - {fileID: 11400000, guid: aa835c8c55a5419458179c48551f0dab, type: 2}
+  canApplyParticle: 0

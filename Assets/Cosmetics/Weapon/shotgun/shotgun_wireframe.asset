@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d2cdc8c0a3e5b09516c9bdb22c0fd2dc8a219c13720aa68f28f6ee955d6a768
-size 1105
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: shotgun_wireframe
+  m_EditorClassIdentifier: 
+  itemdefid: 190
+  displayName: ShotGun | Wireframe
+  description: Uhh just wireframe, but the color is based on the camera view
+  tag: 
+  type: 10
+  inventoryType: 1
+  rarity: 2
+  icon: {fileID: 2800000, guid: d4f9ad6ef896a7c43b57192d251b2aec, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 3a6014db5734bf548a11d59b31ae8a51, type: 2}
+  - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  index: 4
+  alpha: 1
+  size: {x: 1.8031093, y: 0.6264793, z: 1.8031093}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 0

@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6f8d4da0a8f4f56e580aa6b8c2bea4cfab3d809f9b0ab6415442117310d6593
-size 1024
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Nerd Glasses
+  m_EditorClassIdentifier: 
+  itemdefid: 134
+  displayName: Nerd Glasses
+  description: only nerd would wear it,so dont be fool
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: cee224521cecb324fb0ab0378b03df69, type: 3}
+  mesh: {fileID: 4558221389245150596, guid: 0221dc662a3cad249b9b05b54af704aa, type: 3}
+  materials:
+  - {fileID: 2100000, guid: be2c96dcaefa4be46b3ffa03485a3ae6, type: 2}
+  - {fileID: 2100000, guid: 69a214074e6754e42930df383dc620e4, type: 2}
+  index: 12
+  alpha: 1
+  size: {x: 12.0341835, y: 12.0341835, z: 12.0341835}
+  defaultRotation: {x: 0, y: -90, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ffe73e1480263ea9efb0fceb5b22a0801952cb01866cb6d52c769bc7d04b21d
-size 1040
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: BananaGun
+  m_EditorClassIdentifier: 
+  weaponName: BananaGun
+  chineseName: "\u9999\u8549\u67AA"
+  price: 500
+  texture: {fileID: 2800000, guid: a47e2bf7c63e4c54ca590800727ea14f, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: aeea48367405868488502acb804dfa24, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 4bcc34b9452f44d4893d3f38aebe4c1b, type: 2}
+  size: {x: 0.8232, y: 0.8232, z: 0.8232}
+  defaultRotation: {x: 314.99997, y: 270, z: 90}
+  damage: 60
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 7
+  weaponType: 5
+  bUseGravity: 0
+  maxAmmo: 6
+  fireRate: 7
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 0
+  reloadTime: 2
+  explosiveAmmo: 0

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d89d990e53b014872c21746e23a58ef8b2660418769f3d7b4777aa5340083f81
-size 1163
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: sode_hat
+  m_EditorClassIdentifier: 
+  itemdefid: 203
+  displayName: Soda Hat
+  description: It looks kinda juicy
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: b2cece450330e96409e88f1c54df99cc, type: 3}
+  mesh: {fileID: 2534964839176971238, guid: 8a0916ef4b58f624aad541714d32b2b4, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 33551cb905ebce646b58dffc3032fc2f, type: 2}
+  - {fileID: 2100000, guid: bfc917d5363523c4da7c33a40fd96ca4, type: 2}
+  - {fileID: 2100000, guid: c3181a602288a0b45a662cab201f7be6, type: 2}
+  index: 27
+  alpha: 1
+  size: {x: 5, y: 5, z: 5}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 210, z: 0}
+  sizeMultiplier: 1.5
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 1

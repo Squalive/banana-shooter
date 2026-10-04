@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d521f3ca8e02d4c39a9170dabb6b2a636e82fe1c3bbd20795aa93c110f419e37
-size 481
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f09b3ca7b64e3db712d5125ff32ca6, type: 3}
+  m_Name: Connect Command
+  m_EditorClassIdentifier: 
+  commandWord: connect
+  key: normal
+  args:
+  - args:
+    - 127.0.0.1:27015

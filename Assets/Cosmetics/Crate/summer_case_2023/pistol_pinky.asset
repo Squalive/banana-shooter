@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:585808ed5c2964dbd8d490dcceefc4b4f5e5fe72a7ce3b8aab58b4d36365747d
-size 1050
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: pistol_pinky
+  m_EditorClassIdentifier: 
+  itemdefid: 201
+  displayName: Pistol | Pinky
+  description: woo pinky
+  tag: 
+  type: 21
+  inventoryType: 1
+  rarity: 5
+  icon: {fileID: 2800000, guid: d45ea9cd6450dee47afb648a79411c61, type: 3}
+  mesh: {fileID: -5947995769207344222, guid: 474bb8045d48ba14bba22837b8758259, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 15b79189bc3c6484c89f97dbbb5f2277, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 0.80838466, y: 0.3463306, z: 0.80838466}
+  offset: {x: 0, y: -0.02, z: 0}
+  defaultRotation: {x: -90, y: 20, z: 0}
+  sizeMultiplier: 2.5
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 0

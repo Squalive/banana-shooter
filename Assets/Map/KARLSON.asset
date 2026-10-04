@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f180f01b3c5408f005c9a683f3e592ef436ca6203878f991115c51cc0c8ff59e
-size 488
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d30214e44d74c8bb06ad84b194e7db4, type: 3}
+  m_Name: KARLSON
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: 7c4585f83ed71224e9c908ecc26ad91c, type: 3}
+  external: 0

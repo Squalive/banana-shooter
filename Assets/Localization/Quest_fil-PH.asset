@@ -1,3 +1,82 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d71598fb4de7804f0f7dc6860e04f50eceed161c16a08649a0a3e31fd833c333
-size 1925
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Quest_fil-PH
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fil-PH
+  m_SharedData: {fileID: 11400000, guid: d78f6e6cb0c4d254ba514fdcf881b362, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 2336825607767719940
+  m_TableData:
+  - m_Id: 71391685091328
+    m_Localized: 'Prize:
+
+      {0} Crate'
+    m_Metadata:
+      m_Items:
+      - rid: 2336825607767719940
+  - m_Id: 71214870011904
+    m_Localized: 'Prize:
+
+      {0} exp'
+    m_Metadata:
+      m_Items:
+      - rid: 2336825607767719940
+  - m_Id: 1100663598063616
+    m_Localized: Dead 100 times
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100064735338496
+    m_Localized: Noob
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100037363310592
+    m_Localized: Kill 30 people in one match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1099997114769408
+    m_Localized: Killer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71700910153728
+    m_Localized: 'Prize:
+
+      20000 exp
+
+      1 Crate'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54367915319296
+    m_Localized: Win 2 matches
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54358478135296
+    m_Localized: Winner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54338769100800
+    m_Localized: Open 3 crates
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54324512661504
+    m_Localized: Crate Expert
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2336825607767719940
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00a0072cee40000000a00701c5400000

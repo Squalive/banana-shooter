@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f7dce9df96ad88f1de295be9dc35ce0dd130b5bc4f0d6edef90962f747d62b7
-size 930
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Wool Hat
+  m_EditorClassIdentifier: 
+  itemdefid: 122
+  displayName: Wool Hat
+  description: Remember to catch my drift
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: 27484b405536b6d4c8c854fadb66ffc2, type: 3}
+  mesh: {fileID: 389428115073505533, guid: 57cd6e174d6b3ac4cb422ae5909236c5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 6f79f7ce25d77d94e97f00188f0bc503, type: 2}
+  index: 6
+  alpha: 1
+  size: {x: 0.45120305, y: 0.45120305, z: 0.45120305}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

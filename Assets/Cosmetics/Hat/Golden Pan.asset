@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ffe95b6dd7ab7c732ea63f5ebe060654ca0166fa76092d28359646bf991c0ad
-size 971
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Golden Pan
+  m_EditorClassIdentifier: 
+  itemdefid: 119
+  displayName: Golden Pan
+  description: Pretty gold,almost golden like your [___]
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: b0c0adc19efa5f84b8c2db3640aec602, type: 3}
+  mesh: {fileID: 6616182807237470830, guid: 285a96f4c078b524b967b7732be59323, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 7b6853f2408ba254faf35f85b6712f10, type: 2}
+  index: 4
+  alpha: 1
+  size: {x: 0.58565915, y: 0.58565915, z: 0.58565915}
+  defaultRotation: {x: 0, y: -150, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

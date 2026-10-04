@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93cf6fe26371d9fae43a7603aebd249fb91eecc6ad89e299636662a5b3e78e24
-size 1563
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FAQ_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 074fe07cad5401c459d5bff0d666d1b0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18583904256
+    m_Localized: "Jak tworzy si\u0119 powt\xF3rki?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6658750144512
+    m_Localized: "Na klawiaturze wci\u015Bnij znaczek \"~\" a nast\u0119pnie wpisz
+      w konsoli \"debug record 1\" by w\u0142\u0105czy\u0107 powt\xF3rki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6681353248768
+    m_Localized: "Nast\u0119pnie do\u0142\u0105cz do gry i wejd\u017A w menu by klikn\u0105\u0107
+      \"Zacznij nagrywa\u0107\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7216886177792
+    m_Localized: "Po klikni\u0119ciu tego przycisku ca\u0142a gra b\u0119dzie nagrywana
+      je\u017Celi chesz przerwa\u0107 nagrywanie wr\xF3\u0107 do menu i kliknij \"Zako\u0144cz
+      nagrywanie\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15122612346880
+    m_Localized: "By zobaczy\u0107 swoje powt\xF3rki wr\xF3\u0107 do Menu G\u0142\xF3wnego
+      nast\u0119pnie wybierz Powt\xF3rki."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

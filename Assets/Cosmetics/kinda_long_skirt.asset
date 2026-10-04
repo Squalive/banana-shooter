@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0409af5d3ea995e49658f46562fe17fb912a20d51e2b02d96966aabc2ab9be3c
-size 1093
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: kinda_long_skirt
+  m_EditorClassIdentifier: 
+  itemdefid: 186
+  displayName: Kinda Long Skirt
+  description: long skirt
+  tag: 
+  type: 7
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: c2a6a5765ce0e4d42a2e3bf132269f75, type: 3}
+  mesh: {fileID: 1898269601603783157, guid: a49ad0d47f1291146b176055ec074380, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8220c7542e2efc94abe870fb12b7e5da, type: 2}
+  - {fileID: 2100000, guid: e5c8fbf2bb3294a42b43b5bec5a72907, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 3, y: 3, z: 3}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

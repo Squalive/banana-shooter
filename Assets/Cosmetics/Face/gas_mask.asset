@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff63972f6d92d4de27b920d8bfa6fefa590b267fcad464992506eb250519eea4
-size 1114
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: gas_mask
+  m_EditorClassIdentifier: 
+  itemdefid: 126
+  displayName: Gas Mask
+  description: It seems somewhere has been rusted,so this is a good thing to wear
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: 3bd1187dfe682594eab83ed202d69854, type: 3}
+  mesh: {fileID: 3509178351269544637, guid: 8d5a957de64ec544982a042500284ba1, type: 3}
+  materials:
+  - {fileID: 2100000, guid: d4864646bb0954f4ca18e6bb0a50d13a, type: 2}
+  - {fileID: 2100000, guid: cde051099f47a85408156c82f2aeb741, type: 2}
+  - {fileID: 2100000, guid: b8512f2a781829b4a8127bd55f89dd00, type: 2}
+  index: 10
+  alpha: 1
+  size: {x: 3.0764813, y: 0.34099543, z: 3.0764813}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  relatedItem: []
+  canApplyParticle: 1

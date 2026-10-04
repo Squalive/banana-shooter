@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b9b195eb9b5a94fa1017c3ba6e0916f010f98223cc6addc2385bf0448e30b748
-size 1263
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: smoke
+  m_EditorClassIdentifier: 
+  itemdefid: 210
+  displayName: Smoke
+  description: would be nice to wear it
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: 02dd68481fa80ed4986970c045c01a10, type: 3}
+  mesh: {fileID: 4493585093827132993, guid: be65b2771e9afca48a15a0bf1d66e3ee, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f45982f00ee3b894cbab560b4b80c652, type: 2}
+  - {fileID: 2100000, guid: 1b27cfaa1dae28a4dad884bb71b1d635, type: 2}
+  - {fileID: 2100000, guid: 2c49380e7b295b140a5d6411c87d51d5, type: 2}
+  - {fileID: 2100000, guid: 40ae08a9f62cd0a4785a89974c980740, type: 2}
+  index: 28
+  alpha: 1
+  size: {x: 1.5707314, y: 0.37904012, z: 0.34863994}
+  offset: {x: 0, y: -0.02, z: 0}
+  defaultRotation: {x: -90, y: 207.11, z: 0}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 1

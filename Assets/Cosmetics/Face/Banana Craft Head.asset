@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c922ad43e38923d0019515ff60f3ebf3cce54eb9cba77dc03258d4ce65553855
-size 1089
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Banana Craft Head
+  m_EditorClassIdentifier: 
+  itemdefid: 117
+  displayName: BananaCraft Head
+  description: oooh i love blocky bananas
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 6d6a86b6c2ccf634488c7ab62f3311f0, type: 3}
+  mesh: {fileID: -6953185534633728928, guid: e731d93c2766cec46885ce0b3b598973, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f18e7d5981c31db418e64a9049b3f976, type: 2}
+  - {fileID: 2100000, guid: ff0db05943151234294f820e11eae299, type: 2}
+  - {fileID: 2100000, guid: 3e356bc767edadc4cab6fc713a62c06f, type: 2}
+  index: 7
+  alpha: 1
+  size: {x: 0.08102074, y: 0.08102074, z: 0.08102074}
+  defaultRotation: {x: 0, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

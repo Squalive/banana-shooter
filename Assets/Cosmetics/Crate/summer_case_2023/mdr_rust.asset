@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:420de23a1a2bf45a6370c1579d6bb8e5aa48fda1878739201b51e1cb4901c254
-size 1224
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: mdr_rust
+  m_EditorClassIdentifier: 
+  itemdefid: 197
+  displayName: MDR | Rust
+  description: Rusty
+  tag: 
+  type: 29
+  inventoryType: 1
+  rarity: 1
+  icon: {fileID: 2800000, guid: 53d6b6b8d9807c749a8326b1f3ff490d, type: 3}
+  mesh: {fileID: -7513783501688789516, guid: 94e5d9b0b4bd39e4cac53812ff3a754a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 1636fac4a443bcf4c96067f00dc01d3b, type: 2}
+  - {fileID: 2100000, guid: 1636fac4a443bcf4c96067f00dc01d3b, type: 2}
+  - {fileID: 2100000, guid: 1636fac4a443bcf4c96067f00dc01d3b, type: 2}
+  - {fileID: 2100000, guid: 1636fac4a443bcf4c96067f00dc01d3b, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 1, y: 1, z: 1}
+  offset: {x: -0.05, y: 0, z: 0}
+  defaultRotation: {x: 0, y: 120, z: 0}
+  sizeMultiplier: 1.5
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 0

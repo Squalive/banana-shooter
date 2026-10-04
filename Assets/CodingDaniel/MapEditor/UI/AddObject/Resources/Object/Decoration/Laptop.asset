@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a82453995bf2eca07ede1e7fc5a863c00d17379837b6e8cbc4ed3c7da498d70c
-size 589
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297663e7e70c42342a02062fd3b74efd, type: 3}
+  m_Name: Laptop
+  m_EditorClassIdentifier: 
+  type: 2
+  prefab: {fileID: 3558686848447099690, guid: 4ce5e950b27cbf64cba5e61559ddb904, type: 3}
+  icon: {fileID: 2800000, guid: d24d675e1706da34f96e7e34bdf21395, type: 3}
+  decorationType: 0

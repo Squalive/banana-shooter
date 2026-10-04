@@ -2,8 +2,9 @@
 
 Make sure you have the following softwares installed on your computer.
   1. [Git](https://git-scm.com/)
-  2. [Unity 2021.3.45f2 And Unity Hub](https://unity.com/)
-  3. [Steam](https://store.steampowered.com/app/1949740/Banana_Shooter/)
+  2. [Git LFS](https://git-lfs.com/), run `git lfs install` once before cloning
+  3. [Unity 2021.3.45f2 And Unity Hub](https://unity.com/)
+  4. [Steam](https://store.steampowered.com/app/1949740/Banana_Shooter/)
 
 In order to run the game without modification in the editor, you're required to own [Banana Shooter](https://store.steampowered.com/app/1949740/Banana_Shooter/) in your steam account, which means you just need a steam account and own the game which is free. 
 
@@ -14,7 +15,9 @@ In order to run the game without modification in the editor, you're required to 
 Clone the project by:
 ```git clone https://github.com/Squalive/banana-shooter.git```
 
-This process might take a while because the project contains large files including textures, models, audios.
+This process might take a while because the project contains large files including textures, models, audios (about 1.4 GB through Git LFS).
+
+If you cloned without Git LFS, run `git lfs pull` before opening the project, otherwise Unity sees pointer files instead of assets and settings.
 
 ## 2. Opening the project in Unity
 

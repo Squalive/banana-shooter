@@ -1,3 +1,75 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:985c5935294e820cef7bc932457ae003e15ea888ca5f9134a8f0f5d14afee031
-size 1789
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Map_zh-Hans
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: zh-Hans
+  m_SharedData: {fileID: 11400000, guid: 10bad70fc02104f4f806396fbe64b818, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 7854690304
+    m_Localized: "\u5BA4\u5185"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62611329024
+    m_Localized: "\u540E\u5BA4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74728673280
+    m_Localized: "\u9999\u8549\u5C0F\u9547"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102029398016
+    m_Localized: "\u78022"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138876358656
+    m_Localized: "\u65E0\u5C3D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 165447274496
+    m_Localized: "\u8349"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179749851136
+    m_Localized: IMALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 197726638080
+    m_Localized: "\u5361\u5C14\u68EE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 216676503552
+    m_Localized: "\u9999\u8549\u6CF3\u6C60"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 250390319104
+    m_Localized: "\u5C04\u51FB\u573A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 371807031296
+    m_Localized: "\u6C34"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 395936862208
+    m_Localized: "\u602A\u6838"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5276596768768
+    m_Localized: "\u7279\u522B\u7684\u9999\u8549"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

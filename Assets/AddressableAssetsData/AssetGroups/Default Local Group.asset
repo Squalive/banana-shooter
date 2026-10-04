@@ -1,3 +1,78 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:983a00c93e75cf7b31fe7f5263c7ec44a589929a3301fc2fa40e7c801372c0b7
-size 2904
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: 6e319dce8a7da0f4b87c5d81783cf263
+  m_SerializeEntries:
+  - m_GUID: 027dfb745f7e2d242810cccb6207da4a
+    m_Address: Assets/Artwork/Audio/Music/3rd.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 187fd8f6b9d6d394da4459191473070b
+    m_Address: Assets/Artwork/Audio/Music/Zolash.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1917fbd08943951488825b150f3f920b
+    m_Address: Assets/Artwork/Audio/Music/Speed way.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28b683aa31167404ab811915dc227d53
+    m_Address: Assets/Artwork/Audio/Music/Ready to die.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ec4d4b1b3899604993e2cf96e79b919
+    m_Address: Assets/Artwork/Audio/Music/cyberpunk.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5497c810ffec99f4a8452b33740476dc
+    m_Address: Assets/Artwork/Audio/Music/test music.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 929ee1e8854ff8f4684933c5cd0d0cf4
+    m_Address: Assets/Artwork/Audio/Music/banana shooter.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc68efe0a553e7543affe801630cd9ea
+    m_Address: Assets/Artwork/Audio/Music/BananaMenu.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3d6ee66b6cc6e543be592d9a8f4a1b0
+    m_Address: Assets/Artwork/Audio/WinningSound/Banana_man_BGM_.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0d1c816287483f4fa879fb4b942a688
+    m_Address: Assets/Artwork/Audio/Music/bite me.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdd00261114006245a1316d40a542302
+    m_Address: Assets/Localization/Localization Settings.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: bc2c56cf98428bf4f817098a419ee911, type: 2}
+    - {fileID: 11400000, guid: 5c856044cf0fe564a92cfd7e726fc5fd, type: 2}

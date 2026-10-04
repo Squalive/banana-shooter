@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0751bffa902c667c7c84549bb136068a31e63f580d1d4451cc12b15066d41ef
-size 1099
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: BoggieHat
+  m_EditorClassIdentifier: 
+  itemdefid: 115
+  displayName: BoogieHat
+  description: He Will Never Stop Making You Dance, And Eat Bananas
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 5411b9d303b1e4744a331b500229e6a9, type: 3}
+  mesh: {fileID: -877906059410665698, guid: 5f7d8af19abe4c7429560654f327269a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 893e5e98c224a5b4a8d7656c034cbe26, type: 2}
+  - {fileID: 2100000, guid: 0b327c130100bb24c9b82141433c72c8, type: 2}
+  - {fileID: 2100000, guid: 7b408bec62816c14b8ed4bb1404b9bbf, type: 2}
+  index: 6
+  alpha: 1
+  size: {x: 7.1619697, y: 7.6048155, z: 6.281825}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  relatedItem: []
+  canApplyParticle: 1

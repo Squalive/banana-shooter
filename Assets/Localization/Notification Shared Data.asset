@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4dbed1253a6f0272633cc04658507b12c015e298c9b8617824ab6c182263498
-size 1618
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Notification Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Notification
+  m_TableCollectionNameGuidString: 1e1aa282f019d8e4c9c42cea7d44bd86
+  m_Entries:
+  - m_Id: 8338776064
+    m_Key: nc_message
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133916237824
+    m_Key: nc_report_sent_complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 597613322240
+    m_Key: nc_reports_refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 849099595776
+    m_Key: nc_reports_refreshing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22374792011776
+    m_Key: nc_copy_complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538499590103040
+    m_Key: nc_warn_complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538751801991168
+    m_Key: nc_warn_failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852496704540672
+    m_Key: nc_invite_sent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103669968757657600
+    m_Key: nc_vote_set
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2336825598356226048
+  references:
+    version: 2
+    RefIds:
+    - rid: 2336825598356226048
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1669274372194

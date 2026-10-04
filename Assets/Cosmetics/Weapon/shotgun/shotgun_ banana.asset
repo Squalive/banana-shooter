@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a75020403d6450b10c7ea31fb4857c252e962c40ebcb9149e93091038f8720e
-size 1141
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: shotgun_ banana
+  m_EditorClassIdentifier: 
+  itemdefid: 152
+  displayName: ShotGun | Banana
+  description: og weapon
+  tag: 
+  type: 10
+  inventoryType: 1
+  rarity: 3
+  icon: {fileID: 2800000, guid: 4342193d1e7210f4f8331e6982a68eb7, type: 3}
+  mesh: {fileID: -6281477081892022859, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+  materials:
+  - {fileID: 2100000, guid: abf76627d33d36b41828027fd3bb569a, type: 2}
+  - {fileID: 2100000, guid: 955c3970833f59241a48d981c11b4961, type: 2}
+  - {fileID: 2100000, guid: 4dc01ceac95c1244f9daa44837e41d0d, type: 2}
+  - {fileID: 2100000, guid: ac8dc86103ab0ad4581ba7eff3acd7c1, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 1.8031093, y: 0.6264793, z: 1.8031093}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 0

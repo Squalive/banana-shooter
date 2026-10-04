@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:84ab85bc29409f653c300912086cfa9ffcd52e326b94cd5cd4762b469e48cc01
-size 2215
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LoadScene.unity
+    guid: a334faa3ca4240f458899d67bf2b1dca
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 9d19b1fc5122e424baaa0c9419e32288
+  - enabled: 1
+    path: Assets/Scenes/InDoor.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Water.unity
+    guid: 03da8791236db9c439bad78c627df7eb
+  - enabled: 1
+    path: Assets/Scenes/WeirdCore.unity
+    guid: 97b0eff628b761d4c831f94c402381d1
+  - enabled: 1
+    path: Assets/Scenes/Backroom.unity
+    guid: 441328636bef8bc428501d34327d971a
+  - enabled: 1
+    path: Assets/Scenes/Dast2.unity
+    guid: 255a536c70ff68f4a975cbece9ef6bd1
+  - enabled: 1
+    path: Assets/Scenes/ShootingRange.unity
+    guid: 77d4097415def6f4885e6db6a6a151ef
+  - enabled: 1
+    path: Assets/Scenes/KARLSON.unity
+    guid: 4dada3080e7d1614594b5d9929e40c4f
+  - enabled: 1
+    path: Assets/Scenes/Special Banana.unity
+    guid: f5c58a879049c7b419adbe99bac5e750
+  - enabled: 1
+    path: Assets/Scenes/Grass.unity
+    guid: d98be87c2b3c12242bbc24397091ee17
+  - enabled: 1
+    path: Assets/Scenes/BananaTown.unity
+    guid: 19abae6c14f078e4ebbf54949a257d46
+  - enabled: 1
+    path: Assets/Scenes/Pool Banana.unity
+    guid: f1bd47d41b7beab45a353e021dbc26c6
+  - enabled: 1
+    path: Assets/Scenes/IMALL.unity
+    guid: cffcf1a0a595bff4eb6ce3386c5b89a2
+  - enabled: 1
+    path: Assets/Scenes/CustomMap.unity
+    guid: 6023506c3373ffe49b04070f7a0b3ae1
+  - enabled: 1
+    path: Assets/Scenes/ProcMap.unity
+    guid: 37084d412e57f5643860aa0ce354aa6a
+  - enabled: 1
+    path: Assets/CodingDaniel/Scenes/MapEditor.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Voting.unity
+    guid: 72cca5de949210f4ca56288fada048f1
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 483281861c37cb844a8ca2e6ccadf658, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 65e87ff95aa4b90408d210a934c98ee8, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: fdd00261114006245a1316d40a542302, type: 2}

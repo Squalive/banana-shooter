@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fbddb73fc14d6497f3fcf51d4dae40f1cfc2d2befaf21dfe33ba01cc630317b9
-size 900
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Filipino (Philippines) (fil-PH)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Filipino (Philippines) (fil-PH)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e105bc5f6b1823047998e2f061b1ee4b
+  m_SerializeEntries: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f56c2f37d56d8e34a9e0b4446240609a, type: 2}
+    - {fileID: 11400000, guid: f7d359fdb15029d4689ffedc7e5e7c23, type: 2}

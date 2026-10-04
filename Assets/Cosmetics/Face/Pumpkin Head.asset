@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e549269ca73849101c3303edf10e2fc831407e71c23e0b05a8682e8590549f8b
-size 983
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Pumpkin Head
+  m_EditorClassIdentifier: 
+  itemdefid: 145
+  displayName: Pumpkin Head
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 6eb60a30d30c6d5409dd2d4c1396f2b1, type: 3}
+  mesh: {fileID: 21664902525753132, guid: 29c1dffe4e8f0d74dab534845fe77c56, type: 3}
+  materials:
+  - {fileID: 2100000, guid: da0da0d0a8a49f549889dbb95e77d765, type: 2}
+  - {fileID: 2100000, guid: 367a35cebc3307344911303de6a6cce8, type: 2}
+  index: 17
+  alpha: 1
+  size: {x: 0.39820105, y: 0.39820105, z: 0.39820105}
+  defaultRotation: {x: 0, y: 180, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f86bc23abcd27565605e6eeb87b5210d0d1645e634e93ebea543a461adc66b
-size 1194
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: BWP
+  m_EditorClassIdentifier: 
+  weaponName: BWP
+  chineseName: BWP
+  price: 4000
+  texture: {fileID: 2800000, guid: 1ca88e4413d434347b71fdd9da87ebc0, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 35367a8824c6d7845aaf377a8e3a518a, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 8baadd723de35384fbcc213ba4879f31, type: 2}
+  - mesh: {fileID: -4417952093562995596, guid: 35367a8824c6d7845aaf377a8e3a518a, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6835fe4d9e276674ea4794f903e3f06e, type: 2}
+  size: {x: 0.6851694, y: 0.6851694, z: 0.6851694}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 200
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 10
+  weaponType: 7
+  bUseGravity: 0
+  maxAmmo: 5
+  fireRate: 1.4
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 0
+  reloadTime: 3
+  explosiveAmmo: 0

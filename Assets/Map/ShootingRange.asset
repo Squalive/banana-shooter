@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3fa7a1bf08cd79ef97d17cf82dd1000b5afdd845dc558d7ac4535de4c1db614d
-size 494
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d30214e44d74c8bb06ad84b194e7db4, type: 3}
+  m_Name: ShootingRange
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: 5db9d95ece116244f91709583c96c103, type: 3}
+  external: 0

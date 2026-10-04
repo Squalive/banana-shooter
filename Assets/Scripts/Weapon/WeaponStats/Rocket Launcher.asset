@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1eb64c9dc7b769ed10f61a0ec867cc24041cc44af137522f2706bfe116166616
-size 1027
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Rocket Launcher
+  m_EditorClassIdentifier: 
+  weaponName: Rocket Launcher
+  chineseName: "\u706B\u7BAD\u7B52"
+  price: 0
+  texture: {fileID: 2800000, guid: b03680fb495199b41a067497c571e323, type: 3}
+  skins:
+  - mesh: {fileID: -2432090755550338912, guid: fa04a31293d233548b8851d82af1d43d, type: 3}
+    materials:
+    - {fileID: 2100000, guid: e2d543e12e34b064790e49b5c5715424, type: 2}
+  size: {x: 5, y: 5, z: 5}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 200
+  damageOffset: 10
+  specialWeapon: 1
+  spinAmount: 1
+  weaponType: 8
+  bUseGravity: 0
+  maxAmmo: 2
+  fireRate: 1
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 1
+  reloadTime: 0
+  explosiveAmmo: 1

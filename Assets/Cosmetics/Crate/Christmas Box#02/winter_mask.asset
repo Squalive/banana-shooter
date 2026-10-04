@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:346dda78d2d20302525d2dae33534786aa013449f128326c8bca6423e540521a
-size 1122
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: winter_mask
+  m_EditorClassIdentifier: 
+  itemdefid: 177
+  displayName: Winter Mask
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 94dff6158cb5b144582b929d7a4ba2bc, type: 3}
+  mesh: {fileID: -1574878497116636332, guid: 2dd9a20c8fe3a5041a1f416bfa9e9648, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 442385ce1373acf4880edb721d9aaaf2, type: 2}
+  - {fileID: 2100000, guid: 166e2e85e5027f441872e5ab70fc433e, type: 2}
+  - {fileID: 2100000, guid: 5377e5c48539f8e4492fc151cd347bfc, type: 2}
+  index: 25
+  alpha: 1
+  size: {x: -7.931379, y: -2.4767811, z: -2.844114}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

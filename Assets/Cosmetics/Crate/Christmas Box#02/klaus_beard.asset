@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffef6f2549e765272b67bb668548974796ebe2197e776b19aba41af66fa61fd8
-size 975
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: klaus_beard
+  m_EditorClassIdentifier: 
+  itemdefid: 171
+  displayName: Klaus Beard
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: a32b0f4614be1b840bf0ff7d5c7677e3, type: 3}
+  mesh: {fileID: 1530319432653823264, guid: 764ca488cfa896d439c82324402072bb, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8a370867c95e03d498aefd336c24ebbc, type: 2}
+  index: 21
+  alpha: 1
+  size: {x: -8.60155, y: -0.7954698, z: -8.60155}
+  defaultRotation: {x: 0, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

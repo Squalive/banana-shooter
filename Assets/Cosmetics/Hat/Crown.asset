@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14afba80cb68a9e7224795cdd6acd8c0078a184ff05abb379d8862df0a5b09ee
-size 1011
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Crown
+  m_EditorClassIdentifier: 
+  itemdefid: 118
+  displayName: Crown
+  description: sheesh,shiny and golden
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 938656621af9e14478fcb001eac22efd, type: 3}
+  mesh: {fileID: 5935908456911920277, guid: 6473abe7241dabb4ca928645b84ba457, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 7b6853f2408ba254faf35f85b6712f10, type: 2}
+  - {fileID: 2100000, guid: da8dfb843362d614fa82aab8a9f0c2a6, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 4.817817, y: 4.817817, z: 0.97610825}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

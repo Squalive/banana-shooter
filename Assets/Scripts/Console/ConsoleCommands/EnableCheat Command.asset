@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac9554dcab37ebaf5014bd65ae8059fd48d06f136e8319f8dbdd06be0e9cf51b
-size 561
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe56f09e638482a9947b368fef038f7, type: 3}
+  m_Name: EnableCheat Command
+  m_EditorClassIdentifier: 
+  commandWord: sv_cheats
+  description: Enable or disbale the cheats
+  argsHint: <boolean>
+  key:
+  - sv_cheats
+  args:
+  - args:
+    - false
+    - true

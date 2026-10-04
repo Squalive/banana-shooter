@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8933a114c1c30bd1cf854470be45787499d16ec603c46d819f81ac28c3fb367a
-size 1306
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: viking_helmet
+  m_EditorClassIdentifier: 
+  itemdefid: 207
+  displayName: Viking Helmet
+  description: solid
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: bf2f4300e414ff9488c337fd9d44e365, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: 53e81e6bacc33bc4fa958c5899733cf8, type: 3}
+  materials:
+  - {fileID: 2100000, guid: c87cee5085defdb4492047c2de26fe18, type: 2}
+  - {fileID: 2100000, guid: 62d8b4eb82ddfac4198f18892de408b6, type: 2}
+  - {fileID: 2100000, guid: 938675290576303488e52a25229cf642, type: 2}
+  - {fileID: 2100000, guid: 10ce857e0901cee469f345da7ec8abbb, type: 2}
+  - {fileID: 2100000, guid: a453ddb21a5d1674faaeadec9f558cf2, type: 2}
+  index: 29
+  alpha: 1
+  size: {x: 7, y: 7, z: 7}
+  offset: {x: 0, y: -0.04, z: 0}
+  defaultRotation: {x: -90, y: 200.57, z: 0}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 1

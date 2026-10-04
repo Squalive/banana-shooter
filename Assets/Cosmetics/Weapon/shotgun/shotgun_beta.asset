@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cea20eac2aa7414dd4fda7236973feb99f14340f24e4dc1e3d711d9b2f936c54
-size 1070
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: shotgun_beta
+  m_EditorClassIdentifier: 
+  itemdefid: 189
+  displayName: ShotGun | Beta
+  description: Good luck have fun beta participater
+  tag: 
+  type: 10
+  inventoryType: 1
+  rarity: 2
+  icon: {fileID: 2800000, guid: 922bcb8d10f37c4409d4205a66580335, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 66cdbfe1a3ced02459092425815ce000, type: 2}
+  - {fileID: 2100000, guid: 83492cfe777ee964c9f72371e35734d9, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 1.8031093, y: 0.6264793, z: 1.8031093}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 0

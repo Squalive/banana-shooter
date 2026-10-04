@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:05e9592873adac492bd739baf173dcec59b9eaaa5228fd8447a4782bd96a5599
-size 1492
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: christmas_headphones
+  m_EditorClassIdentifier: 
+  itemdefid: 165
+  displayName: Christmas Headphone
+  description: 
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: dd22fcf37150cfc45a030f52ecd0d53a, type: 3}
+  mesh: {fileID: -2309290576706199042, guid: 0af1fa02baee7954f94cc730fc7fe9f1, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 89eabdb893bb83a4f823cc9d8d9fce1b, type: 2}
+  - {fileID: 2100000, guid: 4ad03bc97b6e4404ab6c231670900f3f, type: 2}
+  - {fileID: 2100000, guid: 788f175d7eb8de746833b83a32274b22, type: 2}
+  - {fileID: 2100000, guid: 38119db2d54d26f4dbf368fd443e8cc4, type: 2}
+  - {fileID: 2100000, guid: e3acf3313d5dcb84bb15575a44ce959c, type: 2}
+  - {fileID: 2100000, guid: 986f897fab0bede4087e440f065967c7, type: 2}
+  - {fileID: 2100000, guid: 238fa753c3e5d9f4ea30c01795b138f4, type: 2}
+  - {fileID: 2100000, guid: dab23a02c7de8274baaa175e9ec7dd98, type: 2}
+  index: 20
+  alpha: 1
+  size: {x: 2.4465148, y: 2.441349, z: 0.6182383}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 90cfec7ac822f754bb135ba3bfc81223, type: 2}
+  canApplyParticle: 1

@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7dc4937adbed9642fe99927a5cef076562ac56dc85096a791d80a985f961e74
-size 1290
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FAQ_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 074fe07cad5401c459d5bff0d666d1b0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18583904256
+    m_Localized: How to do replay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6658750144512
+    m_Localized: Press "~" to open console and type "debug record 1" to enable replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6681353248768
+    m_Localized: Then load into the game and open the menu click <b>start recording</b>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7216886177792
+    m_Localized: Then  its gonna start, to stop you can go back to menu or simply
+      click <b>stop recording</b>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15122612346880
+    m_Localized: Finally you can go back to Menu -> Replay to see those replay
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:269a5e99f6c438de35bd8f91107828275f28c4e653a590c0ba7141bbd9c4a72f
-size 1522
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: AL48
+  m_EditorClassIdentifier: 
+  weaponName: AL48
+  chineseName: AL48
+  price: 1400
+  texture: {fileID: 2800000, guid: 688c33286ed2a8543b0b92a3ed0085fe, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 3aeab102417131e469710b73133d40ec, type: 3}
+    materials:
+    - {fileID: 2100000, guid: fad81b7283cb5d74f9b2925571481dc8, type: 2}
+  - mesh: {fileID: 4227043633267099630, guid: 3aeab102417131e469710b73133d40ec, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 2c7123b54129a5c408330720a0737130, type: 2}
+  - mesh: {fileID: 3507673543635138266, guid: 3aeab102417131e469710b73133d40ec, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 2c6c3a794b4464748a2fd225373d78ab, type: 2}
+    - {fileID: 2100000, guid: d2127f8247ab8324f94709229d3dfb75, type: 2}
+    - {fileID: 2100000, guid: 86fd9fc069b25f343a4696baac141958, type: 2}
+  size: {x: 1.1509497, y: 0.39989045, z: 1.1509497}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 30
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 3
+  weaponType: 1
+  bUseGravity: 0
+  maxAmmo: 30
+  fireRate: 11.7
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1.3
+  explosiveAmmo: 0

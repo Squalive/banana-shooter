@@ -1,3 +1,49 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b13a5ac24c91768687b8aa36551cc4951789736934ad9c2ce025b2057030d417
-size 2105
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: summer_case_2023
+  m_EditorClassIdentifier: 
+  itemdefid: 193
+  displayName: Summer Case 2023
+  description: Contains skins
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: af603a4867dd9934c99749904e6fd99e, type: 3}
+  mesh: {fileID: -5881070209205631584, guid: 89cf83d06423c2c4489669ab36895eec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8956a2e0e1aad384c9201e41e2e0e941, type: 2}
+  - {fileID: 2100000, guid: 3d0aaff93e6576a479c9cf600a03840b, type: 2}
+  - {fileID: 2100000, guid: 9d771360074947f4689d541504bbb72a, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 6, y: 6, z: 6}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: b17c4f3ffead20a47a7b4b8e7553f339, type: 2}
+  - {fileID: 11400000, guid: fe2ab9eaf3a7a6a4faed71a50dde671d, type: 2}
+  - {fileID: 11400000, guid: 6f0f82e3adf090546805d365afa4f236, type: 2}
+  - {fileID: 11400000, guid: 0f8a3374a433d294e8ce1584ec941820, type: 2}
+  - {fileID: 11400000, guid: 879eec97d098cd94b945ee7e514c3e33, type: 2}
+  - {fileID: 11400000, guid: 3e42265379167fb4fa4afc96714c5404, type: 2}
+  - {fileID: 11400000, guid: a574a20c4c2d9d94ab1c0abebc7dbb6d, type: 2}
+  - {fileID: 11400000, guid: 2f7d22dba69bda343aed9b2e44a1af7e, type: 2}
+  - {fileID: 11400000, guid: ff4e1ad9bee416b468473cf97bfcb752, type: 2}
+  - {fileID: 11400000, guid: 0b9c6eccf90fb8b4bb0397248ec0687a, type: 2}
+  - {fileID: 11400000, guid: c85d55d1c59882d48bf4d7357f9eebaf, type: 2}
+  - {fileID: 11400000, guid: 30c927b9e2ff5114e9e208b92d05b4b0, type: 2}
+  - {fileID: 11400000, guid: 5424f4e0a2fb47943a003f5108bf5e45, type: 2}
+  - {fileID: 11400000, guid: d6ee05cd1bbb2d9409bb0eefcfc2035d, type: 2}
+  canApplyParticle: 0

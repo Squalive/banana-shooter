@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7085ce8d862cc957d2edbd0e81d217972c03815550ab2a54c3c014447941011
-size 877
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Notification
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 1e1aa282f019d8e4c9c42cea7d44bd86, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: a1456e036f0809940839c259e5c9f172, type: 2}
+  - {fileID: 11400000, guid: 5217e26c6aa61f24097e94bef5d65059, type: 2}
+  - {fileID: 11400000, guid: 3df48c8b2e4d28c4d869fe46bc4104be, type: 2}
+  - {fileID: 11400000, guid: b9bbc2159d2cd5c4c82107d5b9de7c70, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

@@ -1,3 +1,580 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0c365cd78dd4817e811a3d25746f861368c4616d6dc2cca8bdece661dad6077
-size 12063
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Map Editor Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Map Editor
+  m_TableCollectionNameGuidString: d28b155e90fb15d42bac5b85d4b84613
+  m_Entries:
+  - m_Id: 6885806080
+    m_Key: Object
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32336842752
+    m_Key: Lighting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254991470592
+    m_Key: UV Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335702462464
+    m_Key: Tiling And Alignment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628662013952
+    m_Key: Fill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 660769411072
+    m_Key: Anchor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704079794176
+    m_Key: Transform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 788016205824
+    m_Key: Rotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 823512600576
+    m_Key: Tiling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895113564160
+    m_Key: Offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000726138880
+    m_Key: Special
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095655821312
+    m_Key: World Space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1125745758208
+    m_Key: Flip U
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1155177189376
+    m_Key: Flip V
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1178669486080
+    m_Key: Swap UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1205215236096
+    m_Key: Gruop Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1248622088192
+    m_Key: Ungroup Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1279462805504
+    m_Key: Select Face Group
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1303554887680
+    m_Key: Reset UVs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395720523776
+    m_Key: File
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1420869570560
+    m_Key: Edit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1469586411520
+    m_Key: GameObject
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496845193216
+    m_Key: Mesh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521243459584
+    m_Key: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1619155292160
+    m_Key: Exit Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645923340288
+    m_Key: Undo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1656715284480
+    m_Key: Redo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1662943825920
+    m_Key: Select All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1666257326080
+    m_Key: Map Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2081287901184
+    m_Key: Cube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2082047070208
+    m_Key: Stair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2141497135104
+    m_Key: Curved Stair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2143153885184
+    m_Key: Prism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144361844736
+    m_Key: Cylinder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2193812688896
+    m_Key: Plane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2214897455104
+    m_Key: Door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2227375509504
+    m_Key: Pipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2238691741696
+    m_Key: Cone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2248703545344
+    m_Key: Sprite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264293773312
+    m_Key: Arch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2275618394112
+    m_Key: Sphere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2289711255552
+    m_Key: Torus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363233210368
+    m_Key: Merge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2414160449536
+    m_Key: Subdivide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416349876224
+    m_Key: Flip Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2417377480704
+    m_Key: Vertex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2463619682304
+    m_Key: Edge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2483811061760
+    m_Key: Subdivide Edge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2494229712896
+    m_Key: Insert Edge Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506229616640
+    m_Key: Fill Hole
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548709527552
+    m_Key: Subdivide Face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2567227379712
+    m_Key: Merge Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2582574338048
+    m_Key: Reset UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770118447104
+    m_Key: Skybox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2794139226112
+    m_Key: Use Directional Lighting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2871570272256
+    m_Key: Source
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3402606907392
+    m_Key: Point Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4038316593152
+    m_Key: Color Picker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7820635082752
+    m_Key: Done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20029289336832
+    m_Key: Skybox Color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35882189787136
+    m_Key: Face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39676462043136
+    m_Key: Enable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39870448603136
+    m_Key: Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39926849409024
+    m_Key: Intensity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40013952520192
+    m_Key: Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40084991447040
+    m_Key: Spot Angle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40918840053760
+    m_Key: uv_tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089454998360064
+    m_Key: Save As
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1709000025247744
+    m_Key: Inner Spot Angle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743746621050880
+    m_Key: Exit Tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747327935909888
+    m_Key: Discard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117591957835776
+    m_Key: Player Spawn Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117805968003072
+    m_Key: Spawn Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144761983864832
+    m_Key: Color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2484349323513856
+    m_Key: Add Material
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485179455967232
+    m_Key: Base Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485843397513216
+    m_Key: Select Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486514200940544
+    m_Key: Height Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486527224254464
+    m_Key: Normal Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2487370568765440
+    m_Key: Add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2521159038734336
+    m_Key: Smoothness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2524830766010368
+    m_Key: Saving
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2527399018041344
+    m_Key: Metallic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528804487368704
+    m_Key: Material Editing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533025496502272
+    m_Key: Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534073611128832
+    m_Key: Remove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831692015144960
+    m_Key: Normal Scale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831706347081728
+    m_Key: Height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3052938971648000
+    m_Key: Decal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3053571791458304
+    m_Key: NotFunny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067927388295168
+    m_Key: Width
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067933415510016
+    m_Key: Heigh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067958052851712
+    m_Key: Depth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3076413081849856
+    m_Key: Bro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3090486615937024
+    m_Key: NewCustomDecal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3154409771831296
+    m_Key: Add Decal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3422783743528960
+    m_Key: Publish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3424982095695872
+    m_Key: Duplicate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3441991667748864
+    m_Key: Read More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3442059246374912
+    m_Key: Steam Workshop Tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502551193161728
+    m_Key: k_EItemUpdateStatusInvalid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502579928338432
+    m_Key: k_EItemUpdateStatusPreparingConfig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502590552510464
+    m_Key: k_EItemUpdateStatusPreparingContent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502600350404608
+    m_Key: k_EItemUpdateStatusUploadingContent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502613537296384
+    m_Key: k_EItemUpdateStatusUploadingPreviewFile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502635146350592
+    m_Key: k_EItemUpdateStatusCommittingChanges
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3520075548921856
+    m_Key: Failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3589254230642688
+    m_Key: Local
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3589266440261632
+    m_Key: Published
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295526135435264
+    m_Key: Decoration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295757711347712
+    m_Key: Grapple Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584246285766656
+    m_Key: Vendo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584253600632832
+    m_Key: Scary Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4851010793967616
+    m_Key: AudioSource
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4870496565661696
+    m_Key: NewAudioSource
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4957525362151424
+    m_Key: Add Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045261804834816
+    m_Key: Max Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045292226121728
+    m_Key: Min Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047489202556928
+    m_Key: Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5048037922377728
+    m_Key: Spatial Blend
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5053172417368064
+    m_Key: Doppler Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17630312782434304
+    m_Key: Map Bound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18009920191139840
+    m_Key: Shooting Board
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18017058816856064
+    m_Key: Map Bound Center
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019379332321280
+    m_Key: Halloween Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019409954934784
+    m_Key: Chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019462585061376
+    m_Key: Laptop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019545003134976
+    m_Key: Package
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025202062266368
+    m_Key: Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025237546078208
+    m_Key: IMALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025264305737728
+    m_Key: pumpkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025301307887616
+    m_Key: table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025327186743296
+    m_Key: table_long
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18030187416195072
+    m_Key: Book Shelf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23922041823236096
+    m_Key: Custom Models
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24199737924980736
+    m_Key: EnableCollision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24201150893723648
+    m_Key: Model
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45325044794855424
+    m_Key: Bridge
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7524877887373049858
+  references:
+    version: 2
+    RefIds:
+    - rid: 7524877887373049858
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1679937659529

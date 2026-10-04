@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:12b55edad25f4728b0adafde424be37d9223c0c2f3fa82a764aa39ee75098299
-size 1012
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: DLC Shoes
+  m_EditorClassIdentifier: 
+  itemdefid: 222
+  displayName: DLC Shoes
+  description: nothing
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: bb91b144ec8de414bb7a4ad1aa2b3f9d, type: 3}
+  mesh: {fileID: -771880553275636263, guid: 6a5b7ad1eb118bb49a7b5966f6db9aec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f341a7d25a0ec7a48a65a1d2f9e728ba, type: 2}
+  - {fileID: 2100000, guid: 42c6ef50bfe922749949599674124638, type: 2}
+  index: 6
+  alpha: 1
+  size: {x: 8, y: 8, z: 8}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 213.15, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

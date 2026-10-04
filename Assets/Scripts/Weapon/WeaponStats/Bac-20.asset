@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34aa33674d04552fa2534a0c5861d5f60e3bbb599f01c067695e9c123f3cab30
-size 961
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Bac-20
+  m_EditorClassIdentifier: 
+  weaponName: Bac-20
+  chineseName: Bac-20
+  price: 0
+  texture: {fileID: 2800000, guid: bd7e2d0910be50748a65df17d0ed95cd, type: 3}
+  skins:
+  - mesh: {fileID: 1966361926937127900, guid: e460b97e756981e43abef198f0e49221, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6459d386b8871cf408db822a66b46800, type: 2}
+  size: {x: 1, y: 1, z: 1}
+  defaultRotation: {x: 0, y: -90, z: 0}
+  damage: 30
+  damageOffset: 10
+  specialWeapon: 1
+  weaponType: 3
+  bUseGravity: 0
+  maxAmmo: 200
+  fireRate: 15
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 1
+  reloadTime: 0

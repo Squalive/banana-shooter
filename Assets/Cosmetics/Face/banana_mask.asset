@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37222987cf93d6051a2d13b456ef814c7433e009be20030268a458739c1e8003
-size 1179
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_mask
+  m_EditorClassIdentifier: 
+  itemdefid: 125
+  displayName: Banana Mask
+  description: the coolest item i have ever seen,very cool and sick
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 555ce59b69f050e4d95a804fd4fc47e3, type: 3}
+  mesh: {fileID: 8315614940138984208, guid: aef9503e5c367b54b95951e017c9e056, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 0028dc7f05f50ef4faa7ae838e793802, type: 2}
+  - {fileID: 2100000, guid: 5574d3015539c31458775ebb9806169a, type: 2}
+  - {fileID: 2100000, guid: 4369ab9e78b662f4cb40d285d78bd9d2, type: 2}
+  - {fileID: 2100000, guid: 51889c32d1e700a4d9c4a1f2e84d4a49, type: 2}
+  index: 9
+  alpha: 1
+  size: {x: 2.8406653, y: 2.263077, z: 2.8406653}
+  defaultRotation: {x: -101.738, y: 180, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

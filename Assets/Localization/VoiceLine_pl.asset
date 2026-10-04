@@ -1,3 +1,254 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d1af2524f0b661c41a8fa45d8aa14895d9bc213af0b63a8b35b3ed43da932d7
-size 7875
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VoiceLine_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 6dec0b14c6bcdf6449d2aa68888461d7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 106681065472
+    m_Localized: Witaj Dave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167204872192
+    m_Localized: "Deathmatch Dru\u017Cynowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 473217097728
+    m_Localized: Bijatyka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648295735296
+    m_Localized: "Pami\u0119taj by nie strzela\u0107 do sojusznik\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 818114715648
+    m_Localized: "Walcz z innymi by zdoby\u0107 banana"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095303684096
+    m_Localized: "B\u0142\u0105d, ten plik g\u0142osowy nie zosta\u0142 jeszcze zapisany"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1273158950912
+    m_Localized: "Daj gotowo\u015B\u0107 by rozpocz\u0105\u0107 nast\u0119pny mecz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438368391168
+    m_Localized: "Ten mecz by\u0142 dobry ale wci\u0105\u017C masz gra\u0107 dalej
+      albo ci\u0119 zmia\u017Cd\u017C\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616655671296
+    m_Localized: "Ups, ten mecz totalnie ci nie wyszed\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1781269520384
+    m_Localized: "Ale nie my\u015Bl o tym, przygotuj si\u0119 na nast\u0119pny"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2058659815424
+    m_Localized: "Dosta\u0142e\u015B skrzynk\u0119?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2173210451968
+    m_Localized: "Spr\xF3buj j\u0105 otworzy\u0107 w zak\u0142adce ekwipunku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2396678774784
+    m_Localized: "Ten go\u015Bciu powinen serio umrze\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2671837700096
+    m_Localized: "Jest du\u017Co ludzi kt\xF3rych mo\u017Cesz zabi\u0107, ale mnie
+      nie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2828276850688
+    m_Localized: "Szanuj innych, ta osoba nic z\u0142ego nie zrobi\u0142a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923642740736
+    m_Localized: "Ale ty ju\u017C tak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3044728102912
+    m_Localized: "\u015Amier\u0107 tak czy siak ci\u0119 mia\u0142a dopa\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3162722263040
+    m_Localized: Ale nie mnie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3329458429952
+    m_Localized: "Pewnie teraz p\u0142aczesz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3432571199488
+    m_Localized: "Bo przed chwil\u0105 kupi\u0142e\u015B ulepszenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3530898268160
+    m_Localized: "By\u0142o blisko, pewnie jeste\u015B wnerwiony"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652554055680
+    m_Localized: "Ha ha, wiedzia\u0142em \u017Ce umrzesz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3755939454976
+    m_Localized: "Tak, walczcie ze sob\u0105"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4200581816320
+    m_Localized: "Ty: 0 \u015Amier\u0107: 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4301907812352
+    m_Localized: "Zwolnij z tymi zab\xF3jstwami, ch\u0142opcze!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4411387535360
+    m_Localized: Nieeeeeee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533672468480
+    m_Localized: "Ty sie \u015Bwietnie bawisz, a ja za to otrzymuje sjkhjky"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5186444582912
+    m_Localized: "Ha ha, perfekcyjne zab\xF3jstwo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5465114140672
+    m_Localized: Ha ha ha ha ha ha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5744970686464
+    m_Localized: "To nie ja \u015Bwiruje, tylko ty"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5838470111232
+    m_Localized: aishdjasbdjkasbfjkdag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6027616444416
+    m_Localized: "Powiniene\u015B doda\u0107 KARLSON do listy \u017Cycze\u0144 na
+      Steam TERAZ!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6123410153472
+    m_Localized: banan banan banan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6247272144896
+    m_Localized: Wygrana wygrana, a teraz zjedz banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6331191779328
+    m_Localized: "Twoi sojusznicy s\u0105 lepsi od ciebie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6468290994176
+    m_Localized: "Praktycznie rzecz bior\u0105c wygra\u0142e\u015B, ale tak naprawd\u0119
+      nie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6683311988736
+    m_Localized: "Nie martw si\u0119, nast\u0119pnym razem to ty wygrasz banana"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6767286149120
+    m_Localized: Szybciej, szybciej taaaaak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6853156134912
+    m_Localized: "Co ty sobie my\u015Blisz? Dlaczego si\u0119 nie ruszasz?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058899291873280
+    m_Localized: "Witaj w trybie \"Niesko\u0144czony\". Usta\u0144 w arenie oznaczonej
+      bia\u0142\u0105 lini\u0105 by zacz\u0105\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058916425605120
+    m_Localized: "Niesamowite! Grasz w to jeszcze raz? Nie pomy\u015Bla\u0142em \u017Ce
+      kto\u015B b\u0119dzie chcia\u0142 w to gra\u0107 jeszcze raz. Ha ha"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058950479159296
+    m_Localized: "Czekaj co? Znowu wr\xF3ci\u0142e\u015B? Dobra po prostu usta\u0144
+      w arenie, wypuszcz\u0119 moich ch\u0142opc\xF3w by z tob\u0105 walczyli."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058974747402240
+    m_Localized: "Jeste\u015B normalnie bananow\u0105 legend\u0105, skoro wracasz
+      tu poraz czwarty. Ha. Wiesz co robi\u0107 po prostu usta\u0144 w arenie by
+      zacz\u0105\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058975758229504
+    m_Localized: "Usta\u0144 w arenie oznaczej bia\u0142ymi liniami, Usta\u0144 w
+      arenie oznaczej bia\u0142ymi liniami, Usta\u0144 w arenie oznaczej bia\u0142ymi
+      liniami"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059075721076736
+    m_Localized: "Dobra spr\xF3bujmy... Kilka robocik\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059087435767808
+    m_Localized: "Dalej, tu jest wi\u0119cej robot\xF3w rozejrzyj si\u0119. Tylko
+      pami\u0119taj \u017Ce nie s\u0105 za bardzo mili"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059120667238400
+    m_Localized: "O m\xF3j panie, jeste\u015B \u015Bwietny! Zabi\u0142e\u015B ju\u017C
+      tyle moich ch\u0142opc\xF3w."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059135749955584
+    m_Localized: "Kto by si\u0119 spodziewa\u0142 \u017Ce mam wi\u0119cej <b>ROBOT\xD3W</b>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059189491572736
+    m_Localized: "Ha ha, nie dasz rady przetrwa\u0107 tego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059205476065280
+    m_Localized: "Nie poddam si\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059275952955392
+    m_Localized: "Dobra, brak mi s\u0142\xF3w."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170116895383552
+    m_Localized: "Przeciwnicy b\u0119d\u0105 oznaczeni czerwon\u0105 kropk\u0105.
+      Po prostu zestrzel ich swoj\u0105 broni\u0105"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170119336468480
+    m_Localized: "Szokuj\u0105ce. Odwa\u017Cy\u0142e\u015B si\u0119 zacz\u0105\u0107
+      bitwe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170121739804672
+    m_Localized: "No wi\u0119c"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:150bcccf92a8238c9bf97ab63b915ab7d98a19d194ddeef07047ec12eea9689c
-size 556
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29133cd8456942d4a400d10119b1631a, type: 3}
+  m_Name: Match
+  m_EditorClassIdentifier: 
+  questType: 2
+  nameKey: q_match_name
+  descKey: q_match_desc
+  prizeKey: q_prize_only_exp
+  requiredAmount: 5
+  expReward: 10000
+  bonus: 0
+  rewards: 00000000

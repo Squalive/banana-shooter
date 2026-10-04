@@ -1,3 +1,1366 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e893c6478f494d1381c4fd7d911f896e12973c689adc218b0c7c42f0f8b700c3
-size 33869
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_fil-PH
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fil-PH
+  m_SharedData: {fileID: 11400000, guid: e127b2a88bbcce74f9c1575833a0b141, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 3642374302399201299
+  m_TableData:
+  - m_Id: 72079299887226880
+    m_Localized: Laro na sinimulan {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72079377150500864
+    m_Localized: Kabuuan na Panalo {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72079441059110912
+    m_Localized: Karanasan {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72079527050731520
+    m_Localized: Kabuuan na deaths {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72079633560887296
+    m_Localized: 'Shooting Rang positioning aiming for the best results: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72082374911844352
+    m_Localized: '{0}% ang nakakuha nito'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72083705630285824
+    m_Localized: Na konnekt sa server,Mag hintay...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72079717014953984
+    m_Localized: Shooting Range oras ng parkour {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72083800916484096
+    m_Localized: Ginagawa ang server... {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72084459489320960
+    m_Localized: Hinahanap ang server... {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72090321469562880
+    m_Localized: Nagloload ng Mapa {0}%
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72112188704153600
+    m_Localized: 'Mga handang maglalaro: ({game.ReadyPlayer}/{game.clientCount})'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72112562634743808
+    m_Localized: Playing - {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72112575360262144
+    m_Localized: Paused - {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72127569174978560
+    m_Localized: 'Oras: {0}
+
+      <color=green>Completed</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72127809038835712
+    m_Localized: 'Oras: {0}
+
+      <color=red>UnCompleted</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72060918895206400
+    m_Localized: 'Bumoto: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72059605692178432
+    m_Localized: 'Kick Maglalaro: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72075091330981888
+    m_Localized: '{box.playerName} ay nakakuha ng {box.itemName]'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72076308039852032
+    m_Localized: Game Start {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72076521576062976
+    m_Localized: Pinatay {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72076629721997312
+    m_Localized: Panalo {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72076719111004160
+    m_Localized: Target score sa Shooting range {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72076852850581504
+    m_Localized: Oras sa Parkour {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72077002453016576
+    m_Localized: Exp {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72077091846217728
+    m_Localized: Patay {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 72079034597498880
+    m_Localized: Kabuuan na Pinatay {0}
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 12289810432
+    m_Localized: Simulan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793006075904
+    m_Localized: Armas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3816397709312
+    m_Localized: Tumigil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3922123530240
+    m_Localized: Mag gawa ng server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4032324673536
+    m_Localized: Mag browse ng server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4226109906944
+    m_Localized: Bumalik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4274939994112
+    m_Localized: Gumawa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4320607576064
+    m_Localized: Mga Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4370947612672
+    m_Localized: Pangalan ng server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4422202007552
+    m_Localized: Uri ng room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4460902850560
+    m_Localized: Pinakamaraming manlalaro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4528330481664
+    m_Localized: i-Refresh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4826751016960
+    m_Localized: ShotGun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4869159624704
+    m_Localized: AL48
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6387984211968
+    m_Localized: ilagay ang pangalan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13001432735744
+    m_Localized: I-pagtuloy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14446148165632
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14527001763840
+    m_Localized: Manlalaro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303731166388224
+    m_Localized: Bilis ng Paggalaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304380675334144
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 327205637300224
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349867197571072
+    m_Localized: Pangalan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350074761093120
+    m_Localized: Pinatay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350193040465920
+    m_Localized: Namatay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 362826904870912
+    m_Localized: Kumukonekta sa server,mag hintay...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363613211041792
+    m_Localized: Hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451495476666368
+    m_Localized: BananaGun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451527806361600
+    m_Localized: BananaGun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451622870261760
+    m_Localized: Knife
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451656282087424
+    m_Localized: BWP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1453745917894656
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1454717700382720
+    m_Localized: Kontrol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1456079792218112
+    m_Localized: FOV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457306596777984
+    m_Localized: Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1458613109891072
+    m_Localized: Pag-alog ng camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1459680006610944
+    m_Localized: i-reset ang save file
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460203397029888
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460704448585728
+    m_Localized: Lukso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1475250907226112
+    m_Localized: Baril
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485100181594112
+    m_Localized: Reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485481871646720
+    m_Localized: Aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485575715004416
+    m_Localized: Grapple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485626025680896
+    m_Localized: Aromas 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485654886686720
+    m_Localized: Armas 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485667326992384
+    m_Localized: Armas 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486004666474496
+    m_Localized: Flashlight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486209738579968
+    m_Localized: Yuko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1561740521742336
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1563541325193216
+    m_Localized: Kalidad ng Anino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1794268159516672
+    m_Localized: Resolusyon ng Anino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1808298320306176
+    m_Localized: Kalidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1822682715234304
+    m_Localized: Distansya ng anino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1824323002671104
+    m_Localized: Mga kaskad ng Anino
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1825514503774208
+    m_Localized: Anti Aliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1826248423088128
+    m_Localized: Malambut na Particle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863022323146752
+    m_Localized: Wika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1882284731375616
+    m_Localized: Video
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1883006181023744
+    m_Localized: Resolusyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1891055939592192
+    m_Localized: Buong screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1892572176293888
+    m_Localized: Buong screen mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1895803564564480
+    m_Localized: Vsync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897733011513344
+    m_Localized: Pinakamaraming FPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900713320357888
+    m_Localized: Tunog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900965330919424
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910091150761984
+    m_Localized: Mikropono volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2524050014838784
+    m_Localized: Ako and nakakuha ng Saging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551990387712000
+    m_Localized: Paglalarawan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3620936352243712
+    m_Localized: Imbentaryo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3714023837638656
+    m_Localized: Equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3759057194688512
+    m_Localized: Deequip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710561497980928
+    m_Localized: Tindahan ng item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4754914622808064
+    m_Localized: Buksan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5521016504164352
+    m_Localized: Recyvle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5795788777562112
+    m_Localized: Craft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5870184351375360
+    m_Localized: EQUIPPED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6154521827319808
+    m_Localized: Taser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6453393216741376
+    m_Localized: Mapa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798133497929728
+    m_Localized: Umalis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6829537107615744
+    m_Localized: Broadsword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7298922075103232
+    m_Localized: Shooting Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8406514709012480
+    m_Localized: Sumali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8406942150533120
+    m_Localized: Sumali sa lobby gamit ang ID
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9450365590675456
+    m_Localized: Vector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9450376948850688
+    m_Localized: Desert Eagle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10607663499419648
+    m_Localized: SpawnParticle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10629970712305664
+    m_Localized: Boomer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11295111342694400
+    m_Localized: Uri ng Hitmarker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11970158487117824
+    m_Localized: Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15993988926906368
+    m_Localized: Gumamit ng Arm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18199265403183104
+    m_Localized: Pwede na ang aming Discord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18199535604441088
+    m_Localized: Tingnan ang Banana Shooter youtube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18260918144573440
+    m_Localized: Sige
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18596454763831296
+    m_Localized: Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18646310270246912
+    m_Localized: Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18655476594483200
+    m_Localized: Double Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19192154643996672
+    m_Localized: Tungkol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19204193089200128
+    m_Localized: Huwag Paganahin ang Boses
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19206582458359808
+    m_Localized: BumotoKick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19212002715475968
+    m_Localized: Bumoto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19593858585698304
+    m_Localized: UI Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19593863434313728
+    m_Localized: Ambience Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19594266653728768
+    m_Localized: Sound Effect Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19940434483060736
+    m_Localized: Ipakita ang Direksyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19945161048432640
+    m_Localized: Gamemode Vote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19945988957904896
+    m_Localized: Brawl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19946021069496320
+    m_Localized: Team Deathmatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20705878647218176
+    m_Localized: Crosshair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706270781087744
+    m_Localized: Width
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706280214077440
+    m_Localized: Height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706293900091392
+    m_Localized: Distansya
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21512992093347840
+    m_Localized: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22214507862925312
+    m_Localized: Malapit na Server lamang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22447420156125184
+    m_Localized: Humagis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22453920584933376
+    m_Localized: ServerSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22454370000412672
+    m_Localized: WeaponSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22512631638630400
+    m_Localized: Nagana lang sa readyupscene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22513547552989184
+    m_Localized: Mag iwan ng 3 na armas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23294473287475200
+    m_Localized: Random na mapa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23294863735234560
+    m_Localized: Random na Game mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23299403159150592
+    m_Localized: BasicSetting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23308218684383232
+    m_Localized: Random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676647047766016
+    m_Localized: Upgrade 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676845153132544
+    m_Localized: Upgrade 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676894591393792
+    m_Localized: Upgrade 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726726186082304
+    m_Localized: Pinakamaraming Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726772935794688
+    m_Localized: Bilis ng Paggalaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726844750667776
+    m_Localized: Double jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726891236139008
+    m_Localized: Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24727209608978432
+    m_Localized: kung may anemia ka, i tataas nito ang max health mo, kumain kalang
+      ng <color=yellow>mga saging</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24727532226453504
+    m_Localized: Kung hindi ka masaya sa movement speed ngayon, kailangan mo to
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728070997385216
+    m_Localized: bagay para sa mga boomers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728246415761408
+    m_Localized: kung ayaw mo ng isa, dalawa na lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728545708711936
+    m_Localized: i-sorpresa ang mga kalaban
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24759499521236992
+    m_Localized: Armory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24773827783794688
+    m_Localized: All item
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24774022957342720
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928093089538048
+    m_Localized: All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928546909036544
+    m_Localized: Box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928908055388160
+    m_Localized: Hat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928992771940352
+    m_Localized: Shoes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929016423620608
+    m_Localized: Face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929057519411200
+    m_Localized: Clothe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929094647390208
+    m_Localized: Weapon Skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24964647262593024
+    m_Localized: Hair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25080278356041728
+    m_Localized: Dot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29529124746272768
+    m_Localized: Resolusyon ng Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30089705131843584
+    m_Localized: Panalo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31545475966935040
+    m_Localized: Multiplayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31549453727408128
+    m_Localized: I-rerecycle mo ba?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31600223357214720
+    m_Localized: Inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31984046691557376
+    m_Localized: Status
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31985197298196480
+    m_Localized: LeaderBoard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32308386666618880
+    m_Localized: Disable BananaVoice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52960515836510208
+    m_Localized: Infected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59091756340117504
+    m_Localized: Throwables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59094768378871808
+    m_Localized: Grenade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59186001113677824
+    m_Localized: Flying Knife
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59377580919128064
+    m_Localized: Flash bang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59816488769323008
+    m_Localized: MolotovCocktail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60130249745006592
+    m_Localized: mag Right click para i-display ang Scoreboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60262350339342336
+    m_Localized: KillConfirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60494027581980672
+    m_Localized: Mabilis na Labanan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60621909088174080
+    m_Localized: Ipakita ang Damo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63435028586029056
+    m_Localized: Special na armas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64606374087090176
+    m_Localized: Volume ng Tugtog
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64875162686709760
+    m_Localized: Keep Ragdoll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68176313565831168
+    m_Localized: Pinagbawalan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69478370822316032
+    m_Localized: Grupo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69925595444666368
+    m_Localized: Social Media
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69925706107183104
+    m_Localized: Asset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69926133099913216
+    m_Localized: PlayTester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71135123720888320
+    m_Localized: Bloom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71465841391034368
+    m_Localized: Auto Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71485116881297408
+    m_Localized: Warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71485367029587968
+    m_Localized: Bumalik sa Labanan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71802435293667328
+    m_Localized: LobbyKillLeaderBoard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72054896843546624
+    m_Localized: Simulan para Mag simula ang laro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72054985590824960
+    m_Localized: Ang mga na hawaan ay kailangan hawaan ang mga ibang survivors, Pag
+      wala ng survivors, Panalo ang nahawa, pag may buhay pang survivors, panalo
+      ang survivors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055090586836992
+    m_Localized: Humawak sa mouse1 para mag Grapple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055200288858112
+    m_Localized: Pagkatapos mo patayin, kailingan mo kunin yung kanyang saging na
+      kaluluwa, pag hindi mo kinuha, no kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055270237265920
+    m_Localized: Pwede mag retry pag pinindot ang F5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055427947290624
+    m_Localized: Pinduting ang E para mag handa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055474613116928
+    m_Localized: Rightclick para i-unlock ang Mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055641022128128
+    m_Localized: Pindutin ang F1 kung Payag, F2 kung hindi payag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055757225320448
+    m_Localized: Pag ikaw ay infected, Pwede ka mag multijump and sprint, at bumilis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72058311053139968
+    m_Localized: Pindutin ang E para mag Interact
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72072202260832256
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72073324279095296
+    m_Localized: Publiko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72073342947942400
+    m_Localized: Pribado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72086514056552448
+    m_Localized: Boomer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72086662304227328
+    m_Localized: Rocket Launcher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72086731275362304
+    m_Localized: Dual SMG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089456570523648
+    m_Localized: Backroom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089483980300288
+    m_Localized: Banana Town
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089503693529088
+    m_Localized: Dast2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089523255762944
+    m_Localized: Grass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089536966942720
+    m_Localized: InDoor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089553001766912
+    m_Localized: KARLSON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089567736356864
+    m_Localized: Pool Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089610304348160
+    m_Localized: ReadyUpScene
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089630558642176
+    m_Localized: Road
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089643753922560
+    m_Localized: Special Banana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089700179894272
+    m_Localized: Water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089721193357312
+    m_Localized: WeirdCore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72090694838116352
+    m_Localized: Nag hi-hintay pa ng Maglalaro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72090750160986112
+    m_Localized: Naghihintay pa ng Host
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72092980670881792
+    m_Localized: Edited
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093030318858240
+    m_Localized: Default
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093799122198528
+    m_Localized: Max Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093808857178112
+    m_Localized: Move Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093819124834304
+    m_Localized: Double Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72125917630029824
+    m_Localized: Handa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72125997296640000
+    m_Localized: Hindi Handa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72191382066814976
+    m_Localized: Gamitin ang Night Vission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77217725805993984
+    m_Localized: Sumali sa Discord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77262095150194688
+    m_Localized: Opisyal na website
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83401314012733440
+    m_Localized: Perk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380922325901312
+    m_Localized: Bot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380889027321856
+    m_Localized: Fat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380820853104640
+    m_Localized: Nerd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380726422544384
+    m_Localized: Hit Indicator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380695535689728
+    m_Localized: Forg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380605660143616
+    m_Localized: Quick Hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380486009233408
+    m_Localized: WallRun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74219391565160448
+    m_Localized: Ping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74610085802795008
+    m_Localized: Multiplier ng Sway
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79092237568811008
+    m_Localized: GrappleHint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104177924317184
+    m_Localized: Magaling, Rebel, Galingan mo lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104216520302592
+    m_Localized: Maganda itong laban, Ikaw ang kailangan namin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104404752277504
+    m_Localized: Wag kang malungkot, Ang masama ay laging matatalo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104413484818432
+    m_Localized: Ano ang ginagawa mo, Ito ay iyong trabaho, Tatangalin ka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464252526403584
+    m_Localized: Use this for wall running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464648506449920
+    m_Localized: Quick Hand makes your reload faster just like reload go brrrrrrrrrrrrr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464695826587648
+    m_Localized: This makes you jump VERY HIGH so you can go to space, Kinda like
+      a frog if you catch my drift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464729955639296
+    m_Localized: If you are blind and cannot see where your getting hit at, this
+      perk can help you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464764109856768
+    m_Localized: actually, uhm this makes you slow but it gives more damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464802022170624
+    m_Localized: This makes you fat, meaning you will move slow but at least you
+      get more health, RIGHT?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464867809828864
+    m_Localized: This perk can make your hands more metal like, Meaning that it reduces
+      recoil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83817815756742656
+    m_Localized: Gun Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83861299565928448
+    m_Localized: Grapple Expert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83863935652438016
+    m_Localized: Makes your grapple feels better
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83869235633692672
+    m_Localized: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83871336032083968
+    m_Localized: King Of The Hill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84237355653242880
+    m_Localized: The <color=green>infected</color> will spawn in <color=red>{0}</color>
+      second
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 84237611228962816
+    m_Localized: The next hill will update in <color=red>{0}</color> seconds
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 84776015318458368
+    m_Localized: Randomizer Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84862315962802176
+    m_Localized: Weapon Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84865771092025344
+    m_Localized: Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84865954156617728
+    m_Localized: Defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85604128503865344
+    m_Localized: IMALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85879466848919552
+    m_Localized: Map Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87852218644406272
+    m_Localized: Join a random match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87852516372881408
+    m_Localized: Host your own server and let other to join
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89446626301026304
+    m_Localized: 'Report: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 89626520939110400
+    m_Localized: '{item.reporterName} Reported {item.reportedName} For {item.reason}'
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 89640911570968576
+    m_Localized: "More Info:\n -Reporter: \"{report.reporterName}\"\n   -Id: \"{report.reporterId}\"\n\n-Reported:
+      \"{report.reportedName}\"\n   -Id: \"{report.reportedId}\"\n\n -Reason: \"{report.reason}\"\n\n-More
+      Detailed: \"{report.moreDetailed}\"\n\n -Date: \"{report.date}\""
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 89622678440747008
+    m_Localized: confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89623301055815680
+    m_Localized: more
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89573474548817920
+    m_Localized: Reports
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89541091007111168
+    m_Localized: send report
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89536635838373888
+    m_Localized: 'more detailed:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534763597537280
+    m_Localized: clan tag - offensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534706726969344
+    m_Localized: Username - offensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534636489154560
+    m_Localized: voice chat - offensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534605539385344
+    m_Localized: Text chat - offensive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534547699933184
+    m_Localized: Text chat - spam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89533891945668608
+    m_Localized: CHEATING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89532266866778112
+    m_Localized: 'Reasons of the report:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435141273264128
+    m_Localized: Report
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435075825344512
+    m_Localized: Copy Steam ID
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435013791588352
+    m_Localized: Steam Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89434988248276992
+    m_Localized: Kick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89923968127442944
+    m_Localized: Server Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89887556732690432
+    m_Localized: Copy Reported Id
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89887473043742720
+    m_Localized: Copy Reporter Id
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89882073359687680
+    m_Localized: Press <b><color=red>H</color></b> to Report Player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89924373074911232
+    m_Localized: 1 v 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90982847200337920
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804149406048256
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804116799528960
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804266645233664
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804285960003584
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804301680254976
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 92804315332714496
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 90431704971845632
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 97179726061740032
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 97181984673472512
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 97241474949160960
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 98314048818880512
+    m_Localized: End. All you guys killed {0.killCount} enemies in {0.clientTimeString}s
+    m_Metadata:
+      m_Items:
+      - rid: 3642374302399201299
+  - m_Id: 99712289010081792
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99015564601040896
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98655114432585728
+    m_Localized: Enable Upgrade Animation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98655085156343808
+    m_Localized: Enable Tutorial
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3642374302399201299
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00e06fc9bd13000100e0afc6cf13000100e0efa7de13000100e06fadf213000100e0ef790b14000100e02fbf8916000100e02fe81e14000100e0afc3d517000100e0af196f18000100e0eff2c31d000100e0af4fa731000100e0af5ffe31000100e02f560132000100e02f5ba43f000100e02f34dc3f000100e0ef200603000100e0ef5fd401000100e0efe7e90f000100e06f310511000100e02fe93611000100e02f175011000100e02fe76411000100e0af0a8411000100e0afdfa611000100e0efafbb11000100e0ef048013000100a087bc6d452b0100a0073ea9452b0100a007933bc73d0100a0078fd86a3e0100a08723ef773e0100a007e06a3c430100a007d7e1b4490100a0873fdab4490100a00723fdb4490100a047a201b5490100a0474b05b5490100a0077908b5490100a047132847410100a0472b7240590100a0070b8042590100a0c7339b78590100a047441b485d01

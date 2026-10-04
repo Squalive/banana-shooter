@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:334f0d833e47918df4479b26adc7641dca04030f7f208db3fed134a926416693
-size 892
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Kyrgyz (Kyrgyzstan) (ky-KG)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Kyrgyz (Kyrgyzstan) (ky-KG)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 24b1a9bca02837a40a3025af9ea74f68
+  m_SerializeEntries: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: bf81b9285ee1c1e48b2d3c5257aaa06a, type: 2}
+    - {fileID: 11400000, guid: f00634369ad65be48ae6e28e40b91f22, type: 2}

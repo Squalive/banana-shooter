@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fcd1513bf0d5dee1cb6fb9dd9da772938a1c7bf69897e6d949ec39fa988c0ad1
-size 1039
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: the_softest_Sandals
+  m_EditorClassIdentifier: 
+  itemdefid: 206
+  displayName: Sandals
+  description: soft very soft
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: ed974f1f16b69fa4a9025215c6005140, type: 3}
+  mesh: {fileID: -462981019419857548, guid: 22497bf77c9b0fe48a6146e8e0e99d5e, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4e48c5413d6034140a9dfad7f01cd023, type: 2}
+  index: 4
+  alpha: 1
+  size: {x: 2.7734675, y: 6.25, z: 6.25}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 226.48, z: 0}
+  sizeMultiplier: 2
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 1

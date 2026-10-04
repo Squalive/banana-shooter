@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f47318d606e6fcb68711d49b408af392671a5534c52192ce8871f5362c18e973
-size 590
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297663e7e70c42342a02062fd3b74efd, type: 3}
+  m_Name: pumpkin
+  m_EditorClassIdentifier: 
+  type: 2
+  prefab: {fileID: 5533627494226002251, guid: f8584dea3a4e29a4ab6fe72ae6c1fa40, type: 3}
+  icon: {fileID: 2800000, guid: bdd68f84b6c199f4b8b835b7dac532ab, type: 3}
+  decorationType: 1

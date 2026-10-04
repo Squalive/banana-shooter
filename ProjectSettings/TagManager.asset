@@ -1,3 +1,55 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8dfd6e40fde3d635798e665a4b8d499939b81f758442e6f2280d7d975782619
-size 672
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Head
+  - Sniper
+  - Taser
+  - Broadsword
+  - AL48
+  - Banana
+  - MECollide
+  - Enemy
+  - Throwable
+  - Object
+  - Pickable
+  - Metal
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - ServerPlayer
+  - ClientPlayer
+  - Server
+  - Client
+  - Grapple
+  - Bullet
+  - Player
+  - RagDoll
+  - HitPlayer
+  - Cosmetic
+  - Weapon
+  - 
+  - EnemyBullet
+  - Interact
+  - ShootingTarget
+  - Teamer
+  - Radio
+  - 
+  - Lava
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - LagCompensationHitbox
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

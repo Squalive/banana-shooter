@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e638562bca82322ec767a6212bbd686a2b2ecb1467bbd93166d4ee666510cb9
-size 1224
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Radio
+  m_EditorClassIdentifier: 
+  itemdefid: 128
+  displayName: Radio
+  description: It can spread some sound
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: b71e001052f372845a738dca02e1a4e7, type: 3}
+  mesh: {fileID: 8356625827602853941, guid: 80fe3cc14117c7e4990eb43866eb308e, type: 3}
+  materials:
+  - {fileID: 2100000, guid: decb4444d5cdb7c4bac637c97f991a2d, type: 2}
+  - {fileID: 2100000, guid: f5c1ba6394cf8a14d9f7e1b8eb4651fd, type: 2}
+  - {fileID: 2100000, guid: e1c756073117eec42b45bf23353b263c, type: 2}
+  - {fileID: 2100000, guid: bfbc59323ef17084ca9e147af851dd68, type: 2}
+  - {fileID: 2100000, guid: 7f4dbfa51cbbd7b4abc80dc67ff52b27, type: 2}
+  index: 8
+  alpha: 1
+  size: {x: 3.3663511, y: 3.3663518, z: 3.3663516}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 2
+  relatedItem: []
+  canApplyParticle: 1

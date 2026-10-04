@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f605806ca009c44845d4d2cc12835c6a28337a12243de3eed43d4cebe1012f27
-size 1936
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_box#01
+  m_EditorClassIdentifier: 
+  itemdefid: 155
+  displayName: Banana Box#01
+  description: Contains \n<color=white>Female Hair\nWool Hat</color>\n<color=#1e90ff>Normal
+    Shoe\nSquare Hat\nTraffic Cone</color>\n<color=red>Vr Headset\nDomino Hat</color>\n<color=green>Cat
+    Ears Headphone</color>\n<color=yellow>Alien Face</color>\n<color=#ff69b4>Billy</color>\n
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: 5cc4a6aa6a243a6468cd617e5870a37b, type: 3}
+  mesh: {fileID: -2447776121362496397, guid: e49c64dbd650e0444b607716f23119f5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 37a6c083bc331c7468a735233e2c4584, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 5.5, y: 5.5, z: 5.5}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: 849a95ee3cf276d408163f32085c65e1, type: 2}
+  - {fileID: 11400000, guid: 1644d4f9b7e7a61469352fc0f65dc580, type: 2}
+  - {fileID: 11400000, guid: 347bd9c9b6eab4345b04d1aeea746bfc, type: 2}
+  - {fileID: 11400000, guid: 4507a1374134e03409b724699835370a, type: 2}
+  - {fileID: 11400000, guid: bf3665418318d2e41ac498a572693cba, type: 2}
+  - {fileID: 11400000, guid: d705457d67396924a9bcfccc1f7c5b4a, type: 2}
+  - {fileID: 11400000, guid: f5023b9f8f7f17947ab7821b5084dce3, type: 2}
+  - {fileID: 11400000, guid: 68030e2f46713fe408f2ca31a61a668a, type: 2}
+  - {fileID: 11400000, guid: 755e6325aee46bc46ba89089c1bb22b9, type: 2}
+  - {fileID: 11400000, guid: b6c4eb969f4d9f944825c9e4824056fa, type: 2}
+  canApplyParticle: 0

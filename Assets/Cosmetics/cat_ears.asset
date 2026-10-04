@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a4285c4eefb75aa566dd4300befb1af86170e66f2dc3dafbb2f5c67932575363
-size 1092
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: cat_ears
+  m_EditorClassIdentifier: 
+  itemdefid: 182
+  displayName: Cat Ears
+  description: cat girls favourite
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 58cc4fd3c1924a245b5fbbc56b99c232, type: 3}
+  mesh: {fileID: -5068383697533665514, guid: 5f65007ebb50af14e81e85f1550ce690, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8c0623a663b4a734582b0afe23d244f0, type: 2}
+  - {fileID: 2100000, guid: 26046ee5f11ccbe4996057f123d59bea, type: 2}
+  - {fileID: 2100000, guid: 1b78e569176f42b47a0412929571afa8, type: 2}
+  index: 26
+  alpha: 1
+  size: {x: 8, y: 8, z: 8}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 180, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

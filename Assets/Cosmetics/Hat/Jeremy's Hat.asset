@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ced2d552c1ea2c626af8005e517b4ef2a725e722adef20e864c4cfe0a3b35ac
-size 1025
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Jeremy's Hat
+  m_EditorClassIdentifier: 
+  itemdefid: 131
+  displayName: Jeremy's Hat
+  description: Dont mess up with Jeremy
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: 5651b61a92eb83b44aba31ca7406de71, type: 3}
+  mesh: {fileID: 277685860305113742, guid: 7eedd12aecf9c914b9c04fae05691496, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 68b69e0e44f73ca4d9e6f3236baa8cd5, type: 2}
+  - {fileID: 2100000, guid: e9ce35fac72e3e448b30588e55c59f47, type: 2}
+  index: 11
+  alpha: 1
+  size: {x: 3.7801645, y: 3.7801645, z: 3.7801645}
+  defaultRotation: {x: 0, y: -90, z: 0}
+  sizeMultiplier: 2
+  relatedItem: []
+  canApplyParticle: 1

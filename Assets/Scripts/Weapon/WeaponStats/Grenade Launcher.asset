@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5713f09c6cc93b3f40257b5b52cf5e989b1851cbbd63e0b23afcf332652b3fad
-size 1337
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Grenade Launcher
+  m_EditorClassIdentifier: 
+  weaponName: Grenade Launcher
+  chineseName: "\u69B4\u5F39\u70AE"
+  price: 0
+  texture: {fileID: 2800000, guid: c017790e8714e19418c1805ff8fcceb9, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 602f814013350fe4b9d1792763e4d141, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 8b24ee2d958c7764892639e4ca63fb44, type: 2}
+    - {fileID: 2100000, guid: 2f55e37b850f0394da194099502ec945, type: 2}
+    - {fileID: 2100000, guid: 31c19b582802e9543aec4e79dda26edd, type: 2}
+    - {fileID: 2100000, guid: 402312a22c32baf4b984fbad9b87993a, type: 2}
+    - {fileID: 2100000, guid: faa79f4452200864ea68d86dcd91ac39, type: 2}
+  size: {x: 1.4773, y: 1.4773, z: 1.4773}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 35
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 5
+  weaponType: 8
+  bUseGravity: 1
+  maxAmmo: 6
+  fireRate: 4
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 0
+  reloadTime: 2.5
+  explosiveAmmo: 1

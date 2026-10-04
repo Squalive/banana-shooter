@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:57103bcd678b493299fcea331941b012fa3b4d004110c8ec168481d10784e3c7
-size 690
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf7ba1e77a92ad439ab361dda586c9c, type: 3}
+  m_Name: Debug Command
+  m_EditorClassIdentifier: 
+  commandWord: debug
+  description: This command exist to debug the game log and other related stuff
+  argsHint: <key> <value>
+  key:
+  - normal
+  - last_command
+  args:
+  - args:
+    - log
+    - error
+    - warning
+    - clear
+    - network
+    - memory
+  - args:
+    - true
+    - false

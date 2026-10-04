@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db257a6d6889ea4fe0d86612e4fd0527d4c1ddaeacc4551328aff0dc4c554286
-size 1100
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: comfortable_klaus_shoes
+  m_EditorClassIdentifier: 
+  itemdefid: 167
+  displayName: Comfortable Klaus Shoes
+  description: Incredible comfortable
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: 75e12e3299f9aaa43b523b201c27be15, type: 3}
+  mesh: {fileID: -1510367016358233660, guid: 301065d795c5f074c8efce7c3b37cc4d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 7595bd5d72ecd964491951593479d0b9, type: 2}
+  - {fileID: 2100000, guid: a61cf5b5d134ef344ba13c2c491fff6f, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 3.2799854, y: 6.9075613, z: 6.9075613}
+  defaultRotation: {x: -90, y: 133.97, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 90cfec7ac822f754bb135ba3bfc81223, type: 2}
+  canApplyParticle: 1

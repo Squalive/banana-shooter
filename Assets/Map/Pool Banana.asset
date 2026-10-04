@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e29220ca69b1e20a7e3f03b68d666d0ea4b49dcd2e091b00ebf7c06c2a2bb504
-size 492
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d30214e44d74c8bb06ad84b194e7db4, type: 3}
+  m_Name: Pool Banana
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: dae9da13b4b91fd4a9271b282816a14d, type: 3}
+  external: 0

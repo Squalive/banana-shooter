@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:779c844a212b37141874bfc2e2580a7efca9197f65ebb8f62c3989dcfb6679b5
-size 1580
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: FAQ_zh-Hans
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: zh-Hans
+  m_SharedData: {fileID: 11400000, guid: 074fe07cad5401c459d5bff0d666d1b0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18583904256
+    m_Localized: " \u5982\u4F55\u4F7F\u7528\u56DE\u653E\u7CFB\u7EDF?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6658750144512
+    m_Localized: "\u6309 \"~\" \u6253\u5F00\u63A7\u5236\u53F0\u7136\u540E\u8F93\u5165
+      \"debug record 1\" \u542F\u7528\u56DE\u653E\u529F\u80FD"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6681353248768
+    m_Localized: "\u63A5\u7740\u8FDB\u5165\u6E38\u620F \u6253\u5F00\u83DC\u5355\u70B9
+      <b>\u5F00\u59CB\u5F55\u5236</b>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7216886177792
+    m_Localized: "\u63A5\u7740\u5F55\u5236\u5C31\u5F00\u59CB\u4E86 \u56DE\u5230\u4E3B\u83DC\u5355\u6216\u8005\u70B9\u51FB\u505C\u6B62\u5F55\u5236\u53EF\u4EE5<b>\u505C\u6B62\u5F55\u5236</b>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15122612346880
+    m_Localized: "\u6700\u540E\u4F60\u53EF\u4EE5\u56DE\u5230\u4E3B\u83DC\u5355 ->
+      \u56DE\u653E\u53BB\u89C2\u770B\u4EE5\u524D\u7684\u8BB0\u5F55"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

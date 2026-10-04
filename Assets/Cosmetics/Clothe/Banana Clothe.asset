@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9389c21ec719191da45eb9d8d2b36140a3ffdbc4e01daea312158529fd7bf691
-size 948
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Banana Clothe
+  m_EditorClassIdentifier: 
+  itemdefid: 114
+  displayName: Banana Clothe
+  description: What if you want to be a banana man?
+  tag: 
+  type: 6
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 1828e0f5b6799574bac909ba2842ebe9, type: 3}
+  mesh: {fileID: -370997481786945201, guid: b9f91c68bb18eb0498b6ad69c82e6096, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 6f4646f57df1bd5478f3ae5cd65e27c3, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 1.2521479, y: 1.4646765, z: 1.4646765}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7282312fd1a2b748de81709a4e6b58ad622fe1a004b679a39a93eb02bf8b87a
-size 1483
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: P90
+  m_EditorClassIdentifier: 
+  weaponName: P90
+  chineseName: P90
+  price: 1800
+  texture: {fileID: 2800000, guid: b622a461930d5924f96474ea9bb6c683, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 8b470d678a1eace4b8322bfb23f51c7a, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 39a2f07e797f7b74784422afccc00041, type: 2}
+    - {fileID: 2100000, guid: cab812568d27a0146953a5a84fb20b22, type: 2}
+    - {fileID: 2100000, guid: d742c4de35fe4fd48861de1c6aab84e9, type: 2}
+  - mesh: {fileID: -6231077721535070182, guid: 8b470d678a1eace4b8322bfb23f51c7a, type: 3}
+    materials:
+    - {fileID: 2100000, guid: cbde50e1cdbf4e4439fd2a128c9a8ec0, type: 2}
+    - {fileID: 2100000, guid: 179b7103a41b9674aa61d39140c157ff, type: 2}
+    - {fileID: 2100000, guid: 8d1ab466b6cb93546a393487adab68e0, type: 2}
+  size: {x: 2.2198, y: 0.88720965, z: 2.2198}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 18
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 3
+  weaponType: 3
+  bUseGravity: 0
+  maxAmmo: 50
+  fireRate: 14.4
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1.3
+  explosiveAmmo: 0

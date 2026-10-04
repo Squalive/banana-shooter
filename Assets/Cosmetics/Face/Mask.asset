@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecea0d2b171ce3fbd5310139203b44da5b8ca9018b55bbe1e21c2a43b3172aec
-size 900
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Mask
+  m_EditorClassIdentifier: 
+  itemdefid: 113
+  displayName: Mask
+  description: Oh dream
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: 68001163060221141a7eeb692a00d8a3, type: 3}
+  mesh: {fileID: 6690141603448424749, guid: d7b8606e6aff38d4cada150ab1e49963, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 25bfacb3b6a839a498bc8c96c6688dd7, type: 2}
+  index: 5
+  alpha: 1
+  size: {x: 6.1136775, y: 7.151359, z: 7.151359}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

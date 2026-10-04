@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e886d782d1efbc5ab4b4354f89edeb67469f0794eab6046860c176cb8df84cd1
-size 1197
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Double Barrel
+  m_EditorClassIdentifier: 
+  weaponName: Double Barrel
+  chineseName: "\u53CC\u7BA1\u9730\u5F39\u67AA"
+  price: 3000
+  texture: {fileID: 2800000, guid: f9460c40781ef6b4493b1fc6b8db55b0, type: 3}
+  skins:
+  - mesh: {fileID: 7618580566052662339, guid: f411749c81d612f44ba90cc6ee23080f, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6e263301be78d5f41a19dc5cc2065192, type: 2}
+    - {fileID: 2100000, guid: 6683656826549bd47b9c1526a75e1691, type: 2}
+    - {fileID: 2100000, guid: e33f5ed9b72195841bd6ad96c062d94d, type: 2}
+  size: {x: 1.3046154, y: 0.97284144, z: 1.3046154}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 24
+  damageOffset: 10
+  specialWeapon: 0
+  weaponType: 2
+  bUseGravity: 0
+  maxAmmo: 2
+  fireRate: 20
+  bulletAmount: 12
+  spreadAngle: 14
+  cantReload: 0
+  reloadTime: 0.55
+  explosiveAmmo: 0

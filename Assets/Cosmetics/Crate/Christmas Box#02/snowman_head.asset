@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a084a478b7b86ba81c138557d940d5270a1471bd22b53b4d71c5ac627be0ab9f
-size 1266
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: snowman_head
+  m_EditorClassIdentifier: 
+  itemdefid: 173
+  displayName: Snowman Head
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: e90a5c1d37711144fb3f014501022541, type: 3}
+  mesh: {fileID: 7143164630315874331, guid: bc8bc268c3824df4d89997b7de50ced5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: e97c840a309887940a37de9e9b29b205, type: 2}
+  - {fileID: 2100000, guid: 61fb374fcd36e6549bf82f79555c61b3, type: 2}
+  - {fileID: 2100000, guid: 333d6611169aa85468dbb35436b27bdb, type: 2}
+  - {fileID: 2100000, guid: 295ef07efa133cb48b1f39f2adbc9a28, type: 2}
+  - {fileID: 2100000, guid: b14a867e4dc30454896aef0a793f64ce, type: 2}
+  index: 23
+  alpha: 1
+  size: {x: 6.2374997, y: 6.2374997, z: 6.2374997}
+  defaultRotation: {x: -90, y: 180, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

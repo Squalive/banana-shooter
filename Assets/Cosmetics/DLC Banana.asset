@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e09c931fda506374cad077876ff3baf024e900fdc5a1decae47551257136ebdd
-size 939
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: DLC Banana
+  m_EditorClassIdentifier: 
+  itemdefid: 220
+  displayName: DLC Banana
+  description: nothing
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: fc49fafe64748834ea379959b28c693e, type: 3}
+  mesh: {fileID: 7540948708029896524, guid: 6a5b7ad1eb118bb49a7b5966f6db9aec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 6466a436530830840915f0b0f64ba4a1, type: 2}
+  index: 30
+  alpha: 1
+  size: {x: 5, y: 5, z: 5}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

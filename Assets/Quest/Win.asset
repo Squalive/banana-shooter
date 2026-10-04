@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:46578933068698a69943d553fdacb1f593e3b1948de34a83deef5100bafafcb8
-size 554
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29133cd8456942d4a400d10119b1631a, type: 3}
+  m_Name: Win
+  m_EditorClassIdentifier: 
+  questType: 4
+  nameKey: q_win_name
+  descKey: q_win_desc
+  prizeKey: q_prize_exp_with_box
+  requiredAmount: 2
+  expReward: 10000
+  bonus: 0
+  rewards: 01000000

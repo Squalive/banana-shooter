@@ -1,3 +1,2227 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:64a2ca78bfd6d04745d93e426ce85b985254d51e61922a8e3a205a508c54c180
-size 59488
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: e127b2a88bbcce74f9c1575833a0b141, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 189510242361147394
+  m_TableData:
+  - m_Id: 92804116799528960
+    m_Localized: 'Karabin
+
+      <color=white>{0}</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92804149406048256
+    m_Localized: 'Strzelba
+
+      <color=white>{0}</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92804266645233664
+    m_Localized: 'Pistolet Maszynowy
+
+      <color=white>{0}</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92804285960003584
+    m_Localized: 'LKM
+
+      <color=white>{0}</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92804301680254976
+    m_Localized: "N\xF3\u017C\n<color=white>{0}</color>"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92804315332714496
+    m_Localized: 'Pistolet
+
+      <color=white>{0}</color>'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 97179726061740032
+    m_Localized: "Potrzeba {0} graczy w punkcie oznaczonym bia\u0142ymi liniami by
+      zacz\u0105\u0107"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 97181984673472512
+    m_Localized: "Pocz\u0105tek za {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 97241474949160960
+    m_Localized: "Czas \u017Bycia: {e.clientTimeString}\nLiczba Zab\xF3jstw: {e.killCount}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 98314048818880512
+    m_Localized: "Koniec. Wszyscy razem zabili\u015Bcie {0.killCount} przeciwnik\xF3w
+      w {0.clientTimeString}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 102208686435328000
+    m_Localized: "Nazwa: \"{report.playerName}\",\n\nIlo\u015B\u0107 Ostrze\u017Ce\u0144:\"{report.playerWarningAmount}\"\n\nSteam
+      ID:\"{report.playerSteamId}\"\n\n"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 89446626301026304
+    m_Localized: "Zg\u0142o\u015B: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 89626520939110400
+    m_Localized: "{item.reporterName} zg\u0142o\u015Bi\u0142 {item.reportedName}
+      z powodu {item.reason}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 89640911570968576
+    m_Localized: "Wi\u0119cej Informacji:\n -Zg\u0142aszaj\u0105cy: \"{report.reporterName}\"\n  
+      -ID: \"{report.reporterId}\"\n\n-Zg\u0142osi\u0142: \"{report.reportedName}\"\n 
+      -ID: \"{report.reportedId}\"\n\n-Pow\xF3d: \"{report.reason}\"\n\n-Wi\u0119cej
+      Szczeg\xF3\u0142\xF3w: \"{report.moreDetailed}\"\n\n-Data: \"{report.date}\""
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 102588001245192192
+    m_Localized: Nowa Fala za <color=red>{0}s</color>
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 103291087928418304
+    m_Localized: "Pieni\u0105dze: {0}$"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 103306140035571712
+    m_Localized: Miejsce <color=red>{variable}</color>
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 12289810432
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3793006075904
+    m_Localized: "Bro\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3816397709312
+    m_Localized: "Zamknij Gr\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3922123530240
+    m_Localized: Hostuj Serwer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4032324673536
+    m_Localized: "Przegl\u0105daj Serwery"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4226109906944
+    m_Localized: "Wr\xF3\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4274939994112
+    m_Localized: "Stw\xF3rz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4320607576064
+    m_Localized: Ustawienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4370947612672
+    m_Localized: Nazwa Serwera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4422202007552
+    m_Localized: "Widoczno\u015B\u0107 Serwera"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4460902850560
+    m_Localized: Maksymalna liczba graczy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4528330481664
+    m_Localized: "Od\u015Bwie\u017C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4826751016960
+    m_Localized: Strzelba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4869159624704
+    m_Localized: AL48
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6387984211968
+    m_Localized: "Wprowad\u017A Nazw\u0119..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13001432735744
+    m_Localized: "Wzn\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14446148165632
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14527001763840
+    m_Localized: Gracz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303731166388224
+    m_Localized: "Pr\u0119dko\u015B\u0107 Ruchu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 304380675334144
+    m_Localized: Ulepszenie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 327205637300224
+    m_Localized: Zdrowie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349867197571072
+    m_Localized: Nazwa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350074761093120
+    m_Localized: "Zab\xF3jstwa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350193040465920
+    m_Localized: "\u015Amierci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 362826904870912
+    m_Localized: "\u0141\u0105czenie z serwerem, Prosz\u0119 czeka\u0107..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 363613211041792
+    m_Localized: "Podpowied\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451495476666368
+    m_Localized: Pistolet Bananowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451527806361600
+    m_Localized: "N\xF3\u017C Bananowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1451622870261760
+    m_Localized: "N\xF3\u017C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1453745917894656
+    m_Localized: Rozgrywka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1454717700382720
+    m_Localized: Sterowanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1456079792218112
+    m_Localized: FOV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457306596777984
+    m_Localized: "Czu\u0142o\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1458613109891072
+    m_Localized: "Trz\u0119sienia Kamery"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1459680006610944
+    m_Localized: Wyzeruj Plik Zapisu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460203397029888
+    m_Localized: Wyzeruj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460704448585728
+    m_Localized: Skok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1475250907226112
+    m_Localized: "Strza\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485100181594112
+    m_Localized: "Prze\u0142adowanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485481871646720
+    m_Localized: Celowanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485575715004416
+    m_Localized: Hak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485626025680896
+    m_Localized: "Bro\u0144 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485654886686720
+    m_Localized: "Bro\u0144 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1485667326992384
+    m_Localized: "Bro\u0144 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486004666474496
+    m_Localized: Latarka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1486209738579968
+    m_Localized: Kucanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1561740521742336
+    m_Localized: Grafika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1563541325193216
+    m_Localized: "Jako\u015B\u0107 Cieni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1794268159516672
+    m_Localized: "Rozdzielczo\u015B\u0107 Cieni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1808298320306176
+    m_Localized: "Jako\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1822682715234304
+    m_Localized: Dystans Cieni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1824323002671104
+    m_Localized: Kaskady Cieni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1825514503774208
+    m_Localized: Antyaliasing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1826248423088128
+    m_Localized: "Mi\u0119kkie Cz\u0105steczki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863022323146752
+    m_Localized: "J\u0119zyk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1882284731375616
+    m_Localized: Wideo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1883006181023744
+    m_Localized: "Rozdzielczo\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1891055939592192
+    m_Localized: "Pe\u0142ny Ekran"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1892572176293888
+    m_Localized: "Tryb Pe\u0142nego Ekranu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1895803564564480
+    m_Localized: Vsync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897733011513344
+    m_Localized: "Maksymalna liczba klatek na sekund\u0119 (FPS)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900713320357888
+    m_Localized: "D\u017Awi\u0119k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900965330919424
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 Og\xF3lna"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910091150761984
+    m_Localized: Aktywacja Mikrofonu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2524050014838784
+    m_Localized: "Ja dostaj\u0119 banana"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2551990387712000
+    m_Localized: Opis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3620936352243712
+    m_Localized: Ekwipunek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3714023837638656
+    m_Localized: "Wyposa\u017C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3759057194688512
+    m_Localized: Zdejmij
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710561497980928
+    m_Localized: Sklep
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4754914622808064
+    m_Localized: "Otw\xF3rz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5521016504164352
+    m_Localized: Recykluj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5795788777562112
+    m_Localized: "Stw\xF3rz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5870184351375360
+    m_Localized: "WYPOSA\u017BONE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6154521827319808
+    m_Localized: Paralizator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6453393216741376
+    m_Localized: Mapa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6798133497929728
+    m_Localized: "Wyjd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6829537107615744
+    m_Localized: "Pa\u0142asz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7298922075103232
+    m_Localized: Strzelnica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8406514709012480
+    m_Localized: "Do\u0142\u0105cz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8406942150533120
+    m_Localized: "Do\u0142\u0105cz do poczekalni przez ID"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9450365590675456
+    m_Localized: Vector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9450376948850688
+    m_Localized: Desert Eagle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10607663499419648
+    m_Localized: "Cz\u0105steczki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10629970712305664
+    m_Localized: Bombowiec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11295111342694400
+    m_Localized: Typ oznaczenia trafienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11970158487117824
+    m_Localized: "Osi\u0105gni\u0119cia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15993988926906368
+    m_Localized: "Poka\u017C R\u0119ce"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18199265403183104
+    m_Localized: Oficjalny serwer Discord Banana Shooter otwarty!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18199535604441088
+    m_Localized: "Zobacz m\xF3j kana\u0142 YouTube!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18260918144573440
+    m_Localized: Okej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18596454763831296
+    m_Localized: Zastosuj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18646310270246912
+    m_Localized: "Wci\u0119cie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18655476594483200
+    m_Localized: "Podw\xF3jny skok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19192154643996672
+    m_Localized: O grze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19204193089200128
+    m_Localized: "Wy\u0142\u0105cz G\u0142os"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19206582458359808
+    m_Localized: "Wyrzucenie G\u0142osowaniem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19212002715475968
+    m_Localized: "G\u0142osowanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19593858585698304
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 Przycisk\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19593863434313728
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 Nastroju"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19594266653728768
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 Efekt\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19940434483060736
+    m_Localized: "Poka\u017C Kierunek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19945161048432640
+    m_Localized: "G\u0142osowanie Na Tryb Gry"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19945988957904896
+    m_Localized: Bijatyka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19946021069496320
+    m_Localized: "Deathmatch Dru\u017Cynowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20705878647218176
+    m_Localized: Celownik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706270781087744
+    m_Localized: "Szeroko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706280214077440
+    m_Localized: "Wysoko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20706293900091392
+    m_Localized: Dystans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21512992093347840
+    m_Localized: Pistolet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22214507862925312
+    m_Localized: Tylko Bliskie Serwery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22447420156125184
+    m_Localized: "Rzu\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22453920584933376
+    m_Localized: Ustawienia Serwera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22454370000412672
+    m_Localized: Ustawienia Broni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22512631638630400
+    m_Localized: "Dzia\u0142a tylko w poczekalni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22513547552989184
+    m_Localized: Minimalnie 3 bronie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23294473287475200
+    m_Localized: Losowa Mapa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23294863735234560
+    m_Localized: Losowy Tryb Gry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23299403159150592
+    m_Localized: Standardowe Ustawienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23308218684383232
+    m_Localized: Losowe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676647047766016
+    m_Localized: Ulepszenie 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676845153132544
+    m_Localized: Ulepszenie 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24676894591393792
+    m_Localized: Ulepszenie 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726726186082304
+    m_Localized: Maksymalny Poziom Zdrowia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726772935794688
+    m_Localized: "Szybko\u015B\u0107 Ruchu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726844750667776
+    m_Localized: "Podw\xF3jny skok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24726891236139008
+    m_Localized: "Wci\u0119cie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24727209608978432
+    m_Localized: "Je\u017Celi nie czujesz si\u0119 na sile, to to zwi\u0119kszy poziom
+      zdrowia po prostu jedz <color=yellow>banany</color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24727532226453504
+    m_Localized: "Nie satysfakcjonuje ci\u0119 szybko\u015B\u0107 ruchu? POTRZEBUJESZ
+      tego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728070997385216
+    m_Localized: Bombowiec robi boom boom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728246415761408
+    m_Localized: "Dlaczego skaka\u0107 raz jak mo\u017Cesz dwa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24728545708711936
+    m_Localized: Zaskocz swojego przeciwnika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24759499521236992
+    m_Localized: Zbrojownia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24773827783794688
+    m_Localized: Wszystkie Przedmioty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24774022957342720
+    m_Localized: Kup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928093089538048
+    m_Localized: Wszystko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928546909036544
+    m_Localized: Skrzynka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928908055388160
+    m_Localized: Czapka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24928992771940352
+    m_Localized: Buty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929016423620608
+    m_Localized: Twarz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929057519411200
+    m_Localized: Ubrania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24929094647390208
+    m_Localized: "Sk\xF3rka Broni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24964647262593024
+    m_Localized: "W\u0142osy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25080278356041728
+    m_Localized: Kropka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29529124746272768
+    m_Localized: "Rozdzielczo\u015B\u0107 Tekstur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30089705131843584
+    m_Localized: "Zwyci\u0119zca"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31545475966935040
+    m_Localized: Multiplayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31549453727408128
+    m_Localized: "Potwierd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31600223357214720
+    m_Localized: Zbadaj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31984046691557376
+    m_Localized: Statystyki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31985197298196480
+    m_Localized: "Tablica Wynik\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32308386666618880
+    m_Localized: "Wy\u0142\u0105cz Bananowy G\u0142os"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52960515836510208
+    m_Localized: Infekcja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59091756340117504
+    m_Localized: Rzucane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59094768378871808
+    m_Localized: Granat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59186001113677824
+    m_Localized: "N\xF3\u017C Do Rzucania"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59377580919128064
+    m_Localized: "Granat B\u0142yskowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59816488769323008
+    m_Localized: "Koktajl Mo\u0142otowa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60130249745006592
+    m_Localized: "Prawy Przycisk by Zobaczy\u0107 Tablic\u0119 wynik\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60262350339342336
+    m_Localized: "Zab\xF3jstwo Potwierdzone"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60494027581980672
+    m_Localized: Szybki Mecz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60621909088174080
+    m_Localized: "Poka\u017C Traw\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63435028586029056
+    m_Localized: "Specjalna Bro\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64606374087090176
+    m_Localized: "G\u0142o\u015Bno\u015B\u0107 Muzyki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 64875162686709760
+    m_Localized: "W\u0142\u0105cz Tryb Kuk\u0142y (Ragdoll)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 68176313565831168
+    m_Localized: Blokada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69478370822316032
+    m_Localized: Grupa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69925595444666368
+    m_Localized: "Media Spo\u0142eczno\u015Bciowe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69925706107183104
+    m_Localized: Zasoby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 69926133099913216
+    m_Localized: Testerzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71135123720888320
+    m_Localized: Bloom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71465841391034368
+    m_Localized: Automatyczne Ulepszenia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71485116881297408
+    m_Localized: "Ostrze\u017Cenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71485367029587968
+    m_Localized: "POZA GRANIC\u0104; WR\xD3\u0106 NA POLE WALKI"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71802435293667328
+    m_Localized: "Tablica Zab\xF3jstw Poczekalni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72054896843546624
+    m_Localized: "B\u0105d\u017A got\xF3w by zacz\u0105\u0107 gr\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72054985590824960
+    m_Localized: "Zainfekowana osoba musi zainfekowa\u0107 ocala\u0142ych. Je\u017Celi
+      nie ma ju\u017C ocala\u0142ych to zainfekowani wygraj\u0105. Je\u017Celi ocalali
+      przetrwaj\u0105 ca\u0142\u0105 rund\u0119, wygraj\u0105."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055090586836992
+    m_Localized: "Przytrzymaj prawy przycisk myszy by z\u0142apa\u0107 si\u0119 hakiem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055200288858112
+    m_Localized: "Po zab\xF3jstwie martwa osoba zostawi swoj\u0105 bananow\u0105
+      dusz\u0119 zbierz j\u0105 by dosta\u0107 punkt, inaczej zab\xF3jstwo nie zostanie
+      zaliczone."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055270237265920
+    m_Localized: "Wci\u015Bnij F5 by spr\xF3bowa\u0107 jeszcze raz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055427947290624
+    m_Localized: "Wci\u015Bnij E by zaznaczy\u0107 swoj\u0105 gotowo\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055474613116928
+    m_Localized: "Prawy przycisk by zobaczy\u0107 kursor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055641022128128
+    m_Localized: "Wyrzucanie: Wci\u015Bnij F1 by zag\u0142osowa\u0107 za, Wci\u015Bnij
+      F2 by zag\u0142osowa\u0107 przeciw"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72055757225320448
+    m_Localized: "Jako zainfekowany jeste\u015B super szybki, mo\u017Cesz skaka\u0107
+      kilka razy i masz mo\u017Cliwo\u015B\u0107 wcinania si\u0119."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72058311053139968
+    m_Localized: "Wci\u015Bnij E by u\u017Cy\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72059605692178432
+    m_Localized: "Wyrzu\u0107 gracza: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72060918895206400
+    m_Localized: "G\u0142osowanie rozpocz\u0119te przez: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72072202260832256
+    m_Localized: "Wci\u015Bnij ESC by otworzy\u0107 menu i wybra\u0107 map\u0119
+      lub tryb gry"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72073324279095296
+    m_Localized: Publiczne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72073342947942400
+    m_Localized: Tylko Przyjaciele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72075091330981888
+    m_Localized: "{box.playerName} otrzyma\u0142 {.itemName}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72076308039852032
+    m_Localized: Uruchomienia gry {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72076521576062976
+    m_Localized: "{0} Zab\xF3jstwa"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72076629721997312
+    m_Localized: "Zwyci\u0119stwa {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72076719111004160
+    m_Localized: Wynik na strzelnicy {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72076852850581504
+    m_Localized: Czas parkour'u {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72077002453016576
+    m_Localized: PD {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72077091846217728
+    m_Localized: "\u015Amierci {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079034597498880
+    m_Localized: "Zab\xF3jstw \u0142\u0105cznie: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079299887226880
+    m_Localized: "\u0141\u0105czna ilo\u015B\u0107 uruchumie\u0144: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079377150500864
+    m_Localized: "Zwyci\u0119stw \u0142\u0105cznie: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079441059110912
+    m_Localized: "\u0141\u0105czna ilo\u015B\u0107 punkt\xF3w do\u015Bwiadczenia:
+      {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079527050731520
+    m_Localized: "\u0141\u0105czna ilo\u015B\u0107 \u015Bmierci: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079633560887296
+    m_Localized: 'Najlepszy wynik na strzelnicy: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72079717014953984
+    m_Localized: 'Najlepszy czas na strzelnicy: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72082374911844352
+    m_Localized: "{0}% graczy zdoby\u0142o to osi\u0105gni\u0119cie"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72083705630285824
+    m_Localized: "\u0141\u0105czenie z serwerem, Prosz\u0119 czeka\u0107..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72083800916484096
+    m_Localized: 'Tworzenie serwera...
+
+      {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72084459489320960
+    m_Localized: 'Szukanie serwera...
+
+      {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72086514056552448
+    m_Localized: Bombowiec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72086662304227328
+    m_Localized: Wyrzutnia rakiet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72086731275362304
+    m_Localized: "Podw\xF3jne pistolety maszynowe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089456570523648
+    m_Localized: Backrooms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151629798281383936
+    m_Localized: "Sk\xF3rki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151629831848398848
+    m_Localized: "Cz\u0105steczki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089523255762944
+    m_Localized: Trawa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921169462530048
+    m_Localized: Specjalne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151629844133515264
+    m_Localized: Odznaka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151629784700227584
+    m_Localized: Kosmetyki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72089610304348160
+    m_Localized: Poczekalnia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151914499864858624
+    m_Localized: Skrzynki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921670413422592
+    m_Localized: Spodnie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921185832898560
+    m_Localized: Wszystkie Kosmetyki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921144833576960
+    m_Localized: Wszystkie Skrzynki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72090321469562880
+    m_Localized: Wczytywanie Mapy {0}%
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72090694838116352
+    m_Localized: Oczekiwanie na graczy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72090750160986112
+    m_Localized: Oczekiwanie na hosta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72092980670881792
+    m_Localized: Zedytowane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093030318858240
+    m_Localized: Standardowe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093799122198528
+    m_Localized: Maksymalne Zdrowie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093808857178112
+    m_Localized: "Pr\u0119dko\u015Bc Ruchu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72093819124834304
+    m_Localized: "Podw\xF3jny skok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72112188704153600
+    m_Localized: 'Gotowi Gracze: ({game.ReadyPlayer}/{game.clientCount})'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72112562634743808
+    m_Localized: Gra - {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72112575360262144
+    m_Localized: Pauza - {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72125917630029824
+    m_Localized: "Gotowo\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72125997296640000
+    m_Localized: "Brak gotowo\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72127569174978560
+    m_Localized: "Czas: {0}\n<color=green>Uko\u0144czone</color>"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72127809038835712
+    m_Localized: "Czas: {0}\n<color=red>Nie uko\u0144czone</color>"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 72191382066814976
+    m_Localized: "U\u017Cywaj noktowizji"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74219391565160448
+    m_Localized: "Op\xF3\u017Anienie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 74610085802795008
+    m_Localized: "Mno\u017Cnik Ko\u0142ysania Broni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77217725805993984
+    m_Localized: "Do\u0142\u0105cz na serwer Discord"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77262095150194688
+    m_Localized: Oficjalna strona internetowa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79092237568811008
+    m_Localized: "Podpowiedzi \u0141apania si\u0119 Hakiem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104177924317184
+    m_Localized: Dobra robota buntowniku, trzymaj tak dalej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104216520302592
+    m_Localized: "\u015Awietnie walczy\u0142e\u015B, w\u0142a\u015Bnie takiej osoby
+      potrzebowa\u0142em."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104404752277504
+    m_Localized: "Nie smu\u0107 si\u0119, z\u0142o zawsze przegrywa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83104413484818432
+    m_Localized: "Co ty robisz? Przecie\u017C twoj\u0105 robot\u0105 by\u0142a wygrana!
+      Zostaniesz zwolniony!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380486009233408
+    m_Localized: "Bieganie Po \u015Acianach"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380605660143616
+    m_Localized: "Szybkie R\u0105czki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380695535689728
+    m_Localized: "\u017Baba"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380726422544384
+    m_Localized: Oznaczenie trafienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380820853104640
+    m_Localized: Nerd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380889027321856
+    m_Localized: Gruby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83380922325901312
+    m_Localized: Bot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83401314012733440
+    m_Localized: Atuty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464252526403584
+    m_Localized: "U\u017Cywane do biegania po \u015Bcianach"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464648506449920
+    m_Localized: "Szybkie r\u0105czki pomagaj\u0105 ci szybciej prze\u0142adowywa\u0107
+      o tyle szybciej \u017Ce o ho ho"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464695826587648
+    m_Localized: "To pozwala skaka\u0107 ci BARDZO WYSOKO jak \u017Caba, kumasz?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464729955639296
+    m_Localized: "Je\u017Celi masz problemy z widokiem (kup sobie okulary) to ten
+      atut pomo\u017Ce ci widzie\u0107 czy trafiasz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464764109856768
+    m_Localized: "Ten atut sprawia \u017Ce jeste\u015B wolniejszy ale zadajesz wi\u0119cej
+      obra\u017Ce\u0144."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464802022170624
+    m_Localized: "Ten atut sprawia \u017Ce jeste\u015B wolniejszy ale masz wi\u0119cej
+      zdrowia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83464867809828864
+    m_Localized: "Ten atut sprawia \u017Ce masz r\u0119ce jak z metalu czyli s\u0105
+      bardziej stabilne i masz mniejszy odrzut broni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83817815756742656
+    m_Localized: "Wy\u015Bcig zbroje\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83861299565928448
+    m_Localized: Ekspert liny z hakiem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83863935652438016
+    m_Localized: "Pozwala szybciej si\u0119 z\u0142apa\u0107 hakiem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83869235633692672
+    m_Localized: Czas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 83871336032083968
+    m_Localized: "Kr\xF3l Wzg\xF3rza"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84237355653242880
+    m_Localized: "<color=green>Zainfekowany</color> pojawi si\u0119 za <color=red>{0}</color>
+      sek."
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 84237611228962816
+    m_Localized: "Nast\u0119pny punkt pojawi si\u0119 za <color=red>{0}</color> sek."
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 84776015318458368
+    m_Localized: Losowe Bronie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84862315962802176
+    m_Localized: Poziom broni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84865771092025344
+    m_Localized: "Zwyci\u0119stwo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 84865954156617728
+    m_Localized: Przegrana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151629766140432384
+    m_Localized: Wszystko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 85879466848919552
+    m_Localized: Edytor Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87852218644406272
+    m_Localized: "Do\u0142\u0105cz do randomowego meczu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87852516372881408
+    m_Localized: "Zhostuj sw\xF3j w\u0142asny serwer dla innych graczy <size=12><color=red>UWAGA
+      gracze z s\u0142abymi urz\u0105dzeniami nie powinni tworzy\u0107 serwer\xF3w
+      </color>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87853506333483008
+    m_Localized: "Przegl\u0105daj list\u0119 serwer\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 87853540571586560
+    m_Localized: "Po\u0107wicz swoje umiej\u0119tno\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88815895119896576
+    m_Localized: "Mo\u017Cesz po\u0107iwczy\u0107 swoje umiej\u0119tno\u015Bci takie
+      jak celowanie na strzelnicy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88816078171906048
+    m_Localized: "Zaczekaj na wystarczaj\u0105c\u0105 liczb\u0119 graczy by zacz\u0105\u0107
+      gr\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88818164833951744
+    m_Localized: "Zabij wszystko co si\u0119 rusza. Gdy czas dobiegnie ko\u0144ca,
+      wygra osoba z najwi\u0119ksz\u0105 ilo\u015Bci\u0105 zab\xF3jstw."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88818506631979008
+    m_Localized: "Likwiduj cz\u0142onk\xF3w dru\u017Cyny przeciwnej. Dru\u017Cyna
+      z najwi\u0119ksz\u0105 liczb\u0105 zab\xF3jstw pod koniec meczu, wygrywa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88819226647175168
+    m_Localized: Zabijaj innych i zbieraj ich bananowe dusze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88819359287844864
+    m_Localized: "Po 15 sekundach pojawi si\u0119 jeden zainfekowany jego zadaniem
+      jest zainfekowa\u0107 ka\u017Cdego."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88819500476506112
+    m_Localized: "Pozosta\u0144 w punkcie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88819581359464448
+    m_Localized: "To samo co bijatyka, ale bronie s\u0105 losowe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88819926793953280
+    m_Localized: "Po pewnej liczbie zab\xF3jstw zyskujesz now\u0105 bro\u0144 umieszczon\u0105
+      w puli."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88877957527347200
+    m_Localized: Pobieranie informacji o graczu...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88880496859652096
+    m_Localized: Pobieranie informacji o grze...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88880705324949504
+    m_Localized: Incjalizowanie gracza...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88952017481342976
+    m_Localized: "Dzienne Zadania: Pozosta\u0142o {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 89197137321500672
+    m_Localized: "Otw\xF3rz Skrzynk\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89198169531326464
+    m_Localized: Odblokuj {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 89205146315628544
+    m_Localized: "Mo\u017Cesz otrzyma\u0107 nast\u0119puj\u0105ce przedmioty:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89434912054550528
+    m_Localized: Wycisz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89434937262317568
+    m_Localized: "Na\u0142\xF3\u017C Blokad\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89434988248276992
+    m_Localized: "Wyrzu\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435013791588352
+    m_Localized: Profil Steam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435075825344512
+    m_Localized: Kopiuj Steam ID
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89435141273264128
+    m_Localized: "Zg\u0142o\u015B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89532266866778112
+    m_Localized: "Pow\xF3d zg\u0142oszenia:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89533891945668608
+    m_Localized: Wall Hack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534547699933184
+    m_Localized: Wspomagacz celowania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534605539385344
+    m_Localized: Latanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89534636489154560
+    m_Localized: Inne Oszustwo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89536635838373888
+    m_Localized: "Wi\u0119cej szczeg\xF3\u0142\xF3w:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89541091007111168
+    m_Localized: "Wy\u015Blij zg\u0142oszenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89573474548817920
+    m_Localized: "Zg\u0142oszenia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89622678440747008
+    m_Localized: "Potwierd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89623301055815680
+    m_Localized: "Wi\u0119cej"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89882073359687680
+    m_Localized: "Wci\u015Bnij <b><color=red>H</color></b> by zg\u0142osi\u0107 tego
+      gracza"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89887473043742720
+    m_Localized: "Kopiuj ID zg\u0142aszaj\u0105cego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89887556732690432
+    m_Localized: "Kopiuj ID zg\u0142oszonego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89923968127442944
+    m_Localized: Tryb Serwera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89924236185411584
+    m_Localized: Normalny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89924373074911232
+    m_Localized: 1 v 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90001861679489024
+    m_Localized: Bonusowe Zadanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90301653752193024
+    m_Localized: "Mecz mo\u017Ce si\u0119 zacz\u0105\u0107 tylko wtedy kiedy w grze
+      jest 2 graczy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90301774715920384
+    m_Localized: "Gra osi\u0105gn\u0119\u0142a wymagan\u0105 liczb\u0119 graczy,
+      mo\u017Cesz ju\u017C rozpocz\u0105\u0107 mecz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90380341428592640
+    m_Localized: "zawalcz z kim\u015B w pojedynku 1 v 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90406681594798080
+    m_Localized: "Zarz\u0105dzaj"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90428971489402880
+    m_Localized: "Ostrze\u017C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90431704971845632
+    m_Localized: "Zarz\u0105dzaj - {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 90433122365579264
+    m_Localized: "Usu\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90479115144503296
+    m_Localized: Turniej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90479835340054528
+    m_Localized: "W\u0142\u0105cz Turniej"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90482621591035904
+    m_Localized: Nagroda Turnieju
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90668324933312512
+    m_Localized: Bunt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90668355983745024
+    m_Localized: Sojusz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90669703441653760
+    m_Localized: "Wybierz dru\u017Cyn\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90674723742523392
+    m_Localized: Wybrane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90728511329247232
+    m_Localized: "Wy\u0142\u0105cz Specjalne Bronie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90919838616625152
+    m_Localized: "Pula nagr\xF3d"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90921889337679872
+    m_Localized: Anuluj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90927266477350912
+    m_Localized: Nazwa Turnieju
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90928038141206528
+    m_Localized: Opis Turnieju
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90928423568384000
+    m_Localized: Rozpocnij Turniej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90982847200337920
+    m_Localized: 'Turniej: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 92209542016245760
+    m_Localized: "U\u017Cyj"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92229738307231744
+    m_Localized: "Wybierz przedmiot do po\u0142\u0105czenia:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92468962868568064
+    m_Localized: "Po\u0142\u0105cz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 92805287119396864
+    m_Localized: "Bro\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93550809534930944
+    m_Localized: "Niesko\u0144czony"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97566137776578560
+    m_Localized: "Gracze z s\u0142abszymi komputerami nie s\u0105 rekomendowani do
+      hostowania serwer\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98220479718334464
+    m_Localized: "Pocisk Naprowadzaj\u0105cy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98236328269291520
+    m_Localized: "Poziom Szybko\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98236455079878656
+    m_Localized: "Poziom Podw\xF3jnego skoku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98236499770187776
+    m_Localized: "Poziom Wci\u0119cia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98236691961585664
+    m_Localized: Poziom Zdrowia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98593089287331840
+    m_Localized: "Usta\u0144 tutaj"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98655077883420672
+    m_Localized: "W\u0142\u0105cz brutalne tre\u015Bci (Gore)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98655085156343808
+    m_Localized: "W\u0142\u0105cz Samouczek (Podpowiedzi)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98655114432585728
+    m_Localized: "W\u0142\u0105cz Animowane Ulepszenia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99015564601040896
+    m_Localized: "Powt\xF3rki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99712289010081792
+    m_Localized: "Odtw\xF3rz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99713277657866240
+    m_Localized: "Odtw\xF3rz jako..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100065148020973568
+    m_Localized: "Zako\u0144cz Nagrywanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100075540407377920
+    m_Localized: "Zacznij Nagrywa\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100080358043672576
+    m_Localized: Nagrywanie...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100106295971930112
+    m_Localized: Pomoc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100106320022069248
+    m_Localized: "Nie wiesz jak nagrywa\u0107 powt\xF3rki?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100464696253997056
+    m_Localized: "Nie pokazuj tego nast\u0119pnym razem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100822575716753408
+    m_Localized: "Tryb gry gdzie walczysz z przeciwnikami (PvE). Przeciwnicy pojawiaj\u0105
+      si\u0119 w szybciej i w wi\u0119kszych ilo\u015Bciach z czasem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102204724399300608
+    m_Localized: "Zobacz Historie Ostrze\u017Ce\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102625036328755200
+    m_Localized: "Kup bro\u0144...."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102638005833949184
+    m_Localized: Interakcja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135676076267212800
+    m_Localized: Utworzono:{0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 145646984641712128
+    m_Localized: "{0} Serwer\xF3w"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 145646997170098176
+    m_Localized: '{0} Graczy'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 148781681152430080
+    m_Localized: '(Przyjaciele): {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149465292956569600
+    m_Localized: "Data Zg\u0142oszenia: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149465256893943808
+    m_Localized: "Pow\xF3d: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149464982141865984
+    m_Localized: "Nazwa Zg\u0142osiciela: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149464980959072256
+    m_Localized: 'Nazwa: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149464971354116096
+    m_Localized: 'Steam ID: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149464979755307008
+    m_Localized: "Steam ID Zg\u0142o\u015Biciela: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 149464508521058304
+    m_Localized: "ID Zg\u0142oszenia: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 105500137474744320
+    m_Localized: "Z\u0142ap Banana"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105500255003336704
+    m_Localized: 'Masz <color=yellow>Banana</color>
+
+
+      <b>Nie zgub go</b>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105529750330531840
+    m_Localized: "Pilnuj swojego banana, nie zgub go. A je\u017Celi go stracisz,
+      zabij osob\u0119 z bananem by go odzyska\u0107. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135124575325065216
+    m_Localized: Kariera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135133376249925632
+    m_Localized: Niestandardowy Tryb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135674248053985280
+    m_Localized: 'Ocena:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135967242569191424
+    m_Localized: "Wejd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135970475907813376
+    m_Localized: "Stw\xF3rz Now\u0105 Map\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136307303303155712
+    m_Localized: "Wr\xF3\u0107 Do Edytora"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138008380943699968
+    m_Localized: "W\u0142\u0105cz Warsztat Steam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138058513265790976
+    m_Localized: Notka Aktualizacji
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138164838800887808
+    m_Localized: "Wybierz mapy na kt\xF3rych chcesz zagra\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138410305400934400
+    m_Localized: "Wczytywanie \u015Awiata..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138467483679789056
+    m_Localized: "Spr\xF3buj Pobra\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 138859872894390272
+    m_Localized: Zmodifykowane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145645374750396416
+    m_Localized: Oficjalny server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145660035281522688
+    m_Localized: Serwer Hostowany Przez Gracza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145660319613390848
+    m_Localized: "Serwer Spo\u0142eczno\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145668598448066560
+    m_Localized: Ulubione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145671853156667392
+    m_Localized: Przyjaciele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145672473666195456
+    m_Localized: Histora
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145686767233470464
+    m_Localized: Wyszukaj Serwer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145686865094971392
+    m_Localized: Tag Serwera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145688212515131392
+    m_Localized: Bardzo Aktywny Server
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145688217175003136
+    m_Localized: "Niepe\u0142ny"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145688245381697536
+    m_Localized: Posiada Boty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145734534156849152
+    m_Localized: "Wyczy\u015B\u0107 Filtr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145745750157758464
+    m_Localized: LAN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148376141536497664
+    m_Localized: Wczytywanie Gry...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148378100758810624
+    m_Localized: "Wczytywanie Zada\u0144..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148378186595241984
+    m_Localized: "Wczytywanie Powt\xF3rek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148378318921338880
+    m_Localized: Wczytywanie Edytora Map...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 148378405810540544
+    m_Localized: Wczytanie Warsztatu Steam...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149392417394331648
+    m_Localized: "ID Zg\u0142oszenia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149395105024643072
+    m_Localized: Steam ID
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149395988198264832
+    m_Localized: "Steam ID Zg\u0142osiciela"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149396293598121984
+    m_Localized: "Pow\xF3d"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149397677450006528
+    m_Localized: Heurystyczny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149397793758056448
+    m_Localized: Wykrycie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149397798782832640
+    m_Localized: "Zg\u0142oszenie Gracza"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149398111732436992
+    m_Localized: "Data Zg\u0142oszenia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149432377568727040
+    m_Localized: 'Start:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149444279967485952
+    m_Localized: 'Koniec:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149474645235273728
+    m_Localized: Brak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149486849351290880
+    m_Localized: "Wczytywanie R\xF3l..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149707441228812288
+    m_Localized: "Nieudana inicjacja Steam. Urchom ponownie gr\u0119."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149715401426407424
+    m_Localized: Wczytywanie Poziomu...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149715440366325760
+    m_Localized: "Wczytywanie Tablicy Wynik\xF3w..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 149717125625090048
+    m_Localized: Uwierzytelnianie...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153067039880974336
+    m_Localized: Strzelnica | {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 153636050104553472
+    m_Localized: "Ilo\u015Bc Zg\u0142osze\u0144: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359023550435328
+    m_Localized: Deathmatch | {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359100645937152
+    m_Localized: "Dru\u017Cynowy Deathmatch | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359190160773120
+    m_Localized: "Zab\xF3jstwo Potwierdzone | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359188722126848
+    m_Localized: Infekcja | {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359191586836480
+    m_Localized: Losowanka | {0}
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359192849321984
+    m_Localized: "Kr\xF3l Wzg\xF3rza | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359389855780864
+    m_Localized: "Z\u0142ap Banana | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157359388958199808
+    m_Localized: "Wy\u015Bcig Zbroje\u0144 | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 157685679083294720
+    m_Localized: "Niesko\u0144czony | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 151921816970792960
+    m_Localized: "Wszystkie sk\xF3rki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921884285177856
+    m_Localized: Karabin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921938685300736
+    m_Localized: Pistolet Maszynowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151921993139949568
+    m_Localized: Lekki Karabin Maszynowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151922032545435648
+    m_Localized: Snajperka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151922086140252160
+    m_Localized: "Wszystkie Cz\u0105steczki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151922102447706112
+    m_Localized: Wszystkie Odznaki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152160204974002176
+    m_Localized: Najnowsze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152160239597981696
+    m_Localized: "Rzadko\u015Bc"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152163823429423104
+    m_Localized: Alfabetycznie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152165535913414656
+    m_Localized: "Wyposa\u017Cono"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152206154346074112
+    m_Localized: Online
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152206160054521856
+    m_Localized: Offline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152212729966170112
+    m_Localized: "Zaj\u0119ty"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152212789021970432
+    m_Localized: Nieaktywny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152212859775684608
+    m_Localized: Drzemka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152212895603429376
+    m_Localized: Wmiana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152251980585963520
+    m_Localized: "Wci\u015Bnij Spacj\u0119 By Wy\u015Bwietli\u0107 Swoj\u0105 Posta\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 153652454761500672
+    m_Localized: Bronie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 154138504629915648
+    m_Localized: "G\u0142osowanie na map\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 156656648321830912
+    m_Localized: "Roz\u0142\u0105cz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160617501719072768
+    m_Localized: "Jeden Strza\u0142 Jedno Zab\xF3jstwo | {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 160218527149395968
+    m_Localized: "Zobacz Dat\u0119 Zg\u0142osze\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160265849099063296
+    m_Localized: Oczekiwanie na innych graczy...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160266407331565568
+    m_Localized: Rozpoczynanie Gry...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160289499084820480
+    m_Localized: Wymuszony Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160566958728482816
+    m_Localized: "Jeden Strza\u0142 Jedno Zab\xF3jstwo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160595252794429440
+    m_Localized: "Mo\u017Cesz zabija\u0107 przeciwnik\xF3w jednym strza\u0142em ale
+      masz tylko Deagle'a i n\xF3\u017C :)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163489242149621760
+    m_Localized: Warsztat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163493958539612160
+    m_Localized: Zasubskrybowane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163497380470919168
+    m_Localized: Niedawne Na Czasie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163569216130977792
+    m_Localized: Zainstaluj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163569565927542784
+    m_Localized: Odinstaluj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163586337682558976
+    m_Localized: Najpopularniejsze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163586662854365184
+    m_Localized: Najnowsze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163590824430211072
+    m_Localized: Obserwowane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163590989572542464
+    m_Localized: Ulubione
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163591137128157184
+    m_Localized: "Przedmioty Przyjaci\xF3\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163591272813891584
+    m_Localized: Moje Przedmioty z Warsztatu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163591502628196352
+    m_Localized: Otworz Warsztat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166696540984643584
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 166714560712871936
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189609596530003968
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 189613099948249088
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 189613080583147520
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 193966356065751040
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  - m_Id: 166696699256705024
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172522991516454912
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 172522526586245120
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177294907674529792
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177996655519141888
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180213527052357632
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180213542445453312
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180218599345819648
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 180218642404544512
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181637494099218432
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189603958915665920
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193912357035773952
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 244980587283943424
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 189510242361147394
+  references:
+    version: 2
+    RefIds:
+    - rid: 189510242361147394
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00a0873fdab4490100a007d7e1b4490100a00723fdb4490100a047a201b5490100a0474b05b5490100a0077908b5490100a0472b7240590100a0070b8042590100a0c7339b78590100a047441b485d0100e0ef3f421e6b0100a007933bc73d0100a0078fd86a3e0100a08723ef773e0100e06f5c3e776c0100e06f7cb2f66e0100e0ef1363046f0100e0ef048013000100e0efafbb11000100e0afdfa611000100e0af0a8411000100e02fe76411000100e02f175011000100e02fe93611000100e06f310511000100e0efe7e90f000100e0ef3d490d000100e0ef200603000100e0ef5fd401000100e06fc9bd13000100e0afc6cf13000100e0efa7de13000100e06fadf213000100e0ef790b14000100e02fe81e14000100e02fbf8916000100e0eff2c31d000100e0afc3d517000100e0af196f18000100e0af4fa731000100e0af5ffe31000100e02f560132000100e02f5ba43f000100e02f34dc3f000100a0873943e53c0100a0077c63053c0100a0073ea9452b0100a087bc6d452b0100a047132847410100a007e06a3c430100106d2aac04e20100102d2e297105020010ed182c71050200102d96269410020010ed5ce401130200106df7db0113020010edfe9b01130200106db89b0113020010ed7b990113020010ad709b0113020010edb82d0113020010ed6aa9cd1f0200102d6f2cd321020010edbc320d2f0200102db0440d2f020010ad87590d2f020010ed31590d2f020010addc590d2f020010ed275a0d2f0200106d06880d2f020010edd0870d2f020010ed274a3630020010ad4ec4a03a02ccdf2fbf8916000100102d67eca0a10200102d1b1ca4a1020010ed9817a4a1020010ad875f1bb1020010edd18b586603

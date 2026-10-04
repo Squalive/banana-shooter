@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db9718d62eea6c102c7ed52047fd689cfa0d691377f42d757870ec7d38d76368
-size 769
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: fire_particle
+  m_EditorClassIdentifier: 
+  itemdefid: 188
+  displayName: Fire Particle
+  description: fire uwu
+  tag: fire
+  type: 9
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 1a435a93bc64d0748b521b9d93f5e67b, type: 3}
+  mesh: {fileID: 0}
+  materials: []
+  index: 0
+  alpha: 1
+  size: {x: 0.1, y: 0.1, z: 0.1}
+  defaultRotation: {x: 0, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 0

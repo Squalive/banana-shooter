@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:75ae3ef5e10928e9a84ff55fcf2b4e50ccd874afe7a29179d2f41239d7fc8424
-size 899
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: BananaKnife
+  m_EditorClassIdentifier: 
+  weaponName: BananaKnife
+  chineseName: "\u9999\u8549\u5200"
+  price: 500
+  texture: {fileID: 2800000, guid: c9b195f6fb35bfe4bbabe9aad26bac44, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: ef57ee166d7b1ce4bbadfabbd5d402d4, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 3f052afd4bfb0cd4ea44efeebc21a46f, type: 2}
+  size: {x: 0.8232, y: 0.8232, z: 0.8232}
+  defaultRotation: {x: 314.99997, y: 270, z: 90}
+  damage: 100
+  damageOffset: 10
+  specialWeapon: 0
+  weaponType: 6

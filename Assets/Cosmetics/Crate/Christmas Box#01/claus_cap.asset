@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:949dd96771b451bdfb72d91b2ffdbcfebf9c66815ef38fb1934834cf1bb546a9
-size 1043
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: claus_cap
+  m_EditorClassIdentifier: 
+  itemdefid: 166
+  displayName: Claus Cap
+  description: 
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: 9680555c6d7bab64bb98f0a9b7233d9d, type: 3}
+  mesh: {fileID: -3555194690524226596, guid: 8d560ea951ffa81478606a40111901b5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 450f83e11e5563e46be757c3c0d05f64, type: 2}
+  - {fileID: 2100000, guid: 149ae3287cd6e88478ab61e3bae1112d, type: 2}
+  index: 21
+  alpha: 1
+  size: {x: 5.537617, y: 5.537617, z: 4.318717}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 90cfec7ac822f754bb135ba3bfc81223, type: 2}
+  canApplyParticle: 1

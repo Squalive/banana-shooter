@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:331d367d0c09141008db0af38850d3a40671cbfb59f98aae4b165bef9652534a
-size 1081
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Vr Headset
+  m_EditorClassIdentifier: 
+  itemdefid: 121
+  displayName: Vr Headset
+  description: This changes your reality to banana
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: d74f8996b33ebe74c9d338ef5c9a58fc, type: 3}
+  mesh: {fileID: -400350589498950418, guid: aed95c19bd7e0294d9adf138901ec551, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 44b06c02260d84a4689ba18ea0061f11, type: 2}
+  - {fileID: 2100000, guid: befe10b0b02d29d4fad5e8829f6cc0c6, type: 2}
+  - {fileID: 2100000, guid: 30eca81cc38b9c3438fd5cbaef8ff84f, type: 2}
+  index: 8
+  alpha: 1
+  size: {x: 4.5389, y: 1.120632, z: 1.9341488}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  relatedItem: []
+  canApplyParticle: 1

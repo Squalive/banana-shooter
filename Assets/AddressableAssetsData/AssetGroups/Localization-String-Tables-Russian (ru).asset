@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa40ce3e247911492d442f0361dabe88fe3e5835426fc44e5338b1cc53a38d03
-size 1860
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Russian (ru)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Russian (ru)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 976acd774e43869458bc715b69f95ecc
+  m_SerializeEntries:
+  - m_GUID: 35bf67764adc8f043991915aacb4590f
+    m_Address: Map Editor_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 3df48c8b2e4d28c4d869fe46bc4104be
+    m_Address: Notification_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 6286f22d35bb20543987c2244894f247
+    m_Address: Map_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 69aa5060aa050404382bf6d2703634bc
+    m_Address: FAQ_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 7a72877349262de42a66e8f693fe4c32
+    m_Address: Quest_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 88af2358d768da047a86e9b889f75970
+    m_Address: VoiceLine_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 99be603b52803b24082443015950e5a6
+    m_Address: UI Text_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cfc229797ee13004cb06de4223e3d922, type: 2}
+    - {fileID: 11400000, guid: df71db9a42327bc4593231c09ec15846, type: 2}

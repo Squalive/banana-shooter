@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3016addfcc3e01bf95fcecdfcfff739bf7dbaafc6948fb5d93a43c71502dbb3a
-size 1012
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Normal Shoe
+  m_EditorClassIdentifier: 
+  itemdefid: 124
+  displayName: Normal Shoe
+  description: Perfesional gamers should wear it
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 7273437bc19f68e4985ad933ae2e51ff, type: 3}
+  mesh: {fileID: -301419367857345413, guid: c5e209c2badddc948a4aa33ddf6acff4, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 88a2036a8e05e4d4c9bb5b6079816b88, type: 2}
+  - {fileID: 2100000, guid: 9caee32e622a7ee4eb8740bf55ca645c, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 2.4448907, y: 6.7976685, z: 6.7976685}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

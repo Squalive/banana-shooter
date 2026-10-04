@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:14770719ab3d87c654166b21ffe5726e32cf5e13a99a32c9d826214dd599e1fb
-size 903
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Saw
+  m_EditorClassIdentifier: 
+  itemdefid: 103
+  displayName: Saw
+  description: Saw,but saw
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: d0cea52c1560e1a468401c1862dd2eac, type: 3}
+  mesh: {fileID: 1779601754579333883, guid: d052a92f2ab7f67449593186bf0244c2, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 59261440bebbdfc4889ca16ab404c0a3, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 2.2184782, y: 2.2184784, z: 2.2184784}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

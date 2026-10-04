@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:231b9e78f4655a2d6e7cfe4db933afce7a399162c57c163e368bfeb9519689df
-size 892
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Halo
+  m_EditorClassIdentifier: 
+  itemdefid: 140
+  displayName: Halo
+  description: 
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 7
+  icon: {fileID: 2800000, guid: f02728384a775594ab0a5e613b2daf93, type: 3}
+  mesh: {fileID: 8484278402251356901, guid: 78dbffb733ee26742a00ddeeea9fac87, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 17d72d9b343a9034dab6b7ba083d3cb3, type: 2}
+  index: 15
+  alpha: 1
+  size: {x: 3.744252, y: 3.744252, z: 3.744252}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

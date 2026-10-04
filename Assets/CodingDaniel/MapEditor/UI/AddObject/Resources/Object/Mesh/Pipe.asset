@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6b368e6e3427a3b1ceaf27755a731bdf33600258bca20995facca2a27f37e79b
-size 515
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7559829c394a15341be8c5d547e2ee83, type: 3}
+  m_Name: Pipe
+  m_EditorClassIdentifier: 
+  type: 1
+  prefab: {fileID: 0}
+  icon: {fileID: 2800000, guid: 4a39487f7b319f84f903842068124687, type: 3}
+  shapeType: 7

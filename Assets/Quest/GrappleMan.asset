@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29f88057da17b821831380df2ef342d2c6886bdef6ba6caefc26f62ad6656442
-size 571
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29133cd8456942d4a400d10119b1631a, type: 3}
+  m_Name: GrappleMan
+  m_EditorClassIdentifier: 
+  questType: 7
+  nameKey: q_grappleman_name
+  descKey: q_grappleman_desc
+  prizeKey: q_prize_only_exp
+  requiredAmount: 3
+  expReward: 10000
+  bonus: 0
+  rewards: 00000000

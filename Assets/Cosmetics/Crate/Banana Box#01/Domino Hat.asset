@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d5a569d62b418e2d413d3f2c0b706924763d4946ca69ec2b65cbe797304a530
-size 1194
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Domino Hat
+  m_EditorClassIdentifier: 
+  itemdefid: 130
+  displayName: Domino Hat
+  description: just push one domino block and you are good to go
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: 858da04b88d4b794c9a7377fd4f38153, type: 3}
+  mesh: {fileID: 4964335778071558598, guid: 3117bf8dbc337bc439870c54c1e76535, type: 3}
+  materials:
+  - {fileID: 2100000, guid: de084d148bf5d7141a8049a7cefa8860, type: 2}
+  - {fileID: 2100000, guid: 89d982e1e919b364280858642ec485e6, type: 2}
+  - {fileID: 2100000, guid: d4396607f7a42b14bba6182b5a7cc487, type: 2}
+  - {fileID: 2100000, guid: 70e3157ba9f1e8b4da8a868b52e829ad, type: 2}
+  index: 10
+  alpha: 1
+  size: {x: 4, y: 4, z: 4}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: 0, y: -90, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

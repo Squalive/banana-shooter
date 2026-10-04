@@ -1,3 +1,581 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9cd89c4eeebb425d77632516f0e87195e37c15ed2014b5638a97321ec4c044f7
-size 13157
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Map Editor_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d28b155e90fb15d42bac5b85d4b84613, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 5129693579901140994
+  m_TableData:
+  - m_Id: 6885806080
+    m_Localized: Object
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32336842752
+    m_Localized: Lighting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335702462464
+    m_Localized: Tiling And Alignment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254991470592
+    m_Localized: UV Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628662013952
+    m_Localized: Fill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 660769411072
+    m_Localized: Anchor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704079794176
+    m_Localized: Transform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 788016205824
+    m_Localized: Rotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 823512600576
+    m_Localized: Tiling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895113564160
+    m_Localized: Offset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000726138880
+    m_Localized: Special
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095655821312
+    m_Localized: World Space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1125745758208
+    m_Localized: Flip U
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1155177189376
+    m_Localized: Flip V
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1178669486080
+    m_Localized: Swap UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1205215236096
+    m_Localized: Group Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1248622088192
+    m_Localized: Ungroup Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1279462805504
+    m_Localized: Select Face Group
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1303554887680
+    m_Localized: Reset UVs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395720523776
+    m_Localized: File
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1420869570560
+    m_Localized: Edit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1469586411520
+    m_Localized: GameObject
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496845193216
+    m_Localized: Mesh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521243459584
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1619155292160
+    m_Localized: Exit Editor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645923340288
+    m_Localized: Undo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1656715284480
+    m_Localized: Redo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1662943825920
+    m_Localized: Select All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1666257326080
+    m_Localized: Map Setting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2081287901184
+    m_Localized: Cube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2082047070208
+    m_Localized: Stair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2141497135104
+    m_Localized: Curved Stair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2143153885184
+    m_Localized: Prism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144361844736
+    m_Localized: Cylinder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2193812688896
+    m_Localized: Plane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2214897455104
+    m_Localized: Door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2227375509504
+    m_Localized: Pipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2238691741696
+    m_Localized: Cone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2248703545344
+    m_Localized: Sprite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264293773312
+    m_Localized: Arch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2275618394112
+    m_Localized: Sphere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2289711255552
+    m_Localized: Torus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363233210368
+    m_Localized: Merge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2414160449536
+    m_Localized: Subdivide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416349876224
+    m_Localized: Flip Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2417377480704
+    m_Localized: Vertex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2463619682304
+    m_Localized: Edge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2483811061760
+    m_Localized: Subdivide Edge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2494229712896
+    m_Localized: Insert Edge Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506229616640
+    m_Localized: Fill Hole
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548709527552
+    m_Localized: Subdivide Face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2567227379712
+    m_Localized: Merge Faces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2582574338048
+    m_Localized: Reset UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770118447104
+    m_Localized: Skybox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2871570272256
+    m_Localized: Source
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2794139226112
+    m_Localized: Use Directional Lighting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3402606907392
+    m_Localized: Point Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4038316593152
+    m_Localized: Color Picker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7820635082752
+    m_Localized: <color=green>Done</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20029289336832
+    m_Localized: Skybox Color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35882189787136
+    m_Localized: Face
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39676462043136
+    m_Localized: Enable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39870448603136
+    m_Localized: Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39926849409024
+    m_Localized: Intensity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40013952520192
+    m_Localized: Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40084991447040
+    m_Localized: Spot Angle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40918840053760
+    m_Localized: '*Select a face to edit'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089454998360064
+    m_Localized: Save As
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1709000025247744
+    m_Localized: Inner Spot Angle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743746621050880
+    m_Localized: Any changes will be lost if you discard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747327935909888
+    m_Localized: Discard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117591957835776
+    m_Localized: Player Spawn Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117805968003072
+    m_Localized: Spawn Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144761983864832
+    m_Localized: Color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2484349323513856
+    m_Localized: Add Material
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485179455967232
+    m_Localized: Base Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485843397513216
+    m_Localized: Select Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486514200940544
+    m_Localized: Height Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486527224254464
+    m_Localized: Normal Texture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2487370568765440
+    m_Localized: Add
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2521159038734336
+    m_Localized: Smoothness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2524830766010368
+    m_Localized: Saving...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2527399018041344
+    m_Localized: Metallic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528804487368704
+    m_Localized: Material Editing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533025496502272
+    m_Localized: Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534073611128832
+    m_Localized: Remove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831692015144960
+    m_Localized: Normal Scale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831706347081728
+    m_Localized: Height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3052938971648000
+    m_Localized: Decal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3053571791458304
+    m_Localized: NotFunny is a joke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067927388295168
+    m_Localized: Width
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067933415510016
+    m_Localized: Height
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067958052851712
+    m_Localized: Depth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3076413081849856
+    m_Localized: Bro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3090486615937024
+    m_Localized: New Custom Decal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3154409771831296
+    m_Localized: Add Decal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3422783743528960
+    m_Localized: Publish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3424982095695872
+    m_Localized: Duplicate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3441991667748864
+    m_Localized: Read More
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3442059246374912
+    m_Localized: By submitting this item, you agree to the workshop terms of service
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502551193161728
+    m_Localized: The update process is invaild, pls try to re update it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502579928338432
+    m_Localized: The item update is processing configuration data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502590552510464
+    m_Localized: The item update is reading and processing content files
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502600350404608
+    m_Localized: The item update is uploading content changes to Steam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502613537296384
+    m_Localized: The item update is uploading new preview file image
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502635146350592
+    m_Localized: The item update is committing all changes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3520075548921856
+    m_Localized: '<color=red>Failed</color>: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 5129693579901140994
+  - m_Id: 3589254230642688
+    m_Localized: Local
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3589266440261632
+    m_Localized: Published
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295526135435264
+    m_Localized: Decoration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295757711347712
+    m_Localized: Grapple Point
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584246285766656
+    m_Localized: Vendo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584253600632832
+    m_Localized: Scary Plant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4851010793967616
+    m_Localized: AudioSource
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4870496565661696
+    m_Localized: New Audio Source
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4957525362151424
+    m_Localized: Add Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045261804834816
+    m_Localized: Max Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045292226121728
+    m_Localized: Min Distance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047489202556928
+    m_Localized: Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5048037922377728
+    m_Localized: Spatial Blend
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5053172417368064
+    m_Localized: Doppler Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17630312782434304
+    m_Localized: Map Bound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18009920191139840
+    m_Localized: Shooting Borad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18017058816856064
+    m_Localized: Map Bound Center
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019379332321280
+    m_Localized: Halloween Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019409954934784
+    m_Localized: Chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019462585061376
+    m_Localized: Laptop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019545003134976
+    m_Localized: Package
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025202062266368
+    m_Localized: Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025237546078208
+    m_Localized: IMALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025264305737728
+    m_Localized: Pumpkin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025301307887616
+    m_Localized: Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025327186743296
+    m_Localized: Table Long
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18030187416195072
+    m_Localized: Book Shelf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23922041823236096
+    m_Localized: Custom Models
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24199737924980736
+    m_Localized: Enable Collision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24201150893723648
+    m_Localized: Model
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45325044794855424
+    m_Localized: Bridge
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5129693579901140994
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0010ad747d810c00

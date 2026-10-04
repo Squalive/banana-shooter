@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e486c615b531ae681999b558caaca5dacae5404fa9afd4742782839fdce2b6e
-size 693
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c2cd05e1d61484f83b6f6e3e00adb6, type: 3}
+  m_Name: Help Command
+  m_EditorClassIdentifier: 
+  commandWord: help
+  key:
+  - normal
+  args:
+  - args:
+    - 0
+  helps:
+  - args:
+    - ban <playername>
+    - kick <playername>
+    - debug <method> <bool>
+    - help <pages>
+    - spawn <entities> <count>
+    - ui <which> <bool>
+    - entity <method>
+    - fps <bool>
+    - specter <bool>

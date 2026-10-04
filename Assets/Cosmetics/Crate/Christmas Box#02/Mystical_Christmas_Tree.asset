@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78d6bfc0a7084f736ddb50052532ebf247bf9608dc1ea813331a914682abbafb
-size 1357
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Mystical_Christmas_Tree
+  m_EditorClassIdentifier: 
+  itemdefid: 172
+  displayName: Mystical Christmas Tree
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 6cb2c2e2e2086f34c89a85293189ef21, type: 3}
+  mesh: {fileID: -2659891842951311632, guid: bf41b3a25e83922428baca0b77225689, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 30ebcb621f460bf408e3d8fb2e392631, type: 2}
+  - {fileID: 2100000, guid: 0ce395a6c74540b488e8c4a3f4779737, type: 2}
+  - {fileID: 2100000, guid: 9279e5bd769077547a42781fecbb05c3, type: 2}
+  - {fileID: 2100000, guid: 7cdee2f849b975b41b3c173602c3e43b, type: 2}
+  - {fileID: 2100000, guid: 8385a054913784e4ca49eb3d3b4d23d0, type: 2}
+  - {fileID: 2100000, guid: 5c15bf0fec96fce468a973b01bbc0a46, type: 2}
+  index: 22
+  alpha: 1
+  size: {x: 5.0052133, y: 5.0052133, z: 5.005214}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bb61b9aad01e12a730d19f1b75ce57bc8be69d188d2e4d5d573da7eca31e7121
-size 594
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297663e7e70c42342a02062fd3b74efd, type: 3}
+  m_Name: Scary Plant
+  m_EditorClassIdentifier: 
+  type: 2
+  prefab: {fileID: 6636373436579972389, guid: 010a5d95dfec94b4ba9dc37ea001cd7d, type: 3}
+  icon: {fileID: 2800000, guid: c6fe625502a62bb42a6908ceb88640ff, type: 3}
+  decorationType: 1

@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:36729aaca2049721588cc406672b8960948236f976c0a1b3cf7d7fc0c7b62cd7
-size 584
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29133cd8456942d4a400d10119b1631a, type: 3}
+  m_Name: CompleteQuest
+  m_EditorClassIdentifier: 
+  questType: 6
+  nameKey: q_completequest_name
+  descKey: q_completequest_desc
+  prizeKey: q_prize_exp_with_box
+  requiredAmount: 2
+  expReward: 20000
+  bonus: 0
+  rewards: 01000000

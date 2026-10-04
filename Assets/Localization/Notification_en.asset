@@ -1,3 +1,59 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:981ead711de424ec62b7f1d73bcaa2e12ce74ecb3edd117cf20ab04df3054562
-size 1427
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Notification_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1e1aa282f019d8e4c9c42cea7d44bd86, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8338776064
+    m_Localized: Message
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133916237824
+    m_Localized: Report Sent Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 597613322240
+    m_Localized: Refresh Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 849099595776
+    m_Localized: Freshing...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22374792011776
+    m_Localized: Copy Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538499590103040
+    m_Localized: Warn Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 538751801991168
+    m_Localized: Warn Failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852496704540672
+    m_Localized: Invitation Sent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103669968757657600
+    m_Localized: Voting Set Successfully
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

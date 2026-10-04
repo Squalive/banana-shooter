@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f39d7bd535b22909982597a43bd16792b06f2dc6ed24b4f97b7d9c6bb5b87f8e
-size 1223
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: WRD-4
+  m_EditorClassIdentifier: 
+  weaponName: WRD-4
+  chineseName: WRD-4
+  price: 2200
+  texture: {fileID: 2800000, guid: fdd77169516393f44ba9be2034c0bc05, type: 3}
+  skins:
+  - mesh: {fileID: -3496424260210696160, guid: 750e70140e06c354db6abf9ffdbbdb45, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 9895aa15778b70a4f8a20507db1a2754, type: 2}
+    - {fileID: 2100000, guid: 5f7cc419e732e4d4baaa061c816919b6, type: 2}
+    - {fileID: 2100000, guid: 51223f94f76a44c48b7a8f40dbe166a5, type: 2}
+    - {fileID: 2100000, guid: 23c5784e87fb8454eb0cf3f0ccea46e3, type: 2}
+  size: {x: 4, y: 4, z: 4}
+  defaultRotation: {x: -90, y: -90, z: -90}
+  damage: 23
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 3
+  weaponType: 3
+  bUseGravity: 0
+  maxAmmo: 40
+  fireRate: 13.5
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1.2
+  explosiveAmmo: 0

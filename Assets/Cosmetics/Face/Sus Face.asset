@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e25c701077df66c8d350c1ed00cce9bb77518bf9dac2216c03ae881a72c50db
-size 1048
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Sus Face
+  m_EditorClassIdentifier: 
+  itemdefid: 109
+  displayName: Sus Face
+  description: SUS
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: cd11af749fc5a21428822a26bb23c96e, type: 3}
+  mesh: {fileID: -1792928600167645093, guid: 71c9e10930d735344bf463cbf2758a05, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 8ae4592bba8f56c40af7c2d932134889, type: 2}
+  - {fileID: 2100000, guid: 4d89127a3158a6a44ab19ebd3a02c8d3, type: 2}
+  - {fileID: 2100000, guid: 2555951f1fed2e14f95d38a5d7d61803, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 3.8158488, y: 3.8158488, z: 3.8158488}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

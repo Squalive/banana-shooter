@@ -1,3 +1,171 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32bdf7b9fd227e79a9910e24b7c7c1953af563a91a33bde770f3a7184fa02e78
-size 4444
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Quest_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: d78f6e6cb0c4d254ba514fdcf881b362, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 189510264078467074
+  m_TableData:
+  - m_Id: 71214870011904
+    m_Localized: 'Nagroda:
+
+      {0} PD'
+    m_Metadata:
+      m_Items:
+      - rid: 189510264078467074
+  - m_Id: 71391685091328
+    m_Localized: 'Nagroda:
+
+      {0} skrzynka'
+    m_Metadata:
+      m_Items:
+      - rid: 189510264078467074
+  - m_Id: 6803660800
+    m_Localized: "Specjalista od karabin\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109136289792
+    m_Localized: "Zabij 50 os\xF3b z karabinu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1528312602624
+    m_Localized: Punkt Meczowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1569328701440
+    m_Localized: Rozegraj 5 meczy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1609224921088
+    m_Localized: "Mi\u0142o\u015Bnik banan\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1618917957632
+    m_Localized: "Zabij 20 os\xF3b z bananowej broni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54213967585280
+    m_Localized: Wykonuj zadania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54222549131264
+    m_Localized: Wykonuj inne zadania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54287258853376
+    m_Localized: Specjalista od liny z hakiem
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54295286751232
+    m_Localized: "Z\u0142ap si\u0119 hakiem w 3 r\xF3\u017Cnych meczach. Ka\u017Cda
+      mapa powinna mie\u0107 chocia\u017C jeden punkt do z\u0142apania."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54324512661504
+    m_Localized: Ekspert ds. skrzynkowych
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54338769100800
+    m_Localized: "Otw\xF3rz 3 skrzynki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54358478135296
+    m_Localized: "Urodzony zwyci\u0119zca"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54367915319296
+    m_Localized: Wygraj 2 mecze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71700910153728
+    m_Localized: 'Nagroda:
+
+      20000 PD
+
+      1 skrzynka'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1099997114769408
+    m_Localized: "Zab\xF3jca na zlecenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100037363310592
+    m_Localized: "Zabij 30 os\xF3b w jednym meczu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100064735338496
+    m_Localized: Noob
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100663598063616
+    m_Localized: "Zgi\u0144 100 razy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990854425075712
+    m_Localized: 1v1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990862310367232
+    m_Localized: Wygraj w lobby 1v1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990960893288448
+    m_Localized: "Mistrz Niesko\u0144czono\u015Bci"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990975808233472
+    m_Localized: "Przeterwaj 400 sek. w trybie Niesko\u0144czonym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991029491130368
+    m_Localized: "Niesko\u0144czony zab\xF3jca"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991042438946816
+    m_Localized: "Zabij 40 przeciwnik\xF3w w trybie Niesko\u0144czonym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991062995230720
+    m_Localized: "B\u0142ysk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991082125451264
+    m_Localized: "O\u015Blep 5 przeciwnik\xF3w granatem b\u0142yskowym"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991108193050624
+    m_Localized: Bombardier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991111347167232
+    m_Localized: "Zabij 15 przeciwnik\xF3w granatem"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991191831666688
+    m_Localized: "No\u017Cownik"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991202933989376
+    m_Localized: "Zabij 25 przeciwnik\xF3w u\u017Cywaj\u0105\u0107 no\u017Ca"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 189510264078467074
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00a00701c540000000a0072cee400000

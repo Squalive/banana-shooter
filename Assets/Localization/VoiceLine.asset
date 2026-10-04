@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d46bcc57a4d472c241004042bf907e84f7a0bac1437193bc511e41a54141b120
-size 874
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: VoiceLine
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 6dec0b14c6bcdf6449d2aa68888461d7, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: 3771c221bc422d049b2636a864d47e57, type: 2}
+  - {fileID: 11400000, guid: c10e42927dbe08347b60f6a1ccab3da2, type: 2}
+  - {fileID: 11400000, guid: 88af2358d768da047a86e9b889f75970, type: 2}
+  - {fileID: 11400000, guid: c40b981c504269a4b92da10d3131c9be, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

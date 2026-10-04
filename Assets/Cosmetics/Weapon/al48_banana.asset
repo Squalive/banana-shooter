@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d212f8f24f92447e6047a74649e01a7edfdab9d01f49ad18704ef62eb5180bfb
-size 1083
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: al48_banana
+  m_EditorClassIdentifier: 
+  itemdefid: 154
+  displayName: AL48 | Banana
+  description: og weapon
+  tag: 
+  type: 11
+  inventoryType: 1
+  rarity: 6
+  icon: {fileID: 2800000, guid: 8d5dba9a986f1f14889bca994490b0a6, type: 3}
+  mesh: {fileID: 3507673543635138266, guid: 3aeab102417131e469710b73133d40ec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 2c6c3a794b4464748a2fd225373d78ab, type: 2}
+  - {fileID: 2100000, guid: d2127f8247ab8324f94709229d3dfb75, type: 2}
+  - {fileID: 2100000, guid: 86fd9fc069b25f343a4696baac141958, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 1.030059, y: 0.40777618, z: 1.030059}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1.5
+  relatedItem: []
+  canApplyParticle: 0

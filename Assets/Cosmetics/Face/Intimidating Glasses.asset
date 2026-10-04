@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4898375580b245437d26d9c14a1b8a73d3c31fd050af23b368d4419fce60ca82
-size 939
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Intimidating Glasses
+  m_EditorClassIdentifier: 
+  itemdefid: 143
+  displayName: Intimidating Glasses
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: 601b52c82c6f57e419a6c24d571ad17b, type: 3}
+  mesh: {fileID: -462981019419857548, guid: 9362a6dc6504f0a4b8ab177bf7396599, type: 3}
+  materials:
+  - {fileID: 7602432620186055531, guid: 9362a6dc6504f0a4b8ab177bf7396599, type: 3}
+  index: 15
+  alpha: 1
+  size: {x: 27.891819, y: 27.891819, z: 27.891819}
+  defaultRotation: {x: 0, y: 180, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

@@ -1,3 +1,578 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:987a44fe98d52964b77cfdc804dfbe25841622c594a620f2dcae3ba9b669768c
-size 13984
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Map Editor_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: d28b155e90fb15d42bac5b85d4b84613, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 7567228311320920070
+  m_TableData:
+  - m_Id: 2524830766010368
+    m_Localized: Zapisywanie...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6885806080
+    m_Localized: Obiekt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32336842752
+    m_Localized: "O\u015Bwietlenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 254991470592
+    m_Localized: Edycja UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335702462464
+    m_Localized: "Wyk\u0142adanie i Wyr\xF3wnanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 628662013952
+    m_Localized: "Wype\u0142nienie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 660769411072
+    m_Localized: Zakotwiczenie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704079794176
+    m_Localized: "Przekszta\u0142cenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 788016205824
+    m_Localized: "Obr\xF3t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 823512600576
+    m_Localized: "Wyk\u0142adanie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895113564160
+    m_Localized: "R\xF3wnowa\u017Cenie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000726138880
+    m_Localized: Specjalne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095655821312
+    m_Localized: "Pojemno\u015B\u0107 \u015Awiata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1125745758208
+    m_Localized: "Przewr\xF3t U"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1155177189376
+    m_Localized: "Przewr\xF3t V"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1178669486080
+    m_Localized: Zamiana UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1205215236096
+    m_Localized: Grupowanie Twarzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1248622088192
+    m_Localized: Odgrupowanie Twarzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1279462805504
+    m_Localized: "Wybierz Grup\u0119 Twarzy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1303554887680
+    m_Localized: Wyzeruj UV'y
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1395720523776
+    m_Localized: Plik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1420869570560
+    m_Localized: Edycja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1469586411520
+    m_Localized: ObiektGry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1496845193216
+    m_Localized: Mesh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1521243459584
+    m_Localized: Zapisz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1619155292160
+    m_Localized: Zamknij Edytor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645923340288
+    m_Localized: Cofnij
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1656715284480
+    m_Localized: "Powt\xF3rz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1662943825920
+    m_Localized: Wybierz Wszystko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1666257326080
+    m_Localized: Ustawienia Mapy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2081287901184
+    m_Localized: Kostka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2082047070208
+    m_Localized: Schody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2141497135104
+    m_Localized: ZakrzywioneSchody
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2143153885184
+    m_Localized: "S\u0142up"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144361844736
+    m_Localized: Walec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2193812688896
+    m_Localized: "Pod\u0142oga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2214897455104
+    m_Localized: Drzwi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2227375509504
+    m_Localized: Rura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2238691741696
+    m_Localized: "Ro\u017Cek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2248703545344
+    m_Localized: Duszek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2264293773312
+    m_Localized: "\u0141uk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2275618394112
+    m_Localized: Kula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2289711255552
+    m_Localized: Torus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2363233210368
+    m_Localized: Scalanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2414160449536
+    m_Localized: Dzielenie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2416349876224
+    m_Localized: "Normalny Przewr\xF3t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2417377480704
+    m_Localized: "Wierzcho\u0142ek "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2463619682304
+    m_Localized: "Kraw\u0119d\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2483811061760
+    m_Localized: "Dzielenie Kraw\u0119dzi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2494229712896
+    m_Localized: "Wstaw P\u0119tle Kraw\u0119dzi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2506229616640
+    m_Localized: "Wype\u0142nij Dziur\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548709527552
+    m_Localized: Dzielenie Twarzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2567227379712
+    m_Localized: Scalanie Twarzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2582574338048
+    m_Localized: Wyzeruj UV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770118447104
+    m_Localized: Niebo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2794139226112
+    m_Localized: "\nU\u017Cyj O\u015Bwietlenia Kierunkowego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2871570272256
+    m_Localized: "\u0179r\xF3d\u0142o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3402606907392
+    m_Localized: "Punkt \u015Awiat\u0142a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4038316593152
+    m_Localized: "Paleta Kolor\xF3w"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7820635082752
+    m_Localized: <color=green>Gotowe</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20029289336832
+    m_Localized: Kolor Nieba
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35882189787136
+    m_Localized: Twarz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39676462043136
+    m_Localized: "W\u0142\u0105cz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39870448603136
+    m_Localized: Typ
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39926849409024
+    m_Localized: "Intensywno\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40013952520192
+    m_Localized: Zakres
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40084991447040
+    m_Localized: "K\u0105t Punktowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40918840053760
+    m_Localized: '*Wybierz Twarz do edycji'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1089454998360064
+    m_Localized: Zapisz Jako
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1709000025247744
+    m_Localized: "Wewn\u0119trzny K\u0105t Punktowy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1743746621050880
+    m_Localized: "Wszystkie zmiany zostan\u0105 utracone je\u017Celi porzucisz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747327935909888
+    m_Localized: "Porzu\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117591957835776
+    m_Localized: Punkt Odrodzenia Gracza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2117805968003072
+    m_Localized: Punkt Odrodzenia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2144761983864832
+    m_Localized: Kolor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2484349323513856
+    m_Localized: "Dodaj Materia\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485179455967232
+    m_Localized: Standardowa Tekstura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2485843397513216
+    m_Localized: Wybierz Teksture
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486514200940544
+    m_Localized: "Wysoko\u015B\u0107 Tekstury"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2486527224254464
+    m_Localized: Normalna Tekstura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2487370568765440
+    m_Localized: Dodaj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2521159038734336
+    m_Localized: "G\u0142adko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2527399018041344
+    m_Localized: Metaliczny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2528804487368704
+    m_Localized: "Edycja Materia\u0142u"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533025496502272
+    m_Localized: Wybierz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2534073611128832
+    m_Localized: "Usu\u0144"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831692015144960
+    m_Localized: Normalna Skala
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2831706347081728
+    m_Localized: "Wysoko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3052938971648000
+    m_Localized: Kalkomania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3053571791458304
+    m_Localized: "NotFunny to \u017Cart"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067927388295168
+    m_Localized: "Szeroko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067933415510016
+    m_Localized: "Wysoko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3067958052851712
+    m_Localized: "G\u0142\u0119boko\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3076413081849856
+    m_Localized: Brat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3090486615937024
+    m_Localized: Nowa Niestandardowa Kalkomania
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3154409771831296
+    m_Localized: Dodaj Kalkomanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3422783743528960
+    m_Localized: Opublikuj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3424982095695872
+    m_Localized: Zduplikuj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3441991667748864
+    m_Localized: Czytaj Dalej
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3442059246374912
+    m_Localized: "Publikuj\u0105c ten przedmiot, zgadzasz si\u0119 z warunkami korzystania
+      z Warsztatu Steam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502551193161728
+    m_Localized: "Aktualizacja nie powiad\u0142a si\u0119. Spr\xF3buj jeszcze raz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502579928338432
+    m_Localized: Przetwarzanie danych aktualizacji tego przedmiotu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502590552510464
+    m_Localized: Odczytywanie i przetwarzanie danych aktulizacji tego przedmiotu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502600350404608
+    m_Localized: "Wysy\u0142anie zmian aktualizacji tego przedmiotu do Steam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502613537296384
+    m_Localized: "Wysy\u0142anie nowego podgl\u0105du aktualizacji tego przedmiotu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3502635146350592
+    m_Localized: "Wysy\u0142anie wszystkich zmian aktualizacji tego przedmiotu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3520075548921856
+    m_Localized: "<color=red>Pora\u017Cka</color>: {0}"
+    m_Metadata:
+      m_Items:
+      - rid: 7567228311320920070
+  - m_Id: 3589254230642688
+    m_Localized: Lokalne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3589266440261632
+    m_Localized: Opublikowano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295526135435264
+    m_Localized: Dekoracja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4295757711347712
+    m_Localized: Punkt Zachaczenia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584246285766656
+    m_Localized: Vendo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4584253600632832
+    m_Localized: "Straszna Ro\u015Blina"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4851010793967616
+    m_Localized: "\u0179r\xF3d\u0142oAudio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4870496565661696
+    m_Localized: "Nowe \u0179r\xF3d\u0142o Audio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4957525362151424
+    m_Localized: Dodaj Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045261804834816
+    m_Localized: Maks. Dystans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5045292226121728
+    m_Localized: Min. Dystans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5047489202556928
+    m_Localized: "P\u0119tla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5048037922377728
+    m_Localized: Przestrzenna Mieszanka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5053172417368064
+    m_Localized: Poziom Doppler'a
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17630312782434304
+    m_Localized: Granice Mapy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18009920191139840
+    m_Localized: Cel strzelnicki
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18017058816856064
+    m_Localized: "\u015Arodek Mapy"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019379332321280
+    m_Localized: "\u015Awiat\u0142o Halloween'owe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019409954934784
+    m_Localized: Skrzynia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019462585061376
+    m_Localized: Laptop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18019545003134976
+    m_Localized: Paczka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025202062266368
+    m_Localized: Brama
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025237546078208
+    m_Localized: IMALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025264305737728
+    m_Localized: Dynia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025301307887616
+    m_Localized: "St\xF3\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18025327186743296
+    m_Localized: "D\u0142ugi St\xF3\u0142"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18030187416195072
+    m_Localized: "P\xF3\u0142ka Na Ksi\u0105\u017Cki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23922041823236096
+    m_Localized: Niestandardowy Model
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24199737924980736
+    m_Localized: "W\u0142\u0105cz Kolizje"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24201150893723648
+    m_Localized: Model
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7567228311320920070
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0010ad747d810c00

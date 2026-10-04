@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e661f524f2b0beb06e04f5bcd683834547f90c8ce9fc8262c566569f0207e057
-size 950
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: bwp_star
+  m_EditorClassIdentifier: 
+  itemdefid: 195
+  displayName: BWP | Star
+  description: Stars are in the sky
+  tag: 
+  type: 12
+  inventoryType: 1
+  rarity: 2
+  icon: {fileID: 2800000, guid: 907f97e7c5fba07468774a9fb973fb22, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: 35367a8824c6d7845aaf377a8e3a518a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 225fa281d150bbd49b510a30e8d05698, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 0.6851694, y: 0.6851694, z: 0.6851694}
+  defaultRotation: {x: -90, y: 200, z: 0}
+  sizeMultiplier: 1.5
+  relatedItem: []
+  canApplyParticle: 0

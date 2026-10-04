@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:151b1b065d0801f4e68dbf8e32f03709f5920d6b4fea75793b74e07e9ceb64e9
-size 1082
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Boomer
+  m_EditorClassIdentifier: 
+  weaponName: Boomer
+  chineseName: Boomer
+  price: 0
+  texture: {fileID: 2800000, guid: 3337a47d0aff89345bc2ff4bd2ab32b5, type: 3}
+  skins:
+  - mesh: {fileID: -2447776121362496397, guid: d5230b829440ffb4a9145815b046157d, type: 3}
+    materials:
+    - {fileID: 2100000, guid: e8b722f0587936c44a34422e475971f2, type: 2}
+    - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  size: {x: 1.4773, y: 1.4773, z: 1.4773}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 70
+  damageOffset: 10
+  specialWeapon: 1
+  spinAmount: 1
+  weaponType: 8
+  bUseGravity: 1
+  maxAmmo: 5
+  fireRate: 2
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 1
+  reloadTime: 0
+  explosiveAmmo: 1

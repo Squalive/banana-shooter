@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e3b43fd5648bb794774eccf95e692abceae0cea4ad3ec8238a8ae7e9663e8f8
-size 1890
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4fd0222d79785cd42a0d33cacc146700
+  m_SerializeEntries:
+  - m_GUID: 074fe07cad5401c459d5bff0d666d1b0
+    m_Address: Assets/Localization/FAQ Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 10bad70fc02104f4f806396fbe64b818
+    m_Address: Assets/Localization/Map Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 1e1aa282f019d8e4c9c42cea7d44bd86
+    m_Address: Assets/Localization/Notification Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 6dec0b14c6bcdf6449d2aa68888461d7
+    m_Address: Assets/Localization/VoiceLine Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: d28b155e90fb15d42bac5b85d4b84613
+    m_Address: Assets/Localization/Map Editor Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: d78f6e6cb0c4d254ba514fdcf881b362
+    m_Address: Assets/Localization/Quest Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: e127b2a88bbcce74f9c1575833a0b141
+    m_Address: Assets/Localization/UI Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f9749f92d59b49248a8b8188c40ff416, type: 2}
+    - {fileID: 11400000, guid: 47dfd3178540e824ca99af3792e7209e, type: 2}

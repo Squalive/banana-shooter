@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b55b6e2d8c34432a9235c6127cdf9687828cd29a7afed95b7db014031c1258d
-size 1239
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_rod
+  m_EditorClassIdentifier: 
+  itemdefid: 204
+  displayName: Banana Rod
+  description: get this banana
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 5
+  icon: {fileID: 2800000, guid: 47fac059da8e804438353a8331220be6, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: fa261ad2a8e6ddf4d906107861e4633d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 02432adb03b41ab4eb614c1259bfc8ef, type: 2}
+  - {fileID: 2100000, guid: 88cd05f8e047ed6498d053c1372c9125, type: 2}
+  - {fileID: 2100000, guid: 3c3746dd081c12c408ccb0b6628ca588, type: 2}
+  - {fileID: 2100000, guid: c3bddae4b2bcd5d40a791a812e89492e, type: 2}
+  index: 28
+  alpha: 1
+  size: {x: 1, y: 1, z: 1}
+  offset: {x: 0, y: -0.04, z: 0}
+  defaultRotation: {x: -120, y: 200, z: 0}
+  sizeMultiplier: 0.5
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 1

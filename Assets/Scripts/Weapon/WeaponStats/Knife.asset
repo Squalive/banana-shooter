@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6a0f6a0f00661b39f7ddaac479c13a75d7adefcce7add583a4dca635be043697
-size 1065
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  weaponName: Knife
+  chineseName: "\u5C0F\u5200"
+  price: 150
+  texture: {fileID: 2800000, guid: e0cbfb12ec8f36d4ba35f06fff3ed838, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 033b090aa4d42e94d81a4cf2e02ad2c0, type: 3}
+    materials:
+    - {fileID: 2100000, guid: ca46507a01fb312498fd7f348196c543, type: 2}
+    - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  size: {x: 0.945751, y: 0.9056574, z: 3.7149463}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 150
+  damageOffset: 10
+  specialWeapon: 0
+  weaponType: 6
+  bUseGravity: 0
+  maxAmmo: 30
+  fireRate: 1
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 0
+  reloadTime: 0

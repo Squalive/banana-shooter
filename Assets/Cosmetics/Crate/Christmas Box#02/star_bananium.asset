@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1598ea1374c7eab01b273681d1f0718b693968bcf19dd173afa0495ef77cf5d0
-size 1125
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: star_bananium
+  m_EditorClassIdentifier: 
+  itemdefid: 175
+  displayName: Star Bananium
+  description: 
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: dcb3acb83ba5ee542bfea82441474110, type: 3}
+  mesh: {fileID: -4279538045662247217, guid: e63ce28321d9e7744a7e445c0cbb8ca3, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 660cbc7878cf5014f9b997fac634d3f1, type: 2}
+  - {fileID: 2100000, guid: d0ef5f34581b82643b87074964718db5, type: 2}
+  - {fileID: 2100000, guid: 7e0392400ae33b54eac2f29780c0376b, type: 2}
+  index: 24
+  alpha: 1
+  size: {x: 5.6306567, y: 5.6306567, z: 5.6306567}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

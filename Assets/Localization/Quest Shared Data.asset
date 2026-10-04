@@ -1,3 +1,160 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f29483643a1dd3c6d0e84d1979002be4dda588c5151a31f3814f53d4c3f3516
-size 3700
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Quest Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Quest
+  m_TableCollectionNameGuidString: d78f6e6cb0c4d254ba514fdcf881b362
+  m_Entries:
+  - m_Id: 6803660800
+    m_Key: q_rifleman_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109136289792
+    m_Key: q_rifleman_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1528312602624
+    m_Key: q_match_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1569328701440
+    m_Key: q_match_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1609224921088
+    m_Key: q_bananaman_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1618917957632
+    m_Key: q_bananaman_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54213967585280
+    m_Key: q_completequest_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54222549131264
+    m_Key: q_completequest_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54287258853376
+    m_Key: q_grappleman_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54295286751232
+    m_Key: q_grappleman_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54324512661504
+    m_Key: q_openbox_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54338769100800
+    m_Key: q_openbox_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54358478135296
+    m_Key: q_win_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54367915319296
+    m_Key: q_win_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71214870011904
+    m_Key: q_prize_only_exp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71391685091328
+    m_Key: q_prize_only_box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71700910153728
+    m_Key: q_prize_exp_with_box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1099997114769408
+    m_Key: q_killer_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100037363310592
+    m_Key: q_killer_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100064735338496
+    m_Key: q_noob_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1100663598063616
+    m_Key: q_noob_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990854425075712
+    m_Key: q_onevsone_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990862310367232
+    m_Key: q_onevsone_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990960893288448
+    m_Key: q_endlessking_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16990975808233472
+    m_Key: q_endlessking_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991029491130368
+    m_Key: q_endlesskiller_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991042438946816
+    m_Key: q_endlesskiller_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991062995230720
+    m_Key: q_flash_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991082125451264
+    m_Key: q_flash_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991108193050624
+    m_Key: q_grenadier_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991111347167232
+    m_Key: q_grenadier_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991191831666688
+    m_Key: q_knifeman_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16991202933989376
+    m_Key: q_knifeman_desc
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2336825532488876034
+  references:
+    version: 2
+    RefIds:
+    - rid: 2336825532488876034
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1669048167861

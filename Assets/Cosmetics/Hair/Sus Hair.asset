@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:aca53734f8140b313290c14b74d515696c497321a5c9019237fc71d01af85fde
-size 906
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Sus Hair
+  m_EditorClassIdentifier: 
+  itemdefid: 110
+  displayName: Sus Hair
+  description: SUS
+  tag: 
+  type: 2
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 232d931e4468dd94588fb17340e45aa6, type: 3}
+  mesh: {fileID: -4625090082396279539, guid: b92d7915fd8f6874fb25a5565e304acc, type: 3}
+  materials:
+  - {fileID: 2100000, guid: ff0db05943151234294f820e11eae299, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 3.2378597, y: 3.2378597, z: 12.734474}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

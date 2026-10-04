@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27945f7a36fba93610fb7ec279e0a743139689bf2f833308614bdaac8343ede5
-size 583
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ea3557ee0bae046bc84c71a1976db9, type: 3}
+  m_Name: DoF Command
+  m_EditorClassIdentifier: 
+  commandWord: dof
+  description: depth of field settings...
+  argsHint: 
+  key:
+  - last_command
+  - last_command
+  args:
+  - args:
+    - aper
+    - blur
+    - distance
+  - args: []

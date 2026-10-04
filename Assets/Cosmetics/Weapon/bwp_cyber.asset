@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c13c678eac19d601288cbe12bfdeea6ff7ddc99306345d371d274d14ca2e20e
-size 1025
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: bwp_cyber
+  m_EditorClassIdentifier: 
+  itemdefid: 226
+  displayName: BWP | Cyber
+  description: nothing here
+  tag: 
+  type: 12
+  inventoryType: 1
+  rarity: 6
+  icon: {fileID: 2800000, guid: 0dfbb03d503c8ea4dad12080c1f6488f, type: 3}
+  mesh: {fileID: 9067188129477138649, guid: 5769282795036b6428d1a3ebcfe8b853, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f56c3402be910f94c8cb9d38a5470502, type: 2}
+  - {fileID: 2100000, guid: 42c6ef50bfe922749949599674124638, type: 2}
+  index: 3
+  alpha: 1
+  size: {x: 1, y: 0.7, z: 1}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 213.34, z: 0}
+  sizeMultiplier: 1.09
+  relatedItem: []
+  canApplyParticle: 0

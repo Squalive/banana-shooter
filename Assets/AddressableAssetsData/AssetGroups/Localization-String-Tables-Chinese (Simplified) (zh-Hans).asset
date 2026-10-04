@@ -1,3 +1,67 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8c9f299c0a4c8fff6dcaa31ab6639325d76850097d35ea2fcbdd7b18aaf6b18
-size 1966
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Chinese (Simplified) (zh-Hans)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Chinese (Simplified) (zh-Hans)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e498a1bf28e4df34d8d401a386c98d9e
+  m_SerializeEntries:
+  - m_GUID: 088773a69717400498b4afa16d9d0fe3
+    m_Address: UI Text_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: 3771c221bc422d049b2636a864d47e57
+    m_Address: VoiceLine_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: 54853704091a26c40afb3dbe2099a383
+    m_Address: Map_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: 65d5feef105100f4d804f7a8bbb352e3
+    m_Address: Quest_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: 8de3e0a86e3984a4282b8d1b43f9744c
+    m_Address: Map Editor_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: a1456e036f0809940839c259e5c9f172
+    m_Address: Notification_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  - m_GUID: a5a3779c2981769459a3d5e0c3829d10
+    m_Address: FAQ_zh-Hans
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 4447d4f34ab652a45a592f4188f18ac5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 96b19661a4b3def45ab087aa86ceeb4b, type: 2}
+    - {fileID: 11400000, guid: ae7c98852227a0d47b2cd1ebd5c31e39, type: 2}

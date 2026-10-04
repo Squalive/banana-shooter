@@ -1,3 +1,245 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b89d927290dd4ed5e0132377a504aa03d617de6155cb86000ff39f2d7b79342b
-size 6861
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: VoiceLine_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6dec0b14c6bcdf6449d2aa68888461d7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 106681065472
+    m_Localized: Hello Dave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 167204872192
+    m_Localized: Team Death Match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 473217097728
+    m_Localized: Brawl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 648295735296
+    m_Localized: Be careful,dont shoot to your teammate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 818114715648
+    m_Localized: 'Fight with other to get that sweet banana '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1095303684096
+    m_Localized: 'Error,this voiceline has not recorded yet '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1273158950912
+    m_Localized: Ready up to get into next match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1438368391168
+    m_Localized: That match is good,but you still need to ready up or I will smash
+      you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616655671296
+    m_Localized: Oh you get really bad at that match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1781269520384
+    m_Localized: "but don\u2019t worried about that,ready up for next match"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2058659815424
+    m_Localized: Oh you got a box?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2173210451968
+    m_Localized: Maybe you can open it by opening the inventory menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2396678774784
+    m_Localized: That man should really be killed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2671837700096
+    m_Localized: There's a lot of people you need to kill,but except me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2828276850688
+    m_Localized: "Be repectful,that person didn\u2019t do anything wrong"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2923642740736
+    m_Localized: but you did
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3044728102912
+    m_Localized: Death is your destination after all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3162722263040
+    m_Localized: but except me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3329458429952
+    m_Localized: Oh,you must be sad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3432571199488
+    m_Localized: because you just buy a upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3530898268160
+    m_Localized: So close,you must be angry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652554055680
+    m_Localized: haha I knew you will die
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3755939454976
+    m_Localized: yes fight each other
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4200581816320
+    m_Localized: no kill only death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4301907812352
+    m_Localized: "don\u2019t kill too many my boy!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4411387535360
+    m_Localized: nooooooo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533672468480
+    m_Localized: you receive fun,I receive sjkhjky
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5186444582912
+    m_Localized: haha perfect kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5465114140672
+    m_Localized: hahhahahahhahaha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5744970686464
+    m_Localized: im not crazy,you are crazy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5838470111232
+    m_Localized: aishdjasbdjkasbfjkdag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6027616444416
+    m_Localized: wishlist karlson on steam now
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6123410153472
+    m_Localized: "banana banana banana\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6247272144896
+    m_Localized: winner winner banana dinner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6331191779328
+    m_Localized: "your teammate is good,but don\u2019t you"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6468290994176
+    m_Localized: On the surface you won, but you didn't
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6683311988736
+    m_Localized: "don\u2019t worry,you will banana next time"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6767286149120
+    m_Localized: faster faster yesssssssss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6853156134912
+    m_Localized: "what are you thinking,why don\u2019t you move"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058899291873280
+    m_Localized: Welcome to endless, stand in the while line area to start the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058916425605120
+    m_Localized: Oh you come back to this gamemode ha, so hilarious ive never thought
+      someone wil play this gamemode twice again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058950479159296
+    m_Localized: Wait did you just come back again? anyway stand in the white line
+      area then ill let my bois to fight with you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058975758229504
+    m_Localized: Stand in the white line area , Stand in the white line area , Stand
+      in the white line area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26058974747402240
+    m_Localized: Hah, you seems a true banana man since this is the fourth time you
+      open this gamemode, Go ahead let start the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059087435767808
+    m_Localized: Come on, there is more robots here, but keep in mind they are kindness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059075721076736
+    m_Localized: Lets try this, just a few robots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059135749955584
+    m_Localized: But who would guess, i have more <b>ROBOTS</b>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059120667238400
+    m_Localized: Wow such a genius you have already killed so many my bois
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059189491572736
+    m_Localized: Haha i dont believe you can handle this
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059205476065280
+    m_Localized: ' i wont give up'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26059275952955392
+    m_Localized: Ok im speechless
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170116895383552
+    m_Localized: Enemy will have a red dot on their head, use your weapon to shoot
+      them
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170119336468480
+    m_Localized: Wait you actually start a fight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26170121739804672
+    m_Localized: Well
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

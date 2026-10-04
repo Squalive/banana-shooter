@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03a2c2f18b20441b85fd0b361baad47795dbd40d75cc09309b7c0ee44fbb1027
-size 1009
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: m4_noise
+  m_EditorClassIdentifier: 
+  itemdefid: 196
+  displayName: M4 | Noise
+  description: Noisy
+  tag: 
+  type: 22
+  inventoryType: 1
+  rarity: 1
+  icon: {fileID: 2800000, guid: 35a623d12c167404eadc1a7d253e5ef7, type: 3}
+  mesh: {fileID: -254450632431898455, guid: 587fa5e39d5192b4d9917b4c8032ce85, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 9f6d45977089d114fab7564345182380, type: 2}
+  index: 1
+  alpha: 1
+  size: {x: 2, y: 2, z: 2}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 10, z: 195}
+  sizeMultiplier: 1.4
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 0

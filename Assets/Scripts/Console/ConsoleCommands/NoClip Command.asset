@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e607a4751c00b4fbe51325670bed94eb5934b62257e98864c93ffefb830d908a
-size 499
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49511911d02b45ec9b7a21d6fc85f5ff, type: 3}
+  m_Name: NoClip Command
+  m_EditorClassIdentifier: 
+  commandWord: noclip
+  description: Enable or disable noclip
+  argsHint: 
+  key: []
+  args: []

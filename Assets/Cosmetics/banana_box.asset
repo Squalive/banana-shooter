@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ada119ad09e145d6262efdabff19586fa4d46ed874e0f4f81ea96c85ec0f5ab9
-size 1713
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_box
+  m_EditorClassIdentifier: 
+  itemdefid: 200
+  displayName: Banana Box
+  description: Contains \n<color=white>Common item</color>\n<color=#1e90ff>Uncommon
+    item</color>\n<color=red>Rare item</color>\n<color=green>Extraordinary item</color>\n<color=yellow>Legendary
+    item</color>\n<color=#ff69b4>Original item</color>\n<color=#00ff00>Unique item</color>
+  tag: 
+  type: 1
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: 5cc4a6aa6a243a6468cd617e5870a37b, type: 3}
+  mesh: {fileID: -2447776121362496397, guid: e49c64dbd650e0444b607716f23119f5, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 37a6c083bc331c7468a735233e2c4584, type: 2}
+  index: 0
+  alpha: 1
+  size: {x: 5.5, y: 5.5, z: 5.5}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 180}
+  sizeMultiplier: 1
+  relatedItem:
+  - {fileID: 11400000, guid: 68030e2f46713fe408f2ca31a61a668a, type: 2}
+  - {fileID: 11400000, guid: 8a6f84aa1bf666348b8777785e2def35, type: 2}
+  - {fileID: 11400000, guid: d705457d67396924a9bcfccc1f7c5b4a, type: 2}
+  - {fileID: 11400000, guid: 0b162cead3cd0e142b91fe9324d05298, type: 2}
+  - {fileID: 11400000, guid: b5bd0936c371b0a41a9ea2d4901f34db, type: 2}
+  - {fileID: 11400000, guid: 1f153d27e3ca1ef438d56a37cdb45944, type: 2}
+  - {fileID: 11400000, guid: 9ffa8b8bbeed1204593d7f4f0b6189b0, type: 2}
+  canApplyParticle: 0

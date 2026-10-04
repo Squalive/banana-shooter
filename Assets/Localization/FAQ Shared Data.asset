@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d921d0a0e6ca40bd38b6d07fda07056be961d3624bf87c7ea867461abebfb519
-size 1230
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: FAQ Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: FAQ
+  m_TableCollectionNameGuidString: 074fe07cad5401c459d5bff0d666d1b0
+  m_Entries:
+  - m_Id: 18583904256
+    m_Key: faq_replay_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6658750144512
+    m_Key: faq_replay_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6681353248768
+    m_Key: faq_replay_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7216886177792
+    m_Key: faq_replay_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15122612346880
+    m_Key: faq_replay_3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 189510127135227910
+  references:
+    version: 2
+    RefIds:
+    - rid: 189510127135227910
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1671712124857

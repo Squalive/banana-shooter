@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:481253940b8128b74f68fa1c02ce911386eff62f23f3964cb2c2a0abacbb7644
-size 1022
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  weaponName: Pistol
+  chineseName: Pistol
+  price: 250
+  texture: {fileID: 2800000, guid: 1a536b3dceda56346b365cc61bf5c71f, type: 3}
+  skins:
+  - mesh: {fileID: -5947995769207344222, guid: 474bb8045d48ba14bba22837b8758259, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 229dce3195da1d9418e249ea2a7aad5a, type: 2}
+  size: {x: 2.7478137, y: 1.1772267, z: 2.7478137}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 22
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 3
+  weaponType: 5
+  bUseGravity: 0
+  maxAmmo: 23
+  fireRate: 14
+  bulletAmount: 1
+  spreadAngle: 1
+  cantReload: 0
+  reloadTime: 1
+  explosiveAmmo: 0

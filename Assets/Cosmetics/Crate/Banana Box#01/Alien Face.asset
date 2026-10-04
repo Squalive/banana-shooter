@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfbe88e32961ef886778bd3d3fcf62316d289fdf41e864f44664ac1f6605b477
-size 911
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Alien Face
+  m_EditorClassIdentifier: 
+  itemdefid: 108
+  displayName: Alien Face
+  description: A face from laopi
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: e7ffdb0b271e7eb4fba72acf31c35b33, type: 3}
+  mesh: {fileID: 3532461652467662968, guid: 433fb0beaa6ed99459ff7286e67b24bc, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 0ae87c9f97762dd40b48e983190c1fbb, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 5.321, y: 5.321, z: 5.321}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 1

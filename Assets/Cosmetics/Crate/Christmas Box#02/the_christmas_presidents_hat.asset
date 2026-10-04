@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c99bfea2a947bfbcaedf82af521f19f2b7a80978ae3fc4fb99c0a6be01e200ca
-size 1225
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: the_christmas_presidents_hat
+  m_EditorClassIdentifier: 
+  itemdefid: 176
+  displayName: The Christmas President Hat
+  description: 
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 4
+  icon: {fileID: 2800000, guid: e4e323a2000dfd24794c72bd7955fba0, type: 3}
+  mesh: {fileID: -1958919652996637230, guid: ab722ed59401aad4589fd5125ed2c639, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 36bef440a8e60e148b254ce27f835cd0, type: 2}
+  - {fileID: 2100000, guid: 65ce594c68be3764b839a2c34a763f9d, type: 2}
+  - {fileID: 2100000, guid: 13264cc094bd50c41a77d878c1b926ab, type: 2}
+  - {fileID: 2100000, guid: 32b9485aee37d814f81d861d3c338fc9, type: 2}
+  index: 25
+  alpha: 1
+  size: {x: 5.6306567, y: 5.6306567, z: 5.6306567}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: f00b6baecc581654fa5c0c60645e2d66, type: 2}
+  canApplyParticle: 1

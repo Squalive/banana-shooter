@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b31a9e4b110b6d434bd87fcbb0b9f6f7ed2ae4ccc3fefa2c28d5c2f05e73d72e
-size 1031
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: christmas_eyes
+  m_EditorClassIdentifier: 
+  itemdefid: 164
+  displayName: Christmas Eyes
+  description: 
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 1
+  icon: {fileID: 2800000, guid: 6177db0c668b44d41b352d66a379c449, type: 3}
+  mesh: {fileID: 1701892577927475206, guid: 33b4a92eca75a894a83ddcf252c0332a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f172c3ad7ead72a46b1c83fde3bbde63, type: 2}
+  - {fileID: 2100000, guid: 62e389bd67475954b9e1a05b49b967fb, type: 2}
+  index: 20
+  alpha: 1
+  size: {x: 2, y: 2, z: 2}
+  defaultRotation: {x: 0, y: 180, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 90cfec7ac822f754bb135ba3bfc81223, type: 2}
+  canApplyParticle: 1

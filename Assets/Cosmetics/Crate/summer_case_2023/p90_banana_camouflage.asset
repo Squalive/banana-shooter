@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fdfd1e95055cd5f737c86f8cb5235a54cbd766280abe916d3973d6c929186446
-size 1218
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: p90_banana_camouflage
+  m_EditorClassIdentifier: 
+  itemdefid: 199
+  displayName: P90 | Banana Camouflage
+  description: Banana but not real
+  tag: 
+  type: 24
+  inventoryType: 1
+  rarity: 1
+  icon: {fileID: 2800000, guid: 25afb26ebd4c13d429502a6e5c616e12, type: 3}
+  mesh: {fileID: -6566965819587450316, guid: 8b470d678a1eace4b8322bfb23f51c7a, type: 3}
+  materials:
+  - {fileID: 2100000, guid: defc1e0860c7efa4db9732b775e1537c, type: 2}
+  - {fileID: 2100000, guid: defc1e0860c7efa4db9732b775e1537c, type: 2}
+  - {fileID: 2100000, guid: cab812568d27a0146953a5a84fb20b22, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 2.3608994, y: 1.2382739, z: 2.3608994}
+  offset: {x: -0.03, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 15, z: 0}
+  sizeMultiplier: 1.3
+  relatedItem:
+  - {fileID: 11400000, guid: b85ba364ddcd5d64fb43bc9428b1515c, type: 2}
+  canApplyParticle: 0

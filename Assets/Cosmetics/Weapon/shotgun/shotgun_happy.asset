@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c75ed1fa46d05a9de4a12872f82bf3b01623fc70d32fb8ce750fcbaad16aa917
-size 1004
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: shotgun_happy
+  m_EditorClassIdentifier: 
+  itemdefid: 191
+  displayName: ShotGun | Happy
+  description: happy happy happy
+  tag: 
+  type: 10
+  inventoryType: 1
+  rarity: 2
+  icon: {fileID: 2800000, guid: 299fa6d3ff13b944d9c1ddd525352437, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: eb42b68182e422940bc82f185ced64b9, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 4c841c72b07b6ec4e8b75d56e013af06, type: 2}
+  - {fileID: 2100000, guid: 1f2a48a91267f974b9efe88371a577af, type: 2}
+  index: 5
+  alpha: 1
+  size: {x: 1.8031093, y: 0.6264793, z: 1.8031093}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  relatedItem: []
+  canApplyParticle: 0

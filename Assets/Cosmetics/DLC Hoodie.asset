@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbcc5eab7f5f148c6f2263f0af373c709c48299d794fd64a22758eca2264590f
-size 1013
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: DLC Hoodie
+  m_EditorClassIdentifier: 
+  itemdefid: 218
+  displayName: DLC Hoodie
+  description: nothing
+  tag: 
+  type: 6
+  inventoryType: 0
+  rarity: 6
+  icon: {fileID: 2800000, guid: 235296715ac08634bb7911155a815d18, type: 3}
+  mesh: {fileID: 8516396448256349997, guid: 6a5b7ad1eb118bb49a7b5966f6db9aec, type: 3}
+  materials:
+  - {fileID: 2100000, guid: f341a7d25a0ec7a48a65a1d2f9e728ba, type: 2}
+  - {fileID: 2100000, guid: 42c6ef50bfe922749949599674124638, type: 2}
+  index: 2
+  alpha: 1
+  size: {x: 3, y: 3, z: 3}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 208.8, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1

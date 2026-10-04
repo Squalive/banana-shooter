@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7e5e508ca0e84b87c28a3d1bbd960b7c2fcbd9690f1ba4744fd83f05b3d1c46
-size 379
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1200 &1
+AutoStreamingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  mSearchMode: 15
+  mCustomSearchFile: 
+  mTextureSearchString: 
+  mMeshSearchString: 
+  mTextures: []
+  mAudios: []
+  mMeshes: []
+  mScenes: []
+  mConfigCCD:
+    useCCD: 0
+    cosKey: 
+    projectGuid: 
+    bucketUuid: 
+    bucketName: 
+    badgeName: 

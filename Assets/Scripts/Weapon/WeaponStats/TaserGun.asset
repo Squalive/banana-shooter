@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fc496309f79a5b83ff19b9d178408e7a41338fe12016a4ee4fa011860d1848a9
-size 1020
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: TaserGun
+  m_EditorClassIdentifier: 
+  weaponName: TaserGun
+  chineseName: "\u7535\u51FB\u67AA"
+  price: 300
+  texture: {fileID: 2800000, guid: a4f9dea3bb280e640a7a6891a64f3111, type: 3}
+  skins:
+  - mesh: {fileID: 1779601754579333883, guid: 09296184b6b4a4e488425286bf1133b5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 331b1ad3e42e5c343a3d03e0114eb23e, type: 2}
+  size: {x: 0.3, y: 0.3, z: 0.3}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 200
+  damageOffset: 10
+  specialWeapon: 0
+  spinAmount: 1
+  weaponType: 9
+  bUseGravity: 0
+  maxAmmo: 1
+  fireRate: 2
+  bulletAmount: 1
+  spreadAngle: 0
+  cantReload: 1
+  reloadTime: 0
+  explosiveAmmo: 0

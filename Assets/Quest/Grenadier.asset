@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4a20c1392308552e3298ccb52fc6c4be6c03b0f7b780f67997ebb37000638aa
-size 570
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29133cd8456942d4a400d10119b1631a, type: 3}
+  m_Name: Grenadier
+  m_EditorClassIdentifier: 
+  questType: 14
+  nameKey: q_grenadier_name
+  descKey: q_grenadier_desc
+  prizeKey: q_prize_only_exp
+  requiredAmount: 15
+  expReward: 10000
+  bonus: 0
+  rewards: 00000000

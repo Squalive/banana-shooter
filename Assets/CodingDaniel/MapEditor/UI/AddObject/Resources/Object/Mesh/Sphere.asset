@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3387b538fa531679e1024698d2edb6a511927530d5eec3ca6d04c43ee0f835a2
-size 518
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7559829c394a15341be8c5d547e2ee83, type: 3}
+  m_Name: Sphere
+  m_EditorClassIdentifier: 
+  type: 1
+  prefab: {fileID: 0}
+  icon: {fileID: 2800000, guid: 463b801e3a0a588488328a566b7c1e4a, type: 3}
+  shapeType: 11

@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:689f9f8271d923713bf0f9b118b133898ff36bec02d8dd8e386c42c3ab974df9
-size 1166
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: cat
+  m_EditorClassIdentifier: 
+  itemdefid: 163
+  displayName: Cat
+  description: '#catgang'
+  tag: 
+  type: 4
+  inventoryType: 0
+  rarity: 2
+  icon: {fileID: 2800000, guid: d709145339dad7a42a21b74319e80e40, type: 3}
+  mesh: {fileID: 4597397025206421736, guid: 5c2f5f726f3cad647aebc604488324dd, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 09124705e89004a41a136e71b823b554, type: 2}
+  - {fileID: 2100000, guid: 4614b780e35b0a244890aa95b229ca7f, type: 2}
+  - {fileID: 2100000, guid: 20aeada490bf67246b6733aabe1aa01b, type: 2}
+  - {fileID: 2100000, guid: 4fdcd121220901b4c9d1f26b378d1aba, type: 2}
+  index: 19
+  alpha: 1
+  size: {x: 20, y: 20, z: 20}
+  defaultRotation: {x: -90, y: 180, z: 0}
+  relatedItem:
+  - {fileID: 11400000, guid: 90cfec7ac822f754bb135ba3bfc81223, type: 2}
+  canApplyParticle: 1

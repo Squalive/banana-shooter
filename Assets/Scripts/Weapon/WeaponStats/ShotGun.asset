@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8706bc4fc6b7092b6c9c718968c0d6628d639a9892699f8b8334ce7bc0bc812a
-size 1727
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e4204449f0b19418472844bbc26c44, type: 3}
+  m_Name: ShotGun
+  m_EditorClassIdentifier: 
+  weaponName: ShotGun
+  chineseName: "\u9730\u5F39\u67AA"
+  price: 2000
+  texture: {fileID: 2800000, guid: 255b11507e92882439aea7a10a7a982e, type: 3}
+  skins:
+  - mesh: {fileID: -5495902117074765545, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+    materials:
+    - {fileID: 2100000, guid: a58f8d87a2bf2c04aa086170c74efa8b, type: 2}
+    - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  - mesh: {fileID: -5495902117074765545, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+    materials:
+    - {fileID: 2100000, guid: cb33b2731be43274bb9b6b344955d036, type: 2}
+    - {fileID: 2100000, guid: 65ec2bf23bad1a649a3e9625c1c97c9b, type: 2}
+  - mesh: {fileID: -6281477081892022859, guid: 782b4699f3df820419ba3973cb87e764, type: 3}
+    materials:
+    - {fileID: 2100000, guid: abf76627d33d36b41828027fd3bb569a, type: 2}
+    - {fileID: 2100000, guid: 955c3970833f59241a48d981c11b4961, type: 2}
+    - {fileID: 2100000, guid: 4dc01ceac95c1244f9daa44837e41d0d, type: 2}
+    - {fileID: 2100000, guid: ac8dc86103ab0ad4581ba7eff3acd7c1, type: 2}
+  size: {x: 1.8031093, y: 0.6264793, z: 1.8031093}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  damage: 22
+  damageOffset: 10
+  specialWeapon: 0
+  weaponType: 2
+  bUseGravity: 0
+  maxAmmo: 6
+  fireRate: 2
+  bulletAmount: 10
+  spreadAngle: 12
+  cantReload: 0
+  reloadTime: 0.2
