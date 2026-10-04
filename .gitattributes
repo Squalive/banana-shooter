@@ -51,3 +51,4 @@
 **/OcclusionCullingData.asset filter=lfs diff=lfs merge=lfs -text
 **/LightingData.asset filter=lfs diff=lfs merge=lfs -text
 **/NavMesh.asset filter=lfs diff=lfs merge=lfs -text
+*.bytes filter=lfs diff=lfs merge=lfs -text
