@@ -448,6 +448,8 @@ namespace Multiplayer.Entity.Server
 
             if (list.TryGetValue(kickId, out var player))
             {
+                if (NetworkManager.Instance != null && NetworkManager.Instance.Client != null && NetworkManager.Instance.Client.Id == kickId) return;
+
                 ulong SteamId = player.SteamId;
 
                 if (RolesManager.Instance.CheckIsAdmin(SteamId)
