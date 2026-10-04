@@ -137,7 +137,7 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "17.6.0",
+      "version": "12.1.15",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
@@ -236,7 +236,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ugui": {
-      "version": "2.6.0",
+      "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
@@ -245,7 +245,7 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "17.6.0",
+      "version": "12.1.15",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
