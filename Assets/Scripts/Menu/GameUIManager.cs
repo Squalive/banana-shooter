@@ -17,7 +17,9 @@ using PlayerCameraController;
 using Riptide;
 using Steamworks;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
