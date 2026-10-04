@@ -1143,6 +1143,9 @@ namespace Multiplayer.Entity.Server
 
             if (clearKick != null)
                 StopCoroutine(clearKick);
+
+            if (Vote == null || Vote.PlayerId != Id) return;
+
             Vote = null;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.ClearKick);
             NetworkServerManager.Instance.Server.SendToAll(message);
