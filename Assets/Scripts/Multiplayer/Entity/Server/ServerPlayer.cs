@@ -1483,6 +1483,13 @@ namespace Multiplayer.Entity.Server
             SetHasBanana(false);
             if (attacker != Id && list.TryGetValue(attacker, out var fromPlayer))
             {
+                if (NetworkServerManager.ServerGameMode != GameMode.KillConfirm)
+                {
+                    fromPlayer.Kills++;
+                    fromPlayer.CurrentLifeKill++;
+                    fromPlayer.Coin++;
+                }
+
                 switch (NetworkServerManager.ServerGameMode)
                 {
                     case GameMode.KillConfirm:
@@ -1519,13 +1526,6 @@ namespace Multiplayer.Entity.Server
 
                         break;
 
-                }
-
-                if (NetworkServerManager.ServerGameMode != GameMode.KillConfirm)
-                {
-                    fromPlayer.Kills++;
-                    fromPlayer.CurrentLifeKill++;
-                    fromPlayer.Coin++;
                 }
 
                 if (!fromPlayer.IsCrazy)
