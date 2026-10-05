@@ -57,20 +57,14 @@ namespace Mode
                 ratio = 0.4f;
             }
 
-            List<ushort> ids = new List<ushort>();
             int f = (int)(ratio * playerAmount);
             int l = Mathf.Clamp(f, 1, f);
-            for (int i = 0; i < l; i++)
+            List<IPlayerServer> players = ServerPlayer.list.Values.Where(p => !p.Eliminated).ToList();
+            for (int i = 0; i < l && players.Count > 0; i++)
             {
-                IPlayerServer player = ServerPlayer.list.ElementAt(Random.Range(0, ServerPlayer.list.Count)).Value;
-                ushort id = player.Id;
-
-                if (!ids.Contains(id))
-                {
-                    ids.Add(id);
-
-                    player.SetHasBanana(true);
-                }
+                int index = Random.Range(0, players.Count);
+                players[index].SetHasBanana(true);
+                players.RemoveAt(index);
             }
         }
     }
