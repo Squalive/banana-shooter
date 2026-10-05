@@ -1025,18 +1025,16 @@ namespace Multiplayer
                         switch (ServerGameMode)
                         {
                             case GameMode.Infected:
-                                bool isInfect = true;
-                                int index = 0;
+                                int survivors = 0, infectedLeft = 0;
                                 foreach (var player in ServerPlayer.list.Values)
                                 {
-                                    if (!player.IsInfected)
-                                    {
-                                        isInfect = false;
-                                        index++;
-                                    }
+                                    if (player.Id == e.Client.Id) continue;
+
+                                    if (player.IsInfected) infectedLeft++;
+                                    else survivors++;
                                 }
 
-                                if (isInfect || (index == ServerPlayer.list.Count && infected))
+                                if (survivors == 0 || (infected && infectedLeft == 0))
                                 {
                                     StopGame();
                                 }
