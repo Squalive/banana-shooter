@@ -148,14 +148,18 @@ namespace Mode
                                 Vector3 spawnPosition = new Vector3(tempPos.x + Random.Range(minSpawnOffset, maxSpawnOffset), tempPos.y, tempPos.z + Random.Range(minSpawnOffset, maxSpawnOffset));
 
                                 RaycastHit hit;
+                                int attempts = 0;
                                 while (!Physics.Raycast(spawnPosition, Vector3.down, out hit, 1000f, GameManager.Instance.whatIsGround)
                                        || (Physics.Raycast(tempPos, (spawnPosition - tempPos).normalized,
                                            (spawnPosition - tempPos).magnitude, GameManager.Instance.whatIsGround)))
                                 {
+                                    if (++attempts > 50) break;
                                     tempPos = ServerPlayer.list.ElementAt(Random.Range(0, ServerPlayer.list.Count))
                                         .Value.PlayerTransform.position;
                                     spawnPosition = new Vector3(tempPos.x + Random.Range(minSpawnOffset, maxSpawnOffset), tempPos.y, tempPos.z + Random.Range(minSpawnOffset, maxSpawnOffset));
                                 }
+
+                                if (attempts > 50) continue;
 
                                 spawnPosition = hit.point + Vector3.up;
 
@@ -391,7 +395,8 @@ namespace Mode
             Vector3 tempPos = enemySpawnPos[Random.Range(0, enemySpawnPos.Length)].position;
             Vector3 spawnPosition = new Vector3(tempPos.x + Random.Range(minSpawnOffset, maxSpawnOffset), tempPos.y, tempPos.z + Random.Range(minSpawnOffset, maxSpawnOffset));
 
-            while (!Physics.Raycast(spawnPosition, Vector3.down, 1000f, GameManager.Instance.whatIsGround))
+            int attempts = 0;
+            while (!Physics.Raycast(spawnPosition, Vector3.down, 1000f, GameManager.Instance.whatIsGround) && ++attempts <= 50)
             {
                 tempPos = enemySpawnPos[Random.Range(0, enemySpawnPos.Length)].position;
                 spawnPosition = new Vector3(tempPos.x + Random.Range(minSpawnOffset, maxSpawnOffset), tempPos.y, tempPos.z + Random.Range(minSpawnOffset, maxSpawnOffset));
