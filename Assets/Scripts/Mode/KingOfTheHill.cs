@@ -106,6 +106,7 @@ namespace Mode
         private LayerMask serverPlayer;
 
         private Collider[] col = new Collider[40];
+        private readonly HashSet<ServerPlayer> _onHill = new();
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
@@ -116,10 +117,12 @@ namespace Mode
                 {
                     Vector3 pos = hills[serverIndex].position;
                     int count = Physics.OverlapSphereNonAlloc(pos, 12, col, serverPlayer);
+                    _onHill.Clear();
                     for (int i = 0; i < count; i++)
                     {
                         ServerPlayer player = col[i].transform.root.GetComponent<ServerPlayer>();
-                        player.AddTime();
+                        if (player != null && !player.Dead && _onHill.Add(player))
+                            player.AddTime();
                     }
                 }
 
