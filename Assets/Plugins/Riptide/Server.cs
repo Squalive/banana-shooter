@@ -203,6 +203,28 @@ namespace Riptide
                 RiptideLogger.Log(LogType.Warning, LogName, $"Couldn't accept connection from {connection} because no such connection was pending!");
         }
 
+        public bool Accept(Connection connection, ushort clientId)
+        {
+            if (!pendingConnections.Remove(connection))
+            {
+                RiptideLogger.Log(LogType.Warning, LogName, $"Couldn't accept connection from {connection} because no such connection was pending!");
+                return false;
+            }
+
+            if (clients.ContainsValue(connection) || ClientCount >= MaxClientCount || !availableClientIds.Contains(clientId))
+            {
+                Reject(connection, RejectReason.Rejected);
+                return false;
+            }
+
+            availableClientIds = new Queue<ushort>(availableClientIds.Where(id => id != clientId));
+            connection.Id = clientId;
+            clients.Add(clientId, connection);
+            connection.ResetTimeout();
+            connection.SendWelcome();
+            return true;
+        }
+
         /// <summary>Rejects the given pending connection.</summary>
         /// <param name="connection">The connection to reject.</param>
         /// <param name="message">Data that should be sent to the client being rejected. Use <see cref="Message.Create()"/> to get an empty message instance.</param>
