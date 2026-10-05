@@ -356,7 +356,8 @@ namespace Multiplayer.Entity.Server
                     {
                         Rigidbody rb = _col[i].GetComponent<Rigidbody>();
 
-                        rb.AddExplosionForce(.000005f, position, 25f, 1f, ForceMode.Impulse);
+                        if (rb != null)
+                            rb.AddExplosionForce(.000005f, position, 25f, 1f, ForceMode.Impulse);
                     }
                     _clients.Clear();
                     _enemies.Clear();
@@ -380,7 +381,8 @@ namespace Multiplayer.Entity.Server
                     {
                         Rigidbody rb = _col[i].GetComponent<Rigidbody>();
 
-                        rb.AddExplosionForce(.000005f, position, 4f, 1f, ForceMode.Impulse);
+                        if (rb != null)
+                            rb.AddExplosionForce(.000005f, position, 4f, 1f, ForceMode.Impulse);
                     }
                     cnt = Physics.OverlapSphereNonAlloc(position, 4f, _col, GameManager.Instance.lagCompensationHitboxLayer,
                         QueryTriggerInteraction.Ignore);
