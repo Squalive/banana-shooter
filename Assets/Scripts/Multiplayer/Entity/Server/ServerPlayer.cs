@@ -236,10 +236,9 @@ namespace Multiplayer.Entity.Server
                     switch (upgrade)
                     {
                         case 0:
-                            player.MaxHealth += 20;
-                            player.MaxHealth = Mathf.Clamp(player.MaxHealth, 100, 200);
-                            if (player.HasPerk(Perk.Fat))
-                                player.MaxHealth = (int)(player.MaxHealth * 1.25f);
+                            float fat = player.HasPerk(Perk.Fat) ? PerkManager.FatMultiplier : 1f;
+                            int baseHealth = Mathf.RoundToInt(player.MaxHealth / fat);
+                            player.MaxHealth = (int)(Mathf.Clamp(baseHealth + 20, 100, 200) * fat);
 
                             ((ServerPlayer)player).CancelInvoke(nameof(Breathe));
                             ((ServerPlayer)player).Invoke(nameof(Breathe), 4);
