@@ -974,7 +974,7 @@ namespace Multiplayer.Entity.Server
                                 var weaponIndex = weapons[i];
 
                                 if (weaponIndex != -1 &&
-                                    (!NetworkServerManager.AllowedWeapon[weapons[i]] || weaponIndex == 6))
+                                    (!NetworkServerManager.AllowedWeapon[weapons[i]] || weaponIndex == 6 || NetworkServerManager.Instance.weaponInfo[weaponIndex].specialWeapon))
                                 {
                                     weaponIndex = -1;
                                 }
