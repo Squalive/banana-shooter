@@ -294,7 +294,17 @@ namespace Riptide
         ///   If you intend to continue using the message instance after calling this method, you <i>must</i> set <paramref name="shouldRelease"/>
         ///   to <see langword="false"/>. <see cref="Message.Release"/> can be used to manually return the message to the pool at a later time.
         /// </remarks>
-        public void Send(Message message, bool shouldRelease = true) => connection.Send(message, shouldRelease);
+        public void Send(Message message, bool shouldRelease = true)
+        {
+            if (connection == null || IsNotConnected)
+            {
+                if (shouldRelease)
+                    message.Release();
+                return;
+            }
+
+            connection.Send(message, shouldRelease);
+        }
 
         /// <summary>Disconnects from the server.</summary>
         public void Disconnect()
