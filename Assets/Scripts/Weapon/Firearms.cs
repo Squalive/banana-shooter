@@ -329,7 +329,7 @@ namespace Weapon
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("ShootingTarget"))
                     {
                         ShootingTarget target = hit.transform.root.GetComponent<ShootingTarget>();
-                        target.Hit();
+                        if (target != null) target.Hit();
                         HitMarker.Instance.StartHitMarker(Color.white);
                         HitMarker3D h = ObjectPooler.Instance.SpawnFromPool("HitMarker", hit.point, Quaternion.LookRotation(MoveCamera.Instance.transform.position - hit.point)).GetComponent<HitMarker3D>();
                         h.text.SetText(damage.ToString());
@@ -339,13 +339,14 @@ namespace Weapon
                         bool isHead = hit.collider.gameObject.CompareTag("Head");
                         // int actualDamage = isHead ? damage * 2 : damage;
                         ClientPlayer player = hit.transform.root.GetComponent<ClientPlayer>();
-                        if (NetworkManager.Instance.IsTeamMode(player.playerState)) return;
-                        if (isHead)
+                        if (player != null && !NetworkManager.Instance.IsTeamMode(player.playerState))
                         {
-                            AudioManager.Instance.Play("headshotrapid");
+                            if (isHead)
+                            {
+                                AudioManager.Instance.Play("headshotrapid");
+                            }
+                            HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
                         }
-                        HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
-
                     }
                     Invoke("StopSound", 0.1f);
                     break;
