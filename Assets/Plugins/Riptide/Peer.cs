@@ -136,6 +136,7 @@ namespace Riptide
         protected void StopTime()
         {
             time.Reset();
+            CurrentTime = 0;
             eventQueue.Clear();
         }
 
