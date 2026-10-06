@@ -514,7 +514,7 @@ namespace Weapon
                         if (hit.point == Vector3.zero)
                             hit = _hit[0];
 
-                        success = GunHit(hit);
+                        success |= GunHit(hit);
                     }
                 }
             }
