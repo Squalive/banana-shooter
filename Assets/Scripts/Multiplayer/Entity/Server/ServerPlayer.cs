@@ -190,6 +190,9 @@ namespace Multiplayer.Entity.Server
         [MessageHandler((ushort)ClientToServerId.UpdateWeaponIndex, NetworkServerManager.PlayerHostedDemoMessageHandlerGroupId)]
         private static void UpdateWeaponIndex(ushort fromClient, Message message)
         {
+            int index = message.GetInt();
+            if (index < 0 || index > 3) return;
+
             if (list.TryGetValue(fromClient, out var player))
             {
                 var currentWeapon = player.GetCurrentWeapon();
@@ -197,7 +200,7 @@ namespace Multiplayer.Entity.Server
                 {
                     currentWeapon.Disable();
                 }
-                player.CurrentWeaponIndex = message.GetInt();
+                player.CurrentWeaponIndex = index;
 
                 currentWeapon = player.GetCurrentWeapon();
                 if (currentWeapon != null)
