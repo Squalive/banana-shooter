@@ -12,7 +12,7 @@ namespace Multiplayer
 
             foreach (var weapon in weapons)
             {
-                if (weapon >= weaponCount) return false;
+                if (weapon < -1 || weapon >= weaponCount) return false;
             }
 
             return true;

@@ -859,9 +859,12 @@ namespace Multiplayer.Entity.Server
         [MessageHandler((ushort)ClientToServerId.GetWeapon, NetworkServerManager.PlayerHostedDemoMessageHandlerGroupId)]
         private static void ChangeWeapon(ushort fromClient, Message message)
         {
+            short[] weapons = message.GetShorts();
+            if (!ClientInputValidation.IsValidLoadout(weapons, 3, NetworkServerManager.Instance.weaponInfo.Count)) return;
+
             if (list.TryGetValue(fromClient, out var player))
             {
-                player.PlayerGetWeapon(message.GetShorts());
+                player.PlayerGetWeapon(weapons);
             }
         }
 
