@@ -420,6 +420,9 @@ namespace Multiplayer.Entity.Server
             {
                 short weapon = message.GetShort();
 
+                var weapons = NetworkServerManager.Instance.weaponInfo;
+                if (weapon < 0 || weapon >= weapons.Count || !weapons[weapon].specialWeapon) return;
+
                 player.CurrentWeaponIndex = 3;
 
                 var w = player.GetCurrentWeapon();
