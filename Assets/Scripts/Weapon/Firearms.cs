@@ -397,7 +397,7 @@ namespace Weapon
                             Transform root = col.transform.root;
                             ClientPlayer player = root.GetComponent<ClientPlayer>();
                             ClientEnemy clientEnemy = root.GetComponent<ClientEnemy>();
-                            if (col.gameObject.layer == LayerMask.NameToLayer("Client") && hit.transform.root.CompareTag("Enemy") && !clientEnemies.Contains(clientEnemy))
+                            if (col.gameObject.layer == LayerMask.NameToLayer("Client") && root.CompareTag("Enemy") && clientEnemy != null && !clientEnemies.Contains(clientEnemy))
                             {
                                 clientEnemies.Add(clientEnemy);
 
@@ -408,7 +408,7 @@ namespace Weapon
                             {
                                 clients.Add(player);
                                 bool isHead = col.gameObject.CompareTag("Head");
-                                if (NetworkManager.Instance.IsTeamMode(player.playerState)) return;
+                                if (player == null || NetworkManager.Instance.IsTeamMode(player.playerState)) continue;
                                 // if(GameManager.Instance.setting.spawnParticle)Instantiate(PrefabManager.Instance.GetPrefab("Blood"), hit.point, Quaternion.LookRotation(hit.normal));
                                 HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
 
