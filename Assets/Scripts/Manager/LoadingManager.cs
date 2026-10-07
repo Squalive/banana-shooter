@@ -535,10 +535,9 @@ namespace Manager
             }
             else
             {
+                _networkManager.DisconnectClient();
                 yield break;
             }
-
-
 
             #region Loading
 
