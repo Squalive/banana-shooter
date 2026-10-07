@@ -796,6 +796,7 @@ namespace Manager
         }
 
         public LayerMask serverPlayer, flashBangHitLayer;
+        private Texture2D _afterImage;
         IEnumerator GoBlind(float a)
         {
             yield return new WaitForEndOfFrame();
@@ -805,6 +806,8 @@ namespace Manager
             Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
             tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
             tex.Apply();
+            if (_afterImage != null) Destroy(_afterImage);
+            _afterImage = tex;
             GameUIManager.Instance.afterImage.texture = tex;
 
 
