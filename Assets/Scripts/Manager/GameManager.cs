@@ -532,12 +532,11 @@ namespace Manager
                     // Code to execute if deserialization fails
                     c = new InventoryManager.CosmeticIndex();
                     Debug.LogError("Error while deserializing inventory JSON: " + e.Message);
-                    NetworkManager.Instance.currentGroup = CSteamID.Nil;
                 }
 
                 if (c != null)
                 {
-                    if (c.ids.Length < 8)
+                    if (c.ids == null || c.ids.Length < 8)
                     {
                         c.ids = new ulong[8];
 
@@ -573,8 +572,8 @@ namespace Manager
                         c.menuSceneIndex = 0;
                         SaveInventory();
                     }
-                    if (c.weaponIds.Length != 30) c.weaponIds = new ulong[30];
-                    if (c.weaponIndex.Length != 30) c.weaponIndex = new ushort[30];
+                    if (c.weaponIds == null || c.weaponIds.Length != 30) c.weaponIds = new ulong[30];
+                    if (c.weaponIndex == null || c.weaponIndex.Length != 30) c.weaponIndex = new ushort[30];
                     InventoryManager.Instance.cosmeticIndex = c;
 
                 }
