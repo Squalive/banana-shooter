@@ -9,7 +9,7 @@ using Weapon.WeaponStats;
 
 namespace Weapon
 {
-    public class ActiveWeapon
+    public partial class ActiveWeapon
     {
         public WeaponStat Stat { get; private set; }
 
@@ -199,6 +199,12 @@ namespace Weapon
             uint startTick = Math.Max(requestTick, NetworkServerManager.Instance.CurrentTick);
             uint endTick = startTick + waitTicks;
 
+            yield return WaitReload(requestTick, endTick);
+        }
+
+        IEnumerator WaitReload(uint requestTick, uint endTick)
+        {
+            _reloadRequestTick = requestTick;
             _reloadEndTick = endTick;
 
             while (NetworkServerManager.Instance.CurrentTick < endTick)
