@@ -837,7 +837,7 @@ namespace Manager
         {
             if (CameraShaker.Instance)
             {
-                float p = (baseDis / Vector3.Distance(CameraShaker.Instance.transform.position, pos));
+                float p = baseDis / Mathf.Max(0.1f, Vector3.Distance(CameraShaker.Instance.transform.position, pos));
                 CameraShaker.Instance.ShakeOnce(mag * p, rough * p, fadeIn, fadeOut);
             }
         }
