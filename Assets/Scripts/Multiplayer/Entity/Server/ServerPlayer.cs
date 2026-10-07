@@ -11,6 +11,7 @@ using Mode;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Entity.Server.Enemy;
 using Multiplayer.LagCompensation;
+using Multiplayer.Migration;
 using Multiplayer.Server;
 using Riptide;
 using Steamworks;
@@ -26,7 +27,7 @@ namespace Multiplayer.Entity.Server
         Rebel = 0,
         Alliance = 1
     }
-    public class ServerPlayer : MonoBehaviour, IPlayerServer
+    public partial class ServerPlayer : MonoBehaviour, IPlayerServer
     {
         public static Dictionary<ushort, IPlayerServer> list = new();
 
@@ -243,8 +244,8 @@ namespace Multiplayer.Entity.Server
                             int baseHealth = Mathf.RoundToInt(player.MaxHealth / fat);
                             player.MaxHealth = (int)(Mathf.Clamp(baseHealth + 20, 100, 200) * fat);
 
-                            ((ServerPlayer)player).CancelInvoke(nameof(Breathe));
-                            ((ServerPlayer)player).Invoke(nameof(Breathe), 4);
+                            ((ServerPlayer)player).Unschedule(nameof(Breathe));
+                            ((ServerPlayer)player).Schedule(nameof(Breathe), 4);
 
                             msg.Add(player.MaxHealth);
                             break;
@@ -484,14 +485,12 @@ namespace Multiplayer.Entity.Server
 
                 NetworkServerManager.Instance.Server.SendToAll(msg);
 
-                ((ServerPlayer)player).clearKick = ((ServerPlayer)player).StartCoroutine(((ServerPlayer)player).ClearKick());
+                ((ServerPlayer)player).Schedule(nameof(ClearKick), 30f);
             }
         }
 
-        private Coroutine clearKick;
-        IEnumerator ClearKick()
+        void ClearKick()
         {
-            yield return new WaitForSeconds(30f);
             Vote = null;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.ClearKick);
             NetworkServerManager.Instance.Server.SendToAll(message);
@@ -662,7 +661,7 @@ namespace Multiplayer.Entity.Server
         {
             if (list.TryGetValue(fromClient, out var player))
             {
-                if (fromClient == 1 || RolesManager.Instance.CheckIsAdmin(player.SteamId))
+                if (fromClient == NetworkManager.Instance.Client.Id || RolesManager.Instance.CheckIsAdmin(player.SteamId))
                 {
                     bool flag = message.GetBool();
                     if (player.Dead && flag) return;
@@ -878,8 +877,8 @@ namespace Multiplayer.Entity.Server
             if (HasPerk(Perk.Fat))
             {
                 MaxHealth = (int)(100 * 1.25f);
-                CancelInvoke(nameof(Breathe));
-                Invoke(nameof(Breathe), 4);
+                this.Unschedule(nameof(Breathe));
+                this.Schedule(nameof(Breathe), 4);
             }
         }
 
@@ -1040,13 +1039,13 @@ namespace Multiplayer.Entity.Server
 
         public void SetCrazy(string str)
         {
-            CancelInvoke(nameof(ClearCrazy));
+            this.Unschedule(nameof(ClearCrazy));
             IsCrazy = true;
             Message crazyPlayerMessage = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.CrazyPlayer);
             crazyPlayerMessage.Add(str);
             crazyPlayerMessage.Add(Id);
             NetworkServerManager.Instance.Server.SendToAll(crazyPlayerMessage);
-            Invoke(nameof(ClearCrazy), 20f);
+            this.Schedule(nameof(ClearCrazy), 20f);
         }
 
         void ClearCrazy()
@@ -1074,7 +1073,7 @@ namespace Multiplayer.Entity.Server
 
             if (Health < MaxHealth)
             {
-                Invoke(nameof(Breathe), 0.4f);
+                this.Schedule(nameof(Breathe), 0.4f);
             }
         }
 
@@ -1151,8 +1150,7 @@ namespace Multiplayer.Entity.Server
             if (list.ContainsKey(Id))
                 list.Remove(Id);
 
-            if (clearKick != null)
-                StopCoroutine(clearKick);
+            this.Unschedule(nameof(ClearKick));
 
             if (Vote == null || Vote.PlayerId != Id) return;
 
@@ -1360,9 +1358,9 @@ namespace Multiplayer.Entity.Server
             {
                 if (Health > 0)
                 {
-                    CancelInvoke(nameof(FireGone));
+                    this.Unschedule(nameof(FireGone));
                     IsFire = true;
-                    Invoke(nameof(FireGone), 2f);
+                    this.Schedule(nameof(FireGone), 2f);
 
                     message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.PlayerFire);
 
@@ -1380,8 +1378,8 @@ namespace Multiplayer.Entity.Server
             }
             else
             {
-                CancelInvoke(nameof(Breathe));
-                Invoke(nameof(Breathe), 4);
+                this.Unschedule(nameof(Breathe));
+                this.Schedule(nameof(Breathe), 4);
                 //Send Data
                 message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.TakeDamage);
 
@@ -1435,9 +1433,9 @@ namespace Multiplayer.Entity.Server
 
         public void Kill(ushort attacker = 3000, bool headShot = false, bool wallbang = false, bool isAiming = false, ushort weapon = 1000, DamageType damageType = DamageType.Void)
         {
-            CancelInvoke(nameof(FireGone));
+            this.Unschedule(nameof(FireGone));
             FireGone();
-            CancelInvoke(nameof(Breathe));
+            this.Unschedule(nameof(Breathe));
 
             if (CurrentWeaponIndex == 3)
             {
@@ -1485,7 +1483,7 @@ namespace Multiplayer.Entity.Server
 
                 GameManager.Instance.ServerPlayerDead?.Invoke(this,
                     list.TryGetValue(attacker, out var p) ? p : null);
-                Invoke(nameof(Respawn), 5f);
+                this.Schedule(nameof(Respawn), 5f);
             }
 
             bool hasBanana = HasBanana;
@@ -1632,7 +1630,7 @@ namespace Multiplayer.Entity.Server
                 ReadyToFire = false;
                 TakeDamage(10, LastAttackBy, NetworkServerManager.Instance.CurrentTick, true, false, 1003);
 
-                Invoke(nameof(GetReadyToFire), 1f);
+                this.Schedule(nameof(GetReadyToFire), 1f);
             }
 
             if (!Dead)
@@ -1706,7 +1704,7 @@ namespace Multiplayer.Entity.Server
 
         public void DisableInvincible()
         {
-            CancelInvoke(nameof(DisableInvincible));
+            this.Unschedule(nameof(DisableInvincible));
             if (!invincible) return;
             invincible = false;
 
@@ -1717,9 +1715,9 @@ namespace Multiplayer.Entity.Server
         public void Respawn()
         {
             if (!Dead || specting || Eliminated) return;
-            CancelInvoke(nameof(Respawn));
+            this.Unschedule(nameof(Respawn));
             invincible = true;
-            Invoke(nameof(DisableInvincible), 3f);
+            this.Schedule(nameof(DisableInvincible), 3f);
             Vector3 pos = GetSpawnPos();
 
             Health = MaxHealth;
@@ -1856,7 +1854,7 @@ namespace Multiplayer.Entity.Server
             if (sendTime)
             {
                 sendTime = false;
-                Invoke(nameof(ReadyToSendTime), 1f);
+                this.Schedule(nameof(ReadyToSendTime), 1f);
 
                 Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.SetTime);
                 message.Add(Id);
@@ -1879,7 +1877,8 @@ namespace Multiplayer.Entity.Server
 
             PlayerTransform = player.transform;
 
-            TacticalThrowCount = 1;
+            if (!_restored)
+                TacticalThrowCount = 1;
         }
 
         public static float CrouchSize = 2.1f;
