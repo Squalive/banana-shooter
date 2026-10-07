@@ -192,7 +192,10 @@ namespace Manager
         {
             SteamUGC.StopPlaytimeTrackingForAllItems();
             SteamUGC.StartPlaytimeTracking(new[] { map }, 1);
-            StartCoroutine(JoinWorkshopMap(map, external));
+            if (asyncOperation != null) asyncOperation.allowSceneActivation = true;
+            if (loadingCoroutine != null)
+                StopCoroutine(loadingCoroutine);
+            loadingCoroutine = StartCoroutine(JoinWorkshopMap(map, external));
         }
 
         public void Menu()
