@@ -230,7 +230,7 @@ namespace Manager
 
                 yield return cd.coroutine;
 
-                if (cd.result is string[] up)
+                if (cd.result is string[] up && up.Length == upgrades.Length)
                     upgrades = up;
             }
 
@@ -242,11 +242,13 @@ namespace Manager
                 cd = new CoroutineWithData(this, SaveSystem.LoadBinaryDataAsync("weapons"));
                 yield return cd.coroutine;
 
-                if (cd.result is short[] wea)
+                if (cd.result is short[] wea && wea.Length >= 3)
                 {
+                    var weaponInfo = NetworkManager.Instance.weaponInfo;
                     for (int i = 0; i < 3; i++)
                     {
                         if (wea[i] == 6) wea[i] = 1;
+                        if (wea[i] < 0 || wea[i] >= weaponInfo.Count || weaponInfo[wea[i]].specialWeapon) continue;
 
                         NetworkManager.Instance.Weapons[i] = wea[i];
                     }
