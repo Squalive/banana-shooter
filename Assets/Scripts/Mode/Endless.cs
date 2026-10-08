@@ -11,6 +11,7 @@ using Multiplayer.Entity.Client;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Entity.Server;
 using Multiplayer.Entity.Server.Enemy;
+using Multiplayer.Migration;
 using Quest;
 using Riptide;
 using Safe;
@@ -21,7 +22,7 @@ using Random = UnityEngine.Random;
 
 namespace Mode
 {
-    public class Endless : MonoBehaviour
+    public partial class Endless : MonoBehaviour
     {
         public static Endless Instance { get; private set; }
         public List<Transform> spawnPos = new List<Transform>();
@@ -479,7 +480,7 @@ namespace Mode
                 }
                 GameManager.Entities.Clear();
 
-                StartCoroutine(Restart());
+                this.Schedule(nameof(Restart), 2f);
                 //TODO: Stop
                 Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.StopRound);
 
@@ -489,10 +490,8 @@ namespace Mode
             }
         }
 
-        IEnumerator Restart()
+        void Restart()
         {
-            yield return new WaitForSeconds(2f);
-
             foreach (var serverPlayer in ServerPlayer.list.Values)
             {
                 serverPlayer.Spect(false);
