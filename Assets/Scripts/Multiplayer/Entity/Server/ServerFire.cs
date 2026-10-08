@@ -1,11 +1,12 @@
 using Multiplayer.Entity.Interface;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 
 namespace Multiplayer.Entity.Server
 {
-    public class ServerFire : MonoBehaviour
+    public partial class ServerFire : MonoBehaviour
     {
         public ushort PlayerId { get; private set; } = 0;
 
@@ -14,6 +15,7 @@ namespace Multiplayer.Entity.Server
         public void Initialize(ushort playerId)
         {
             PlayerId = playerId;
+            _spawnTime = Time.time;
 
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.FireInit);
 
@@ -48,7 +50,7 @@ namespace Multiplayer.Entity.Server
                     {
                         damageable.TakeDamage(5, PlayerId, NetworkServerManager.Instance.CurrentTick, false, false, 1003);
                         ready = false;
-                        Invoke(nameof(GetReady), 0.5f);
+                        this.Schedule(nameof(GetReady), 0.5f);
                     }
                 }
             }
