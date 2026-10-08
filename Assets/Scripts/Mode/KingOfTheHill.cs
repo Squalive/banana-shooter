@@ -9,6 +9,7 @@ using Menu;
 using Multiplayer;
 using Multiplayer.Entity.Server;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Multiplayer.Server;
 using Riptide;
 using Steamworks;
@@ -17,7 +18,7 @@ using UnityEngine.SceneManagement;
 
 namespace Mode
 {
-    public class KingOfTheHill : GameModes
+    public partial class KingOfTheHill : GameModes
     {
         public static KingOfTheHill Instance;
 
@@ -41,41 +42,37 @@ namespace Mode
 
             serverPlayer = GameManager.Instance.serverPlayer;
 
-            if (NetworkServerManager.Instance.Server.IsRunning)
-            {
-                gameStart += SetNewHillServer;
-            }
+            gameStart += SetNewHillServer;
         }
 
 
         void SetNewHillServer()
         {
+            if (!NetworkServerManager.Instance.Server.IsRunning) return;
             ++serverIndex;
             if (serverIndex >= hills.Count) serverIndex = 0;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.SetHill);
             message.Add(serverIndex);
             NetworkServerManager.Instance.Server.SendToAll(message);
-            StartCoroutine(MessageBox());
+            _hillTime = 10;
+            this.Schedule(nameof(HillCountdown), 20f);
         }
 
-        IEnumerator MessageBox()
+        private ushort _hillTime;
+
+        void HillCountdown()
         {
-            yield return new WaitForSeconds(20f);
+            Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.Message);
 
-            ushort time = 10;
-            while (time > 0)
-            {
-                Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.Message);
+            message.Add((ushort)MessageType.KingOfTheHill);
+            message.Add(_hillTime);
 
-                message.Add((ushort)MessageType.KingOfTheHill);
-                message.Add(time);
+            NetworkServerManager.Instance.Server.SendToAll(message);
 
-                NetworkServerManager.Instance.Server.SendToAll(message);
-                yield return new WaitForSeconds(1f);
-                time--;
-            }
-
-            SetNewHillServer();
+            if (--_hillTime > 0)
+                this.Schedule(nameof(HillCountdown), 1f);
+            else
+                this.Schedule(nameof(SetNewHillServer), 1f);
         }
 
         [MessageHandler((ushort)ServerToClientId.SetHill, NetworkManager.PlayerHostedDemoMessageHandlerGroupId)]

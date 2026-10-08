@@ -6,6 +6,7 @@ using Menu;
 using Multiplayer;
 using Multiplayer.Entity.Server;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Multiplayer.Server;
 using Riptide;
 using Steamworks;
@@ -16,7 +17,7 @@ using Random = UnityEngine.Random;
 
 namespace Mode
 {
-    public class Infected : GameModes
+    public partial class Infected : GameModes
     {
         public static Infected Instance;
 
@@ -46,7 +47,10 @@ namespace Mode
         void StartInfected()
         {
             if (NetworkServerManager.Instance.Server.IsRunning)
-                StartCoroutine(FirstInfect());
+            {
+                _infectTime = 15;
+                FirstInfect();
+            }
         }
 
         private void OnDisable()
@@ -55,19 +59,21 @@ namespace Mode
         }
 
         public bool infected = false;
-        IEnumerator FirstInfect()
+        private ushort _infectTime;
+
+        void FirstInfect()
         {
-            ushort time = 15;
-            while (time > 0)
+            if (_infectTime > 0)
             {
                 Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.Message);
 
                 message.Add((ushort)MessageType.Infect);
-                message.Add(time);
+                message.Add(_infectTime);
 
                 NetworkServerManager.Instance.Server.SendToAll(message);
-                time--;
-                yield return new WaitForSeconds(1f);
+                _infectTime--;
+                this.Schedule(nameof(FirstInfect), 1f);
+                return;
             }
 
             var players = ServerPlayer.list.Values.Where(e => !e.Eliminated).ToList();
@@ -91,7 +97,7 @@ namespace Mode
             if (count <= 1)
             {
                 infected = true;
-                yield break;
+                return;
             }
 
             while (ids.Count < len)
