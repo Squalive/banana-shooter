@@ -149,6 +149,8 @@ namespace CodingDaniel.MapEditor.UI
             currentCamera.targetTexture = rt;
             currentCamera.Render();
 
+            if (texture2D != null && !MapSaver.Instance.IsSaving) Destroy(texture2D);
+
             texture2D = new Texture2D(width, height, TextureFormat.RGB24, false);
 
             texture2D.ReadPixels(rect, 0, 0);
