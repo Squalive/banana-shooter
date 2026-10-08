@@ -869,8 +869,6 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                 return false;
             }
 
-            MEBase.Instance.HasChanged = false;
-
             MapMetadata md = new MapMetadata(mapName, CurrentMap.saveKey, description, CurrentMap.isPublished,
                 CurrentMap.fileId);
 
@@ -931,72 +929,91 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
         {
             float time = Time.time;
 
-            string map = await Task.Run(() => JsonConvert.SerializeObject(CurrentMap, Formatting.None,
-                new JsonSerializerSettings()
-                {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                }));
-
-            byte[] previewImg = texture2D.EncodeToJPG();
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".jpg", previewImg);
-
-            string md = await Task.Run(() => JsonConvert.SerializeObject(metadata, Formatting.None,
-                new JsonSerializerSettings()
-                {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                }));
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
-
-            Debug.Log("save complete in: " + (Time.time - time));
-            IsSaving = false;
-
-            CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
-
-            if (!EditingMaps.Contains(CurrentMapFile))
+            try
             {
-                EditingMaps.Add(CurrentMapFile);
+                string map = await Task.Run(() => JsonConvert.SerializeObject(CurrentMap, Formatting.None,
+                    new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                    }));
+
+                byte[] previewImg = texture2D.EncodeToJPG();
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".jpg", previewImg);
+
+                string md = await Task.Run(() => JsonConvert.SerializeObject(metadata, Formatting.None,
+                    new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                    }));
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
+
+                Debug.Log("save complete in: " + (Time.time - time));
+                MEBase.Instance.HasChanged = false;
+
+                CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
+
+                if (!EditingMaps.Contains(CurrentMapFile))
+                {
+                    EditingMaps.Add(CurrentMapFile);
+                }
+
+                EditingMapMetadatas[CurrentMapFile] = metadata;
             }
-
-            EditingMapMetadatas[CurrentMapFile] = metadata;
-
-            EditorMenu.Instance.SavingMenu.SetActive(false);
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to save map {CurrentMap?.name}: {e}");
+            }
+            finally
+            {
+                IsSaving = false;
+                EditorMenu.Instance.SavingMenu.SetActive(false);
+            }
         }
 
         public async void SaveBsmFileOnly()
         {
-            string map = JsonConvert.SerializeObject(CurrentMap, Formatting.None, new JsonSerializerSettings()
+            try
             {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            });
+                string map = JsonConvert.SerializeObject(CurrentMap, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
 
-            MapMetadata metadata = new MapMetadata(CurrentMap.name, CurrentMap.saveKey, CurrentMap.description,
-                CurrentMap.isPublished, CurrentMap.fileId);
+                MapMetadata metadata = new MapMetadata(CurrentMap.name, CurrentMap.saveKey, CurrentMap.description,
+                    CurrentMap.isPublished, CurrentMap.fileId);
 
-            float time = await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
+                float time = await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
 
-            string md = JsonConvert.SerializeObject(metadata, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            });
+                string md = JsonConvert.SerializeObject(metadata, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
 
-            time += await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
+                time += await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
 
-            IsSaving = false;
+                CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
 
-            CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
+                Debug.Log("save complete in: " + time);
 
-            Debug.Log("save complete in: " + time);
+                if (!EditingMaps.Contains(CurrentMapFile))
+                {
+                    EditingMaps.Add(CurrentMapFile);
+                }
 
-            if (!EditingMaps.Contains(CurrentMapFile))
-            {
-                EditingMaps.Add(CurrentMapFile);
+                EditingMapMetadatas[CurrentMapFile] = metadata;
             }
-
-            EditingMapMetadatas[CurrentMapFile] = metadata;
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to save map {CurrentMap?.name}: {e}");
+            }
+            finally
+            {
+                IsSaving = false;
+            }
         }
 
         public Material dummyMat;
