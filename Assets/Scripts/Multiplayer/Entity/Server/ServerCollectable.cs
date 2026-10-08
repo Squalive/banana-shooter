@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Multiplayer.Server
 {
-    public class ServerCollectable : MonoBehaviour
+    public partial class ServerCollectable : MonoBehaviour
     {
         public static Dictionary<ushort, ServerCollectable> list = new Dictionary<ushort, ServerCollectable>();
 
@@ -28,6 +28,7 @@ namespace Multiplayer.Server
         public void InitializeKillConfirm(ushort _deadPlayerId, ushort _killPlayerId)
         {
             Id = nextId++;
+            _spawnTime = Time.time;
 
             deadPlayerId = _deadPlayerId;
             killPlayerId = _killPlayerId;
