@@ -1295,7 +1295,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             {
                 return null;
             }
-            var audioType = p.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
+            var audioType = p.EndsWith(".wav", StringComparison.OrdinalIgnoreCase) ? AudioType.WAV : AudioType.MPEG;
             using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(p), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip

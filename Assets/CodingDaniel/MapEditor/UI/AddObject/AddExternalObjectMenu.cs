@@ -443,7 +443,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
                 yield break;
             }
             _loadAudioPath = path;
-            var audioType = path.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
+            var audioType = path.EndsWith(".wav", StringComparison.OrdinalIgnoreCase) ? AudioType.WAV : AudioType.MPEG;
             using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(path), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip
