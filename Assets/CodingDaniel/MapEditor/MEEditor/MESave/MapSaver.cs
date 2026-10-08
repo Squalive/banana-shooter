@@ -1296,7 +1296,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                 return null;
             }
             var audioType = p.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
-            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(p, audioType))
+            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(p), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip
                 DownloadHandlerAudioClip handler = new DownloadHandlerAudioClip(webRequest.url, audioType);

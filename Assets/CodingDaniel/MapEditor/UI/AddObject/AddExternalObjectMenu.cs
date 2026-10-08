@@ -444,7 +444,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
             }
             _loadAudioPath = path;
             var audioType = path.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
-            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(path, audioType))
+            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(path), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip
                 DownloadHandlerAudioClip handler = new DownloadHandlerAudioClip(webRequest.url, audioType);
