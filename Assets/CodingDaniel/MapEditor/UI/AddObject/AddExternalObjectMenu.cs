@@ -143,9 +143,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                     if (MapSaver.CurrentMap != null)
                     {
-                        string path = Path.Combine(MapSaver.CurrentMap.GetDecalTexturePath(), material.name + ".png");
-
-                        if (File.Exists(path))
+                        if (SafePath.TryCombine(MapSaver.CurrentMap.GetDecalTexturePath(), material.name + ".png", out var path) && File.Exists(path))
                         {
                             File.Delete(path);
                         }
@@ -171,9 +169,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                     if (MapSaver.CurrentMap != null)
                     {
-                        string path = Path.Combine(MapSaver.CurrentMap.GetAudioPath(), clip.name + ".wav");
-
-                        if (File.Exists(path))
+                        if (SafePath.TryCombine(MapSaver.CurrentMap.GetAudioPath(), clip.name + ".wav", out var path) && File.Exists(path))
                         {
                             File.Delete(path);
                         }
@@ -197,9 +193,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                         if (MapSaver.CurrentMap != null)
                         {
-                            string path = Path.Combine(MapSaver.CurrentMap.GetModelPath(), config.name);
-
-                            if (Directory.Exists(path))
+                            if (SafePath.TryCombine(MapSaver.CurrentMap.GetModelPath(), config.name, out var path) && Directory.Exists(path))
                             {
                                 Directory.Delete(path, true);
                             }
