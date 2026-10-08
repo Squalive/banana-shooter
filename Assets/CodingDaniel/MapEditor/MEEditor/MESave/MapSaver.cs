@@ -848,16 +848,26 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
         {
             PublishMenu.Instance.nameInput.SetTextWithoutNotify(mapName);
             PublishMenu.Instance.descriptionInput.SetTextWithoutNotify(description);
-            IsSaving = true;
-
             if (string.IsNullOrEmpty(mapName))
             {
                 return false;
             }
 
+            IsSaving = true;
+
             EditorMenu.Instance.SavingMenu.SetActive(true);
 
-            SetMapData(mapName, description, saveAs, true);
+            try
+            {
+                SetMapData(mapName, description, saveAs, true);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to prepare map {mapName} for saving: {e}");
+                IsSaving = false;
+                EditorMenu.Instance.SavingMenu.SetActive(false);
+                return false;
+            }
 
             MEBase.Instance.HasChanged = false;
 
