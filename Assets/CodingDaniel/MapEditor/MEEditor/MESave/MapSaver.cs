@@ -1196,7 +1196,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 if (loadedAssetBundle == null)
                 {
-                    Debug.Log($"Failed to load {bundle.name} AssetBundle!");
+                    Debug.LogError($"Failed to load {bundle.name} AssetBundle!");
                     return;
                 }
 
@@ -1209,13 +1209,29 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 if (assetRequest.asset is not GameObject go)
                 {
-                    Debug.Log($"Failed to load {bundle.name} Asset!");
+                    Debug.LogError($"Failed to load {bundle.name} Asset!");
                     return;
                 }
 
                 Sanitize(go);
+                UseGameShaders(go);
 
                 bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, bundleRequest.assetBundle, assetRequest.asset);
+            }
+        }
+
+        void UseGameShaders(GameObject root)
+        {
+            Shader lit = dummyMat != null ? dummyMat.shader : null;
+            if (lit == null) return;
+
+            foreach (var r in root.GetComponentsInChildren<Renderer>(true))
+            {
+                foreach (var m in r.sharedMaterials)
+                {
+                    if (m != null && m.shader != null && m.shader != lit && m.shader.name == lit.name)
+                        m.shader = lit;
+                }
             }
         }
 
