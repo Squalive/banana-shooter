@@ -272,7 +272,7 @@ namespace SteamWorkshop
             for (uint i = 0; i < result.m_unNumResultsReturned; i++)
             {
                 SteamUGCDetails_t itemDetails;
-                if (!SteamUGC.GetQueryUGCResult(_queryHandle, i, out itemDetails))
+                if (!SteamUGC.GetQueryUGCResult(result.m_handle, i, out itemDetails))
                 {
                     // Failed to get item details
                     Debug.Log("Failed to get item details");
