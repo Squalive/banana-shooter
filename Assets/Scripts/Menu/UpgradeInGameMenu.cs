@@ -150,7 +150,9 @@ namespace Menu
             {
                 while (upgrade.currentIndex < upgrade.maxIndex && upgrade.cost <= Player.coins)
                 {
+                    int coins = Player.coins;
                     upgrade.Upgrade(new InputAction.CallbackContext());
+                    if (Player.coins == coins) break;
                 }
             }
         }
