@@ -1465,8 +1465,10 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             foreach (var decoration in data.decorationDatas)
             {
                 ObjectItem item = GetObjectItem(decoration.data.name);
-                var go = decoration.external ? AddObjectMenu.CreateDecorationExposeToEditor((GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3()
-                    , decoration.data.rotation, decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision) : AddObjectMenu.CreateDecorationExposeToEditor(item.prefab, MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3(),
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                var go = AddObjectMenu.CreateDecorationExposeToEditor(prefab, MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3(),
                     decoration.data.rotation, decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision);
 
                 GameObject o = go.gameObject;
@@ -1579,19 +1581,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             foreach (var decoration in data.decorationDatas)
             {
-                GameObject go;
-                if (decoration.external)
-                {
-                    go = AddObjectMenu.CreateDecoration(
-                        (GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation
-                        , decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision);
-                }
-                else
-                {
-                    ObjectItem item = GetObjectItem(decoration.data.name);
-                    go = AddObjectMenu.CreateDecoration(item.prefab, MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                GameObject go = AddObjectMenu.CreateDecoration(prefab, MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
+                    decoration.type, decoration.enableCollision);
 
                 playModeLoadedObject.Add(go);
             }
@@ -1681,18 +1675,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             foreach (var decoration in CurrentMap.decorationDatas)
             {
-                if (decoration.external)
-                {
-                    AddObjectMenu.CreateDecoration(
-                        (GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
-                else
-                {
-                    ObjectItem item = GetObjectItem(decoration.data.name);
-                    AddObjectMenu.CreateDecoration(item.prefab, MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                AddObjectMenu.CreateDecoration(prefab, MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
+                    decoration.type, decoration.enableCollision);
             }
             foreach (var audioData in CurrentMap.audioDatas)
             {
@@ -1717,6 +1704,19 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             return true;
         }
+
+        GameObject GetDecorationPrefab(MapData.DecorationObjectData decoration)
+        {
+            GameObject prefab = decoration.external
+                ? AssetBundleManager.Instance.GetAssetObject(decoration.data.name) as GameObject
+                : GetObjectItem(decoration.data.name)?.prefab;
+
+            if (prefab == null)
+                Debug.LogWarning($"Skipping decoration {decoration.data.name}, its prefab didnt load");
+
+            return prefab;
+        }
+
         ObjectItem GetObjectItem(string n)
         {
             foreach (var item in objectItems)
