@@ -1,11 +1,12 @@
 using Multiplayer.Entity.Interface;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 
 namespace Multiplayer.Entity.Server.Enemy
 {
-    public class ServerTurret : ServerEnemy
+    public partial class ServerTurret : ServerEnemy
     {
         public override int MaxHealth { get; set; } = 300;
 
@@ -54,7 +55,7 @@ namespace Multiplayer.Entity.Server.Enemy
                         if (readyToShoot)
                         {
                             readyToShoot = false;
-                            Invoke(nameof(ReadyToShoot), 1f / fireRate);
+                            this.Schedule(nameof(ReadyToShoot), 1f / fireRate);
 
                             if (Physics.Raycast(tip.position, (_desiredPos - tip.position).normalized, out var hit, 1000f, whatIsHittable))
                             {
@@ -89,8 +90,8 @@ namespace Multiplayer.Entity.Server.Enemy
                     _targetPlayer = _colliders[0].transform.root.GetComponent<ServerPlayer>();
 
                     _state = ETurretState.Shooting;
-                    Invoke(nameof(GotoRecover), 5);
-                    Invoke(nameof(ReadyToShoot), 1.2f);
+                    this.Schedule(nameof(GotoRecover), 5);
+                    this.Schedule(nameof(ReadyToShoot), 1.2f);
                     SendState();
                 }
                 else
@@ -107,8 +108,8 @@ namespace Multiplayer.Entity.Server.Enemy
                 _targetPlayer = s;
 
                 _state = ETurretState.Shooting;
-                Invoke(nameof(GotoRecover), 5);
-                Invoke(nameof(ReadyToShoot), 1.2f);
+                this.Schedule(nameof(GotoRecover), 5);
+                this.Schedule(nameof(ReadyToShoot), 1.2f);
                 SendState();
             }
 
@@ -123,7 +124,7 @@ namespace Multiplayer.Entity.Server.Enemy
             _state = ETurretState.Recovering;
             _targetPlayer = null;
             SendState();
-            Invoke(nameof(GotoIdle), 2.5f);
+            this.Schedule(nameof(GotoIdle), 2.5f);
         }
 
         void GotoIdle()

@@ -1,12 +1,13 @@
 using Manager;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Multiplayer.Entity.Server.Enemy
 {
-    public class ServerZombie : ServerEnemy
+    public partial class ServerZombie : ServerEnemy
     {
         /// <summary>
         /// Zombie should stand when there is no target in his view
@@ -103,7 +104,7 @@ namespace Multiplayer.Entity.Server.Enemy
                 {
                     target = cols[0].transform;
                     ChangeState(EZombieState.Awake);
-                    Invoke(nameof(ReadyToTrace), 1f);
+                    this.Schedule(nameof(ReadyToTrace), 1f);
                 }
             }
         }

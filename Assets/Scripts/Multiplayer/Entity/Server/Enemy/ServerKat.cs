@@ -1,11 +1,12 @@
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Multiplayer.Entity.Server.Enemy
 {
-    public class ServerKat : ServerEnemy
+    public partial class ServerKat : ServerEnemy
     {
         public override int MaxHealth { get; set; } = 100;
 
@@ -102,8 +103,8 @@ namespace Multiplayer.Entity.Server.Enemy
 
                             state = Random.Range(0, 10) < 5 * difficulty ? EKatState.Missile : EKatState.Shooting;
                             _readyToShoot = false;
-                            Invoke(nameof(ReadyToShoot), 1f);
-                            Invoke(nameof(BackToNormal), 4f);
+                            this.Schedule(nameof(ReadyToShoot), 1f);
+                            this.Schedule(nameof(BackToNormal), 4f);
                             SendState();
                         }
 
@@ -114,7 +115,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     if (_readyToShoot)
                     {
                         _readyToShoot = false;
-                        Invoke(nameof(ReadyToShoot), 1f / fireRate);
+                        this.Schedule(nameof(ReadyToShoot), 1f / fireRate);
                         tip.LookAt(_trackTarget);
                         if (Physics.Raycast(tip.position, tip.forward + new Vector3(Random.Range(-offset, offset), Random.Range(-offset, offset)), out var hit, 1000f, whatIsHittable))
                         {
@@ -131,7 +132,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     if (_readyToShoot)
                     {
                         _readyToShoot = false;
-                        Invoke(nameof(ReadyToShoot), 1f);
+                        this.Schedule(nameof(ReadyToShoot), 1f);
                         tip.LookAt(_trackTarget);
                         // Vector3 pos = tip.position;
                         // var obj = Instantiate(PrefabManager.Instance.GetPrefab("ServerMissile"),pos,Quaternion.identity)
@@ -184,7 +185,7 @@ namespace Multiplayer.Entity.Server.Enemy
                 {
                     _trackTarget = _cols[0].transform;
                     state = EKatState.Awaking;
-                    Invoke(nameof(Chase), 1.3f);
+                    this.Schedule(nameof(Chase), 1.3f);
                     SendState();
                 }
             }
