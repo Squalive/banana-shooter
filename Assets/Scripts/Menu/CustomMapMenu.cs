@@ -48,7 +48,10 @@ namespace Menu
 
                 itemUI.gameObject.SetActive(false);
             }
+        }
 
+        private void OnEnable()
+        {
             if (SteamWorkshopManager.QueryLoaded)
             {
                 InitMaps();
