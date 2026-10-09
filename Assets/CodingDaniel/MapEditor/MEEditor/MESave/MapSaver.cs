@@ -1118,6 +1118,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     if (File.Exists(audioPath))
                     {
                         AudioClip clip = await LoadAudio(audioPath);
+                        if (clip == null)
+                        {
+                            Debug.LogWarning($"Failed to load audio {audioPath}");
+                            continue;
+                        }
                         clip.name = n;
 
                         externalAudioClips.Add(new Tuple<string, AudioClip>(audioPath, clip));
@@ -1129,6 +1134,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     if (File.Exists(audioPath))
                     {
                         AudioClip clip = await LoadAudio(audioPath);
+                        if (clip == null)
+                        {
+                            Debug.LogWarning($"Failed to load audio {audioPath}");
+                            continue;
+                        }
                         clip.name = n;
 
                         externalAudioClips.Add(new Tuple<string, AudioClip>(audioPath, clip));
@@ -1592,6 +1602,8 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             foreach (var audioData in data.audioDatas)
             {
+                if (audioData.index < 0 || audioData.index >= externalAudioClips.Count) continue;
+
                 AudioSource source = AddExternalObjectMenu.CreateAudioSource(externalAudioClips[audioData.index].Item2);
 
                 Transform transform1;
@@ -1683,6 +1695,8 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             }
             foreach (var audioData in CurrentMap.audioDatas)
             {
+                if (audioData.index < 0 || audioData.index >= externalAudioClips.Count) continue;
+
                 AudioSource source = AddExternalObjectMenu.CreateAudioSource(externalAudioClips[audioData.index].Item2);
 
                 Transform transform1;
