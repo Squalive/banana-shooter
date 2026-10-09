@@ -114,7 +114,7 @@ namespace SteamWorkshop
 
                 WorkshopItem workshopItem = new WorkshopItem(fileId, state);
 
-                if (SteamUGC.GetItemInstallInfo(fileId, out var size, out var path, 256, out var timeStamp))
+                if (SteamUGC.GetItemInstallInfo(fileId, out var size, out var path, 1024, out var timeStamp))
                 {
                     DateTime date = DateTimeOffset.FromUnixTimeSeconds(timeStamp).LocalDateTime;
 
@@ -134,7 +134,13 @@ namespace SteamWorkshop
                 WorkshopItems.Add(fileId, workshopItem);
             }
 
-            SendDetailsQuery(SubscribedItems, maxLen);
+            if (maxLen > 0)
+                SendDetailsQuery(SubscribedItems, maxLen);
+            else
+            {
+                QueryLoaded = true;
+                OnQueryLoaded?.Invoke();
+            }
 
             Initialized = true;
         }
@@ -210,7 +216,7 @@ namespace SteamWorkshop
                 item = new WorkshopItem(param.m_nPublishedFileId, state);
                 WorkshopItems.Add(param.m_nPublishedFileId, item);
             }
-            if (SteamUGC.GetItemInstallInfo(param.m_nPublishedFileId, out var size, out var path, 1000, out var timeStamp))
+            if (SteamUGC.GetItemInstallInfo(param.m_nPublishedFileId, out var size, out var path, 1024, out var timeStamp))
             {
                 DateTime date = DateTimeOffset.FromUnixTimeSeconds(timeStamp).LocalDateTime;
 
