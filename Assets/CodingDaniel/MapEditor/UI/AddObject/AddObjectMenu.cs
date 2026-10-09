@@ -343,12 +343,10 @@ namespace CodingDaniel.MapEditor.UI.AddObject
                     switch (decoration.type)
                     {
                         case MEDecoration.EDecorationType.Obstacle:
-                            col.enabled = decoration.enableCollision;
-                            col.gameObject.layer = LayerMask.NameToLayer("Ground");
+                            SetupColliders(go, decoration.enableCollision, LayerMask.NameToLayer("Ground"));
                             break;
                         case MEDecoration.EDecorationType.GrapplePoint:
-                            col.enabled = decoration.enableCollision;
-                            col.gameObject.layer = LayerMask.NameToLayer("Grapple");
+                            SetupColliders(go, decoration.enableCollision, LayerMask.NameToLayer("Grapple"));
                             break;
                         case MEDecoration.EDecorationType.Water:
                             col.gameObject.AddComponent<Water>();
@@ -386,6 +384,15 @@ namespace CodingDaniel.MapEditor.UI.AddObject
             }
 
             return go;
+        }
+
+        static void SetupColliders(GameObject go, bool enabled, int layer)
+        {
+            foreach (var col in go.GetComponentsInChildren<Collider>())
+            {
+                col.enabled = enabled;
+                col.gameObject.layer = layer;
+            }
         }
 
         #endregion
