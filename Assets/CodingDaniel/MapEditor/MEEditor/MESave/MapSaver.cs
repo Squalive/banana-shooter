@@ -1148,18 +1148,31 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         string sourcePath = Path.Combine(info.FullName, "source.unity3d");
                         if (File.Exists(configPath))
                         {
-                            MapData.ExternalModelConfig config =
-                                JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
-                                    SaveSystem.ReadFileNormally(configPath));
-
-                            if (File.Exists(previewImage))
-                                config.previewImage.LoadImage(await SaveSystem.ReadByteFromFileAsync(previewImage));
-
-                            if (File.Exists(sourcePath))
+                            try
                             {
-                                await TryToDownloadAssetBundle(config, sourcePath);
+                                MapData.ExternalModelConfig config =
+                                    JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
+                                        SaveSystem.ReadFileNormally(configPath));
+
+                                if (config == null || string.IsNullOrEmpty(config.name) || ModelConfigs.ContainsKey(config.name))
+                                {
+                                    Debug.LogWarning($"Skipping model config {configPath}");
+                                    continue;
+                                }
+
+                                if (File.Exists(previewImage))
+                                    config.previewImage.LoadImage(await SaveSystem.ReadByteFromFileAsync(previewImage));
+
+                                if (File.Exists(sourcePath))
+                                {
+                                    await TryToDownloadAssetBundle(config, sourcePath);
+                                }
+                                ModelConfigs.Add(config.name, config);
                             }
-                            ModelConfigs.Add(config.name, config);
+                            catch (Exception e)
+                            {
+                                Debug.LogError($"Failed to load model {info.Name}: {e}");
+                            }
                         }
                     }
                 }
