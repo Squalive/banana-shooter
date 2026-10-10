@@ -7,6 +7,9 @@
 [Project Setup]: docs/project-setup.md
 [Contributing]: CONTRIBUTING.md
 
+[![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
+[![de](https://img.shields.io/badge/lang-de-yellow.svg)](./README.de.md)
+
 # Banana Shooter
 [Banana Shooter](https://store.steampowered.com/app/1949740/Banana_Shooter/) is a fast paced first person shooter game where you move and shoot the bad guys.
 
