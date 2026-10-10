@@ -356,8 +356,8 @@ namespace Multiplayer.Entity.Client
 
             if (CurrentWeapon != null && CurrentWeapon.gameObject != null)
             {
-                _leftHandTarget.parent = null;
-                _rightHandTarget.parent = null;
+                if (_leftHandTarget) _leftHandTarget.parent = null;
+                if (_rightHandTarget) _rightHandTarget.parent = null;
                 CurrentWeapon.gameObject.SetActive(false);
                 DisableIK();
                 CurrentWeapon = null;

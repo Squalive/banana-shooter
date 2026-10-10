@@ -329,7 +329,7 @@ namespace Weapon
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("ShootingTarget"))
                     {
                         ShootingTarget target = hit.transform.root.GetComponent<ShootingTarget>();
-                        target.Hit();
+                        if (target != null) target.Hit();
                         HitMarker.Instance.StartHitMarker(Color.white);
                         HitMarker3D h = ObjectPooler.Instance.SpawnFromPool("HitMarker", hit.point, Quaternion.LookRotation(MoveCamera.Instance.transform.position - hit.point)).GetComponent<HitMarker3D>();
                         h.text.SetText(damage.ToString());
@@ -339,13 +339,14 @@ namespace Weapon
                         bool isHead = hit.collider.gameObject.CompareTag("Head");
                         // int actualDamage = isHead ? damage * 2 : damage;
                         ClientPlayer player = hit.transform.root.GetComponent<ClientPlayer>();
-                        if (NetworkManager.Instance.IsTeamMode(player.playerState)) return;
-                        if (isHead)
+                        if (player != null && !NetworkManager.Instance.IsTeamMode(player.playerState))
                         {
-                            AudioManager.Instance.Play("headshotrapid");
+                            if (isHead)
+                            {
+                                AudioManager.Instance.Play("headshotrapid");
+                            }
+                            HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
                         }
-                        HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
-
                     }
                     Invoke("StopSound", 0.1f);
                     break;
@@ -397,7 +398,7 @@ namespace Weapon
                             Transform root = col.transform.root;
                             ClientPlayer player = root.GetComponent<ClientPlayer>();
                             ClientEnemy clientEnemy = root.GetComponent<ClientEnemy>();
-                            if (col.gameObject.layer == LayerMask.NameToLayer("Client") && hit.transform.root.CompareTag("Enemy") && !clientEnemies.Contains(clientEnemy))
+                            if (col.gameObject.layer == LayerMask.NameToLayer("Client") && root.CompareTag("Enemy") && clientEnemy != null && !clientEnemies.Contains(clientEnemy))
                             {
                                 clientEnemies.Add(clientEnemy);
 
@@ -408,7 +409,7 @@ namespace Weapon
                             {
                                 clients.Add(player);
                                 bool isHead = col.gameObject.CompareTag("Head");
-                                if (NetworkManager.Instance.IsTeamMode(player.playerState)) return;
+                                if (player == null || NetworkManager.Instance.IsTeamMode(player.playerState)) continue;
                                 // if(GameManager.Instance.setting.spawnParticle)Instantiate(PrefabManager.Instance.GetPrefab("Blood"), hit.point, Quaternion.LookRotation(hit.normal));
                                 HitMarker.Instance.StartHitMarker(isHead ? Color.yellow : Color.white);
 
@@ -513,7 +514,7 @@ namespace Weapon
                         if (hit.point == Vector3.zero)
                             hit = _hit[0];
 
-                        success = GunHit(hit);
+                        success |= GunHit(hit);
                     }
                 }
             }
