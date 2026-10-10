@@ -401,6 +401,8 @@ namespace Multiplayer
 
         private void Update()
         {
+            if (!SteamManager.Initialized) return;
+
             Client.Update();
         }
 
@@ -438,6 +440,8 @@ namespace Multiplayer
 
         private void OnApplicationQuit()
         {
+            if (!SteamManager.Initialized) return;
+
             Client.Connected -= DidConnect;
             Client.ConnectionFailed -= FailedToConnect;
             Client.Disconnected -= DidDisconnect;
@@ -631,6 +635,7 @@ namespace Multiplayer
 
         public void SetRichPreference(string gamemodeName, string mapName)
         {
+            if (!SteamManager.Initialized) return;
             SteamFriends.SetRichPresence("gamemode", gamemodeName);
             SteamFriends.SetRichPresence("map", mapName);
             SteamFriends.SetRichPresence("steam_display", "#Playing");
@@ -970,19 +975,21 @@ namespace Multiplayer
             };
             message.Add(perks);
 
-            int len = InventoryManager.SerializeInventory.Length;
+            // Fragments go out later; a refresh in between must not mix two snapshots.
+            _sendingInventory = InventoryManager.SerializeInventory;
+            int len = _sendingInventory.Length;
 
             message.Add(len);
 
             if (len <= MaxSplitPacketSize)
             {
-                message.Add(InventoryManager.SerializeInventory);
+                message.Add(_sendingInventory);
             }
             else
             {
                 byte[] bytes = new byte[MaxSplitPacketSize];
 
-                Array.Copy(InventoryManager.SerializeInventory, 0, bytes, 0, MaxSplitPacketSize);
+                Array.Copy(_sendingInventory, 0, bytes, 0, MaxSplitPacketSize);
                 message.Add(bytes);
             }
 
@@ -993,9 +1000,11 @@ namespace Multiplayer
                 Invoke(nameof(SendFragmentSerializeInventory), 0.3f);
         }
 
+        private byte[] _sendingInventory;
+
         private void SendFragmentSerializeInventory()
         {
-            int len = InventoryManager.SerializeInventory.Length;
+            int len = _sendingInventory.Length;
             int offset = len % MaxSplitPacketSize == 0 ? 0 : 1;
 
             int loop = (int)(len / MaxSplitPacketSize + offset - 1);
@@ -1006,7 +1015,7 @@ namespace Multiplayer
                 int index = i + 1 >= loop ? len - d : (int)MaxSplitPacketSize;
                 byte[] bytes = new byte[index];
 
-                Array.Copy(InventoryManager.SerializeInventory, d, bytes, 0, index);
+                Array.Copy(_sendingInventory, d, bytes, 0, index);
 
                 Message message = Message.Create(MessageSendMode.Reliable, (ushort)ClientToServerId.FragmentSerializeInventory);
 

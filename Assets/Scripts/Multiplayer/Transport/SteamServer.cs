@@ -7,6 +7,11 @@ using Steamworks;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_SERVER
+using Sockets = Steamworks.SteamGameServerNetworkingSockets;
+#else
+using Sockets = Steamworks.SteamNetworkingSockets;
+#endif
 
 namespace Riptide.Transports.Steam
 {
@@ -26,22 +31,18 @@ namespace Riptide.Transports.Steam
             Port = port;
             connections = new Dictionary<CSteamID, SteamConnection>();
 
-            connectionStatusChanged = Callback<SteamNetConnectionStatusChangedCallback_t>.Create(OnConnectionStatusChanged);
-
-            //             try
-            //             {
-            // #if UNITY_SERVER
-            //                 SteamGameServerNetworkingUtils.InitRelayNetworkAccess();
-            // #else
-            //                 SteamNetworkingUtils.InitRelayNetworkAccess();
-            // #endif
-            //             }
-            //             catch (Exception ex)
-            //             {
-            //                 Debug.LogException(ex);
-            //             }
             SteamNetworkingConfigValue_t[] options = new SteamNetworkingConfigValue_t[] { };
-            listenSocket = SteamNetworkingSockets.CreateListenSocketP2P(port, options.Length, options);
+#if UNITY_SERVER
+            // Dedicated server: clients connect by IP (server browser), not P2P through a lobby.
+            connectionStatusChanged = Callback<SteamNetConnectionStatusChangedCallback_t>.CreateGameServer(OnConnectionStatusChanged);
+            SteamNetworkingIPAddr address = new SteamNetworkingIPAddr();
+            address.Clear();
+            address.m_port = port;
+            listenSocket = Sockets.CreateListenSocketIP(ref address, options.Length, options);
+#else
+            connectionStatusChanged = Callback<SteamNetConnectionStatusChangedCallback_t>.Create(OnConnectionStatusChanged);
+            listenSocket = Sockets.CreateListenSocketP2P(port, options.Length, options);
+#endif
         }
 
         private void OnConnectionStatusChanged(SteamNetConnectionStatusChangedCallback_t callback)
@@ -58,12 +59,12 @@ namespace Riptide.Transports.Steam
                     break;
 
                 case ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_ClosedByPeer:
-                    SteamNetworkingSockets.CloseConnection(callback.m_hConn, 0, "Closed by peer", false);
+                    Sockets.CloseConnection(callback.m_hConn, 0, "Closed by peer", false);
                     OnDisconnected(clientSteamId, DisconnectReason.Disconnected);
                     break;
 
                 case ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_ProblemDetectedLocally:
-                    SteamNetworkingSockets.CloseConnection(callback.m_hConn, 0, "Problem detected", false);
+                    Sockets.CloseConnection(callback.m_hConn, 0, "Problem detected", false);
                     OnDisconnected(clientSteamId, DisconnectReason.TransportError);
                     break;
 
@@ -86,7 +87,7 @@ namespace Riptide.Transports.Steam
 
         private void Accept(HSteamNetConnection connection)
         {
-            EResult result = SteamNetworkingSockets.AcceptConnection(connection);
+            EResult result = Sockets.AcceptConnection(connection);
             if (result != EResult.k_EResultOK)
                 Debug.LogWarning($"{LogName}: Connection could not be accepted: {result}");
         }
@@ -95,7 +96,7 @@ namespace Riptide.Transports.Steam
         {
             if (connection is SteamConnection steamConnection)
             {
-                SteamNetworkingSockets.CloseConnection(steamConnection.SteamNetConnection, 0, "Disconnected by server", false);
+                Sockets.CloseConnection(steamConnection.SteamNetConnection, 0, "Disconnected by server", true);
                 connections.Remove(steamConnection.SteamId);
             }
         }
@@ -110,7 +111,7 @@ namespace Riptide.Transports.Steam
         //public void Flush()
         //{
         //    foreach (SteamConnection connection in connections.Values)
-        //        SteamNetworkingSockets.FlushMessagesOnConnection(connection.SteamNetConnection);
+        //        Sockets.FlushMessagesOnConnection(connection.SteamNetConnection);
         //}
 
         public void Shutdown()
@@ -122,10 +123,10 @@ namespace Riptide.Transports.Steam
             }
 
             foreach (SteamConnection connection in connections.Values)
-                SteamNetworkingSockets.CloseConnection(connection.SteamNetConnection, 0, "Server stopped", false);
+                Sockets.CloseConnection(connection.SteamNetConnection, 0, "Server stopped", false);
 
             connections.Clear();
-            SteamNetworkingSockets.CloseListenSocket(listenSocket);
+            Sockets.CloseListenSocket(listenSocket);
         }
 
         protected internal virtual void OnConnected(Connection connection)

@@ -92,12 +92,16 @@ namespace Manager
 
         public void SetAchievement(EAchievements achievement)
         {
+            if (!SteamManager.Initialized) return;
+
             SteamUserStats.SetAchievement(achievement.ToString());
             SteamUserStats.StoreStats();
         }
 
         public int SetStatsPlusOne(EStats stats)
         {
+            if (!SteamManager.Initialized) return 0;
+
             SteamUserStats.GetStat(stats.ToString(), out int score);
             ++score;
             SteamUserStats.SetStat(stats.ToString(), score);

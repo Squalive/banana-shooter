@@ -840,47 +840,10 @@ namespace Manager
         }
         void InitNetwork(int external)
         {
-            GameModes gameMode = null;
-            switch (NetworkManager.ClientGameMode)
-            {
-                case GameMode.Brawl:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<Brawl>();
-                    break;
-                case GameMode.TeamDeathMatch:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<TeamDeathMatch>();
-                    break;
-                case GameMode.Infected:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<Infected>();
-                    break;
-                case GameMode.KillConfirm:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<KillConfirm>();
-                    break;
-                case GameMode.Randomizer:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<Randomizer>();
-                    break;
-                case GameMode.KingOfTheHill:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<KingOfTheHill>();
+            GameModes gameMode = GameModes.Create(NetworkManager.ClientGameMode, MapBound.Instance.gameObject);
 
-                    if (external != -1)
-                        KingOfTheHill.Instance.SetNewHillClient(external);
-                    break;
-                case GameMode.GunGame:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<GunGame>();
-                    gameMode.leftTime = 350;
-                    break;
-                case GameMode.CatchTheBanana:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<CatchTheBanana>();
-                    break;
-                case GameMode.OneShotOneKill:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<OneShotOneKill>();
-                    break;
-                case GameMode.RocketMode:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<RocketMode>();
-                    break;
-                case GameMode.PVE:
-                    gameMode = MapBound.Instance.gameObject.AddComponent<PVEMode>();
-                    break;
-            }
+            if (NetworkManager.ClientGameMode == GameMode.KingOfTheHill && external != -1)
+                KingOfTheHill.Instance.SetNewHillClient(external);
 
             NetworkServerManager.Instance.game = gameMode;
             NetworkManager.Instance.game = gameMode;

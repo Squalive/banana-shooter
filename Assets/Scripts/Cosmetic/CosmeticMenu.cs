@@ -1231,7 +1231,7 @@ namespace Cosmetic
             useInventory.anchoredPosition = Vector2.Lerp(useInventory.anchoredPosition, _useInvDesiredPos,
                 Time.deltaTime * 15f);
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 if (!menu && GameUIManager.Instance.pause)
                 {

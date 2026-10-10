@@ -5,10 +5,12 @@ using System.Linq;
 using Audio;
 using Manager;
 using Menu;
+using Mode;
 using Multiplayer;
 using Multiplayer.Entity.Client;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Entity.Server;
+using PVE;
 using Quest;
 using Riptide;
 using Unity.Mathematics;
@@ -27,6 +29,28 @@ public abstract class GameModes : MonoBehaviour
     public uint EndTick { get; private set; } = 0;
 
     public event Action gameStart;
+
+    public static GameModes Create(GameMode mode, GameObject host)
+    {
+        switch (mode)
+        {
+            case GameMode.Brawl: return host.AddComponent<Brawl>();
+            case GameMode.TeamDeathMatch: return host.AddComponent<TeamDeathMatch>();
+            case GameMode.Infected: return host.AddComponent<Infected>();
+            case GameMode.KillConfirm: return host.AddComponent<KillConfirm>();
+            case GameMode.Randomizer: return host.AddComponent<Randomizer>();
+            case GameMode.KingOfTheHill: return host.AddComponent<KingOfTheHill>();
+            case GameMode.GunGame:
+                var gunGame = host.AddComponent<GunGame>();
+                gunGame.leftTime = 350;
+                return gunGame;
+            case GameMode.CatchTheBanana: return host.AddComponent<CatchTheBanana>();
+            case GameMode.OneShotOneKill: return host.AddComponent<OneShotOneKill>();
+            case GameMode.RocketMode: return host.AddComponent<RocketMode>();
+            case GameMode.PVE: return host.AddComponent<PVEMode>();
+            default: return null;
+        }
+    }
 
     private void Start()
     {
@@ -333,6 +357,7 @@ public abstract class GameModes : MonoBehaviour
     {
         ServerUpdate();
 
+#if !UNITY_SERVER
         var tick = NetworkManager.Instance.ServerTick;
 
         if (EndTick - tick <= MusicManager.Instance.TicksToPlayWin && !_winMusic)
@@ -396,6 +421,7 @@ public abstract class GameModes : MonoBehaviour
             GameUIManager.Instance.leftTime.SetText("Waiting...");
             GameUIManager.Instance.scoreBoardLeftTime.SetText("Waiting...");
         }
+#endif
     }
 
     private void ServerUpdate()

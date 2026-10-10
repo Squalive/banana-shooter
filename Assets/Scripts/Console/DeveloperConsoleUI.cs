@@ -7,6 +7,7 @@ using Menu;
 using Movement;
 using Multiplayer;
 using Multiplayer.Entity.Client;
+using Steamworks.NET;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -70,6 +71,8 @@ namespace Console
 
         private void Start()
         {
+            if (!SteamManager.Initialized) return;
+
             InvokeRepeating(nameof(RefreshInfo), 0, 0.5f);
         }
 

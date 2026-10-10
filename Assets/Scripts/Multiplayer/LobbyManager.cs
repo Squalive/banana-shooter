@@ -337,6 +337,7 @@ namespace Multiplayer
 
         public void SetLobbyGameMode()
         {
+            if (!SteamManager.Initialized) return;
             if (owner.m_SteamID == Chat.Instance.steamId)
             {
                 SteamMatchmaking.SetLobbyData(lobbyId, "GameMode", NetworkServerManager.ServerGameMode.ToString());
@@ -345,6 +346,7 @@ namespace Multiplayer
 
         public void SetLobbyType(ELobbyType type)
         {
+            if (!SteamManager.Initialized) return;
             if (SteamMatchmaking.SetLobbyType(lobbyId, type))
                 Debug.Log($"Change lobby type to {type} successfully");
         }

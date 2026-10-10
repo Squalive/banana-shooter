@@ -9,6 +9,7 @@ using Multiplayer.Entity.Server;
 using Multiplayer.Interface;
 using Riptide;
 using Steamworks;
+using Steamworks.NET;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -97,7 +98,7 @@ namespace UI
 
         private void Update()
         {
-            if (GameManager.Instance.setting.disableVoice) return;
+            if (!SteamManager.Initialized || GameManager.Instance.setting.disableVoice) return;
             if (!NetworkManager.Instance.Client.IsConnected) return;
             if (IsSpeaking)
             {

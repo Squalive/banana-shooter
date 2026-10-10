@@ -101,6 +101,12 @@ namespace Steamworks.NET
 				Debug.LogError("[Steamworks.NET] DllCheck Test returned false, One or more of the Steamworks binaries seems to be the wrong version.", this);
 			}
 
+#if UNITY_SERVER
+			// Dedicated server uses the GameServer API (see DedicatedServer). The client API stays off,
+			// so Initialized is false and every client-only manager skips its Steam setup.
+			return;
+#endif
+
 			try {
 				// If Steam is not running or the game wasn't started through Steam, SteamAPI_RestartAppIfNecessary starts the
 				// Steam client and also launches this game again if the User owns it. This can act as a rudimentary form of DRM.

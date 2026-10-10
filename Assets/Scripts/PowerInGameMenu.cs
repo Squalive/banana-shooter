@@ -6,6 +6,7 @@ using Multiplayer;
 using Multiplayer.Client;
 using Multiplayer.Entity.Client;
 using Riptide;
+using Steamworks.NET;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -165,6 +166,8 @@ public class PowerInGameMenu : MonoBehaviour
 
     private void Update()
     {
+        if (!SteamManager.Initialized) return;
+
         if (NetworkManager.Instance.Client.Connection != null)
         {
             if (localPlayer == null)

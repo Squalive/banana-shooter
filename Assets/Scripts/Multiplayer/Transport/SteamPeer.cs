@@ -7,6 +7,11 @@ using Steamworks;
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
+#if UNITY_SERVER
+using Sockets = Steamworks.SteamGameServerNetworkingSockets;
+#else
+using Sockets = Steamworks.SteamNetworkingSockets;
+#endif
 
 namespace Riptide.Transports.Steam
 {
@@ -20,6 +25,7 @@ namespace Riptide.Transports.Steam
         protected const int MaxMessages = 256;
 
         private readonly byte[] receiveBuffer;
+        private readonly IntPtr[] ptrs = new IntPtr[MaxMessages];
 
         protected SteamPeer()
         {
@@ -28,10 +34,8 @@ namespace Riptide.Transports.Steam
 
         protected void Receive(SteamConnection fromConnection)
         {
-            IntPtr[] ptrs = new IntPtr[MaxMessages]; // TODO: remove allocation?
-
             // TODO: consider using poll groups -> https://partner.steamgames.com/doc/api/ISteamNetworkingSockets#functions_poll_groups
-            int messageCount = SteamNetworkingSockets.ReceiveMessagesOnConnection(fromConnection.SteamNetConnection, ptrs, MaxMessages);
+            int messageCount = Sockets.ReceiveMessagesOnConnection(fromConnection.SteamNetConnection, ptrs, MaxMessages);
             if (messageCount > 0)
             {
                 for (int i = 0; i < messageCount; i++)
@@ -61,7 +65,7 @@ namespace Riptide.Transports.Steam
             GCHandle handle = GCHandle.Alloc(dataBuffer, GCHandleType.Pinned);
             IntPtr pDataBuffer = handle.AddrOfPinnedObject();
 
-            EResult result = SteamNetworkingSockets.SendMessageToConnection(toConnection, pDataBuffer, (uint)numBytes, Constants.k_nSteamNetworkingSend_Unreliable, out long _);
+            EResult result = Sockets.SendMessageToConnection(toConnection, pDataBuffer, (uint)numBytes, Constants.k_nSteamNetworkingSend_Unreliable, out long _);
             if (result != EResult.k_EResultOK)
                 Debug.LogWarning($"{LogName}: Failed to send {numBytes} bytes - {result}");
 
