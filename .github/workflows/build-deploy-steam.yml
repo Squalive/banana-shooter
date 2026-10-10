@@ -52,7 +52,10 @@ jobs:
           lfs: true
 
       - name: Restore Unlicensed Assets
-        shell: bash
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: |
             bsubp restore latest --confirm
 
