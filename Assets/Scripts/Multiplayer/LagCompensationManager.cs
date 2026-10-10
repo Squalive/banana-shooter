@@ -16,6 +16,15 @@ namespace Multiplayer
         private const int MaxPendingShots = 1024;
         private const int MaxShotsPerPhysicsStep = 128;
 
+        // 1 s at the 50 Hz fixed timestep: covers interpolation delay plus high ping.
+        private const uint MaxRewindTicks = 50;
+
+        // Camera sits 1.17 m above the player root (head y 0.78 * parent scale 1.5).
+        private static readonly Vector3 HeadOffset = new(0, 1.17f, 0);
+
+        // Slack for crouch, camera bob and the latest movement packet lagging the shot.
+        private const float MaxShotOriginError = 3f;
+
         private Queue<ShootLagCompensationData> _shootQueue = new();
 
         private void Awake()
@@ -76,6 +85,15 @@ namespace Multiplayer
 
                 Vector3 lookDir = message.GetVector3();
                 Vector3 raycastPos = message.GetVector3();
+
+                uint currentTick = NetworkServerManager.Instance.CurrentTick;
+                uint oldestTick = currentTick > MaxRewindTicks ? currentTick - MaxRewindTicks : 0;
+                tick = Math.Clamp(tick, oldestTick, currentTick);
+
+                Vector3 serverHeadPos = player.PlayerTransform.position + HeadOffset;
+                // Negated so NaN/Infinity origins also fail the check.
+                if (!((raycastPos - serverHeadPos).sqrMagnitude <= MaxShotOriginError * MaxShotOriginError))
+                    raycastPos = serverHeadPos;
 
                 var weapon = player.GetCurrentWeapon();
 
