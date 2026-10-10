@@ -1,0 +1,8 @@
+<!-- Manifest types are only created by Newtonsoft through reflection, which High stripping can't see. -->
+<linker>
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="Web.Manifest" preserve="all"/>
+    <type fullname="Web.Manifest/OfficialServer" preserve="all"/>
+    <type fullname="SecureServer.Roles" preserve="all"/>
+  </assembly>
+</linker>

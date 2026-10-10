@@ -13,15 +13,11 @@ namespace Web
     {
         public static async Task<T> Get<T>(string endpoint, bool debug = false)
         {
+            string text = await GetText(endpoint, debug);
+            if (string.IsNullOrWhiteSpace(text)) return default;
+
             try
             {
-                using var request = CreateRequest(endpoint);
-                if (!await SendAsync(request)) return default;
-
-                string text = request.downloadHandler.text;
-                if (string.IsNullOrWhiteSpace(text)) return default;
-                if (debug) Debug.Log(text);
-
                 return JsonConvert.DeserializeObject<T>(text, new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -31,6 +27,24 @@ namespace Web
             {
                 Debug.LogError($"GET request failed: {e.Message}");
                 return default;
+            }
+        }
+
+        public static async Task<string> GetText(string endpoint, bool debug = false)
+        {
+            try
+            {
+                using var request = CreateRequest(endpoint);
+                if (!await SendAsync(request)) return null;
+
+                string text = request.downloadHandler.text;
+                if (debug) Debug.Log(text);
+                return text;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"GET request failed: {e.Message}");
+                return null;
             }
         }
 
@@ -88,7 +102,6 @@ namespace Web
         public static string GetPlayerSummaries = $"{Base}Steamworks/GetPlayerSummaries/";
         public static string GetPlayerBansSummaries = $"{Base}Steamworks/GetPlayerBans/";
 
-        public static string GetRoles = $"{Base}Roles/GetRoles/";
         public static string ReportCheating = $"{Base}Steamworks/ReportPlayerCheating/";
         public static string RequestDailyReward = $"{Base}Steamworks/RequestDailyReward/";
         public static string AntiCheatDetection = $"{Base}Steamworks/AntiCheatDetection/";

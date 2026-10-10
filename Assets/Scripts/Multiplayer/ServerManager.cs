@@ -7,6 +7,7 @@ using Menu;
 using Riptide.Transports.Udp;
 using Steamworks;
 using UnityEngine;
+using Web;
 
 namespace Multiplayer
 {
@@ -20,20 +21,11 @@ namespace Multiplayer
 
         private HServerListRequest _lanRequest, _internetRequest, _favouriteRequest, _historyRequest, _friendRequest;
 
-        private HashSet<uint> _officialServers = new();
-
         public Callback<GameRichPresenceJoinRequested_t> OnServerJoinRequested;
 
         private void Awake()
         {
             Instance = this;
-
-            // _officialServers.Add(1836836131);
-            // _officialServers.Add(267100932);
-            // _officialServers.Add(760055535);
-            // _officialServers.Add(763938292);
-            // _officialServers.Add(2371835460);
-            // _officialServers.Add(3227753154);
         }
 
         private void Start()
@@ -181,7 +173,7 @@ namespace Multiplayer
                 }
                 else
                 {
-                    type = _officialServers.Contains(item.m_NetAdr.GetIP()) ? ServerFilter.SearchServerType.Official : ServerFilter.SearchServerType.Community;
+                    type = Manifest.Current.IsOfficialServer(item.m_steamID.m_SteamID) ? ServerFilter.SearchServerType.Official : ServerFilter.SearchServerType.Community;
                 }
             }
             else if (hRequest == _friendRequest)

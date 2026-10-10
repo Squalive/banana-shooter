@@ -23,7 +23,8 @@ namespace Manager
         {
             try
             {
-                Roles = await HttpClient.Get<Roles>(EndPoint.GetRoles) ?? new Roles();
+                await Manifest.Load();
+                Roles = Manifest.Current.Roles ?? new Roles();
             }
             finally
             {
