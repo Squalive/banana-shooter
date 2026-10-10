@@ -559,7 +559,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                 ExternalData externalData = new ExternalData(audioClip.name);
                 if (saved)
                 {
-                    string basePath = p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4);
+                    string basePath = p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4).ToLowerInvariant();
                     Debug.Log(basePath);
                     if (!File.Exists(basePath) || basePath != tuple.Item1)
                     {
@@ -1140,7 +1140,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     string n = audioData.name;
                     Debug.Log(n);
 
-                    string audioPath = Path.Combine(p, $"{n}.wav");
+                    string audioPath = FindFile(p, $"{n}.wav");
                     // Debug.Log(audioPath + "Path exist: " + File.Exists(audioPath));
                     if (File.Exists(audioPath))
                     {
@@ -1151,7 +1151,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         continue;
                     }
 
-                    audioPath = Path.Combine(p, $"{n}.mp3");
+                    audioPath = FindFile(p, $"{n}.mp3");
                     // Debug.Log(audioPath + "Path exist: " + File.Exists(audioPath));
                     if (File.Exists(audioPath))
                     {
@@ -1287,6 +1287,20 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             playModeLoadedObject.Clear();
 
             AssetBundleManager.Instance.UnloadAllBundles();
+        }
+
+        static string FindFile(string folder, string fileName)
+        {
+            string exact = Path.Combine(folder, fileName);
+            if (File.Exists(exact) || !Directory.Exists(folder)) return exact;
+
+            foreach (var file in Directory.GetFiles(folder))
+            {
+                if (string.Equals(Path.GetFileName(file), fileName, StringComparison.OrdinalIgnoreCase))
+                    return file;
+            }
+
+            return exact;
         }
 
         async Task<AudioClip> LoadAudio(string p)
