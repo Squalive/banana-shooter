@@ -673,18 +673,12 @@ namespace Multiplayer
                 ushort currnetMapVoteCount = 0;
                 if (workshopMap)
                 {
-                    ulong id;
-                    if (!string.IsNullOrEmpty(item.Item2))
-                    {
-                        id = ulong.Parse(item.Item2);
-                        if (WorkshopMapVote.ContainsKey(id))
-                            lastMapVoteCount = --WorkshopMapVote[id];
-                    }
-                    id = ulong.Parse(map);
-                    if (WorkshopMapVote.ContainsKey(id))
-                    {
-                        currnetMapVoteCount = ++WorkshopMapVote[id];
-                    }
+                    if (!ulong.TryParse(map, out var id) || !WorkshopMapVote.ContainsKey(id)) return;
+
+                    if (ulong.TryParse(item.Item2, out var lastId) && WorkshopMapVote.ContainsKey(lastId))
+                        lastMapVoteCount = --WorkshopMapVote[lastId];
+
+                    currnetMapVoteCount = ++WorkshopMapVote[id];
                 }
                 else
                 {

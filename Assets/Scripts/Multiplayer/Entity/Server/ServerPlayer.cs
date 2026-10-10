@@ -190,6 +190,9 @@ namespace Multiplayer.Entity.Server
         [MessageHandler((ushort)ClientToServerId.UpdateWeaponIndex, NetworkServerManager.PlayerHostedDemoMessageHandlerGroupId)]
         private static void UpdateWeaponIndex(ushort fromClient, Message message)
         {
+            int index = message.GetInt();
+            if (index < 0 || index > 3) return;
+
             if (list.TryGetValue(fromClient, out var player))
             {
                 var currentWeapon = player.GetCurrentWeapon();
@@ -197,7 +200,7 @@ namespace Multiplayer.Entity.Server
                 {
                     currentWeapon.Disable();
                 }
-                player.CurrentWeaponIndex = message.GetInt();
+                player.CurrentWeaponIndex = index;
 
                 currentWeapon = player.GetCurrentWeapon();
                 if (currentWeapon != null)
@@ -419,6 +422,9 @@ namespace Multiplayer.Entity.Server
             if (list.TryGetValue(fromClient, out var player) && !player.IsInfected)
             {
                 short weapon = message.GetShort();
+
+                var weapons = NetworkServerManager.Instance.weaponInfo;
+                if (weapon < 0 || weapon >= weapons.Count || !weapons[weapon].specialWeapon) return;
 
                 player.CurrentWeaponIndex = 3;
 
@@ -853,9 +859,12 @@ namespace Multiplayer.Entity.Server
         [MessageHandler((ushort)ClientToServerId.GetWeapon, NetworkServerManager.PlayerHostedDemoMessageHandlerGroupId)]
         private static void ChangeWeapon(ushort fromClient, Message message)
         {
+            short[] weapons = message.GetShorts();
+            if (!ClientInputValidation.IsValidLoadout(weapons, 3, NetworkServerManager.Instance.weaponInfo.Count)) return;
+
             if (list.TryGetValue(fromClient, out var player))
             {
-                player.PlayerGetWeapon(message.GetShorts());
+                player.PlayerGetWeapon(weapons);
             }
         }
 
@@ -965,7 +974,7 @@ namespace Multiplayer.Entity.Server
                                 var weaponIndex = weapons[i];
 
                                 if (weaponIndex != -1 &&
-                                    (!NetworkServerManager.AllowedWeapon[weapons[i]] || weaponIndex == 6))
+                                    (!NetworkServerManager.AllowedWeapon[weapons[i]] || weaponIndex == 6 || NetworkServerManager.Instance.weaponInfo[weaponIndex].specialWeapon))
                                 {
                                     weaponIndex = -1;
                                 }

@@ -134,6 +134,8 @@ namespace Multiplayer.Entity.Server.Enemy
         private static void SpawnEnemy(ushort fromClient, Message message)
         {
             if (list.Count >= MaxEnemyCount) return;
+            if (NetworkServerManager.ServerType != ServerType.ShootingRange && !NetworkServerManager.CheatsEnabled
+                && !(NetworkServerManager.TryGetAuthorizedSteamId(fromClient, out var steamId) && RolesManager.Instance.CheckIsAdmin(steamId))) return;
             EnemyType type = (EnemyType)message.GetUShort();
 
             Vector3 pos = message.GetVector3();

@@ -181,9 +181,17 @@ namespace Manager
         {
             byte[] bytes = message.GetBytes();
 
-            string result = System.Text.Encoding.UTF8.GetString(bytes);
+            AnticheatReport obj;
+            try
+            {
+                obj = JsonConvert.DeserializeObject<AnticheatReport>(System.Text.Encoding.UTF8.GetString(bytes).TrimEnd('\0'));
+            }
+            catch (JsonException)
+            {
+                return;
+            }
 
-            AnticheatReport obj = JsonConvert.DeserializeObject<AnticheatReport>(result);
+            if (obj?.reports == null) return;
 
             foreach (var val in obj.reports)
             {
@@ -203,16 +211,16 @@ namespace Manager
                         // NetworkServerManager.Instance.Server.DisconnectClient(fromClient);
 
                         Debug.Log($"{fromClient} is using dll 1, stop kicking it now...");
-                        return;
+                        break;
                     case var value when value == HANDLE1:
                         // NetworkServerManager.Instance.Server.DisconnectClient(fromClient);
 
                         Debug.Log($"{fromClient} is using handle 1, kicking it now...");
-                        return;
+                        break;
                     case var value when value == HEARTBEAT:
                         // Debug.Log($"Set {fromClient} heartbeat");
                         Instance.Heartbeats[fromClient] = Time.time;
-                        return;
+                        break;
                 }
             }
         }
