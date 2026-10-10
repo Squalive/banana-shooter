@@ -82,13 +82,6 @@ namespace Menu
 
             SteamUGC.ReleaseQueryUGCRequest(result.m_handle);
         }
-        private void OnDisable()
-        {
-            if (editBtn != null)
-                editBtn.onClick.RemoveAllListeners();
-
-        }
-
         void Edit()
         {
             MapEditorMainMenu.Instance.editBar.position = Input.mousePosition;

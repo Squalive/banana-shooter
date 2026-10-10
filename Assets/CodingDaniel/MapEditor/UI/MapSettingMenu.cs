@@ -40,6 +40,10 @@ namespace CodingDaniel.MapEditor.UI
             boundXInput.onEndEdit.RemoveAllListeners();
             boundYInput.onEndEdit.RemoveAllListeners();
             boundZInput.onEndEdit.RemoveAllListeners();
+
+            boundCenterXInput.onEndEdit.RemoveAllListeners();
+            boundCenterYInput.onEndEdit.RemoveAllListeners();
+            boundCenterZInput.onEndEdit.RemoveAllListeners();
         }
 
         [SerializeField] public RawImage skyboxImg;

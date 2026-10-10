@@ -202,6 +202,11 @@ namespace Save
             return Application.persistentDataPath + "/" + filename;
         }
 
+        public static string ToFileUri(string path)
+        {
+            return new Uri(Path.GetFullPath(path)).AbsoluteUri;
+        }
+
         public static void WriteFile(string path, string content)
         {
             FileStream fileStream = File.Create(path);

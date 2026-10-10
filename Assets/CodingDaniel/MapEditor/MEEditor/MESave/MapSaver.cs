@@ -538,20 +538,10 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             p = GetAudioPath();
 
-            if (saved)
-            {
-                if (!Directory.Exists(p))
-                {
-                    if (externalAudioClips.Count > 0)
-                        Directory.CreateDirectory(p);
-                }
-                else
-                {
-                    Directory.Delete(p, true);
-                    if (externalAudioClips.Count > 0)
-                        Directory.CreateDirectory(p);
-                }
-            }
+            var keptAudio = new HashSet<string>();
+
+            if (saved && externalAudioClips.Count > 0)
+                Directory.CreateDirectory(p);
 
             foreach (var tuple in externalAudioClips)
             {
@@ -559,15 +549,25 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                 ExternalData externalData = new ExternalData(audioClip.name);
                 if (saved)
                 {
-                    string basePath = p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4);
+                    string basePath = Path.GetFullPath(p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4).ToLowerInvariant());
                     Debug.Log(basePath);
-                    if (!File.Exists(basePath) || basePath != tuple.Item1)
-                    {
-                        if (File.Exists(tuple.Item1))
-                            File.Copy(tuple.Item1, basePath);
-                    }
+                    if (File.Exists(tuple.Item1) && Path.GetFullPath(tuple.Item1) != basePath)
+                        File.Copy(tuple.Item1, basePath, true);
+                    keptAudio.Add(basePath);
                 }
                 externalAudioDatas.Add(externalData);
+            }
+
+            if (saved && Directory.Exists(p))
+            {
+                foreach (var file in Directory.GetFiles(p))
+                {
+                    if (!keptAudio.Contains(Path.GetFullPath(file)))
+                        File.Delete(file);
+                }
+
+                if (externalAudioClips.Count == 0)
+                    Directory.Delete(p, true);
             }
 
             p = GetModelPath();
@@ -848,18 +848,26 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
         {
             PublishMenu.Instance.nameInput.SetTextWithoutNotify(mapName);
             PublishMenu.Instance.descriptionInput.SetTextWithoutNotify(description);
-            IsSaving = true;
-
             if (string.IsNullOrEmpty(mapName))
             {
                 return false;
             }
 
+            IsSaving = true;
+
             EditorMenu.Instance.SavingMenu.SetActive(true);
 
-            SetMapData(mapName, description, saveAs, true);
-
-            MEBase.Instance.HasChanged = false;
+            try
+            {
+                SetMapData(mapName, description, saveAs, true);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to prepare map {mapName} for saving: {e}");
+                IsSaving = false;
+                EditorMenu.Instance.SavingMenu.SetActive(false);
+                return false;
+            }
 
             MapMetadata md = new MapMetadata(mapName, CurrentMap.saveKey, description, CurrentMap.isPublished,
                 CurrentMap.fileId);
@@ -921,72 +929,91 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
         {
             float time = Time.time;
 
-            string map = await Task.Run(() => JsonConvert.SerializeObject(CurrentMap, Formatting.None,
-                new JsonSerializerSettings()
-                {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                }));
-
-            byte[] previewImg = texture2D.EncodeToJPG();
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".jpg", previewImg);
-
-            string md = await Task.Run(() => JsonConvert.SerializeObject(metadata, Formatting.None,
-                new JsonSerializerSettings()
-                {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-                }));
-
-            await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
-
-            Debug.Log("save complete in: " + (Time.time - time));
-            IsSaving = false;
-
-            CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
-
-            if (!EditingMaps.Contains(CurrentMapFile))
+            try
             {
-                EditingMaps.Add(CurrentMapFile);
+                string map = await Task.Run(() => JsonConvert.SerializeObject(CurrentMap, Formatting.None,
+                    new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                    }));
+
+                byte[] previewImg = texture2D.EncodeToJPG();
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".jpg", previewImg);
+
+                string md = await Task.Run(() => JsonConvert.SerializeObject(metadata, Formatting.None,
+                    new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                    }));
+
+                await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
+
+                Debug.Log("save complete in: " + (Time.time - time));
+                MEBase.Instance.HasChanged = false;
+
+                CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
+
+                if (!EditingMaps.Contains(CurrentMapFile))
+                {
+                    EditingMaps.Add(CurrentMapFile);
+                }
+
+                EditingMapMetadatas[CurrentMapFile] = metadata;
             }
-
-            EditingMapMetadatas[CurrentMapFile] = metadata;
-
-            EditorMenu.Instance.SavingMenu.SetActive(false);
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to save map {CurrentMap?.name}: {e}");
+            }
+            finally
+            {
+                IsSaving = false;
+                EditorMenu.Instance.SavingMenu.SetActive(false);
+            }
         }
 
         public async void SaveBsmFileOnly()
         {
-            string map = JsonConvert.SerializeObject(CurrentMap, Formatting.None, new JsonSerializerSettings()
+            try
             {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            });
+                string map = JsonConvert.SerializeObject(CurrentMap, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
 
-            MapMetadata metadata = new MapMetadata(CurrentMap.name, CurrentMap.saveKey, CurrentMap.description,
-                CurrentMap.isPublished, CurrentMap.fileId);
+                MapMetadata metadata = new MapMetadata(CurrentMap.name, CurrentMap.saveKey, CurrentMap.description,
+                    CurrentMap.isPublished, CurrentMap.fileId);
 
-            float time = await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
+                float time = await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".bsm", map);
 
-            string md = JsonConvert.SerializeObject(metadata, Formatting.None, new JsonSerializerSettings()
-            {
-                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            });
+                string md = JsonConvert.SerializeObject(metadata, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
 
-            time += await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
+                time += await SaveSystem.WriteToFileAsyncThread(path + CurrentMap.GetNameString() + ".metadata", md);
 
-            IsSaving = false;
+                CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
 
-            CurrentMapFile ??= new FileInfo(path + CurrentMap.GetNameString() + ".bsm");
+                Debug.Log("save complete in: " + time);
 
-            Debug.Log("save complete in: " + time);
+                if (!EditingMaps.Contains(CurrentMapFile))
+                {
+                    EditingMaps.Add(CurrentMapFile);
+                }
 
-            if (!EditingMaps.Contains(CurrentMapFile))
-            {
-                EditingMaps.Add(CurrentMapFile);
+                EditingMapMetadatas[CurrentMapFile] = metadata;
             }
-
-            EditingMapMetadatas[CurrentMapFile] = metadata;
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to save map {CurrentMap?.name}: {e}");
+            }
+            finally
+            {
+                IsSaving = false;
+            }
         }
 
         public Material dummyMat;
@@ -1113,7 +1140,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     string n = audioData.name;
                     Debug.Log(n);
 
-                    string audioPath = Path.Combine(p, $"{n}.wav");
+                    string audioPath = FindFile(p, $"{n}.wav");
                     // Debug.Log(audioPath + "Path exist: " + File.Exists(audioPath));
                     if (File.Exists(audioPath))
                     {
@@ -1124,7 +1151,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         continue;
                     }
 
-                    audioPath = Path.Combine(p, $"{n}.mp3");
+                    audioPath = FindFile(p, $"{n}.mp3");
                     // Debug.Log(audioPath + "Path exist: " + File.Exists(audioPath));
                     if (File.Exists(audioPath))
                     {
@@ -1262,14 +1289,28 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             AssetBundleManager.Instance.UnloadAllBundles();
         }
 
+        static string FindFile(string folder, string fileName)
+        {
+            string exact = Path.Combine(folder, fileName);
+            if (File.Exists(exact) || !Directory.Exists(folder)) return exact;
+
+            foreach (var file in Directory.GetFiles(folder))
+            {
+                if (string.Equals(Path.GetFileName(file), fileName, StringComparison.OrdinalIgnoreCase))
+                    return file;
+            }
+
+            return exact;
+        }
+
         async Task<AudioClip> LoadAudio(string p)
         {
             if (string.IsNullOrEmpty(p))
             {
                 return null;
             }
-            var audioType = p.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
-            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(p, audioType))
+            var audioType = p.EndsWith(".wav", StringComparison.OrdinalIgnoreCase) ? AudioType.WAV : AudioType.MPEG;
+            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(p), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip
                 DownloadHandlerAudioClip handler = new DownloadHandlerAudioClip(webRequest.url, audioType);

@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
+using System.Threading.Tasks;
 using Audio;
 
 using CodingDaniel.FileBrowser;
@@ -143,9 +143,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                     if (MapSaver.CurrentMap != null)
                     {
-                        string path = Path.Combine(MapSaver.CurrentMap.GetDecalTexturePath(), material.name + ".png");
-
-                        if (File.Exists(path))
+                        if (SafePath.TryCombine(MapSaver.CurrentMap.GetDecalTexturePath(), material.name + ".png", out var path) && File.Exists(path))
                         {
                             File.Delete(path);
                         }
@@ -171,9 +169,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                     if (MapSaver.CurrentMap != null)
                     {
-                        string path = Path.Combine(MapSaver.CurrentMap.GetAudioPath(), clip.name + ".wav");
-
-                        if (File.Exists(path))
+                        if (SafePath.TryCombine(MapSaver.CurrentMap.GetAudioPath(), clip.name + ".wav", out var path) && File.Exists(path))
                         {
                             File.Delete(path);
                         }
@@ -197,9 +193,7 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
                         if (MapSaver.CurrentMap != null)
                         {
-                            string path = Path.Combine(MapSaver.CurrentMap.GetModelPath(), config.name);
-
-                            if (Directory.Exists(path))
+                            if (SafePath.TryCombine(MapSaver.CurrentMap.GetModelPath(), config.name, out var path) && Directory.Exists(path))
                             {
                                 Directory.Delete(path, true);
                             }
@@ -378,25 +372,28 @@ namespace CodingDaniel.MapEditor.UI.AddObject
 
         IEnumerator LoadImage(string path, bool create)
         {
-            bool complete = false;
-            byte[] data = null;
-            var customThread = new Thread(() =>
-            {
-                data = SaveSystem.ReadByteFromFile(path);
+            Task<byte[]> read = SaveSystem.ReadByteFromFileAsync(path);
 
-                complete = true;
-            });
-            customThread.Start();
-
-            while (!complete)
+            while (!read.IsCompleted)
             {
                 yield return null;
             }
 
-            _path = path;
-            customThread.Abort();
+            if (read.IsFaulted)
+            {
+                Debug.LogError($"Failed to read {path}: {read.Exception?.GetBaseException().Message}");
+                yield break;
+            }
+
             Texture2D texture2D = new Texture2D(1, 1, TextureFormat.RGB24, false);
-            texture2D.LoadImage(data);
+            if (!texture2D.LoadImage(read.Result))
+            {
+                Debug.LogError($"{path} is not a valid image");
+                Destroy(texture2D);
+                yield break;
+            }
+
+            _path = path;
 
             _texture2Ds.Add(texture2D);
 
@@ -449,8 +446,8 @@ namespace CodingDaniel.MapEditor.UI.AddObject
                 yield break;
             }
             _loadAudioPath = path;
-            var audioType = path.EndsWith(".wav") ? AudioType.WAV : AudioType.MPEG;
-            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(path, audioType))
+            var audioType = path.EndsWith(".wav", StringComparison.OrdinalIgnoreCase) ? AudioType.WAV : AudioType.MPEG;
+            using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(SaveSystem.ToFileUri(path), audioType))
             {
                 // download the audio data using DownloadHandlerAudioClip
                 DownloadHandlerAudioClip handler = new DownloadHandlerAudioClip(webRequest.url, audioType);

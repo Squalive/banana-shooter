@@ -101,6 +101,8 @@ namespace CodingDaniel.MapEditor.UI
                 yield return null;
             }
 
+            if (MEBase.Instance.HasChanged) yield break;
+
             QuitToMenu();
         }
 
