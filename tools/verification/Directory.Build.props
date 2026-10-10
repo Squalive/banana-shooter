@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory).build/obj/</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory).build/bin/</BaseOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.build/**</DefaultItemExcludes>
+  </PropertyGroup>
+</Project>

@@ -120,3 +120,5 @@ InitTestScene*.unity*
 /Assets/SteamWorkshopTemp.meta
 
 /demos/*
+!/tools/verification/RegressionTests.csproj
+/tools/verification/.build/
