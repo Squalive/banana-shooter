@@ -242,6 +242,9 @@ namespace Multiplayer.Migration
             NetworkServerManager.Instance.StopServer();
             ServerSnapshot.ClearServerState();
             NetworkServerManager.ClientData.Clear();
+            if (LobbyManager.Instance != null)
+                LobbyManager.Instance.owner = new CSteamID(data.SteamId);
+            RefreshHostUi();
             return true;
         }
 
@@ -389,6 +392,7 @@ namespace Multiplayer.Migration
             if (LobbyManager.Instance != null)
                 LobbyManager.Instance.owner = new CSteamID(Me);
 
+            RefreshHostUi();
             Debug.Log($"[Migration] took over as host: {ServerPlayerCount()} players, {NetworkServerManager.ClientData.Count} clients, waiting for {_awaiting.Count}");
             Debug.Log($"[Migration] {ServerSnapshot.Describe()}");
         }
@@ -441,6 +445,24 @@ namespace Multiplayer.Migration
         }
 
         #endregion
+
+        private static void RefreshHostUi()
+        {
+            if (Menu.GameVoteMenu.Instance != null)
+                Menu.GameVoteMenu.Instance.RefreshHost();
+
+            if (Menu.GameUIManager.Instance == null) return;
+            foreach (var pair in Menu.GameUIManager.Instance.PlayerList)
+            {
+                if (pair.Value == null
+                    || !NetworkManager.ClientData.TryGetValue(pair.Key, out var data)
+                    || !Multiplayer.Entity.Client.ClientPlayer.list.TryGetValue(pair.Key, out var player)) continue;
+
+                string name = Chat.Instance.GetPlayerNameNetwork(data.Name, data.SteamId, player.DisplayTag, data.OwnedDlc) + " " + player.GetGroupName();
+                pair.Value.playerName = name;
+                pair.Value.playerNameText.SetText(name);
+            }
+        }
 
         #region Clients
 
@@ -643,6 +665,7 @@ namespace Multiplayer.Migration
                 NetworkManager.Instance.RemovePlayer(id);
 
             NetworkManager.Instance.ResumeAuthorize();
+            RefreshHostUi();
         }
 
         [MessageHandler((ushort)ServerToClientId.MigrationDropped, NetworkManager.PlayerHostedDemoMessageHandlerGroupId)]
