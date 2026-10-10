@@ -12,6 +12,7 @@ using Movement;
 using Multiplayer.Entity.Client;
 using Multiplayer.Entity.Client.Enemy;
 using Multiplayer.Entity.Server;
+using Multiplayer.Migration;
 using Pool;
 using Quest;
 using Riptide;
@@ -120,6 +121,11 @@ namespace Multiplayer
         ClientEliminated,
         JumpPadSpawned,
         PveIterate,
+        MigrationSuccessors,
+        MigrationSnapshot,
+        MigrationHandoff,
+        MigrationResumed,
+        MigrationDropped,
     }
     public enum ClientToServerId : ushort
     {
@@ -162,6 +168,7 @@ namespace Multiplayer
         PickPickable,
         BuyWeapon,
         AntiCheatData,
+        MigrationAck,
     }
     [Serializable]
     public enum GameMode : ushort
@@ -216,7 +223,7 @@ namespace Multiplayer
 
 
     [DefaultExecutionOrder(-99)]
-    public class NetworkManager : MonoBehaviour
+    public partial class NetworkManager : MonoBehaviour
     {
         public const uint MaxSplitPacketSize = 256;
 
@@ -502,13 +509,15 @@ namespace Multiplayer
 
         void DidConnect(object sender, EventArgs e)
         {
-            ClearClientData();
             connecting = false;
+            if (HostMigration.Instance != null && HostMigration.Instance.Resuming) return;
+            ClearClientData();
         }
 
         void FailedToConnect(object sender, EventArgs e)
         {
             connecting = false;
+            if (HostMigration.Instance != null && HostMigration.Instance.Migrating) return;
             if (SceneManager.GetActiveScene().name != "Menu")
             {
                 if (LoadingManager.Instance.menuType == LoadingManager.MenuType.None)
@@ -520,29 +529,34 @@ namespace Multiplayer
 
         void ClientPlayerLeft(object sender, ClientDisconnectedEventArgs e)
         {
-            if (ClientData.ContainsKey(e.Id))
+            RemovePlayer(e.Id);
+        }
+
+        internal void RemovePlayer(ushort id)
+        {
+            if (ClientData.ContainsKey(id))
             {
-                VoiceChatUIManager.Instance.RemovePlayer(e.Id);
-                ClientData.Remove(e.Id);
+                VoiceChatUIManager.Instance.RemovePlayer(id);
+                ClientData.Remove(id);
             }
 
-            if (GameUIManager.Instance && GameUIManager.Instance.PlayerList.ContainsKey(e.Id) && GameUIManager.Instance.PlayerList[e.Id] != null)
+            if (GameUIManager.Instance && GameUIManager.Instance.PlayerList.ContainsKey(id) && GameUIManager.Instance.PlayerList[id] != null)
             {
-                Destroy(GameUIManager.Instance.PlayerList[e.Id].gameObject);
-                GameUIManager.Instance.PlayerList.Remove(e.Id);
+                Destroy(GameUIManager.Instance.PlayerList[id].gameObject);
+                GameUIManager.Instance.PlayerList.Remove(id);
             }
 
-            if (ClientPlayer.list.ContainsKey(e.Id))
+            if (ClientPlayer.list.ContainsKey(id))
             {
-                Destroy(ClientPlayer.list[e.Id].gameObject);
-                ClientPlayer.list.Remove(e.Id);
+                Destroy(ClientPlayer.list[id].gameObject);
+                ClientPlayer.list.Remove(id);
             }
 
             if (GameState == GameState.Voting)
             {
                 if (GameVoteMenu.Instance)
                 {
-                    GameVoteMenu.Instance.RemoveObject(e.Id);
+                    GameVoteMenu.Instance.RemoveObject(id);
                 }
             }
         }
@@ -552,6 +566,12 @@ namespace Multiplayer
         }
 
         void DidDisconnect(object sender, DisconnectedEventArgs e)
+        {
+            if (HostMigration.Instance != null && HostMigration.Instance.TryMigrate(e)) return;
+            FinishDisconnect(e);
+        }
+
+        internal void FinishDisconnect(DisconnectedEventArgs e)
         {
             connecting = false;
             LocalClientData = null;
@@ -1219,6 +1239,7 @@ namespace Multiplayer
         [MessageHandler((ushort)ServerToClientId.Authorized, PlayerHostedDemoMessageHandlerGroupId)]
         private static void Authorized(Message message)
         {
+            if (HostMigration.Instance != null && HostMigration.Instance.CompleteResume()) return;
             Instance.Init();
         }
 
