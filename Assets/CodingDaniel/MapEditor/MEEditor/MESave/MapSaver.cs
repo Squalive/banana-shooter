@@ -1118,6 +1118,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     if (File.Exists(audioPath))
                     {
                         AudioClip clip = await LoadAudio(audioPath);
+                        if (clip == null)
+                        {
+                            Debug.LogWarning($"Failed to load audio {audioPath}");
+                            continue;
+                        }
                         clip.name = n;
 
                         externalAudioClips.Add(new Tuple<string, AudioClip>(audioPath, clip));
@@ -1129,6 +1134,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     if (File.Exists(audioPath))
                     {
                         AudioClip clip = await LoadAudio(audioPath);
+                        if (clip == null)
+                        {
+                            Debug.LogWarning($"Failed to load audio {audioPath}");
+                            continue;
+                        }
                         clip.name = n;
 
                         externalAudioClips.Add(new Tuple<string, AudioClip>(audioPath, clip));
@@ -1148,18 +1158,31 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         string sourcePath = Path.Combine(info.FullName, "source.unity3d");
                         if (File.Exists(configPath))
                         {
-                            MapData.ExternalModelConfig config =
-                                JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
-                                    SaveSystem.ReadFileNormally(configPath));
-
-                            if (File.Exists(previewImage))
-                                config.previewImage.LoadImage(await SaveSystem.ReadByteFromFileAsync(previewImage));
-
-                            if (File.Exists(sourcePath))
+                            try
                             {
-                                await TryToDownloadAssetBundle(config, sourcePath);
+                                MapData.ExternalModelConfig config =
+                                    JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
+                                        SaveSystem.ReadFileNormally(configPath));
+
+                                if (config == null || string.IsNullOrEmpty(config.name) || ModelConfigs.ContainsKey(config.name))
+                                {
+                                    Debug.LogWarning($"Skipping model config {configPath}");
+                                    continue;
+                                }
+
+                                if (File.Exists(previewImage))
+                                    config.previewImage.LoadImage(await SaveSystem.ReadByteFromFileAsync(previewImage));
+
+                                if (File.Exists(sourcePath))
+                                {
+                                    await TryToDownloadAssetBundle(config, sourcePath);
+                                }
+                                ModelConfigs.Add(config.name, config);
                             }
-                            ModelConfigs.Add(config.name, config);
+                            catch (Exception e)
+                            {
+                                Debug.LogError($"Failed to load model {info.Name}: {e}");
+                            }
                         }
                     }
                 }
@@ -1183,7 +1206,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 if (loadedAssetBundle == null)
                 {
-                    Debug.Log($"Failed to load {bundle.name} AssetBundle!");
+                    Debug.LogError($"Failed to load {bundle.name} AssetBundle!");
                     return;
                 }
 
@@ -1196,13 +1219,29 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 if (assetRequest.asset is not GameObject go)
                 {
-                    Debug.Log($"Failed to load {bundle.name} Asset!");
+                    Debug.LogError($"Failed to load {bundle.name} Asset!");
                     return;
                 }
 
                 Sanitize(go);
+                UseGameShaders(go);
 
                 bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, bundleRequest.assetBundle, assetRequest.asset);
+            }
+        }
+
+        void UseGameShaders(GameObject root)
+        {
+            Shader lit = dummyMat != null ? dummyMat.shader : null;
+            if (lit == null) return;
+
+            foreach (var r in root.GetComponentsInChildren<Renderer>(true))
+            {
+                foreach (var m in r.sharedMaterials)
+                {
+                    if (m != null && m.shader != null && m.shader != lit && m.shader.name == lit.name)
+                        m.shader = lit;
+                }
             }
         }
 
@@ -1436,8 +1475,10 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             foreach (var decoration in data.decorationDatas)
             {
                 ObjectItem item = GetObjectItem(decoration.data.name);
-                var go = decoration.external ? AddObjectMenu.CreateDecorationExposeToEditor((GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3()
-                    , decoration.data.rotation, decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision) : AddObjectMenu.CreateDecorationExposeToEditor(item.prefab, MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3(),
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                var go = AddObjectMenu.CreateDecorationExposeToEditor(prefab, MEBase.Instance.EditedObject.transform, decoration.data.position.ToVector3(),
                     decoration.data.rotation, decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision);
 
                 GameObject o = go.gameObject;
@@ -1550,25 +1591,19 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             foreach (var decoration in data.decorationDatas)
             {
-                GameObject go;
-                if (decoration.external)
-                {
-                    go = AddObjectMenu.CreateDecoration(
-                        (GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation
-                        , decoration.data.scale.ToVector3(), decoration.type, decoration.enableCollision);
-                }
-                else
-                {
-                    ObjectItem item = GetObjectItem(decoration.data.name);
-                    go = AddObjectMenu.CreateDecoration(item.prefab, MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                GameObject go = AddObjectMenu.CreateDecoration(prefab, MEBase.Instance.PlayModeObject.transform, decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
+                    decoration.type, decoration.enableCollision);
 
                 playModeLoadedObject.Add(go);
             }
 
             foreach (var audioData in data.audioDatas)
             {
+                if (audioData.index < 0 || audioData.index >= externalAudioClips.Count) continue;
+
                 AudioSource source = AddExternalObjectMenu.CreateAudioSource(externalAudioClips[audioData.index].Item2);
 
                 Transform transform1;
@@ -1652,21 +1687,16 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             foreach (var decoration in CurrentMap.decorationDatas)
             {
-                if (decoration.external)
-                {
-                    AddObjectMenu.CreateDecoration(
-                        (GameObject)AssetBundleManager.Instance.GetAssetObject(decoration.data.name), MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
-                else
-                {
-                    ObjectItem item = GetObjectItem(decoration.data.name);
-                    AddObjectMenu.CreateDecoration(item.prefab, MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
-                        decoration.type, decoration.enableCollision);
-                }
+                GameObject prefab = GetDecorationPrefab(decoration);
+                if (prefab == null) continue;
+
+                AddObjectMenu.CreateDecoration(prefab, MEMap.Instance.GetGroundRoot(), decoration.data.position.ToVector3(), decoration.data.rotation, decoration.data.scale.ToVector3(),
+                    decoration.type, decoration.enableCollision);
             }
             foreach (var audioData in CurrentMap.audioDatas)
             {
+                if (audioData.index < 0 || audioData.index >= externalAudioClips.Count) continue;
+
                 AudioSource source = AddExternalObjectMenu.CreateAudioSource(externalAudioClips[audioData.index].Item2);
 
                 Transform transform1;
@@ -1688,6 +1718,19 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             return true;
         }
+
+        GameObject GetDecorationPrefab(MapData.DecorationObjectData decoration)
+        {
+            GameObject prefab = decoration.external
+                ? AssetBundleManager.Instance.GetAssetObject(decoration.data.name) as GameObject
+                : GetObjectItem(decoration.data.name)?.prefab;
+
+            if (prefab == null)
+                Debug.LogWarning($"Skipping decoration {decoration.data.name}, its prefab didnt load");
+
+            return prefab;
+        }
+
         ObjectItem GetObjectItem(string n)
         {
             foreach (var item in objectItems)

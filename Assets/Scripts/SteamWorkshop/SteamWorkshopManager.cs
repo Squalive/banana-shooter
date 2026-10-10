@@ -70,8 +70,7 @@ namespace SteamWorkshop
         private string _updateNote;
         public static AppId_t _appId;
 
-        private CallResult<SteamUGCQueryCompleted_t> _queryResult;
-        private UGCQueryHandle_t _queryHandle;
+        private readonly List<CallResult<SteamUGCQueryCompleted_t>> _queries = new();
 
         protected Callback<ItemInstalled_t> ItemInstalled;
         protected Callback<RemoteStoragePublishedFileSubscribed_t> FileSubscribed;
@@ -84,8 +83,6 @@ namespace SteamWorkshop
             if (!SteamManager.Initialized) return;
             _appId = SteamUtils.GetAppID();
             // Debug.Log(_appId);
-
-            _queryResult = CallResult<SteamUGCQueryCompleted_t>.Create(OnUGCQueryCompleted);
 
             ItemInstalled = Callback<ItemInstalled_t>.Create(OnItemInstalled);
             FileSubscribed = Callback<RemoteStoragePublishedFileSubscribed_t>.Create(OnFileSubscribed);
@@ -117,7 +114,7 @@ namespace SteamWorkshop
 
                 WorkshopItem workshopItem = new WorkshopItem(fileId, state);
 
-                if (SteamUGC.GetItemInstallInfo(fileId, out var size, out var path, 256, out var timeStamp))
+                if (SteamUGC.GetItemInstallInfo(fileId, out var size, out var path, 1024, out var timeStamp))
                 {
                     DateTime date = DateTimeOffset.FromUnixTimeSeconds(timeStamp).LocalDateTime;
 
@@ -137,10 +134,13 @@ namespace SteamWorkshop
                 WorkshopItems.Add(fileId, workshopItem);
             }
 
-            _queryHandle = SteamUGC.CreateQueryUGCDetailsRequest(SubscribedItems, maxLen);
-
-            var call = SteamUGC.SendQueryUGCRequest(_queryHandle);
-            _queryResult.Set(call);
+            if (maxLen > 0)
+                SendDetailsQuery(SubscribedItems, maxLen);
+            else
+            {
+                QueryLoaded = true;
+                OnQueryLoaded?.Invoke();
+            }
 
             Initialized = true;
         }
@@ -196,10 +196,7 @@ namespace SteamWorkshop
 
                 if ((EItemState.k_EItemStateInstalled | EItemState.k_EItemStateSubscribed) == state)
                 {
-                    _queryHandle = SteamUGC.CreateQueryUGCDetailsRequest(new[] { param.m_nPublishedFileId }, 1);
-
-                    var call = SteamUGC.SendQueryUGCRequest(_queryHandle);
-                    _queryResult.Set(call);
+                    SendDetailsQuery(new[] { param.m_nPublishedFileId }, 1);
                 }
             }
         }
@@ -219,7 +216,7 @@ namespace SteamWorkshop
                 item = new WorkshopItem(param.m_nPublishedFileId, state);
                 WorkshopItems.Add(param.m_nPublishedFileId, item);
             }
-            if (SteamUGC.GetItemInstallInfo(param.m_nPublishedFileId, out var size, out var path, 1000, out var timeStamp))
+            if (SteamUGC.GetItemInstallInfo(param.m_nPublishedFileId, out var size, out var path, 1024, out var timeStamp))
             {
                 DateTime date = DateTimeOffset.FromUnixTimeSeconds(timeStamp).LocalDateTime;
 
@@ -231,10 +228,7 @@ namespace SteamWorkshop
                 MapSaver.Instance.LoadWorkshopMap(path, param.m_nPublishedFileId);
             }
 
-            _queryHandle = SteamUGC.CreateQueryUGCDetailsRequest(new[] { param.m_nPublishedFileId }, 1);
-
-            var call = SteamUGC.SendQueryUGCRequest(_queryHandle);
-            _queryResult.Set(call);
+            SendDetailsQuery(new[] { param.m_nPublishedFileId }, 1);
 
             Debug.Log(param.m_nPublishedFileId + " New item installed");
         }
@@ -259,6 +253,15 @@ namespace SteamWorkshop
             }
         }
 
+        void SendDetailsQuery(PublishedFileId_t[] ids, uint count)
+        {
+            _queries.RemoveAll(q => !q.IsActive());
+
+            var query = CallResult<SteamUGCQueryCompleted_t>.Create(OnUGCQueryCompleted);
+            query.Set(SteamUGC.SendQueryUGCRequest(SteamUGC.CreateQueryUGCDetailsRequest(ids, count)));
+            _queries.Add(query);
+        }
+
         private void OnUGCQueryCompleted(SteamUGCQueryCompleted_t result, bool ioFailure)
         {
             if (ioFailure || result.m_unNumResultsReturned == 0)
@@ -272,7 +275,7 @@ namespace SteamWorkshop
             for (uint i = 0; i < result.m_unNumResultsReturned; i++)
             {
                 SteamUGCDetails_t itemDetails;
-                if (!SteamUGC.GetQueryUGCResult(_queryHandle, i, out itemDetails))
+                if (!SteamUGC.GetQueryUGCResult(result.m_handle, i, out itemDetails))
                 {
                     // Failed to get item details
                     Debug.Log("Failed to get item details");
