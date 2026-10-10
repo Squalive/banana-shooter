@@ -4,7 +4,14 @@
 
 name: Build and Deploy to Steam
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
+    tags:
+      - "v*"
+
+concurrency:
+  group: build-n-deploy-steam
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -37,7 +44,7 @@ jobs:
           mkdir -p "$INSTALL_DIR"
 
           curl -fsSL -o "$ARCHIVE" \
-            "https://github.com/Squalive/bsubp/releases/latest/download/$ARCHIVE"
+            "https://github.com/Squalive/bsubp/releases/v1.0.31/download/$ARCHIVE"
 
           if [[ "$ARCHIVE" == *.zip ]]; then
             7z x "$ARCHIVE" -o"$INSTALL_DIR" -y > /dev/null
@@ -89,8 +96,7 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 2021.3.45f2
-          versioning: Custom
-          version: '1.37.0'
+          versioning: Semantic
           buildName: Banana Shooter
 
       - name: Remove IL2CPP/Burst debug directories
