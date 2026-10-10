@@ -192,7 +192,10 @@ namespace Manager
         {
             SteamUGC.StopPlaytimeTrackingForAllItems();
             SteamUGC.StartPlaytimeTracking(new[] { map }, 1);
-            StartCoroutine(JoinWorkshopMap(map, external));
+            if (asyncOperation != null) asyncOperation.allowSceneActivation = true;
+            if (loadingCoroutine != null)
+                StopCoroutine(loadingCoroutine);
+            loadingCoroutine = StartCoroutine(JoinWorkshopMap(map, external));
         }
 
         public void Menu()
@@ -532,10 +535,9 @@ namespace Manager
             }
             else
             {
+                _networkManager.DisconnectClient();
                 yield break;
             }
-
-
 
             #region Loading
 
@@ -895,7 +897,10 @@ namespace Manager
 
         public void StartLoadVotingScene(float time, List<Tuple<ushort, LobbyDataManager.LobbyData>> datas, int minimalPlayerCount)
         {
-            StartCoroutine(LoadVotingScene(time, datas, minimalPlayerCount));
+            if (asyncOperation != null) asyncOperation.allowSceneActivation = true;
+            if (loadingCoroutine != null)
+                StopCoroutine(loadingCoroutine);
+            loadingCoroutine = StartCoroutine(LoadVotingScene(time, datas, minimalPlayerCount));
         }
 
         IEnumerator LoadVotingScene(float time, List<Tuple<ushort, LobbyDataManager.LobbyData>> datas, int minimalPlayerCount)
@@ -922,7 +927,8 @@ namespace Manager
                 yield return null;
             }
 
-
+            isLoading = false;
+            SetAlpha(0);
             TransitionUI.Instance.ClearTransition();
 
             GameVoteMenu.Instance.SetVotePage(time, datas, minimalPlayerCount);

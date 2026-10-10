@@ -35,6 +35,8 @@ namespace SteamWorkshop.UI
 
         private void OnDisable()
         {
+            voteUpBtn.onClick.RemoveAllListeners();
+            voteDownBtn.onClick.RemoveAllListeners();
             GetUserItemVoteResult.Dispose();
             SetUserItemVoteResult.Dispose();
         }

@@ -53,6 +53,7 @@ public class ReBindUI : MonoBehaviour
 
     private void OnDisable()
     {
+        rebindBtn.onClick.RemoveListener(DoReBind);
         GameManager.RebindComplete -= UpdateUI;
         GameManager.RebindCanceled -= UpdateUI;
     }

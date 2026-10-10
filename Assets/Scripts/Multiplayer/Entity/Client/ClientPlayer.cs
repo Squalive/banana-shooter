@@ -253,9 +253,10 @@ namespace Multiplayer.Entity.Client
         public string GetGroupName()
         {
             string groupTag = SteamFriends.GetClanTag(new CSteamID(groupId));
-            string groupName = $"<size=15><color={StringColor.Colors[existGroup.FindIndex(a => a == groupId)]}>{groupTag}</color></size>";
+            if (string.IsNullOrEmpty(groupTag)) return "";
 
-            return string.IsNullOrEmpty(groupTag) ? "" : groupName;
+            int index = Mathf.Max(0, existGroup.IndexOf(groupId)) % StringColor.Colors.Length;
+            return $"<size=15><color={StringColor.Colors[index]}>{groupTag}</color></size>";
         }
 
         // void SetCosmeticLocal()

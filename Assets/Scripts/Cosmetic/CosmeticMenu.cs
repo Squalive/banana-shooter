@@ -162,7 +162,6 @@ namespace Cosmetic
             meshFilter = CosmeticRender.Instance.meshFilter;
 
             CosmeticRender.Instance.light.enabled = RenderSettings.sun == null;
-            dropDown.Dropdown.onValueChanged.AddListener(SetType);
 
             searchInput.onValueChanged.AddListener(SetSearchItem);
 
@@ -182,6 +181,16 @@ namespace Cosmetic
                 _useItems[i].gameObject.SetActive(false);
             }
 
+            _started = true;
+            WaitForInventory();
+        }
+
+        private bool _started, _itemsInitialized;
+
+        void WaitForInventory()
+        {
+            if (_itemsInitialized) return;
+
             if (!InventoryManager.Initialized)
                 InventoryManager.OnGetInventory += InitializeItems;
             else
@@ -191,11 +200,14 @@ namespace Cosmetic
         private void OnEnable()
         {
             InventoryManager.NewItemAdded += RefreshPage;
+            dropDown.Dropdown.onValueChanged.AddListener(SetType);
+
+            if (_started) WaitForInventory();
         }
 
         private void OnDisable()
         {
-            dropDown.Dropdown.onValueChanged.RemoveAllListeners();
+            dropDown.Dropdown.onValueChanged.RemoveListener(SetType);
             InventoryManager.NewItemAdded -= RefreshPage;
             InventoryManager.OnGetInventory -= InitializeItems;
         }
@@ -204,6 +216,8 @@ namespace Cosmetic
 
         void InitializeItems()
         {
+            InventoryManager.OnGetInventory -= InitializeItems;
+            _itemsInitialized = true;
             RefreshPage();
             RefreshDetailType();
 

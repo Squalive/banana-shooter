@@ -230,7 +230,7 @@ namespace Manager
 
                 yield return cd.coroutine;
 
-                if (cd.result is string[] up)
+                if (cd.result is string[] up && up.Length == upgrades.Length)
                     upgrades = up;
             }
 
@@ -242,11 +242,13 @@ namespace Manager
                 cd = new CoroutineWithData(this, SaveSystem.LoadBinaryDataAsync("weapons"));
                 yield return cd.coroutine;
 
-                if (cd.result is short[] wea)
+                if (cd.result is short[] wea && wea.Length >= 3)
                 {
+                    var weaponInfo = NetworkManager.Instance.weaponInfo;
                     for (int i = 0; i < 3; i++)
                     {
                         if (wea[i] == 6) wea[i] = 1;
+                        if (wea[i] < 0 || wea[i] >= weaponInfo.Count || weaponInfo[wea[i]].specialWeapon) continue;
 
                         NetworkManager.Instance.Weapons[i] = wea[i];
                     }
@@ -530,12 +532,11 @@ namespace Manager
                     // Code to execute if deserialization fails
                     c = new InventoryManager.CosmeticIndex();
                     Debug.LogError("Error while deserializing inventory JSON: " + e.Message);
-                    NetworkManager.Instance.currentGroup = CSteamID.Nil;
                 }
 
                 if (c != null)
                 {
-                    if (c.ids.Length < 8)
+                    if (c.ids == null || c.ids.Length < 8)
                     {
                         c.ids = new ulong[8];
 
@@ -571,8 +572,8 @@ namespace Manager
                         c.menuSceneIndex = 0;
                         SaveInventory();
                     }
-                    if (c.weaponIds.Length != 30) c.weaponIds = new ulong[30];
-                    if (c.weaponIndex.Length != 30) c.weaponIndex = new ushort[30];
+                    if (c.weaponIds == null || c.weaponIds.Length != 30) c.weaponIds = new ulong[30];
+                    if (c.weaponIndex == null || c.weaponIndex.Length != 30) c.weaponIndex = new ushort[30];
                     InventoryManager.Instance.cosmeticIndex = c;
 
                 }
@@ -794,6 +795,7 @@ namespace Manager
         }
 
         public LayerMask serverPlayer, flashBangHitLayer;
+        private Texture2D _afterImage;
         IEnumerator GoBlind(float a)
         {
             yield return new WaitForEndOfFrame();
@@ -803,6 +805,8 @@ namespace Manager
             Texture2D tex = new Texture2D(width, height, TextureFormat.RGB24, false);
             tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
             tex.Apply();
+            if (_afterImage != null) Destroy(_afterImage);
+            _afterImage = tex;
             GameUIManager.Instance.afterImage.texture = tex;
 
 
@@ -833,7 +837,7 @@ namespace Manager
         {
             if (CameraShaker.Instance)
             {
-                float p = (baseDis / Vector3.Distance(CameraShaker.Instance.transform.position, pos));
+                float p = baseDis / Mathf.Max(0.1f, Vector3.Distance(CameraShaker.Instance.transform.position, pos));
                 CameraShaker.Instance.ShakeOnce(mag * p, rough * p, fadeIn, fadeOut);
             }
         }
