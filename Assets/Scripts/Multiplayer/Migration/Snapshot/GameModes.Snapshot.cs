@@ -28,6 +28,8 @@ public abstract partial class GameModes
         ReadModeSnapshot(r);
     }
 
+    internal virtual string DescribeMode() => $" started{(started ? 1 : 0)} stopped{(stopped ? 1 : 0)}";
+
     internal virtual void ClearServerSide()
     {
         _init = false;

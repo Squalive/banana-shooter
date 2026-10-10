@@ -66,6 +66,13 @@ namespace Multiplayer.Entity.Server
             }
         }
 
+        internal string DescribeState()
+        {
+            var weapon = GetCurrentWeapon();
+            var pos = PlayerTransform != null ? PlayerTransform.position : Vector3.zero;
+            return $"{Id}:hp{Health}/{MaxHealth} k{Kills} d{Deaths} w{CurrentWeaponIndex}:{Weapons[CurrentWeaponIndex < 0 ? 0 : CurrentWeaponIndex]} ammo{weapon?.CurrentAmmo}{(weapon != null && weapon.IsReloading ? "r" : "")} dead{(Dead ? 1 : 0)} team{(int)Team} inf{(IsInfected ? 1 : 0)} banana{(HasBanana ? 1 : 0)} stay{StayTime:F1} lvl{WeaponLevel} coin{Coin} cash{Cash} inv{(invincible ? 1 : 0)} throw{TacticalThrowCount} pos({pos.x:F1},{pos.y:F1},{pos.z:F1})";
+        }
+
         void WriteSnapshot(SnapshotWriter w)
         {
             w.UShort(Id);

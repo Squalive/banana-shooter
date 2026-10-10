@@ -4,6 +4,8 @@ namespace Mode
 {
     public partial class KingOfTheHill
     {
+        internal override string DescribeMode() => base.DescribeMode() + $" hill{serverIndex} hilltime{_hillTime} next{this.Remaining(nameof(HillCountdown)):F1}/{this.Remaining(nameof(SetNewHillServer)):F1}";
+
         internal override void ClearServerSide()
         {
             base.ClearServerSide();

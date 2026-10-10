@@ -97,19 +97,16 @@ namespace Multiplayer.Migration
 
         public static string Describe()
         {
-            var players = ServerPlayer.list.Values.OfType<ServerPlayer>().OrderBy(p => p.Id).Select(p =>
-            {
-                var weapon = p.GetCurrentWeapon();
-                var pos = p.PlayerTransform != null ? p.PlayerTransform.position : Vector3.zero;
-                return $"{p.Id}:hp{p.Health}/{p.MaxHealth} k{p.Kills} d{p.Deaths} w{p.CurrentWeaponIndex} ammo{weapon?.CurrentAmmo} dead{(p.Dead ? 1 : 0)} pos({pos.x:F1},{pos.y:F1},{pos.z:F1})";
-            });
+            var players = ServerPlayer.list.Values.OfType<ServerPlayer>().OrderBy(p => p.Id).Select(p => p.DescribeState());
             var enemies = ServerEnemy.list.Values.Where(e => e != null).OrderBy(e => e.Id).Select(e =>
             {
                 var pos = e.transform.position;
                 return $"e{e.Id}:{e.enemyType} hp{e.Health} pos({pos.x:F1},{pos.y:F1},{pos.z:F1})";
             });
             var game = NetworkServerManager.Instance.game;
-            return $"state {NetworkServerManager.GameState} tick {NetworkServerManager.Instance.CurrentTick} end {(game != null ? game.EndTick : 0)} objects {ServerObject.list.Count} | {string.Join(" | ", players.Concat(enemies))}";
+            string mode = game != null ? game.DescribeMode() : string.Empty;
+            string endless = Endless.Instance != null ? Endless.Instance.DescribeState() : string.Empty;
+            return $"state {NetworkServerManager.GameState} mode {NetworkServerManager.ServerGameMode} tick {NetworkServerManager.Instance.CurrentTick} end {(game != null ? game.EndTick : 0)}{mode}{endless} objects {ServerObject.list.Count} grenades {ServerGrenade.list.Count} collectables {ServerCollectable.list.Count} | {string.Join(" | ", players.Concat(enemies))}";
         }
 
         public static void ClearServerState()

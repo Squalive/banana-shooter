@@ -4,6 +4,8 @@ namespace Mode
 {
     public partial class Infected
     {
+        internal override string DescribeMode() => base.DescribeMode() + $" infected{(infected ? 1 : 0)} infecttime{_infectTime} next{this.Remaining(nameof(FirstInfect)):F1}";
+
         internal override void ClearServerSide()
         {
             base.ClearServerSide();

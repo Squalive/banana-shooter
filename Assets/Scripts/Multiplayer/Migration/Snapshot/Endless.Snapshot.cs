@@ -5,6 +5,8 @@ namespace Mode
 {
     public partial class Endless
     {
+        internal string DescribeState() => $" endless{(serverStarted ? 1 : 0)} round{_round} spawn{_spawnCount} wave{_waveTime:F1} diff{difficulty:F2} t{serverTime:F1}";
+
         internal void ClearServerSide()
         {
             serverStarted = false;
