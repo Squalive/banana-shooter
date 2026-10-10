@@ -83,8 +83,12 @@ namespace Multiplayer.Server
             }
         }
 
+        private bool _collected;
+
         private void FixedUpdate()
         {
+            if (_collected) return;
+
             Collider[] cols = Physics.OverlapSphere(transform.position, 2f, GameManager.Instance.serverPlayer);
 
             foreach (var c in cols)
@@ -120,12 +124,15 @@ namespace Multiplayer.Server
 
                     if (flag)
                     {
+                        _collected = true;
+
                         Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.GetConfirm);
 
                         message.Add(Id);
                         message.Add(player.Id);
 
                         NetworkServerManager.Instance.Server.SendToAll(message);
+                        return;
                     }
 
                 }

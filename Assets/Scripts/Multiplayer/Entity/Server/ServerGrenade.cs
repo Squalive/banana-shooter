@@ -164,8 +164,9 @@ namespace Multiplayer.Entity.Server
             if (type is ThrowObjectMenu.ThrowObjectType.MolotovCocktail or ThrowObjectMenu.ThrowObjectType.JumpPad)
             {
                 Vector3 normal = other.contacts[0].normal;
-                if (Vector3.Angle(Vector3.up, normal) < 30)
+                if (!exploded && Vector3.Angle(Vector3.up, normal) < 30)
                 {
+                    exploded = true;
                     StartCoroutine(Explode(0, other.contacts[0].point));
                 }
             }
@@ -355,7 +356,8 @@ namespace Multiplayer.Entity.Server
                     {
                         Rigidbody rb = _col[i].GetComponent<Rigidbody>();
 
-                        rb.AddExplosionForce(.000005f, position, 25f, 1f, ForceMode.Impulse);
+                        if (rb != null)
+                            rb.AddExplosionForce(.000005f, position, 25f, 1f, ForceMode.Impulse);
                     }
                     _clients.Clear();
                     _enemies.Clear();
@@ -379,7 +381,8 @@ namespace Multiplayer.Entity.Server
                     {
                         Rigidbody rb = _col[i].GetComponent<Rigidbody>();
 
-                        rb.AddExplosionForce(.000005f, position, 4f, 1f, ForceMode.Impulse);
+                        if (rb != null)
+                            rb.AddExplosionForce(.000005f, position, 4f, 1f, ForceMode.Impulse);
                     }
                     cnt = Physics.OverlapSphereNonAlloc(position, 4f, _col, GameManager.Instance.lagCompensationHitboxLayer,
                         QueryTriggerInteraction.Ignore);

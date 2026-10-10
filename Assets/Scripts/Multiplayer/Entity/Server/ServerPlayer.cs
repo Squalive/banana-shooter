@@ -236,10 +236,9 @@ namespace Multiplayer.Entity.Server
                     switch (upgrade)
                     {
                         case 0:
-                            player.MaxHealth += 20;
-                            player.MaxHealth = Mathf.Clamp(player.MaxHealth, 100, 200);
-                            if (player.HasPerk(Perk.Fat))
-                                player.MaxHealth = (int)(player.MaxHealth * 1.25f);
+                            float fat = player.HasPerk(Perk.Fat) ? PerkManager.FatMultiplier : 1f;
+                            int baseHealth = Mathf.RoundToInt(player.MaxHealth / fat);
+                            player.MaxHealth = (int)(Mathf.Clamp(baseHealth + 20, 100, 200) * fat);
 
                             ((ServerPlayer)player).CancelInvoke(nameof(Breathe));
                             ((ServerPlayer)player).Invoke(nameof(Breathe), 4);
@@ -448,6 +447,8 @@ namespace Multiplayer.Entity.Server
 
             if (list.TryGetValue(kickId, out var player))
             {
+                if (NetworkManager.Instance != null && NetworkManager.Instance.Client != null && NetworkManager.Instance.Client.Id == kickId) return;
+
                 ulong SteamId = player.SteamId;
 
                 if (RolesManager.Instance.CheckIsAdmin(SteamId)
@@ -1143,6 +1144,9 @@ namespace Multiplayer.Entity.Server
 
             if (clearKick != null)
                 StopCoroutine(clearKick);
+
+            if (Vote == null || Vote.PlayerId != Id) return;
+
             Vote = null;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.ClearKick);
             NetworkServerManager.Instance.Server.SendToAll(message);
@@ -1479,6 +1483,13 @@ namespace Multiplayer.Entity.Server
             SetHasBanana(false);
             if (attacker != Id && list.TryGetValue(attacker, out var fromPlayer))
             {
+                if (NetworkServerManager.ServerGameMode != GameMode.KillConfirm)
+                {
+                    fromPlayer.Kills++;
+                    fromPlayer.CurrentLifeKill++;
+                    fromPlayer.Coin++;
+                }
+
                 switch (NetworkServerManager.ServerGameMode)
                 {
                     case GameMode.KillConfirm:
@@ -1515,13 +1526,6 @@ namespace Multiplayer.Entity.Server
 
                         break;
 
-                }
-
-                if (NetworkServerManager.ServerGameMode != GameMode.KillConfirm)
-                {
-                    fromPlayer.Kills++;
-                    fromPlayer.CurrentLifeKill++;
-                    fromPlayer.Coin++;
                 }
 
                 if (!fromPlayer.IsCrazy)
