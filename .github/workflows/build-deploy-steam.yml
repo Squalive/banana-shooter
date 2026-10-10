@@ -36,7 +36,7 @@ jobs:
             "https://github.com/Squalive/bsubp/releases/latest/download/$ARCHIVE"
 
           if [[ "$ARCHIVE" == *.zip ]]; then
-            tar -xf "$ARCHIVE" -C "$INSTALL_DIR"
+            7z x "$ARCHIVE" -o"$INSTALL_DIR" -y > /dev/null
             rm "$ARCHIVE"
           else
             tar -xzf "$ARCHIVE" -C "$INSTALL_DIR"
@@ -44,12 +44,8 @@ jobs:
           fi
 
           chmod +x "$INSTALL_DIR"/bsubp* 2>/dev/null || true
-
-          # Debug — remove once it works
           ls -la "$INSTALL_DIR"
-          which bsubp || which bsubp.exe || echo "bsubp not found on PATH yet"
 
-          # On Windows, append a native path to GITHUB_PATH
           if [ "${{ runner.os }}" = "Windows" ]; then
             cygpath -w "$INSTALL_DIR" >> "$GITHUB_PATH"
           else
