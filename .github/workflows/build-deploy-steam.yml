@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  main:
+  build:
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -91,10 +91,17 @@ jobs:
       - name: Remove IL2CPP/Burst debug directories
         shell: bash
         run: |
-          find build -type d \( \
+          SUDO=""
+          if [ "${{ runner.os }}" = "Linux" ]; then SUDO="sudo"; fi
+
+          $SUDO find build -type d \( \
             -name '*_BackUpThisFolder_ButDontShipItWithYourGame' -o \
             -name '*_BurstDebugInformation_DoNotShip' \
           \) -prune -exec rm -rf {} +
+
+          if [ -n "$SUDO" ]; then
+            $SUDO chown -R "$(id -u):$(id -g)" build
+          fi
 
           echo "Remaining build contents:"
           find build -maxdepth 1 -type d
@@ -104,3 +111,42 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
+          retention-days: 1
+
+  deploy:
+    name: Deploy to Steam
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Windows Build
+        uses: actions/download-artifact@v4
+        with:
+          name: Build-StandaloneWindows64
+          path: build/StandaloneWindows64
+
+      - name: Download Linux Build
+        uses: actions/download-artifact@v4
+        with:
+          name: Build-StandaloneLinux64
+          path: build/StandaloneLinux64
+
+      # - name: Deploy to Steam
+      #   uses: game-ci
+
+      - name: Delete artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+            });
+            for (const artifact of artifacts.data.artifacts) {
+              await github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifact.id,
+              });
+            }
