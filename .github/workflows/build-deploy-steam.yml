@@ -19,31 +19,42 @@ jobs:
       - name: Install Banana Shooter Unlicensed Backup CLI
         shell: bash
         run: |
-            if [ "${{ runner.os }}" = "Windows" ]; then
-              TARGET="x86_64-pc-windows-msvc"
-              ARCHIVE="bsubp-$TARGET.zip"
-            elif [ "${{ runner.os }}" = "macOS" ]; then
-              TARGET="x86_64-apple-darwin"
-              ARCHIVE="bsubp-$TARGET.tar.gz"
-            else
-              TARGET="x86_64-unknown-linux-gnu"
-              ARCHIVE="bsubp-$TARGET.tar.gz"
-            fi
+          set -euo pipefail
 
-            mkdir -p "$HOME/.local/bin"
-            curl -fsSL -o "$ARCHIVE" \
-             "https://github.com/Squalive/bsubp/releases/latest/download/$ARCHIVE"
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            ARCHIVE="bsubp-x86_64-pc-windows-msvc.zip"
+          elif [ "${{ runner.os }}" = "macOS" ]; then
+            ARCHIVE="bsubp-x86_64-apple-darwin.tar.gz"
+          else
+            ARCHIVE="bsubp-x86_64-unknown-linux-gnu.tar.gz"
+          fi
 
-            if [[ "$ARCHIVE" == *.zip ]]; then
-              unzip -o "$ARCHIVE" -d "$HOME/.local/bin"
-              rm "$ARCHIVE"
-            else
-              tar -xzf "$ARCHIVE" -C "$HOME/.local/bin"
-              rm "$ARCHIVE"
-            fi
+          INSTALL_DIR="$HOME/.local/bin"
+          mkdir -p "$INSTALL_DIR"
 
-            chmod +x "$HOME/.local/bin/"bsubp* 2>/dev/null || true
-            echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          curl -fsSL -o "$ARCHIVE" \
+            "https://github.com/Squalive/bsubp/releases/latest/download/$ARCHIVE"
+
+          if [[ "$ARCHIVE" == *.zip ]]; then
+            tar -xf "$ARCHIVE" -C "$INSTALL_DIR"
+            rm "$ARCHIVE"
+          else
+            tar -xzf "$ARCHIVE" -C "$INSTALL_DIR"
+            rm "$ARCHIVE"
+          fi
+
+          chmod +x "$INSTALL_DIR"/bsubp* 2>/dev/null || true
+
+          # Debug — remove once it works
+          ls -la "$INSTALL_DIR"
+          which bsubp || which bsubp.exe || echo "bsubp not found on PATH yet"
+
+          # On Windows, append a native path to GITHUB_PATH
+          if [ "${{ runner.os }}" = "Windows" ]; then
+            cygpath -w "$INSTALL_DIR" >> "$GITHUB_PATH"
+          else
+            echo "$INSTALL_DIR" >> "$GITHUB_PATH"
+          fi
 
       - name: Checkout Repository
         uses: actions/checkout@v4
