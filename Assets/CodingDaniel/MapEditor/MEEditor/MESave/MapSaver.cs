@@ -538,20 +538,10 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
             p = GetAudioPath();
 
-            if (saved)
-            {
-                if (!Directory.Exists(p))
-                {
-                    if (externalAudioClips.Count > 0)
-                        Directory.CreateDirectory(p);
-                }
-                else
-                {
-                    Directory.Delete(p, true);
-                    if (externalAudioClips.Count > 0)
-                        Directory.CreateDirectory(p);
-                }
-            }
+            var keptAudio = new HashSet<string>();
+
+            if (saved && externalAudioClips.Count > 0)
+                Directory.CreateDirectory(p);
 
             foreach (var tuple in externalAudioClips)
             {
@@ -559,15 +549,25 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                 ExternalData externalData = new ExternalData(audioClip.name);
                 if (saved)
                 {
-                    string basePath = p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4).ToLowerInvariant();
+                    string basePath = Path.GetFullPath(p + "/" + audioClip.name + tuple.Item1.Substring(tuple.Item1.Length - 4).ToLowerInvariant());
                     Debug.Log(basePath);
-                    if (!File.Exists(basePath) || basePath != tuple.Item1)
-                    {
-                        if (File.Exists(tuple.Item1))
-                            File.Copy(tuple.Item1, basePath);
-                    }
+                    if (File.Exists(tuple.Item1) && Path.GetFullPath(tuple.Item1) != basePath)
+                        File.Copy(tuple.Item1, basePath, true);
+                    keptAudio.Add(basePath);
                 }
                 externalAudioDatas.Add(externalData);
+            }
+
+            if (saved && Directory.Exists(p))
+            {
+                foreach (var file in Directory.GetFiles(p))
+                {
+                    if (!keptAudio.Contains(Path.GetFullPath(file)))
+                        File.Delete(file);
+                }
+
+                if (externalAudioClips.Count == 0)
+                    Directory.Delete(p, true);
             }
 
             p = GetModelPath();
