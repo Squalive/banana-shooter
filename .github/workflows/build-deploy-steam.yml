@@ -85,7 +85,8 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: 2021.3.45f2
-          versioning: Semantic
+          versioning: Custom
+          version: '1.37.0'
           buildName: Banana Shooter
 
       - name: Remove IL2CPP/Burst debug directories
@@ -104,7 +105,7 @@ jobs:
           fi
 
           echo "Remaining build contents:"
-          find build -maxdepth 1 -type d
+          find build -maxdepth 2 -type d
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
@@ -117,6 +118,8 @@ jobs:
     name: Deploy to Steam
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
 
     steps:
       - name: Download Windows Build
@@ -131,8 +134,16 @@ jobs:
           name: Build-StandaloneLinux64
           path: build/StandaloneLinux64
 
-      # - name: Deploy to Steam
-      #   uses: game-ci
+      - name: Deploy to Steam
+        uses: game-ci/steam-deploy@v3
+        with:
+          username: ${{ secrets.STEAM_USERNAME }}
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
+          appId: 1949740
+          buildDescription: 'Build ${{ github.sha }}'
+          rootPath: build
+          depot1Path: StandaloneWindows64
+          depot2Path: StandaloneLinux64
 
       - name: Delete artifacts
         uses: actions/github-script@v7
