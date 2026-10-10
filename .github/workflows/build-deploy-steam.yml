@@ -16,12 +16,6 @@ jobs:
             targetPlatform: StandaloneLinux64
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
-
       - name: Install Banana Shooter Unlicensed Backup CLI
         shell: bash
         run: |
@@ -50,6 +44,17 @@ jobs:
 
             chmod +x "$HOME/.local/bin/"bsubp* 2>/dev/null || true
             echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Restore Unlicensed Assets
+        shell: bash
+        run: |
+            bsubp restore latest --confirm
 
       - name: Cache library
         uses: actions/cache@v4
