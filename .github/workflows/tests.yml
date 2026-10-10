@@ -13,4 +13,5 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Run regression suite
-        run: dotnet run --project tools/verification/RegressionTests.csproj
+        working-directory: tools/verification
+        run: dotnet run --project RegressionTests.csproj

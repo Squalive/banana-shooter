@@ -19,10 +19,10 @@
 
 ## Run the regression suite
 
-Install the .NET 8 SDK and run from the project root:
+Install the .NET 8 SDK and run it from `tools/verification`, where `global.json` pins the SDK:
 
 ```bash
-dotnet run --project tools/verification/RegressionTests.csproj
+cd tools/verification && dotnet run --project RegressionTests.csproj
 ```
 
 The runner links the actual production files for saves, HTTP, the manifest, roles, preload and lag compensation. Only unavailable Unity/Steam boundaries have test doubles. Newtonsoft.Json and Roslyn are taken from the SDK, so no external NuGet packages are required. Build outputs go into the ignored `tools/verification/.build` directory; save fixtures go into the operating system's temporary directory.
