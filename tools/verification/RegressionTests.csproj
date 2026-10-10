@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <NoWarn>SYSLIB0011;SYSLIB0006;CS0612;CS0618;CS0649</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(MSBuildSDKsPath)/../Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(MSBuildSDKsPath)/../Roslyn/bincore/Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>$(MSBuildSDKsPath)/../Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Compile Include="../../Assets/Scripts/Save/SaveSystem.cs" Link="Production/SaveSystem.cs" />
+    <Compile Include="../../Assets/Scripts/Web/HttpClient.cs" Link="Production/HttpClient.cs" />
+    <Compile Include="../../Assets/Scripts/Manager/RolesManager.cs" Link="Production/RolesManager.cs" />
+    <Compile Include="../../Assets/Scripts/Web/Manifest.cs" Link="Production/Manifest.cs" />
+    <Compile Include="../../Assets/Scripts/SecureServer/Roles.cs" Link="Production/Roles.cs" />
+    <Compile Include="../../Assets/Scripts/SecureServer/PlayerBanSummary.cs" Link="Production/PlayerBanSummary.cs" />
+    <Compile Include="../../Assets/Scripts/Manager/Preload.cs" Link="Production/Preload.cs" />
+    <Compile Include="../../Assets/Scripts/Multiplayer/LagCompensationManager.cs" Link="Production/LagCompensationManager.cs" />
+    <Compile Include="../../Assets/Scripts/Weapon/EShootingResult.cs" Link="Production/EShootingResult.cs" />
+    <Compile Include="../../Assets/Scripts/Multiplayer/ClientAuthentication.cs" Link="Production/ClientAuthentication.cs" />
+    <Compile Include="../../Assets/Scripts/Multiplayer/ClientInputValidation.cs" Link="Production/ClientInputValidation.cs" />
+  </ItemGroup>
+</Project>
