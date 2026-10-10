@@ -22,6 +22,35 @@ jobs:
           fetch-depth: 0
           lfs: true
 
+      - name: Install Banana Shooter Unlicensed Backup CLI
+        shell: bash
+        run: |
+            if [ "${{ runner.os }}" = "Windows" ]; then
+              TARGET="x86_64-pc-windows-msvc"
+              ARCHIVE="bsubp-$TARGET.zip"
+            elif [ "${{ runner.os }}" = "macOS" ]; then
+              TARGET="x86_64-apple-darwin"
+              ARCHIVE="bsubp-$TARGET.tar.gz"
+            else
+              TARGET="x86_64-unknown-linux-gnu"
+              ARCHIVE="bsubp-$TARGET.tar.gz"
+            fi
+
+            mkdir -p "$HOME/.local/bin"
+            curl -fsSL -o "$ARCHIVE" \
+             "https://github.com/Squalive/bsubp/releases/latest/download/$ARCHIVE"
+
+            if [[ "$ARCHIVE" == *.zip ]]; then
+              unzip -o "$ARCHIVE" -d "$HOME/.local/bin"
+              rm "$ARCHIVE"
+            else
+              tar -xzf "$ARCHIVE" -C "$HOME/.local/bin"
+              rm "$ARCHIVE"
+            fi
+
+            chmod +x "$HOME/.local/bin/"bsubp* 2>/dev/null || true
+            echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
       - name: Cache library
         uses: actions/cache@v4
         with:
