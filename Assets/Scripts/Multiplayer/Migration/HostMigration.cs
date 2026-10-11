@@ -476,6 +476,8 @@ namespace Multiplayer.Migration
             }
             if (Server.IsRunning) return false;
 
+            if (Riptide.Transports.Steam.SteamClient.LastEndReason == SteamPeer.KickedEndReason) return false;
+
             switch (e.Reason)
             {
                 case DisconnectReason.ServerStopped:
