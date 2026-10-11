@@ -23,6 +23,7 @@ namespace Riptide.Transports.Steam
         private const string LocalHostIP = "127.0.0.1";
 
         public SteamConnection steamConnection;
+        public static int LastEndReason { get; private set; }
         private SteamServer localServer;
         private Callback<SteamNetConnectionStatusChangedCallback_t> connectionStatusChanged;
 
@@ -39,6 +40,7 @@ namespace Riptide.Transports.Steam
         public bool Connect(string hostAddress, out Connection connection, out string connectError)
         {
             connection = null;
+            LastEndReason = 0;
 
             //             try
             //             {
@@ -193,6 +195,7 @@ namespace Riptide.Transports.Steam
                     break;
 
                 case ESteamNetworkingConnectionState.k_ESteamNetworkingConnectionState_ClosedByPeer:
+                    LastEndReason = callback.m_info.m_eEndReason;
                     SteamNetworkingSockets.CloseConnection(callback.m_hConn, 0, "Closed by peer", false);
                     OnDisconnected(DisconnectReason.Disconnected);
                     break;

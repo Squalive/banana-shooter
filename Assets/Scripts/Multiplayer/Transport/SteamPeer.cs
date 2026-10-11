@@ -14,6 +14,8 @@ namespace Riptide.Transports.Steam
     {
         /// <summary>The name to use when logging messages via <see cref="RiptideLogger"/>.</summary>
         public const string LogName = "STEAM";
+        public const int KickedEndReason = 1001;
+        public const int StoppedEndReason = 1002;
 
         public event EventHandler<DataReceivedEventArgs> DataReceived;
 
