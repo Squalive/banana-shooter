@@ -54,6 +54,9 @@ namespace Multiplayer.Migration
         private bool _quitAllowed;
         private ushort _handoffClient;
         private byte[] _promoteNext;
+        private byte[] _pendingFinal;
+        private float _pendingFinalDeadline;
+        private bool _ackReceived;
         private CSteamID _handedOffLobby = CSteamID.Nil;
         private DisconnectedEventArgs _disconnect;
 
@@ -74,6 +77,12 @@ namespace Multiplayer.Migration
         private void Update()
         {
             if (!Steamworks.NET.SteamManager.Initialized) return;
+
+            if (_pendingFinal != null && Time.unscaledTime > _pendingFinalDeadline)
+            {
+                _promoteNext = _pendingFinal;
+                _pendingFinal = null;
+            }
 
             if (_promoteNext != null)
             {
@@ -251,7 +260,7 @@ namespace Multiplayer.Migration
         {
             _handingOff = true;
             float deadline = Time.unscaledTime + 1.5f;
-            while (Time.unscaledTime < deadline && Server.IsRunning && Server.TryGetClient(_handoffClient, out _))
+            while (Time.unscaledTime < deadline && Server.IsRunning && !_ackReceived && Server.TryGetClient(_handoffClient, out _))
                 yield return null;
             _handingOff = false;
             then();
@@ -311,6 +320,7 @@ namespace Multiplayer.Migration
 
             _handedOffLobby = Lobby;
             _handingOff = true;
+            _ackReceived = false;
             _handoffClient = TryGetClientId(target, out var targetClient) ? targetClient : (ushort)0;
             _lastSnapshot = null;
             _handoffTarget = target;
@@ -514,7 +524,15 @@ namespace Multiplayer.Migration
 
         public bool TryMigrate(DisconnectedEventArgs e)
         {
-            if (Migrating) return true;
+            if (Migrating)
+            {
+                if (_pendingFinal != null)
+                {
+                    _promoteNext = _pendingFinal;
+                    _pendingFinal = null;
+                }
+                return true;
+            }
             if (_leaving)
             {
                 _leaving = false;
@@ -688,7 +706,16 @@ namespace Multiplayer.Migration
             Instance._oldHostStays = oldHostStays;
             Instance._ownerWatchUntil = Time.unscaledTime + 30f;
             Instance._disconnect = new DisconnectedEventArgs(DisconnectReason.ServerStopped, null);
-            Instance._promoteNext = data;
+            Instance._pendingFinal = data;
+            Instance._pendingFinalDeadline = Time.unscaledTime + 2f;
+            Client.Send(Message.Create(MessageSendMode.Reliable, (ushort)ClientToServerId.MigrationAck));
+        }
+
+        [MessageHandler((ushort)ClientToServerId.MigrationAck, NetworkServerManager.PlayerHostedDemoMessageHandlerGroupId)]
+        private static void OnAck(ushort fromClient, Message message)
+        {
+            if (Instance._handingOff && fromClient == Instance._handoffClient)
+                Instance._ackReceived = true;
         }
 
         [MessageHandler((ushort)ServerToClientId.MigrationHandoff, NetworkManager.PlayerHostedDemoMessageHandlerGroupId)]
