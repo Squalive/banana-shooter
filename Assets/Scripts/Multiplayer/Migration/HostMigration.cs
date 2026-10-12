@@ -212,7 +212,7 @@ namespace Multiplayer.Migration
                 if (!TryGetClientId(steamId, out ushort clientId)) continue;
                 for (int i = 0; i < chunks.Count; i++)
                 {
-                    var message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.MigrationSnapshot);
+                    var message = Message.Create(final ? MessageSendMode.Reliable : MessageSendMode.Unreliable, (ushort)ServerToClientId.MigrationSnapshot);
                     message.AddUInt(_session);
                     message.AddUInt(seq);
                     message.AddUShort((ushort)i);
