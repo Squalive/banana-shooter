@@ -293,7 +293,7 @@ namespace Multiplayer.Entity.Client
             string name = message.GetString();
             if (!NetworkManager.ClientData.TryGetValue(id, out var data))
             {
-                data = new ClientData(id, name, 0, false, 0, String.Empty, 0, true, false, null, null);
+                data = new ClientData(id, name, 0, false, 0, String.Empty, 0, true, false, new short[0], new ushort[0]);
             }
             short rtt = -1;
             if (message.GetBool())
