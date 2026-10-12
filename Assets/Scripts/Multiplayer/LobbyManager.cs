@@ -302,7 +302,7 @@ namespace Multiplayer
 
         public void LeaveLobby()
         {
-            if (HostMigration.Instance != null) HostMigration.Instance.OnLeaveLobby();
+            if (HostMigration.Instance != null && HostMigration.Instance.OnLeaveLobby()) return;
             SteamMatchmaking.LeaveLobby(lobbyId);
             NetworkManager.Instance.DisconnectClient();
             NetworkServerManager.Instance.StopServer();

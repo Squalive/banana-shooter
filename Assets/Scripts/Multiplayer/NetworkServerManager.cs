@@ -977,6 +977,7 @@ namespace Multiplayer
 
         public void ClientDisconnect(object sender, ServerDisconnectedEventArgs e)
         {
+            if (HostMigration.Instance != null && HostMigration.Instance.HandingOff) return;
             RemoveClient(e.Client.Id);
         }
 

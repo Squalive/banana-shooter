@@ -27,6 +27,8 @@ namespace Multiplayer.Migration
         public bool Migrating { get; private set; }
         public bool Resuming { get; private set; }
 
+        public bool HandingOff => _handingOff;
+
         private readonly List<ulong> _successors = new();
         private readonly SnapshotAssembler _assembler = new();
         private readonly HashSet<ushort> _awaiting = new();
@@ -48,6 +50,9 @@ namespace Multiplayer.Migration
         private CSteamID _pingLobby = CSteamID.Nil;
         private bool _takeOverLobby;
         private bool _leaving;
+        private bool _handingOff;
+        private bool _quitAllowed;
+        private ushort _handoffClient;
         private byte[] _promoteNext;
         private CSteamID _handedOffLobby = CSteamID.Nil;
         private DisconnectedEventArgs _disconnect;
@@ -216,21 +221,57 @@ namespace Multiplayer.Migration
             return false;
         }
 
-        public void OnLeaveLobby()
+        public bool OnLeaveLobby()
         {
+            if (_handingOff) return true;
             _leaving = !Migrating;
-            HandOffIfHosting();
+            if (!HandOffIfHosting()) return false;
+
+            StartCoroutine(AfterHandOff(() => LobbyManager.Instance.LeaveLobby()));
+            return true;
         }
 
-        private void HandOffIfHosting()
+        private bool CanHandOff()
         {
-            if (!Server.IsRunning || Lobby == CSteamID.Nil || Server.ClientCount < 2) return;
-            if (NetworkServerManager.ServerType == ServerType.ShootingRange || _handedOffLobby == Lobby) return;
+            return Server.IsRunning && Lobby != CSteamID.Nil && Server.ClientCount >= 2
+                   && NetworkServerManager.ServerType != ServerType.ShootingRange && _handedOffLobby != Lobby;
+        }
+
+        private bool HandOffIfHosting()
+        {
+            if (!CanHandOff()) return false;
 
             Elect();
-            if (_successors.Count == 0) return;
+            if (_successors.Count == 0) return false;
             HandOff(_successors[0], false);
+            return true;
         }
+
+        private IEnumerator AfterHandOff(Action then)
+        {
+            _handingOff = true;
+            float deadline = Time.unscaledTime + 1.5f;
+            while (Time.unscaledTime < deadline && Server.IsRunning && Server.TryGetClient(_handoffClient, out _))
+                yield return null;
+            _handingOff = false;
+            then();
+        }
+
+        private bool WantsToQuit()
+        {
+            if (_quitAllowed || !CanHandOff() || !HandOffIfHosting()) return true;
+
+            StartCoroutine(AfterHandOff(() =>
+            {
+                _quitAllowed = true;
+                Application.Quit();
+            }));
+            return false;
+        }
+
+        private void OnEnable() => Application.wantsToQuit += WantsToQuit;
+
+        private void OnDisable() => Application.wantsToQuit -= WantsToQuit;
 
         public bool HandOffTo(ushort clientId)
         {
@@ -239,12 +280,15 @@ namespace Multiplayer.Migration
             if (!Server.TryGetClient(clientId, out _)) return false;
 
             HandOff(data.SteamId, true);
-            NetworkServerManager.Instance.StopServer();
-            ServerSnapshot.ClearServerState();
-            NetworkServerManager.ClientData.Clear();
-            if (LobbyManager.Instance != null)
-                LobbyManager.Instance.owner = new CSteamID(data.SteamId);
-            RefreshHostUi();
+            StartCoroutine(AfterHandOff(() =>
+            {
+                NetworkServerManager.Instance.StopServer();
+                ServerSnapshot.ClearServerState();
+                NetworkServerManager.ClientData.Clear();
+                if (LobbyManager.Instance != null)
+                    LobbyManager.Instance.owner = new CSteamID(data.SteamId);
+                RefreshHostUi();
+            }));
             return true;
         }
 
@@ -266,6 +310,8 @@ namespace Multiplayer.Migration
             }
 
             _handedOffLobby = Lobby;
+            _handingOff = true;
+            _handoffClient = TryGetClientId(target, out var targetClient) ? targetClient : (ushort)0;
             _lastSnapshot = null;
             _handoffTarget = target;
             _newHost = target;
