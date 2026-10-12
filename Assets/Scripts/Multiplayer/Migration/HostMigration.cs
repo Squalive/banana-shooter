@@ -42,6 +42,7 @@ namespace Multiplayer.Migration
         private ulong _newHost;
         private ushort _myId;
         private uint _snapshotSeq;
+        private uint _session;
         private float _snapshotTimer;
         private float _electionTimer;
         private float _awaitDeadline;
@@ -58,6 +59,7 @@ namespace Multiplayer.Migration
         private float _pendingFinalDeadline;
         private bool _ackReceived;
         private CSteamID _handedOffLobby = CSteamID.Nil;
+        private CSteamID _knownLobby = CSteamID.Nil;
         private DisconnectedEventArgs _disconnect;
 
         private static ulong Me => SteamUser.GetSteamID().m_SteamID;
@@ -71,6 +73,7 @@ namespace Multiplayer.Migration
         private void Awake()
         {
             Instance = this;
+            _session = (uint)new System.Random().Next(1, int.MaxValue);
             Server.HandleConnection = HandleConnection;
         }
 
@@ -99,6 +102,15 @@ namespace Multiplayer.Migration
             }
 
             var lobby = Lobby;
+            if (lobby != _knownLobby && !Migrating && !Resuming)
+            {
+                _knownLobby = lobby;
+                _lastSnapshot = null;
+                _pendingFinal = null;
+                _successors.Clear();
+                _handoffTarget = 0;
+                _oldHostStays = false;
+            }
             PublishPing(lobby);
             WatchOwner(lobby);
             if (_takeOverLobby) TryTakeOverLobby(lobby);
@@ -201,6 +213,7 @@ namespace Multiplayer.Migration
                 for (int i = 0; i < chunks.Count; i++)
                 {
                     var message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.MigrationSnapshot);
+                    message.AddUInt(_session);
                     message.AddUInt(seq);
                     message.AddUShort((ushort)i);
                     message.AddUShort((ushort)chunks.Count);
@@ -688,6 +701,7 @@ namespace Multiplayer.Migration
         [MessageHandler((ushort)ServerToClientId.MigrationSnapshot, NetworkManager.PlayerHostedDemoMessageHandlerGroupId)]
         private static void OnSnapshot(Message message)
         {
+            uint session = message.GetUInt();
             uint seq = message.GetUInt();
             ushort index = message.GetUShort();
             ushort count = message.GetUShort();
@@ -695,7 +709,7 @@ namespace Multiplayer.Migration
             bool oldHostStays = message.GetBool();
             byte[] chunk = message.GetBytes();
 
-            var data = Instance._assembler.Add(seq, index, count, chunk);
+            var data = Instance._assembler.Add(session, seq, index, count, chunk);
             if (data == null) return;
 
             Instance._lastSnapshot = data;

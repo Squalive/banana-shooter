@@ -21,13 +21,21 @@ namespace Multiplayer.Migration
 
     public sealed class SnapshotAssembler
     {
+        private uint _session;
         private uint _seq;
         private byte[][] _parts;
         private int _received;
 
-        public byte[] Add(uint seq, int index, int count, byte[] chunk)
+        public byte[] Add(uint session, uint seq, int index, int count, byte[] chunk)
         {
             if (count <= 0 || index < 0 || index >= count || chunk == null) return null;
+            if (session != _session)
+            {
+                _session = session;
+                _seq = 0;
+                _parts = null;
+            }
+
             if (_parts != null && seq < _seq) return null;
 
             if (_parts == null || seq != _seq || _parts.Length != count)
