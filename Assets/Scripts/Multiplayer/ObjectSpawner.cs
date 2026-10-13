@@ -2,13 +2,14 @@
 using Manager;
 using Multiplayer.Entity.Server;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Multiplayer.Server;
 using Pool;
 using UnityEngine;
 
 namespace Multiplayer
 {
-    public class ObjectSpawner : MonoBehaviour
+    public partial class ObjectSpawner : MonoBehaviour
     {
 
         private GameObject _obj;
@@ -20,13 +21,14 @@ namespace Multiplayer
 
         private void Start()
         {
-            if (!NetworkServerManager.Instance.Server.IsRunning) Destroy(this);
             _spawn = transform;
-            InvokeRepeating(nameof(SpawnObj), 5f, 15f);
+            if (!NetworkServerManager.Instance.Server.IsRunning) return;
+            this.Schedule(nameof(SpawnObj), 5f);
         }
 
         void SpawnObj()
         {
+            this.Schedule(nameof(SpawnObj), 15f);
             if (_obj != null) return;
 
             Rigidbody rb;

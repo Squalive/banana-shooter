@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Multiplayer.ServerTypes
 {
-    public class KnockoutServer : IServerType
+    public partial class KnockoutServer : IServerType
     {
         public int Round { get; private set; } = 0;
 

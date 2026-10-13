@@ -15,7 +15,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public abstract class GameModes : MonoBehaviour
+public abstract partial class GameModes : MonoBehaviour
 {
     public bool started, stopped;
 

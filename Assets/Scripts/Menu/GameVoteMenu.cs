@@ -104,6 +104,20 @@ namespace Menu
             forceStartObj.SetActive(true);
         }
 
+        public void RefreshHost()
+        {
+            CancelInvoke(nameof(DisplayForceStartButton));
+            forceStartObj.SetActive(NetworkServerManager.Instance.Server.IsRunning);
+
+            foreach (var pair in _list)
+            {
+                if (NetworkManager.ClientData.TryGetValue(pair.Key, out var clientData))
+                    pair.Value.playerName = Chat.Instance.GetPlayerNameNetwork(clientData.Name, clientData.SteamId, clientData.DisplayTag, clientData.OwnedDlc);
+            }
+
+            Refresh();
+        }
+
         void StopMusic()
         {
             MusicManager.Instance.ChangeMusic(MusicManager.MusicType.None);

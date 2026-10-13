@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using Manager;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 
 namespace Multiplayer.Entity.Server
 {
-    public class ServerObject : MonoBehaviour, IEntity
+    public partial class ServerObject : MonoBehaviour, IEntity
     {
         public static Dictionary<ushort, ServerObject> list = new Dictionary<ushort, ServerObject>();
 
@@ -30,7 +31,7 @@ namespace Multiplayer.Entity.Server
 
             _transform = transform;
             _rigidbody = GetComponent<Rigidbody>();
-            Init();
+            if (!_restoring) Init();
         }
         public void Destroy()
         {
@@ -67,6 +68,7 @@ namespace Multiplayer.Entity.Server
             // }
             Id = _nextId;
             _nextId++;
+            _spawnTime = Time.time;
             list.Add(Id, this);
             GameManager.Entities.Add(gameObject);
 
@@ -190,7 +192,7 @@ namespace Multiplayer.Entity.Server
             if (ready && other.gameObject.layer != LayerMask.NameToLayer("ServerPlayer"))
             {
                 ready = false;
-                Invoke(nameof(BeReady), 0.1f);
+                this.Schedule(nameof(BeReady), 0.1f);
 
                 Message message = Message.Create(MessageSendMode.Unreliable, (ushort)ServerToClientId.ObjHitWall);
                 message.Add(other.contacts[0].point);

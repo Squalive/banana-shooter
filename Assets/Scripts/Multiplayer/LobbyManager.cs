@@ -7,6 +7,7 @@ using Menu;
 using Multiplayer.Client;
 using Multiplayer.Entity.Client;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide.Transports.Steam;
 using Steamworks;
 using Steamworks.NET;
@@ -42,7 +43,7 @@ namespace Multiplayer
 
         public List<CSteamID> lobbyIds = new List<CSteamID>();
 
-        private const string HostAddressKey = "HostAddress";
+        internal const string HostAddressKey = "HostAddress";
         internal CSteamID lobbyId;
 
         public static bool ServerTournamentStarted = false;
@@ -104,6 +105,8 @@ namespace Multiplayer
                      (EChatMemberStateChange)param.m_rgfChatMemberStateChange ==
                      EChatMemberStateChange.k_EChatMemberStateChangeLeft))
                 {
+                    if (HostMigration.Instance != null && HostMigration.Instance.OnOwnerLeft()) return;
+
                     foreach (ClientPlayer player in ClientPlayer.list.Values)
                         Destroy(player.gameObject);
 
@@ -299,6 +302,7 @@ namespace Multiplayer
 
         public void LeaveLobby()
         {
+            if (HostMigration.Instance != null && HostMigration.Instance.OnLeaveLobby()) return;
             SteamMatchmaking.LeaveLobby(lobbyId);
             NetworkManager.Instance.DisconnectClient();
             NetworkServerManager.Instance.StopServer();

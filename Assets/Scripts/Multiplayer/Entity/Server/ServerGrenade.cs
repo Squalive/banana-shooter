@@ -6,6 +6,7 @@ using Menu;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Entity.Server.Enemy;
 using Multiplayer.LagCompensation;
+using Multiplayer.Migration;
 using Pool;
 using Riptide;
 using UnityEngine;
@@ -14,7 +15,7 @@ using Random = UnityEngine.Random;
 
 namespace Multiplayer.Entity.Server
 {
-    public class ServerGrenade : MonoBehaviour, IEntity
+    public partial class ServerGrenade : MonoBehaviour, IEntity
     {
         public static Dictionary<ushort, ServerGrenade> list = new Dictionary<ushort, ServerGrenade>();
 
@@ -126,19 +127,20 @@ namespace Multiplayer.Entity.Server
         private bool inited = false;
         private void Start()
         {
+            if (_restored) return;
             switch (type)
             {
                 case ThrowObjectMenu.ThrowObjectType.Grenade:
-                    StartCoroutine(Explode(1.2f, Vector3.zero));
+                    StartFuse(1.2f);
                     break;
                 case ThrowObjectMenu.ThrowObjectType.FlashBang:
-                    StartCoroutine(Explode(1.5f, Vector3.zero));
+                    StartFuse(1.5f);
                     break;
                 case ThrowObjectMenu.ThrowObjectType.JumpPad:
-                    Invoke(nameof(Destroy), 5f);
+                    this.Schedule(nameof(Destroy), 5f);
                     break;
                 default:
-                    StartCoroutine(Explode(10, Vector3.zero));
+                    StartFuse(10);
                     break;
             }
         }

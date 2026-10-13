@@ -3,6 +3,7 @@ using System.Collections;
 using Manager;
 using Movement;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Riptide;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace Multiplayer.Entity.Server.Enemy
 {
-    public class ServerJack : ServerEnemy
+    public partial class ServerJack : ServerEnemy
     {
         public override int MaxHealth { get; set; } = 100;
 
@@ -72,7 +73,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     {
                         target = cols[0].transform;
                         state = EJackState.Tracing;
-                        if (_coroutine != null) StopCoroutine(_coroutine);
+                        this.Unschedule(nameof(ApplyPendingState));
                     }
                 }
                 else
@@ -82,8 +83,7 @@ namespace Multiplayer.Entity.Server.Enemy
                         if (target != cols[0].transform)
                         {
                             state = EJackState.Stop;
-                            if (_coroutine != null) StopCoroutine(_coroutine);
-                            _coroutine = StartCoroutine(ChangeStateAndTarget(8, cols[0].transform, EJackState.Tracing));
+                            ChangeStateAndTarget(8, cols[0].transform, EJackState.Tracing);
                             // leftTimeToTrack -= Time.fixedDeltaTime;
                             // if (leftTimeToTrack <= 0)
                             // {
@@ -95,8 +95,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     else
                     {
                         state = EJackState.Stop;
-                        if (_coroutine != null) StopCoroutine(_coroutine);
-                        _coroutine = StartCoroutine(ChangeStateAndTarget(8, null, EJackState.Awake));
+                        ChangeStateAndTarget(8, null, EJackState.Awake);
                         // leftTimeToTrack -= Time.fixedDeltaTime;
                         // if (leftTimeToTrack <= 0)
                         // {
@@ -108,14 +107,21 @@ namespace Multiplayer.Entity.Server.Enemy
             }
         }
 
-        private Coroutine _coroutine;
+        private Transform _pendingTarget;
+        private EJackState _pendingState;
 
-        IEnumerator ChangeStateAndTarget(float t, Transform tr, EJackState s)
+        void ChangeStateAndTarget(float t, Transform tr, EJackState s)
         {
-            yield return new WaitForSeconds(t);
+            this.Unschedule(nameof(ApplyPendingState));
+            _pendingTarget = tr;
+            _pendingState = s;
+            this.Schedule(nameof(ApplyPendingState), t);
+        }
 
-            target = tr;
-            state = s;
+        void ApplyPendingState()
+        {
+            target = _pendingTarget;
+            state = _pendingState;
         }
 
 
@@ -152,7 +158,7 @@ namespace Multiplayer.Entity.Server.Enemy
                             meleeLeftTime = meleeWaitTime;
                             target = null;
                             state = EJackState.Stop;
-                            StartCoroutine(GoAwake(0.3f));
+                            this.Schedule(nameof(GoAwake), 0.3f);
 
                         }
                     }
@@ -175,7 +181,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     else
                     {
                         state = EJackState.Stop;
-                        StartCoroutine(GoAwake(0.7f));
+                        this.Schedule(nameof(GoAwake), 0.7f);
                     }
                     break;
                 case EJackState.Tracing:
@@ -190,10 +196,10 @@ namespace Multiplayer.Entity.Server.Enemy
                             traceTime = 0;
                             state = EJackState.Attacking;
                             readyToShoot = false;
-                            Invoke(nameof(ReadyToShoot), 1.7f);
+                            this.Schedule(nameof(ReadyToShoot), 1.7f);
                             SendState();
 
-                            Invoke(nameof(StopAttack), 4f);
+                            this.Schedule(nameof(StopAttack), 4f);
                         }
                     }
                     else if (!f)
@@ -239,7 +245,7 @@ namespace Multiplayer.Entity.Server.Enemy
                     }
 
                     readyToShoot = false;
-                    Invoke(nameof(ReadyToShoot), 1f / fireRate);
+                    this.Schedule(nameof(ReadyToShoot), 1f / fireRate);
                     // Message msg = Message.Create(MessageSendMode.unreliable,(ushort)ServerToClientId.EnemyShoot);
                     // msg.Add(Id);
                     // msg.Add(1);
@@ -260,9 +266,8 @@ namespace Multiplayer.Entity.Server.Enemy
         }
 
 
-        IEnumerator GoAwake(float t)
+        void GoAwake()
         {
-            yield return new WaitForSeconds(t);
             state = EJackState.Awake;
         }
 
@@ -290,7 +295,7 @@ namespace Multiplayer.Entity.Server.Enemy
             readyToShoot = false;
             state = EJackState.Stop;
             target = null;
-            StartCoroutine(GoAwake(1.2f));
+            this.Schedule(nameof(GoAwake), 1.2f);
 
             SendState();
         }
@@ -375,7 +380,7 @@ namespace Multiplayer.Entity.Server.Enemy
 
                 player.TakeDamage((int)(meleeAttackDamage * difficulty), Id, NetworkServerManager.Instance.CurrentTick, false, false, 12);
                 flag = false;
-                Invoke(nameof(ReadyToAttack), 0.7f);
+                this.Schedule(nameof(ReadyToAttack), 0.7f);
                 return;
             }
 

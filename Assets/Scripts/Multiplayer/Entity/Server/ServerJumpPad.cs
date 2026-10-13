@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 namespace Multiplayer.Entity.Server
 {
-    public class ServerJumpPad : MonoBehaviour, IEntity
+    public partial class ServerJumpPad : MonoBehaviour, IEntity
     {
         public static Dictionary<ushort, ServerJumpPad> List = new();
 

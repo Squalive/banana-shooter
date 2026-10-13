@@ -4,6 +4,7 @@ using Manager;
 using Mode;
 using Multiplayer.Entity.Interface;
 using Multiplayer.Interface;
+using Multiplayer.Migration;
 using Multiplayer.LagCompensation;
 using Riptide;
 using UnityEngine;
@@ -11,7 +12,7 @@ using Random = UnityEngine.Random;
 
 namespace Multiplayer.Entity.Server.Enemy
 {
-    public abstract class ServerEnemy : MonoBehaviour, IEntity, IDamageable
+    public abstract partial class ServerEnemy : MonoBehaviour, IEntity, IDamageable
     {
         public enum EnemyType
         {
@@ -155,7 +156,7 @@ namespace Multiplayer.Entity.Server.Enemy
             Health -= damage;
             Health = Mathf.Clamp(Health, 0, MaxHealth);
             this.fromClient = attacker;
-            Invoke(nameof(ClearFrom), 0.5f);
+            this.Schedule(nameof(ClearFrom), 0.5f);
             OnTakeDamaged?.Invoke(fromClient);
             if (Health <= 0 && !Dead)
             {

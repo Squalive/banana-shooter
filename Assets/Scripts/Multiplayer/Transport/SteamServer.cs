@@ -95,7 +95,7 @@ namespace Riptide.Transports.Steam
         {
             if (connection is SteamConnection steamConnection)
             {
-                SteamNetworkingSockets.CloseConnection(steamConnection.SteamNetConnection, 0, "Disconnected by server", false);
+                SteamNetworkingSockets.CloseConnection(steamConnection.SteamNetConnection, KickedEndReason, "Disconnected by server", false);
                 connections.Remove(steamConnection.SteamId);
             }
         }
@@ -122,7 +122,7 @@ namespace Riptide.Transports.Steam
             }
 
             foreach (SteamConnection connection in connections.Values)
-                SteamNetworkingSockets.CloseConnection(connection.SteamNetConnection, 0, "Server stopped", false);
+                SteamNetworkingSockets.CloseConnection(connection.SteamNetConnection, StoppedEndReason, "Server stopped", false);
 
             connections.Clear();
             SteamNetworkingSockets.CloseListenSocket(listenSocket);

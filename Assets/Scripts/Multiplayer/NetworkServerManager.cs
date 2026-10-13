@@ -11,6 +11,7 @@ using Multiplayer.Entity.Server;
 using Multiplayer.Entity.Server.Enemy;
 using Multiplayer.Interface;
 using Multiplayer.LagCompensation;
+using Multiplayer.Migration;
 using Multiplayer.Server;
 using Multiplayer.ServerTypes;
 using Pool;
@@ -28,7 +29,7 @@ using Random = UnityEngine.Random;
 
 namespace Multiplayer
 {
-    public class ClientData
+    public partial class ClientData
     {
         public ushort Id { get; }
         public bool Eliminated { get; private set; }
@@ -175,7 +176,7 @@ namespace Multiplayer
     }
 
     [DefaultExecutionOrder(-105)]
-    public class NetworkServerManager : MonoBehaviour, INetworkServer
+    public partial class NetworkServerManager : MonoBehaviour, INetworkServer
     {
         public const byte PlayerHostedDemoMessageHandlerGroupId = 255;
 
@@ -457,6 +458,7 @@ namespace Multiplayer
             Server.ClientDisconnected += ClientDisconnect;
 
             InitializeIds();
+            gameObject.AddComponent<HostMigration>();
         }
 
         public void StopServer()
@@ -865,6 +867,9 @@ namespace Multiplayer
 
                         Instance.Server.Send(message, client);
 
+                        if (HostMigration.Instance != null && HostMigration.Instance.WasResumed(client))
+                            break;
+
                         if (PlayerVoteList.ContainsKey(client))
                             PlayerVoteList.Remove(client);
 
@@ -937,6 +942,8 @@ namespace Multiplayer
         {
             AnticheatManager.Instance.Heartbeats[e.Client.Id] = Time.time;
 
+            if (HostMigration.Instance != null && HostMigration.Instance.OnResumedConnect(e.Client.Id)) return;
+
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.Init);
 
             message.Add((ushort)ServerType);
@@ -970,31 +977,37 @@ namespace Multiplayer
 
         public void ClientDisconnect(object sender, ServerDisconnectedEventArgs e)
         {
-            AnticheatManager.Instance.Heartbeats.Remove(e.Client.Id);
-            PlayerVoteList.Remove(e.Client.Id);
+            if (HostMigration.Instance != null && HostMigration.Instance.HandingOff) return;
+            RemoveClient(e.Client.Id);
+        }
 
-            if (Authentication.Remove(e.Client.Id, out var steamId))
+        internal void RemoveClient(ushort id)
+        {
+            AnticheatManager.Instance.Heartbeats.Remove(id);
+            PlayerVoteList.Remove(id);
+
+            if (Authentication.Remove(id, out var steamId))
             {
                 SteamUser.EndAuthSession(new CSteamID(steamId));
                 _userHasDlc.Remove(steamId);
             }
 
-            if (ClientData.TryGetValue(e.Client.Id, out var data))
+            if (ClientData.TryGetValue(id, out var data))
             {
                 if (InventoryManager.Instance.PendingUserSteamIds.Contains(data))
                 {
                     InventoryManager.Instance.PendingUserSteamIds.Remove(data);
                 }
 
-                ClientData.Remove(e.Client.Id);
+                ClientData.Remove(id);
             }
             if (SceneManager.GetActiveScene().name != "Menu")
             {
-                if (ServerPlayer.list.ContainsKey(e.Client.Id))
+                if (ServerPlayer.list.ContainsKey(id))
                 {
                     if (IsTeamMode())
                     {
-                        if (ServerPlayer.list[e.Client.Id].Team == Team.Rebel)
+                        if (ServerPlayer.list[id].Team == Team.Rebel)
                         {
                             ServerPlayer.RebelPlayers--;
                         }
@@ -1004,14 +1017,14 @@ namespace Multiplayer
                         }
                     }
 
-                    ServerCollectable.RemoveItem(e.Client.Id);
+                    ServerCollectable.RemoveItem(id);
 
-                    bool infected = ServerPlayer.list[e.Client.Id].IsInfected;
+                    bool infected = ServerPlayer.list[id].IsInfected;
 
                     if ((ServerGameMode != GameMode.SpecialGameMode
                          && ServerGameMode != GameMode.SpecialNormalGameMode))
                     {
-                        if (Server.ClientCount < 2)
+                        if (Server.ClientCount + HostMigration.PendingResumes < 2)
                         {
                             StopGame();
                         }
@@ -1022,7 +1035,7 @@ namespace Multiplayer
                                 int survivors = 0, infectedLeft = 0;
                                 foreach (var player in ServerPlayer.list.Values)
                                 {
-                                    if (player.Id == e.Client.Id) continue;
+                                    if (player.Id == id) continue;
 
                                     if (player.IsInfected) infectedLeft++;
                                     else survivors++;
@@ -1037,8 +1050,8 @@ namespace Multiplayer
                         }
                     }
 
-                    ServerPlayer.list[e.Client.Id].Destroy();
-                    ServerPlayer.list.Remove(e.Client.Id);
+                    ServerPlayer.list[id].Destroy();
+                    ServerPlayer.list.Remove(id);
                 }
 
             }
@@ -1286,6 +1299,7 @@ namespace Multiplayer
             game.StopGameServer();
 
             StopAllCoroutines();
+            CancelServerTimers();
 
             foreach (var map in Maps)
             {
@@ -1313,12 +1327,11 @@ namespace Multiplayer
             ServerGrenade.nextId = 0;
             ServerCollectable.nextId = 0;
 
-            StartCoroutine(GotoReady());
+            this.Schedule(nameof(GotoReady), 15f);
         }
 
-        IEnumerator GotoReady()
+        void GotoReady()
         {
-            yield return new WaitForSeconds(15f);
             SetGameState(GameState.Voting, false);
             int playerCount = Server.ClientCount;
 
@@ -1349,10 +1362,8 @@ namespace Multiplayer
             }
         }
 
-        IEnumerator KickLoadFailedPlayer()
+        void KickLoadFailedPlayer()
         {
-            yield return new WaitForSeconds(10);
-
             foreach (var client in ClientData.Values.ToList())
             {
                 if (!ServerPlayer.list.ContainsKey(client.Id))
@@ -1363,11 +1374,13 @@ namespace Multiplayer
         }
         IEnumerator StartGame()
         {
-            StartCoroutine(KickLoadFailedPlayer());
+            this.Schedule(nameof(KickLoadFailedPlayer), 10f);
+            _awaitingPlayers = true;
             while (ServerPlayer.list.Count < ClientData.Count)
             {
                 yield return null;
             }
+            _awaitingPlayers = false;
 
             if (!IsPlaying) IsPlaying = true;
             if (!Server.IsRunning) yield break;
@@ -1966,6 +1979,7 @@ namespace Multiplayer
             GameModeVote[(ushort)GameMode.GunGame] = 0;
             GameModeVote[(ushort)GameMode.CatchTheBanana] = 0;
             StopAllCoroutines();
+            CancelServerTimers();
             SetGameState(GameState.None, false);
             ServerRandomMap = false;
             ServerRandomGameMode = false;

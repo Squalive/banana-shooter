@@ -7662,6 +7662,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 015f7b16fc5cabc4eb4916d8665b1b18, type: 2}
   - {fileID: 11400000, guid: f005e41142a416241a24a1d3b53c472a, type: 2}
   - {fileID: 11400000, guid: 02a5f2f5c5fae984c8c4d436a6343a08, type: 2}
+  - {fileID: 11400000, guid: 6b8db3bb5b6140bcaada7e05082aabf1, type: 2}
   uiCanvas: {fileID: 7174584609609125222}
   inputField: {fileID: 7174584610891896998}
   tipContent: {fileID: 7174584610181773667}
