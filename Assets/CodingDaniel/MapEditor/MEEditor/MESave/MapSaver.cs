@@ -1303,25 +1303,28 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         string sourcePath = Path.Combine(info.FullName, "source.unity3d");
                         if (File.Exists(configPath))
                         {
+                            MapData.ExternalModelConfig config =
+                                JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
+                                    File.ReadAllText(configPath));
+
+                            if (config == null || string.IsNullOrEmpty(config.name) || ModelConfigs.ContainsKey(config.name))
+                            {
+                                Debug.LogWarning($"Skipping model config {configPath}");
+                                continue;
+                            }
+
                             try
                             {
-                                MapData.ExternalModelConfig config =
-                                    JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
-                                        SaveSystem.ReadFileNormally(configPath));
-
-                                if (config == null || string.IsNullOrEmpty(config.name) || ModelConfigs.ContainsKey(config.name))
-                                {
-                                    Debug.LogWarning($"Skipping model config {configPath}");
-                                    continue;
-                                }
-
                                 if (File.Exists(previewImage))
-                                    config.previewImage.LoadImage(await SaveSystem.ReadByteFromFileAsync(previewImage));
+                                {
+                                    config.previewImage.LoadImage(SaveSystem.ReadByteFromFile(previewImage));
+                                }
 
                                 if (File.Exists(sourcePath))
                                 {
-                                    await TryToDownloadAssetBundle(config, sourcePath);
+                                    TryToDownloadAssetBundle(config, sourcePath);
                                 }
+
                                 ModelConfigs.Add(config.name, config);
                             }
                             catch (Exception e)
@@ -1337,20 +1340,15 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             Debug.Log("Initialized workshop map load");
         }
 
-        async Task TryToDownloadAssetBundle(MapData.ExternalModelConfig bundle, string p)
+        void TryToDownloadAssetBundle(MapData.ExternalModelConfig bundle, string p)
         {
             AssetBundleContainer container = AssetBundleManager.Instance.GetAssetBundle(bundle.name);
 
             if (container == null)
             {
-                var bundleRequest = AssetBundle.LoadFromFileAsync(p);
+                Debug.Log($"Try to load asset bundle {p}");
 
-                while (!bundleRequest.isDone)
-                {
-                    await Task.Delay(10);
-                }
-
-                var loadedAssetBundle = bundleRequest.assetBundle;
+                var loadedAssetBundle = AssetBundle.LoadFromFile(p);
 
                 if (loadedAssetBundle == null)
                 {
@@ -1358,23 +1356,28 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                     return;
                 }
 
-                var assetRequest = loadedAssetBundle.LoadAssetAsync<GameObject>("model");
+                Debug.Log("Asset bundle loaded successfully");
 
-                while (!assetRequest.isDone)
-                {
-                    await Task.Delay(10);
-                }
+                Debug.Log("Try to load `model` from the asset bundle");
 
-                if (assetRequest.asset is not GameObject go)
+                var asset = loadedAssetBundle.LoadAsset<GameObject>("model");
+
+                if (asset == null)
                 {
                     Debug.LogError($"Failed to load {bundle.name} Asset!");
                     return;
                 }
 
-                Sanitize(go);
-                UseGameShaders(go);
+                Debug.Log("`model` loaded successfully");
 
-                bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, bundleRequest.assetBundle, assetRequest.asset);
+                Debug.Log("Sanitizing `model`");
+
+                Sanitize(asset);
+                UseGameShaders(asset);
+
+                bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, loadedAssetBundle, asset);
+
+                Debug.Log($"Finished loading and processing asset bundle `{bundle.name}`");
             }
         }
 
