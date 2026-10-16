@@ -1308,7 +1308,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                             {
                                 config = JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(File.ReadAllText(configPath));
                             }
-                            catch(Exception e)
+                            catch (Exception e)
                             {
                                 Debug.LogError($"Failed to load external model config: {e}");
                                 continue;
