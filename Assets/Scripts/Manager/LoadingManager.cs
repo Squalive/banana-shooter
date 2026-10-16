@@ -571,11 +571,8 @@ namespace Manager
             progress.SetEntry("Load WorkshopMap");
             progress.RefreshString();
             var task = MapSaver.Instance.LoadWorkshopMap(map, data);
+            yield return new WaitUntil(() => task.IsCompleted || task.IsFaulted || task.IsCanceled);
 
-            while (!task.IsCompleted)
-            {
-                yield return null;
-            }
             #endregion
 
             #region Waitting for server
@@ -814,11 +811,8 @@ namespace Manager
             progress.SetEntry("Load WorkshopMap");
             progress.RefreshString();
             var task = MapSaver.Instance.LoadWorkshopMap(map, data);
+            yield return new WaitUntil(() => task.IsCompleted || task.IsFaulted || task.IsCanceled);
 
-            while (!task.IsCompleted)
-            {
-                yield return null;
-            }
             #endregion
 
             desiredProgress = 1f;

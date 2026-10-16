@@ -1303,9 +1303,16 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
                         string sourcePath = Path.Combine(info.FullName, "source.unity3d");
                         if (File.Exists(configPath))
                         {
-                            MapData.ExternalModelConfig config =
-                                JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(
-                                    File.ReadAllText(configPath));
+                            MapData.ExternalModelConfig config = null;
+                            try
+                            {
+                                config = JsonConvert.DeserializeObject<MapData.ExternalModelConfig>(File.ReadAllText(configPath));
+                            }
+                            catch(Exception e)
+                            {
+                                Debug.LogError($"Failed to load external model config: {e}");
+                                continue;
+                            }
 
                             if (config == null || string.IsNullOrEmpty(config.name) || ModelConfigs.ContainsKey(config.name))
                             {
@@ -1322,7 +1329,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                                 if (File.Exists(sourcePath))
                                 {
-                                    TryToDownloadAssetBundle(config, sourcePath);
+                                    await TryToDownloadAssetBundle(config, sourcePath);
                                 }
 
                                 ModelConfigs.Add(config.name, config);
@@ -1340,7 +1347,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             Debug.Log("Initialized workshop map load");
         }
 
-        void TryToDownloadAssetBundle(MapData.ExternalModelConfig bundle, string p)
+        async Task TryToDownloadAssetBundle(MapData.ExternalModelConfig bundle, string p)
         {
             AssetBundleContainer container = AssetBundleManager.Instance.GetAssetBundle(bundle.name);
 
@@ -1348,7 +1355,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             {
                 Debug.Log($"Try to load asset bundle {p}");
 
-                var loadedAssetBundle = AssetBundle.LoadFromFile(p);
+                var loadedAssetBundle = await AssetBundle.LoadFromFileAsync(p).GetAwaiter();
 
                 if (loadedAssetBundle == null)
                 {
@@ -1360,10 +1367,11 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 Debug.Log("Try to load `model` from the asset bundle");
 
-                var asset = loadedAssetBundle.LoadAsset<GameObject>("model");
+                var asset = await loadedAssetBundle.LoadAssetAsync<GameObject>("model").GetAwaiter();
 
-                if (asset == null)
+                if (asset is not GameObject go)
                 {
+                    loadedAssetBundle.Unload(true);
                     Debug.LogError($"Failed to load {bundle.name} Asset!");
                     return;
                 }
@@ -1372,10 +1380,10 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 Debug.Log("Sanitizing `model`");
 
-                Sanitize(asset);
-                UseGameShaders(asset);
+                Sanitize(go);
+                UseGameShaders(go);
 
-                bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, loadedAssetBundle, asset);
+                bundle.AssetBundle = AssetBundleManager.Instance.AddBundle(bundle.name, loadedAssetBundle, go);
 
                 Debug.Log($"Finished loading and processing asset bundle `{bundle.name}`");
             }
@@ -1579,11 +1587,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             #endregion
 
             var task = InitializeLoad(true, false);
-
-            while (!task.IsCompleted)
-            {
-                yield return null;
-            }
+            yield return new WaitUntil(() => task.IsCompleted || task.IsFaulted || task.IsCanceled);
 
             OnMapLoaded?.Invoke();
 
@@ -2014,5 +2018,22 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             return -1;
         }
 
+    }
+}
+
+public static class AsyncOperationExtensions
+{
+    public static Task<AssetBundle> GetAwaiter(this AssetBundleCreateRequest request)
+    {
+        var tcs = new TaskCompletionSource<AssetBundle>();
+        request.completed += _ => tcs.SetResult(request.assetBundle);
+        return tcs.Task;
+    }
+
+    public static Task<UnityEngine.Object> GetAwaiter(this AssetBundleRequest request)
+    {
+        var tcs = new TaskCompletionSource<UnityEngine.Object>();
+        request.completed += _ => tcs.SetResult(request.asset);
+        return tcs.Task;
     }
 }

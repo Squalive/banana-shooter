@@ -284,7 +284,7 @@ namespace Dedicated
 
             yield return SceneManager.LoadSceneAsync("CustomMap");
             var build = MapSaver.Instance.LoadWorkshopMap(id, data);
-            yield return new WaitUntil(() => build.IsCompleted);
+            yield return new WaitUntil(() => build.IsCompleted || build.IsFaulted || build.IsCanceled);
         }
 
         /// <summary>On a listen server the host's scene reset does this when voting starts or a map loads.</summary>
