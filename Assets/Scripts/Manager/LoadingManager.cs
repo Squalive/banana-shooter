@@ -815,6 +815,8 @@ namespace Manager
             if (task.Exception != null)
             {
                 Debug.LogError($"Failed to load workshop map: {task.Exception}");
+                TransitionUI.Instance.ClearTransition();
+                isLoading = false;
                 yield break;
             }
 
