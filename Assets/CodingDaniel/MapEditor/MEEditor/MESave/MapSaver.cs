@@ -1355,7 +1355,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             {
                 Debug.Log($"Try to load asset bundle {p}");
 
-                var loadedAssetBundle = await AssetBundle.LoadFromFileAsync(p).GetAwaiter();
+                var loadedAssetBundle = await AssetBundle.LoadFromFileAsync(p).AsTask();
 
                 if (loadedAssetBundle == null)
                 {
@@ -1367,7 +1367,7 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
                 Debug.Log("Try to load `model` from the asset bundle");
 
-                var asset = await loadedAssetBundle.LoadAssetAsync<GameObject>("model").GetAwaiter();
+                var asset = await loadedAssetBundle.LoadAssetAsync<GameObject>("model").AsTask();
 
                 if (asset is not GameObject go)
                 {
@@ -1587,7 +1587,12 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
             #endregion
 
             var task = InitializeLoad(true, false);
-            yield return new WaitUntil(() => task.IsCompleted || task.IsFaulted || task.IsCanceled);
+            yield return new WaitUntil(() => task.IsCompleted);
+            if (task.Exception != null)
+            {
+                Debug.LogError($"Failed to load map: {task.Exception}");
+                yield break;
+            }
 
             OnMapLoaded?.Invoke();
 
@@ -2023,14 +2028,14 @@ namespace CodingDaniel.MapEditor.MEEditor.MESave
 
 public static class AsyncOperationExtensions
 {
-    public static Task<AssetBundle> GetAwaiter(this AssetBundleCreateRequest request)
+    public static Task<AssetBundle> AsTask(this AssetBundleCreateRequest request)
     {
         var tcs = new TaskCompletionSource<AssetBundle>();
         request.completed += _ => tcs.SetResult(request.assetBundle);
         return tcs.Task;
     }
 
-    public static Task<UnityEngine.Object> GetAwaiter(this AssetBundleRequest request)
+    public static Task<UnityEngine.Object> AsTask(this AssetBundleRequest request)
     {
         var tcs = new TaskCompletionSource<UnityEngine.Object>();
         request.completed += _ => tcs.SetResult(request.asset);
