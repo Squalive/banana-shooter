@@ -26,6 +26,8 @@ jobs:
       actions: write
     uses: ./.github/workflows/_build-n-deploy.yml
     with:
+      linux_os: ubuntu-latest
+      windows_os: windows-2022
       version_scheme: nightly
       build_description: nightly-${{ github.run_number }}-${{ github.sha }}
     secrets: inherit

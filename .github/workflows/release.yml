@@ -16,6 +16,8 @@ jobs:
       actions: write
     uses: ./.github/workflows/_build-n-deploy.yml
     with:
+      linux_os: blacksmith-4vcpu-ubuntu-2404
+      windows_os: blacksmith-4vcpu-windows-2025
       version_scheme: semantic
       build_description: release-${{ github.ref_name }}
     secrets: inherit

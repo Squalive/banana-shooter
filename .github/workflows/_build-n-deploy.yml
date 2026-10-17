@@ -3,6 +3,12 @@ name: Build and Deploy
 on:
   workflow_call:
     inputs:
+      linux_os:
+        required: true
+        type: string
+      windows_os:
+        required: true
+        type: string
       # 'nightly' or 'semantic'
       version_scheme:
         required: true
@@ -21,17 +27,28 @@ on:
       STEAM_CONFIG_VDF: { required: true }
 
 jobs:
-  build-client:
-    name: Build Client for ${{ matrix.targetPlatform }}
+  build:
+    name: Build ${{ matrix.subtarget }} for ${{ matrix.targetPlatform }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
       matrix:
         include:
-          - os: windows-2022
+          - os: ${{ inputs.windows_os }}
             targetPlatform: StandaloneWindows64
-          - os: ubuntu-latest
+            subtarget: Client
+            buildName: Banana Shooter
+            cachePrefix: Library
+          - os: ${{ inputs.linux_os }}
             targetPlatform: StandaloneLinux64
+            subtarget: Client
+            buildName: Banana Shooter
+            cachePrefix: Library
+          - os: ${{ inputs.linux_os }}
+            targetPlatform: StandaloneLinux64
+            subtarget: Server
+            buildName: bsds
+            cachePrefix: Library-Server
 
     steps:
       - name: Free Disk Space (Ubuntu)
@@ -83,10 +100,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: ${{ matrix.cachePrefix }}-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-${{ matrix.targetPlatform }}-
-            Library-
+            ${{ matrix.cachePrefix }}-${{ matrix.targetPlatform }}-
+            ${{ matrix.cachePrefix }}-
 
       - uses: ./.github/actions/install-bsubp
 
@@ -109,7 +126,8 @@ jobs:
           unityVersion: 2021.3.45f2
           versioning: ${{ steps.version.outputs.versioning }}
           version: ${{ steps.version.outputs.version }}
-          buildName: Banana Shooter
+          buildName: ${{ matrix.buildName }}
+          customParameters: ${{ matrix.subtarget == 'Server' && '-standaloneBuildSubtarget Server' || '' }}
 
       - name: Remove IL2CPP/Burst debug directories
         shell: bash
@@ -132,124 +150,13 @@ jobs:
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
-          name: Client-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
-          retention-days: 1
-
-  build-server:
-    name: Build Server for ${{ matrix.targetPlatform }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: true
-      matrix:
-        include:
-          - os: ubuntu-latest
-            targetPlatform: StandaloneLinux64
-
-    steps:
-      - name: Free Disk Space (Ubuntu)
-        if: runner.os == 'Linux'
-        uses: jlumbroso/free-disk-space@v2
-        with:
-          tool-cache: false
-
-      # Checkout (without LFS)
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      # Git LFS
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v4
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Compute version
-        id: version
-        shell: bash
-        run: |
-          if [[ "${{ inputs.version_scheme }}" == "nightly" ]]; then
-            BASE=$(git describe --tags --abbrev=0 --match "v*" 2>/dev/null || echo "v0.0.0")
-            BASE=${BASE#v}
-            DATE=$(date +'%Y%m%d')
-            SHA=$(echo ${{ github.sha }} | cut -c1-7)
-            echo "versioning=Custom" >> "$GITHUB_OUTPUT"
-            echo "version=${BASE}-nightly.${DATE}.${SHA}" >> "$GITHUB_OUTPUT"
-          else
-            echo "versioning=Semantic" >> "$GITHUB_OUTPUT"
-            echo "version=" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Cache library
-        uses: actions/cache@v4
-        with:
-          path: Library
-          key: Library-Server-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-Server-${{ matrix.targetPlatform }}-
-            Library-Server
-
-      - uses: ./.github/actions/install-bsubp
-
-      - name: Restore Unlicensed Assets
-        env:
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-        run: |
-            bsubp restore 2026-10-13T09-37-48Z -c
-
-      - name: Build
-        if: runner.os == 'Linux'
-        uses: game-ci/unity-builder@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          targetPlatform: ${{ matrix.targetPlatform }}
-          unityVersion: 2021.3.45f2
-          versioning: ${{ steps.version.outputs.versioning }}
-          version: ${{ steps.version.outputs.version }}
-          buildName: bsds
-          customParameters: -standaloneBuildSubtarget Server
-
-      - name: Remove IL2CPP/Burst debug directories
-        if: runner.os == 'Linux'
-        shell: bash
-        run: |
-          sudo find build -type d \( \
-            -name '*_BackUpThisFolder_ButDontShipItWithYourGame' -o \
-            -name '*_BurstDebugInformation_DoNotShip' \
-          \) -prune -exec rm -rf {} +
-
-          sudo chown -R "$(id -u):$(id -g)" build
-
-          echo "Remaining build contents:"
-          find build -maxdepth 2 -type d
-
-      - name: Upload Build
-        uses: actions/upload-artifact@v4
-        with:
-          name: Server-${{ matrix.targetPlatform }}
+          name: ${{ matrix.subtarget }}-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
           retention-days: 1
 
   deploy:
     name: Deploy to Steam
-    needs: [build-client, build-server]
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       actions: write
