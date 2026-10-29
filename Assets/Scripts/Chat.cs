@@ -74,6 +74,8 @@ public class Chat : MonoBehaviour
             if (type < 0 || type > 2 || string.IsNullOrEmpty(text) || text.Length > 300) return;
             if (type == 0 && (text.Length > 200 || text.Contains("<color"))) return;
 
+            if (type == 0 && HostCommands.TryRun(fromClient, text)) return;
+
             if (type == 0)
             {
                 text = Instance.SwearCheck(text);

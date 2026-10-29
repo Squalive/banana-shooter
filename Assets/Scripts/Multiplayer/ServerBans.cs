@@ -15,12 +15,14 @@ namespace Multiplayer
         public readonly struct Ban
         {
             public readonly ulong SteamId;
+            public readonly string Name;
             public readonly DateTime? Expires;
             public readonly string Reason;
 
-            public Ban(ulong steamId, DateTime? expires, string reason)
+            public Ban(ulong steamId, string name, DateTime? expires, string reason)
             {
                 SteamId = steamId;
+                Name = name;
                 Expires = expires;
                 Reason = reason;
             }
@@ -28,10 +30,10 @@ namespace Multiplayer
 
         readonly Dictionary<ulong, Ban> _bans = new Dictionary<ulong, Ban>();
 
-        public void Add(ulong steamId, string reason, TimeSpan? duration = null, DateTime? now = null)
+        public void Add(ulong steamId, string name, string reason, TimeSpan? duration = null, DateTime? now = null)
         {
             DateTime? expires = duration.HasValue ? (now ?? DateTime.UtcNow) + duration.Value : (DateTime?)null;
-            _bans[steamId] = new Ban(steamId, expires, reason);
+            _bans[steamId] = new Ban(steamId, name, expires, reason);
         }
 
         public bool TryGet(ulong steamId, out Ban ban, DateTime? now = null)
@@ -44,6 +46,22 @@ namespace Multiplayer
         }
 
         public bool Remove(ulong steamId) => _bans.Remove(steamId);
+
+        /// <summary>Finds an active ban by Steam ID or by the banned player's name, ignoring case.</summary>
+        public bool TryFind(string steamIdOrName, out Ban ban, DateTime? now = null)
+        {
+            foreach (var b in Active(now))
+            {
+                if (b.SteamId.ToString() == steamIdOrName || string.Equals(b.Name, steamIdOrName, StringComparison.OrdinalIgnoreCase))
+                {
+                    ban = b;
+                    return true;
+                }
+            }
+
+            ban = default;
+            return false;
+        }
 
         public void Clear() => _bans.Clear();
 

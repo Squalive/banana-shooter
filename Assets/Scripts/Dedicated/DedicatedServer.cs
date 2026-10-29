@@ -97,6 +97,7 @@ namespace Dedicated
             NetworkServerManager.MinimalPlayerCount = _config.Game.MinimalPlayerAmount;
             NetworkServerManager.DlcOnly = _config.Server.DlcOnly;
             NetworkServerManager.VoteKickBanMinutes = Mathf.Max(0, _config.Server.VoteKickBanMinutes);
+            HostCommands.Hosts.UnionWith(_config.Server.Hosts);
 
             if (!StartSteam())
             {
@@ -509,6 +510,8 @@ namespace Dedicated
                 [JsonProperty("Enable_Update_Restart")] public bool UpdateRestart = true;
                 // 0 kicks without a ban.
                 [JsonProperty("Vote_Kick_Ban_Minutes")] public int VoteKickBanMinutes = NetworkServerManager.DefaultVoteKickBanMinutes;
+                // Steam IDs that can use the host chat commands.
+                [JsonProperty("Hosts")] public List<ulong> Hosts = new();
             }
 
             public class BrowserSection
