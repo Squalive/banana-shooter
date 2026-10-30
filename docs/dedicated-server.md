@@ -32,7 +32,7 @@ On first start the server writes `Servers/<server>/Config.json` in the working d
 
 ```json
 {
-  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true },
+  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true, "Vote_Kick_Ban_Minutes": 30, "Hosts": [] },
   "Browser": { "Server_Name": "Banana Shooter", "Description_Short": "" },
   "Game": { "Random_Map": false, "Random_GameMode": false, "Minimal_Player_Amount": 2, "Server_Type": 1 }
 }
@@ -41,6 +41,8 @@ On first start the server writes `Servers/<server>/Config.json` in the working d
 - `Login_Token`: a [game server login token](https://steamcommunity.com/dev/managegameservers) for app 1949740. Empty logs on anonymously.
 - `Server_Type`: `1` Normal or `5` Knockout. Other types need a host client and fall back to Normal.
 - `Enable_Update_Restart`: quits when Steam reports a game update. With players on, it first counts down 3 minutes and warns in chat (3 min, 1 min, 30, 15, 3, 2, 1 s). Run the server under a supervisor that updates and restarts it.
+- `Vote_Kick_Ban_Minutes`: how long a vote-kicked player can't rejoin. `0` kicks without a ban. Admin bans last until the server restarts.
+- `Hosts`: Steam IDs (SteamID64, e.g. `76561198000000000`) of the server's hosts. Hosts can use the chat commands below and can't be vote kicked. Read on start, so restart the server after editing it.
 
 ## Workshop maps
 
@@ -52,9 +54,21 @@ On first start the server writes `Servers/<server>/Config.json` in the working d
 
 The server downloads the items into `Servers/<server>/Workshop/Content` before it opens for players. While workshop is on, every match is a workshop map, and King of the Hill falls back to Brawl. Items that fail to download are skipped, and the log says which ones.
 
+## Host chat commands
+
+Hosts (and game admins) type these into the in-game chat. Other players don't see them, and the reply only shows up for the host who typed it.
+
+- `/players`: list players with their `#` number.
+- `/kick <player>`: kick a player. `<player>` is a name or the `#` from `/players`.
+- `/ban <player>`: ban a player until the server restarts.
+- `/bans`: list bans and time left, including vote kicks.
+- `/unban <player or steamid>`: lift a ban, for example a vote kick.
+
+Hosts can't kick or ban other hosts. Every command is logged as `[Host] ...`.
+
 ## Console
 
-Type into the server's stdin: `status`, `kick <id>`, `start` (skip voting), `restart` (same countdown and chat warnings as an update restart, then quits), `quit`. Linux builds only. `SIGTERM` (`docker stop`, systemd) also shuts down cleanly.
+Type into the server's stdin: `status`, `kick <id>`, `bans` (list bans and time left), `unban <steamid>`, `start` (skip voting), `restart` (same countdown and chat warnings as an update restart, then quits), `quit`. Linux builds only. `SIGTERM` (`docker stop`, systemd) also shuts down cleanly.
 
 ## Not supported yet
 

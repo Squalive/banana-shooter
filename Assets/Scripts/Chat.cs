@@ -74,6 +74,8 @@ public class Chat : MonoBehaviour
             if (type < 0 || type > 2 || string.IsNullOrEmpty(text) || text.Length > 300) return;
             if (type == 0 && (text.Length > 200 || text.Contains("<color"))) return;
 
+            if (type == 0 && HostCommands.TryRun(fromClient, text)) return;
+
             if (type == 0)
             {
                 text = Instance.SwearCheck(text);
@@ -323,7 +325,7 @@ public class Chat : MonoBehaviour
         {
             name = $"<color=#FFD700>[SHIT] {playerName}</color>";
         }
-        else if (steamId == LobbyManager.Instance.owner.m_SteamID)
+        else if (steamId == LobbyManager.Instance.owner.m_SteamID || IsServerHost(steamId))
         {
             name = $"<color=#DAA520>[Host] {playerName}</color>";
         }
@@ -342,5 +344,12 @@ public class Chat : MonoBehaviour
         }
 
         return name;
+    }
+
+    static bool IsServerHost(ulong steamId)
+    {
+        foreach (var data in NetworkManager.ClientData.Values)
+            if (data.SteamId == steamId) return data.IsHost;
+        return false;
     }
 }

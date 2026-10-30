@@ -32,7 +32,7 @@ Beim ersten Start schreibt der Server `Servers/<server>/Config.json` im Arbeitsv
 
 ```json
 {
-  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true },
+  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true, "Vote_Kick_Ban_Minutes": 30, "Hosts": [] },
   "Browser": { "Server_Name": "Banana Shooter", "Description_Short": "" },
   "Game": { "Random_Map": false, "Random_GameMode": false, "Minimal_Player_Amount": 2, "Server_Type": 1 }
 }
@@ -41,6 +41,8 @@ Beim ersten Start schreibt der Server `Servers/<server>/Config.json` im Arbeitsv
 - `Login_Token`: ein [game server login token](https://steamcommunity.com/dev/managegameservers) für app 1949740. Leer meldet anonym an.
 - `Server_Type`: `1` Normal oder `5` Knockout. Andere Typen brauchen einen Host-Client und fallen zurück auf Normal.
 - `Enable_Update_Restart`: Beendet das Spiel, wenn Steam ein Update meldet. Wenn Spieler online sind, wird zunächst 3 Minuten heruntergezählt und im Chat gewarnt (3 min, 1 min, 30, 15, 3, 2, 1 s). Lasst den Server unter einem Supervisor laufen, der ihn aktualisiert und neu startet.
+- `Vote_Kick_Ban_Minutes`: wie lange ein per Vote gekickter Spieler nicht wieder beitreten kann. `0` kickt ohne Bann. Admin-Banns gelten bis zum Neustart des Servers.
+- `Hosts`: Steam-IDs (SteamID64, z. B. `76561198000000000`) der Hosts des Servers. Hosts können die Chat-Befehle unten verwenden und nicht per Vote gekickt werden. Wird beim Start gelesen, also den Server nach einer Änderung neu starten.
 
 ## Workshop maps
 
@@ -52,9 +54,21 @@ Beim ersten Start schreibt der Server `Servers/<server>/Config.json` im Arbeitsv
 
 Der Server lädt die Items in `Servers/<server>/Workshop/Content` herunter, bevor er für die Spieler geöffnet wird. Wenn der Workshop aktiviert ist, ist jedes Match eine Workshop Karte, und King of the Hill geht auf Brawl zurück. Items die nicht heruntergeladen werden, werden übersprungen und im Log steht welche es sind.
 
+## Host-Chat-Befehle
+
+Hosts (und Spiel-Admins) tippen diese in den Chat im Spiel. Andere Spieler sehen sie nicht, und die Antwort sieht nur der Host, der den Befehl eingegeben hat.
+
+- `/players`: Spieler mit ihrer `#`-Nummer anzeigen.
+- `/kick <spieler>`: einen Spieler kicken. `<spieler>` ist ein Name oder die `#` aus `/players`.
+- `/ban <spieler>`: einen Spieler bis zum Neustart des Servers bannen.
+- `/bans`: Banns und Restzeit anzeigen, auch Vote-Kicks.
+- `/unban <spieler oder steamid>`: einen Bann aufheben, zum Beispiel einen Vote-Kick.
+
+Hosts können andere Hosts nicht kicken oder bannen. Jeder Befehl wird als `[Host] ...` geloggt.
+
 ## Konsole
 
-Tippe in das stdin des Servers: `status`, `kick <id>`, `start` (Voting überspringen), `restart` (gleicher Countdown und Chat-Warnungen wie bei einem Update-Neustart, dann beendet sich das Programm), `quit`. Nur Linux-Versionen. `SIGTERM` (`docker stop`, systemd) fährt den Server ebenfalls sauber herunter.
+Tippe in das stdin des Servers: `status`, `kick <id>`, `bans` (Banns und Restzeit anzeigen), `unban <steamid>`, `start` (Voting überspringen), `restart` (gleicher Countdown und Chat-Warnungen wie bei einem Update-Neustart, dann beendet sich das Programm), `quit`. Nur Linux-Versionen. `SIGTERM` (`docker stop`, systemd) fährt den Server ebenfalls sauber herunter.
 
 ## Noch nicht unterstützt
 

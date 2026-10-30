@@ -598,8 +598,9 @@ namespace Multiplayer
                 {
                     if (e.Reason == DisconnectReason.ServerStopped)
                         LoadingManager.Instance.menuType = LoadingManager.MenuType.HostQuit;
+                    // Kicks without a reason come from the anticheat
                     if (e.Reason == DisconnectReason.Kicked)
-                        LoadingManager.Instance.menuType = LoadingManager.MenuType.Cheat;
+                        LoadingManager.Instance.menuType = additionalMessage != String.Empty ? LoadingManager.MenuType.Kick : LoadingManager.MenuType.Cheat;
                     if (e.Reason == DisconnectReason.TransportError)
                         LoadingManager.Instance.menuType = LoadingManager.MenuType.ConnectionFailed;
                     // if (e.Reason == DisconnectReason.Disconnected)
@@ -1140,10 +1141,13 @@ namespace Multiplayer
             short[] weapons = message.GetShorts();
             ushort[] perks = message.GetUShorts();
             InventoryManager.CosmeticIndex cosmeticIndex = message.GetCosmeticIndex();
+            // Older servers and demos don't send it
+            bool isHost = message.UnreadLength > 0 && message.GetBool();
 
             ClientData data = new ClientData(id, name, steamId, ownedDlc, groupId, desc, exp, displayTag, eliminated, weapons, perks)
             {
-                CosmeticIndex = cosmeticIndex
+                CosmeticIndex = cosmeticIndex,
+                IsHost = isHost
             };
 
             SteamFriends.SetPlayedWith((CSteamID)steamId);

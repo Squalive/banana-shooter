@@ -44,6 +44,8 @@ namespace Multiplayer
         public string Desc { get; }
         public int Exp { get; }
         public bool DisplayTag { get; private set; }
+        // In the dedicated server's Hosts list, shown as a [Host] tag
+        public bool IsHost { get; set; }
         public int DesiredTeam { get; set; } = -1;
 
         public short[] Weapons { get; set; }
@@ -161,6 +163,8 @@ namespace Multiplayer
 
             message.Add(perks);
             message.Add(CosmeticIndex);
+            // Last, so older clients and demos that don't read it still work
+            message.Add(IsHost);
 
             return message;
         }
@@ -227,7 +231,9 @@ namespace Multiplayer
         private const float MaxWallBangDistance = 3f;
 
         //The banned player from server
-        public static List<ulong> BannedPlayer = new List<ulong>();
+        public static readonly ServerBans Bans = new ServerBans();
+        //How long a passed vote kick keeps the player out, 0 kicks without a ban
+        public static int VoteKickBanMinutes { get; set; } = 30;
         //The weapons that server allows to use
         public static List<bool> AllowedWeapon = new List<bool>();
         //Store the client datas
@@ -503,7 +509,7 @@ namespace Multiplayer
             SetGameState(GameState.None, false);
             ServerGameMode = GameMode.Brawl;
             SetServerType(ServerType.Normal);
-            BannedPlayer.Clear();
+            Bans.Clear();
             _userHasDlc.Clear();
         }
 
@@ -813,8 +819,9 @@ namespace Multiplayer
                         LobbyManager.Instance.LeaveLobby();
                     }
                     steamId = message.GetULong();
-                    BannedPlayer.Add(steamId);
-                    Instance.Server.DisconnectClient(id);
+                    Bans.Add(steamId, ClientData.TryGetValue(id, out var banned) ? banned.Name : null, "Banned from this server");
+                    Debug.Log($"[Ban] Admin {senderSteamId} banned {steamId} until the server restarts");
+                    Instance.Server.DisconnectClient(id, GetDisconnectMessage("Banned from this server"));
                     break;
             }
         }
