@@ -44,6 +44,8 @@ namespace Multiplayer
         public string Desc { get; }
         public int Exp { get; }
         public bool DisplayTag { get; private set; }
+        // In the dedicated server's Hosts list, shown as a [Host] tag
+        public bool IsHost { get; set; }
         public int DesiredTeam { get; set; } = -1;
 
         public short[] Weapons { get; set; }
@@ -161,6 +163,8 @@ namespace Multiplayer
 
             message.Add(perks);
             message.Add(CosmeticIndex);
+            // Last, so older clients and demos that don't read it still work
+            message.Add(IsHost);
 
             return message;
         }

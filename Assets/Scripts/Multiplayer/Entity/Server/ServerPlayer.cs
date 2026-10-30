@@ -792,7 +792,10 @@ namespace Multiplayer.Entity.Server
             var dlcResult = NetworkServerManager.GetLicenseResult(steamId);
 
             //TODO:Set the init data
-            ClientData data = new ClientData(fromClient, name, steamId, dlcResult == EUserHasLicenseForAppResult.k_EUserHasLicenseResultHasLicense, groupId, description, exp, displayTag, NetworkServerManager.CurrentServer.GetEliminated(), weapons, perks);
+            ClientData data = new ClientData(fromClient, name, steamId, dlcResult == EUserHasLicenseForAppResult.k_EUserHasLicenseResultHasLicense, groupId, description, exp, displayTag, NetworkServerManager.CurrentServer.GetEliminated(), weapons, perks)
+            {
+                IsHost = HostCommands.Hosts.Contains(steamId)
+            };
             if (NetworkServerManager.ClientData.ContainsKey(fromClient))
             {
                 NetworkServerManager.ClientData.Remove(fromClient);

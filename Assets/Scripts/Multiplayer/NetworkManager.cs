@@ -1150,10 +1150,13 @@ namespace Multiplayer
             short[] weapons = message.GetShorts();
             ushort[] perks = message.GetUShorts();
             InventoryManager.CosmeticIndex cosmeticIndex = message.GetCosmeticIndex();
+            // Older servers and demos don't send it
+            bool isHost = message.UnreadLength > 0 && message.GetBool();
 
             ClientData data = new ClientData(id, name, steamId, ownedDlc, groupId, desc, exp, displayTag, eliminated, weapons, perks)
             {
-                CosmeticIndex = cosmeticIndex
+                CosmeticIndex = cosmeticIndex,
+                IsHost = isHost
             };
 
             SteamFriends.SetPlayedWith((CSteamID)steamId);
