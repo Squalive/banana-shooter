@@ -694,6 +694,7 @@ namespace Menu
             {
                 FailedWindow window = Instantiate(PrefabManager.Instance.failedWindow, transform)
                     .GetComponent<FailedWindow>();
+                window.closeByItself = true;
                 window.SetTitle("Eat shit");
                 window.SetReason(UIManager.IsItChinese() ? "现在已有投票在场" : "Theres already has vote in game");
                 return;
@@ -709,6 +710,7 @@ namespace Menu
                 {
                     FailedWindow window = Instantiate(PrefabManager.Instance.failedWindow, transform)
                         .GetComponent<FailedWindow>();
+                    window.closeByItself = true;
                     window.SetTitle("Eat shit");
                     window.SetReason("Sorry he is not cheating , he is a verified person in the game");
                     return;
@@ -718,6 +720,7 @@ namespace Menu
             {
                 FailedWindow window = Instantiate(PrefabManager.Instance.failedWindow, transform)
                     .GetComponent<FailedWindow>();
+                window.closeByItself = true;
                 window.SetTitle("Eat shit");
                 window.SetReason(UIManager.IsItChinese() ? "你不能踢自己" : "You cant kick youself");
                 return;
@@ -966,6 +969,7 @@ namespace Menu
             {
                 FailedWindow window = Instantiate(PrefabManager.Instance.failedWindow, transform)
                     .GetComponent<FailedWindow>();
+                window.closeByItself = true;
                 window.SetTitle("Eat shit");
                 window.SetReason(UIManager.IsItChinese() ? "你不能踢自己" : "you cant kick yourself");
                 return;

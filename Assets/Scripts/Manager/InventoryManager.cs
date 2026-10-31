@@ -827,7 +827,7 @@ namespace Manager
 
         void UserInventoryDeserializationFailed(ClientData user)
         {
-            NetworkServerManager.Instance.Server.DisconnectClient(user.Id);
+            NetworkServerManager.Instance.Server.DisconnectClient(user.Id, NetworkServerManager.GetDisconnectMessage("Couldn't load your inventory"));
 
             Debug.Log($"Failed To Load {user.Name}'s Inventory, kicking {user.Name} Now...");
         }

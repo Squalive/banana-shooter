@@ -39,6 +39,24 @@ partial class Program
             Check(auth.Remove(7, out var removed) && removed == 111 && auth.SteamIds.Count == 0, "disconnect left the identity bound");
             return Task.CompletedTask;
         });
+        await Test("vote kick ban expires after its duration", () => {
+            var bans = new ServerBans(); var now = new DateTime(2026, 10, 29, 12, 0, 0, DateTimeKind.Utc);
+            bans.Add(111, "Vote kicked", TimeSpan.FromMinutes(30), now);
+            Check(bans.TryGet(111, out var ban, now.AddMinutes(29)) && ban.Reason == "Vote kicked", "ban lifted early");
+            Check(ServerBans.Describe(ban, now.AddMinutes(29)) == "for 1 more minute", "wrong time left: " + ServerBans.Describe(ban, now.AddMinutes(29)));
+            Check(!bans.TryGet(111, out _, now.AddMinutes(30)), "ban outlived its duration");
+            Check(bans.Active(now.AddMinutes(30)).Count == 0, "expired ban still listed");
+            return Task.CompletedTask;
+        });
+        await Test("admin ban lasts until cleared and can be lifted", () => {
+            var bans = new ServerBans();
+            bans.Add(222, "Banned from this server");
+            Check(bans.TryGet(222, out var ban, DateTime.UtcNow.AddYears(1)), "session ban expired");
+            Check(ServerBans.Describe(ban) == "until the server restarts", "wrong description");
+            Check(bans.Remove(222) && !bans.TryGet(222, out _), "unban did not lift the ban");
+            Check(!bans.Remove(222), "unbanning twice reported success");
+            return Task.CompletedTask;
+        });
         await Test("save files cannot instantiate types the game never saves", async () => {
             NotASaveType.Ran = false;
             using (var file = File.Create(Save.SaveSystem.GetPath("tampered")))

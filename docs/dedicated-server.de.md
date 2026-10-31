@@ -32,7 +32,7 @@ Beim ersten Start schreibt der Server `Servers/<server>/Config.json` im Arbeitsv
 
 ```json
 {
-  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true },
+  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true, "Vote_Kick_Ban_Minutes": 30 },
   "Browser": { "Server_Name": "Banana Shooter", "Description_Short": "" },
   "Game": { "Random_Map": false, "Random_GameMode": false, "Minimal_Player_Amount": 2, "Server_Type": 1 }
 }
@@ -41,6 +41,7 @@ Beim ersten Start schreibt der Server `Servers/<server>/Config.json` im Arbeitsv
 - `Login_Token`: ein [game server login token](https://steamcommunity.com/dev/managegameservers) für app 1949740. Leer meldet anonym an.
 - `Server_Type`: `1` Normal oder `5` Knockout. Andere Typen brauchen einen Host-Client und fallen zurück auf Normal.
 - `Enable_Update_Restart`: Beendet das Spiel, wenn Steam ein Update meldet. Wenn Spieler online sind, wird zunächst 3 Minuten heruntergezählt und im Chat gewarnt (3 min, 1 min, 30, 15, 3, 2, 1 s). Lasst den Server unter einem Supervisor laufen, der ihn aktualisiert und neu startet.
+- `Vote_Kick_Ban_Minutes`: wie lange ein per Vote gekickter Spieler nicht wieder beitreten kann. `0` kickt ohne Bann. Admin-Banns gelten bis zum Neustart des Servers.
 
 ## Workshop maps
 
@@ -54,7 +55,7 @@ Der Server lädt die Items in `Servers/<server>/Workshop/Content` herunter, bevo
 
 ## Konsole
 
-Tippe in das stdin des Servers: `status`, `kick <id>`, `start` (Voting überspringen), `restart` (gleicher Countdown und Chat-Warnungen wie bei einem Update-Neustart, dann beendet sich das Programm), `quit`. Nur Linux-Versionen. `SIGTERM` (`docker stop`, systemd) fährt den Server ebenfalls sauber herunter.
+Tippe in das stdin des Servers: `status`, `kick <id>`, `bans` (Banns und Restzeit anzeigen), `unban <steamid>`, `start` (Voting überspringen), `restart` (gleicher Countdown und Chat-Warnungen wie bei einem Update-Neustart, dann beendet sich das Programm), `quit`. Nur Linux-Versionen. `SIGTERM` (`docker stop`, systemd) fährt den Server ebenfalls sauber herunter.
 
 ## Noch nicht unterstützt
 

@@ -1100,8 +1100,8 @@ namespace Multiplayer.Entity.Client
                     }
                     return;
                 }
+                // The server disconnects us right after this with the reason, leaving now would drop it
                 if (LoadingManager.Instance.menuType == LoadingManager.MenuType.None) LoadingManager.Instance.menuType = LoadingManager.MenuType.Kick;
-                LobbyManager.Instance.LeaveLobby();
                 return;
             }
             if (_gameUi)

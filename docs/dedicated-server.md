@@ -32,7 +32,7 @@ On first start the server writes `Servers/<server>/Config.json` in the working d
 
 ```json
 {
-  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true },
+  "Server": { "Login_Token": "", "VAC_Secure": true, "DLC_Only": false, "Enable_Update_Restart": true, "Vote_Kick_Ban_Minutes": 30 },
   "Browser": { "Server_Name": "Banana Shooter", "Description_Short": "" },
   "Game": { "Random_Map": false, "Random_GameMode": false, "Minimal_Player_Amount": 2, "Server_Type": 1 }
 }
@@ -41,6 +41,7 @@ On first start the server writes `Servers/<server>/Config.json` in the working d
 - `Login_Token`: a [game server login token](https://steamcommunity.com/dev/managegameservers) for app 1949740. Empty logs on anonymously.
 - `Server_Type`: `1` Normal or `5` Knockout. Other types need a host client and fall back to Normal.
 - `Enable_Update_Restart`: quits when Steam reports a game update. With players on, it first counts down 3 minutes and warns in chat (3 min, 1 min, 30, 15, 3, 2, 1 s). Run the server under a supervisor that updates and restarts it.
+- `Vote_Kick_Ban_Minutes`: how long a vote-kicked player can't rejoin. `0` kicks without a ban. Admin bans last until the server restarts.
 
 ## Workshop maps
 
@@ -54,7 +55,7 @@ The server downloads the items into `Servers/<server>/Workshop/Content` before i
 
 ## Console
 
-Type into the server's stdin: `status`, `kick <id>`, `start` (skip voting), `restart` (same countdown and chat warnings as an update restart, then quits), `quit`. Linux builds only. `SIGTERM` (`docker stop`, systemd) also shuts down cleanly.
+Type into the server's stdin: `status`, `kick <id>`, `bans` (list bans and time left), `unban <steamid>`, `start` (skip voting), `restart` (same countdown and chat warnings as an update restart, then quits), `quit`. Linux builds only. `SIGTERM` (`docker stop`, systemd) also shuts down cleanly.
 
 ## Not supported yet
 
