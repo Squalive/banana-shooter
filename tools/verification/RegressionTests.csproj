@@ -27,5 +27,6 @@
     <Compile Include="../../Assets/Scripts/Weapon/EShootingResult.cs" Link="Production/EShootingResult.cs" />
     <Compile Include="../../Assets/Scripts/Multiplayer/ClientAuthentication.cs" Link="Production/ClientAuthentication.cs" />
     <Compile Include="../../Assets/Scripts/Multiplayer/ClientInputValidation.cs" Link="Production/ClientInputValidation.cs" />
+    <Compile Include="../../Assets/Scripts/Multiplayer/ServerBans.cs" Link="Production/ServerBans.cs" />
   </ItemGroup>
 </Project>

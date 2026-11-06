@@ -96,6 +96,7 @@ namespace Dedicated
             NetworkServerManager.ServerRandomGameMode = _config.Game.RandomGameMode;
             NetworkServerManager.MinimalPlayerCount = _config.Game.MinimalPlayerAmount;
             NetworkServerManager.DlcOnly = _config.Server.DlcOnly;
+            NetworkServerManager.VoteKickBanMinutes = Mathf.Max(0, _config.Server.VoteKickBanMinutes);
 
             if (!StartSteam())
             {
@@ -419,6 +420,15 @@ namespace Dedicated
                 case "kick" when args.Length > 1 && ushort.TryParse(args[1], out var id):
                     server.Server.DisconnectClient(id, NetworkServerManager.GetDisconnectMessage("Kicked"));
                     break;
+                case "bans":
+                    var bans = NetworkServerManager.Bans.Active();
+                    Debug.Log($"[Dedicated] {bans.Count} banned");
+                    foreach (var ban in bans)
+                        Debug.Log($"  {ban.SteamId}  {ban.Reason} {ServerBans.Describe(ban)}");
+                    break;
+                case "unban" when args.Length > 1 && ulong.TryParse(args[1], out var steamId):
+                    Debug.Log(NetworkServerManager.Bans.Remove(steamId) ? $"[Dedicated] Unbanned {steamId}" : $"[Dedicated] {steamId} is not banned");
+                    break;
                 case "start":
                     server.ForceStart();
                     break;
@@ -429,7 +439,7 @@ namespace Dedicated
                     Application.Quit();
                     break;
                 default:
-                    Debug.Log("[Dedicated] Commands: status, kick <id>, start, restart, quit");
+                    Debug.Log("[Dedicated] Commands: status, kick <id>, bans, unban <steamid>, start, restart, quit");
                     break;
             }
         }
@@ -497,6 +507,8 @@ namespace Dedicated
                 [JsonProperty("VAC_Secure")] public bool VacSecure = true;
                 [JsonProperty("DLC_Only")] public bool DlcOnly;
                 [JsonProperty("Enable_Update_Restart")] public bool UpdateRestart = true;
+                // 0 kicks without a ban.
+                [JsonProperty("Vote_Kick_Ban_Minutes")] public int VoteKickBanMinutes = NetworkServerManager.DefaultVoteKickBanMinutes;
             }
 
             public class BrowserSection

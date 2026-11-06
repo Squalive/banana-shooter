@@ -484,14 +484,23 @@ namespace Multiplayer.Entity.Server
 
                 NetworkServerManager.Instance.Server.SendToAll(msg);
 
+                Debug.Log($"[VoteKick] {VoteName(fromClient)} started a vote to kick {VoteName(kickId)}");
+
                 ((ServerPlayer)player).clearKick = ((ServerPlayer)player).StartCoroutine(((ServerPlayer)player).ClearKick());
             }
         }
+
+        static string VoteName(ushort id) => list.TryGetValue(id, out var p) ? LogName(p.Username, p.SteamId) : $"client {id}";
+
+        // Usernames are player-controlled, so keep them from starting fake log lines
+        static string LogName(string name, ulong steamId) => $"{name?.Replace('\r', ' ').Replace('\n', ' ')} ({steamId})";
 
         private Coroutine clearKick;
         IEnumerator ClearKick()
         {
             yield return new WaitForSeconds(30f);
+            if (Vote != null)
+                Debug.Log($"[VoteKick] Vote to kick {VoteName(Vote.PlayerId)} failed: {Vote.agreeCount} yes, {Vote.disAgreeCount} no");
             Vote = null;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.ClearKick);
             NetworkServerManager.Instance.Server.SendToAll(message);
@@ -501,7 +510,7 @@ namespace Multiplayer.Entity.Server
         {
             if (Vote != null)
             {
-                if (Vote.Players.ContainsKey(fromClient)) return;
+                if (Vote.passed || Vote.Players.ContainsKey(fromClient)) return;
             }
             else
             {
@@ -517,14 +526,26 @@ namespace Multiplayer.Entity.Server
 
                 NetworkServerManager.Instance.Server.SendToAll(msg);
 
+                Debug.Log($"[VoteKick] {VoteName(fromClient)} voted yes to kick {VoteName(Vote.PlayerId)}");
+
                 if (Vote.agreeCount > (ushort)Mathf.CeilToInt(NetworkServerManager.Instance.Server.ClientCount * 1 / 3f))
                 {
-                    NetworkServerManager.BannedPlayer.Add(list[Vote.PlayerId].SteamId);
+                    Vote.passed = true;
+                    string reason = ServerBans.VoteKickReason;
+                    int minutes = NetworkServerManager.VoteKickBanMinutes;
+                    if (minutes > 0)
+                    {
+                        NetworkServerManager.Bans.Add(list[Vote.PlayerId].SteamId, ServerBans.VoteKickReason, TimeSpan.FromMinutes(minutes));
+                        reason = $"{ServerBans.VoteKickReason}, you can rejoin in {minutes} min";
+                    }
+                    Debug.Log($"[VoteKick] {VoteName(Vote.PlayerId)} was vote kicked ({Vote.agreeCount} yes, {Vote.disAgreeCount} no), " + (minutes > 0 ? $"banned for {minutes} min" : "not banned"));
+
                     Message m = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.VoteToKickFinish);
                     m.Add(Vote.PlayerId);
-                    NetworkServerManager.Instance.Server.SendToAll(m);
+                    // Not to the kicked player: clients leave on their own result and would miss the reason below
+                    NetworkServerManager.Instance.Server.SendToAll(m, Vote.PlayerId);
 
-                    NetworkServerManager.Instance.Server.DisconnectClient(Vote.PlayerId);
+                    NetworkServerManager.Instance.Server.DisconnectClient(Vote.PlayerId, NetworkServerManager.GetDisconnectMessage(reason));
                 }
             }
         }
@@ -533,7 +554,7 @@ namespace Multiplayer.Entity.Server
         {
             if (Vote != null)
             {
-                if (Vote.Players.ContainsKey(fromClient)) return;
+                if (Vote.passed || Vote.Players.ContainsKey(fromClient)) return;
             }
             else
             {
@@ -548,6 +569,8 @@ namespace Multiplayer.Entity.Server
                 Message msg = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.DisAgreeKicking);
 
                 NetworkServerManager.Instance.Server.SendToAll(msg);
+
+                Debug.Log($"[VoteKick] {VoteName(fromClient)} voted no to kick {VoteName(Vote.PlayerId)}");
             }
         }
 
@@ -730,7 +753,7 @@ namespace Multiplayer.Entity.Server
             {
                 if (Endless.Instance && Endless.Instance.serverStarted)
                 {
-                    NetworkServerManager.Instance.Server.DisconnectClient(fromClient);
+                    NetworkServerManager.Instance.Server.DisconnectClient(fromClient, NetworkServerManager.GetDisconnectMessage("This endless game already started"));
                     return;
                 }
             }
@@ -750,9 +773,11 @@ namespace Multiplayer.Entity.Server
                 return;
             }
 
-            if (NetworkServerManager.BannedPlayer.Contains(steamId))
+            if (NetworkServerManager.Bans.TryGet(steamId, out var ban))
             {
-                NetworkServerManager.Instance.Server.DisconnectClient(fromClient);
+                string reason = $"{ban.Reason} {ServerBans.Describe(ban)}";
+                Debug.Log($"[Ban] Rejected {LogName(name, steamId)}: {reason}");
+                NetworkServerManager.Instance.Server.DisconnectClient(fromClient, NetworkServerManager.GetDisconnectMessage(reason));
                 return;
             }
             if (!ClientInputValidation.IsValidLoadout(weapons, 3, NetworkServerManager.Instance.weaponInfo.Count)
@@ -1156,6 +1181,8 @@ namespace Multiplayer.Entity.Server
 
             if (Vote == null || Vote.PlayerId != Id) return;
 
+            if (!Vote.passed)
+                Debug.Log($"[VoteKick] Vote to kick {LogName(Username, SteamId)} ended, they are no longer on the server ({Vote.agreeCount} yes, {Vote.disAgreeCount} no)");
             Vote = null;
             Message message = Message.Create(MessageSendMode.Reliable, (ushort)ServerToClientId.ClearKick);
             NetworkServerManager.Instance.Server.SendToAll(message);
@@ -1425,12 +1452,10 @@ namespace Multiplayer.Entity.Server
 
         public async void Ban()
         {
-            if (!NetworkServerManager.BannedPlayer.Contains(SteamId))
-            {
-                NetworkServerManager.BannedPlayer.Add(SteamId);
-            }
+            NetworkServerManager.Bans.Add(SteamId, ServerBans.AdminBanReason);
+            Debug.Log($"[Ban] {LogName(Username, SteamId)} banned until the server restarts");
             await Task.Delay(500);
-            NetworkServerManager.Instance.Server.DisconnectClient(Id);
+            NetworkServerManager.Instance.Server.DisconnectClient(Id, NetworkServerManager.GetDisconnectMessage(ServerBans.AdminBanReason));
         }
 
         public void Kill(ushort attacker = 3000, bool headShot = false, bool wallbang = false, bool isAiming = false, ushort weapon = 1000, DamageType damageType = DamageType.Void)

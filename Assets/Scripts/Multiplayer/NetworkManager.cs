@@ -598,8 +598,9 @@ namespace Multiplayer
                 {
                     if (e.Reason == DisconnectReason.ServerStopped)
                         LoadingManager.Instance.menuType = LoadingManager.MenuType.HostQuit;
+                    // Only the anticheat and invalid client data kick without a reason
                     if (e.Reason == DisconnectReason.Kicked)
-                        LoadingManager.Instance.menuType = LoadingManager.MenuType.Cheat;
+                        LoadingManager.Instance.menuType = additionalMessage != String.Empty ? LoadingManager.MenuType.Kick : LoadingManager.MenuType.Cheat;
                     if (e.Reason == DisconnectReason.TransportError)
                         LoadingManager.Instance.menuType = LoadingManager.MenuType.ConnectionFailed;
                     // if (e.Reason == DisconnectReason.Disconnected)
@@ -611,6 +612,15 @@ namespace Multiplayer
             else
             {
                 UIManager.Instance.disConnectBtn.onClick.Invoke();
+
+                // Rejected while joining, e.g. banned or DLC only
+                if (additionalMessage != String.Empty)
+                {
+                    var window = Instantiate(PrefabManager.Instance.failedWindow, UIManager.Instance.transform)
+                        .GetComponent<FailedWindow>();
+                    window.SetTitle("Can't join");
+                    window.SetReason(additionalMessage);
+                }
 
                 UIManager.Instance.endLessBtn.interactable = true;
                 UIManager.Instance.shootingRangeBtn.interactable = true;

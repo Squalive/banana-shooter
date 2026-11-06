@@ -106,6 +106,7 @@ public class VoteKicking
 {
     internal ushort PlayerId, FromClient;
     public ushort agreeCount, disAgreeCount;
+    public bool passed;
     public Dictionary<ushort, bool> Players = new Dictionary<ushort, bool>();
 
     public VoteKicking(ushort playerId, ushort fromClient)

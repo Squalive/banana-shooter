@@ -6,6 +6,7 @@
 using Steamworks;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 #if UNITY_SERVER
 using Sockets = Steamworks.SteamGameServerNetworkingSockets;
@@ -96,9 +97,18 @@ namespace Riptide.Transports.Steam
         {
             if (connection is SteamConnection steamConnection)
             {
-                Sockets.CloseConnection(steamConnection.SteamNetConnection, 0, "Disconnected by server", true);
                 connections.Remove(steamConnection.SteamId);
+                CloseLater(steamConnection.SteamNetConnection);
             }
+        }
+
+        // Riptide sends its disconnect message (with the kick reason) right before this. A client that sees the
+        // connection close drops messages it hasn't read yet, so give it time to read the reason and leave itself.
+        private static async void CloseLater(HSteamNetConnection connection)
+        {
+            Sockets.FlushMessagesOnConnection(connection);
+            await Task.Delay(1000);
+            Sockets.CloseConnection(connection, 0, "Disconnected by server", true);
         }
 
         public void Poll()
