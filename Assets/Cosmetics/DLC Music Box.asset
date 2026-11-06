@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemdefid: 216
   displayName: DLC Music Box
-  description: n othing
+  description: nothing
   tag: 
   type: 32
   inventoryType: 0
