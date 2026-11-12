@@ -44,6 +44,8 @@ namespace Multiplayer
         public string Desc { get; }
         public int Exp { get; }
         public bool DisplayTag { get; private set; }
+        // In the dedicated server's Hosts list, shown as a [Host] tag
+        public bool IsHost { get; set; }
         public int DesiredTeam { get; set; } = -1;
 
         public short[] Weapons { get; set; }
@@ -161,6 +163,8 @@ namespace Multiplayer
 
             message.Add(perks);
             message.Add(CosmeticIndex);
+            // Last, so older clients and demos that don't read it still work
+            message.Add(IsHost);
 
             return message;
         }
@@ -816,7 +820,7 @@ namespace Multiplayer
                         LobbyManager.Instance.LeaveLobby();
                     }
                     steamId = message.GetULong();
-                    Bans.Add(steamId, ServerBans.AdminBanReason);
+                    Bans.Add(steamId, ClientData.TryGetValue(id, out var banned) ? banned.Name : null, ServerBans.AdminBanReason);
                     Debug.Log($"[Ban] Admin {senderSteamId} banned {steamId} until the server restarts");
                     Instance.Server.DisconnectClient(id, GetDisconnectMessage(ServerBans.AdminBanReason));
                     break;
