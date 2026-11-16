@@ -184,7 +184,8 @@ public class Chat : MonoBehaviour
                 }
             }
         }
-
+        // "sanitizing" rich text
+        str = str.Replace("<", "<\u200B");
         return str;
     }
 
