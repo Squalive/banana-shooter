@@ -742,7 +742,7 @@ namespace Multiplayer.Entity.Client
                 {
                     AchievementManager.Instance.SetAchievement(AchievementManager.EAchievements.HEAD_SHOT);
                 }
-                
+
                 if (list.TryGetValue(fromClient, out var localPlayer))
                 {
                     localPlayer.DamageTracker.DamageGiven(Id, damage);
