@@ -262,9 +262,9 @@ namespace Multiplayer.Entity.Client
         // void SetCosmeticLocal()
         // {
         //     Message message = Message.Create(MessageSendMode.Reliable, (ushort)ClientToServerId.SetCosmetics);
-        //     
+        //
         //     NetworkManager.Instance.SendByte += message.WrittenLength;
-        //     
+        //
         //     NetworkManager.Instance.Client.Send(message);
         // }
 
@@ -737,6 +737,12 @@ namespace Multiplayer.Entity.Client
 
             if (fromPlayerIsLocal)
             {
+                if (headShot && _weaponManager != null && _weaponManager.CurrentWeapon != null &&
+                    _weaponManager.CurrentWeapon.gameObject.CompareTag("Sniper"))
+                {
+                    AchievementManager.Instance.SetAchievement(AchievementManager.EAchievements.HEAD_SHOT);
+                }
+
                 if (list.TryGetValue(fromClient, out var localPlayer))
                 {
                     localPlayer.DamageTracker.DamageGiven(Id, damage);
@@ -1488,6 +1494,12 @@ namespace Multiplayer.Entity.Client
 
                     AchievementManager.Instance.SetAchievement(AchievementManager.EAchievements.FIRST_KILL);
 
+                    if (hitHead && _weaponManager != null && _weaponManager.CurrentWeapon != null &&
+                        _weaponManager.CurrentWeapon.gameObject.CompareTag("Sniper"))
+                    {
+                        AchievementManager.Instance.SetAchievement(AchievementManager.EAchievements.HEAD_SHOT);
+                    }
+
                     if (bloodThirsty)
                     {
                         AchievementManager.Instance.SetAchievement(AchievementManager.EAchievements.BLOODDTHIRSTY);
@@ -2056,7 +2068,7 @@ namespace Multiplayer.Entity.Client
             //             _gameUi.weaponUis[weaponIndex].DeSelect();
             //             _gameUi.weaponUis[weaponIndex].Display();
             //         }
-            //     
+            //
             //         weapon[weaponIndex] = firearm;
             //         break;
             //     }
