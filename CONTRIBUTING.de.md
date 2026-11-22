@@ -23,3 +23,5 @@ Das sind die bevorzugten Beiträge, sie lassen sich leicht Unit Testen.
 
 ### Asset änderungen
 Das sind gerade nicht die `BS` Fokuspunkte, erwartet nach der Einreichung abgelehnt oder unbearbeitet gelassen zu werden.
+
+[Zurück zur Readme](README.de.md)
