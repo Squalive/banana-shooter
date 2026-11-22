@@ -23,3 +23,5 @@ These are the preferred contributions, it is easy to get reviewed and can be uni
 
 ### Asset changes
 These are not `BS` focus right now, expect to get rejected or left pending after submission.
+
+[Back to the Readme](README.md)
