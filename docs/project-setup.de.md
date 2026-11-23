@@ -40,3 +40,5 @@ Es wird erwartet **Fehler** zu sehen wenn man das Projekt zum ersten Mal öffnet
 Kein Code wurde entfernt da er uns gehört.
 
 Es gibt derzeit keinen Plan sie zu überarbeiten also funktioniert in diesem Repo im Grunde nur die Bewegung, die Waffen, die Karten und der Code.
+
+[Zurück zur Readme](../README.de.md)
