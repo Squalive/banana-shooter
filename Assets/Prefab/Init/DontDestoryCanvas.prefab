@@ -8073,17 +8073,87 @@ MonoBehaviour:
   messageObj: {fileID: 494501981831139857}
   prefab: {fileID: 5709197040135663405, guid: 21edae0cf71227845af783397f8f00b2, type: 3}
   swear:
-  - fuck
-  - dick
-  - suck
   - "\u50BB\u903C"
   - "\u50BBB"
   - cnm
   - "\u64CD\u4F60\u5988"
+  - anal
+  - anus
+  - arse
+  - ass
+  - ballsack
+  - balls
+  - bastard
   - bitch
-  - shit
-  - nigga
+  - biatch
+  - bloody
+  - blowjob
+  - blow job
+  - bollock
+  - bollok
+  - boner
+  - boob
+  - bugger
+  - bum
+  - butt
+  - buttplug
+  - clitoris
+  - cock
+  - coon
+  - crap
+  - cunt
+  - damn
+  - dick
+  - dildo
+  - dyke
+  - fag
+  - feck
+  - fellate
+  - fellatio
+  - felching
+  - fuck
+  - f u c k
+  - fudgepacker
+  - fudge packer
+  - flange
+  - Goddamn
+  - God damn
+  - hell
+  - homo
+  - jerk
+  - jizz
+  - knobend
+  - knob end
+  - labia
+  - lmao
+  - lmfao
+  - muff
   - nigger
+  - nigga
+  - omg
+  - penis
+  - piss
+  - poop
+  - prick
+  - pube
+  - pussy
+  - queer
+  - scrotum
+  - sex
+  - shit
+  - s hit
+  - sh1t
+  - slut
+  - smegma
+  - spunk
+  - tit
+  - tosser
+  - turd
+  - twat
+  - vagina
+  - wank
+  - whore
+  - wtf
   c: {fileID: 494501982492968420}
 --- !u!1 &7174584611060616211
 GameObject:
